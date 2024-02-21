@@ -11,3 +11,4 @@ Jon | González Sandoval | Jon Gonzalez (Digital5) | si | si
 Jose Luis | Sanz Bioxader | jlsanz_albasoft | si | si
 Kilian | Niubó Vinuesa | knvx | si | si
 Isa | Suárez Casado | isa_dabne | si | si
+David | Aguilera Galvez | bydifi | si | si
