@@ -1,20 +1,21 @@
 Listado
-----------------
-Nombre | Apellido | Discord | Instalacion Odoo | Git
---- | --- | --- | ---
-Nacho | Serra Almenar | nachoserra_domatix | si | si
-Francisco | Romay Méndez | femio23 | si | si
-Lorena | Garrido Santamaría | lorena_gs | si | si
-Carlos| Carlos Borrás | Carlos Borrás      | si | si
-Frank | Cespedes Ruiz | Frank Cespedes(Nuobit Solutions) | si | si
-Sergio | Torres | sergio_04428 | si | si
-Jon | González Sandoval | Jon Gonzalez (Digital5) | si | si
-Jose Luis | Sanz Bioxader | jlsanz_albasoft | si | si
-Kilian | Niubó Vinuesa | knvx | si | si
-Isa | Suárez Casado | isa_dabne | si | si
-David | Aguilera Galvez | bydifi | si | si
-Luis | Noreña Sobrado | luisnore_criptomart | si | si
-Jordi | Navarro Bergada | i2t_consultors | Si | Si
-Ruben | García Solís | potxolate | si | si
-Vicent | Esteve Ferre | vicent_esteve | si | si
-Adasat | Torres de león | adasatorres | si | si
+
+| Nombre | Apellido | Discord | Instalacion Odoo | Git | 
+| --- | --- | --- | --- | --- |
+| Nacho | Serra Almenar | nachoserra_domatix | Si | Si | 
+| Francisco | Romay Méndez | femio23 | Si | Si | 
+| Lorena | Garrido Santamaría | lorena_gs | Si | Si | 
+| Carlos| Carlos Borrás | Carlos Borrás      | Si | Si | 
+| Frank | Cespedes Ruiz | Frank Cespedes(Nuobit Solutions) | Si | Si | 
+| Sergio | Torres | sergio_04428 | Si | Si | 
+| Jon | González Sandoval | Jon Gonzalez (Digital5) | Si | Si | 
+| Jose Luis | Sanz Bioxader | jlsanz_albasoft | Si | Si | 
+| Kilian | Niubó Vinuesa | knvx | Si | Si | 
+| Isa | Suárez Casado | isa_dabne | Si | Si | 
+| David | Aguilera Galvez | bydifi | Si | Si | 
+| Luis | Noreña Sobrado | luisnore_criptomart | Si | Si | 
+| Jordi | Navarro Bergada | i2t_consultors | Si | Si | 
+| Ruben | García Solís | potxolate | Si | Si | 
+| Vicent | Esteve Ferre | vicent_esteve | Si | Si | 
+| Adasat | Torres de león | adasatorres | Si | Si | 
+| Daniel | Sulbarán Socas | danielsulbaranbakata | Si | Si | 
