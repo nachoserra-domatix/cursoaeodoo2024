@@ -14,3 +14,4 @@ Kilian | Niubó Vinuesa | knvx | si | si
 Isa | Suárez Casado | isa_dabne | si | si
 David | Aguilera Galvez | bydifi | si | si
 Luis | Noreña Sobrado | luisnore_criptomart | si | si
+Jordi | Navarro Bergada | i2t_consultors | Si | Si
