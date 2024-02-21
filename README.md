@@ -9,3 +9,4 @@ Carlos| Carlos Borrás | Carlos Borrás      | si | si
 Frank | Cespedes Ruiz | Frank Cespedes(Nuobit Solutions) | si | si
 Jon | González Sandoval | Jon Gonzalez (Digital5) | si | si
 Jose Luis | Sanz Bioxader | jlsanz_albasoft | si | si
+Kilian | Niubó Vinuesa | knvx | si | si
