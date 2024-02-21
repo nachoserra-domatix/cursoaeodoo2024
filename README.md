@@ -17,3 +17,4 @@ Luis | Noreña Sobrado | luisnore_criptomart | si | si
 Jordi | Navarro Bergada | i2t_consultors | Si | Si
 Ruben | García Solís | potxolate | si | si
 Vicent | Esteve Ferre | vicent_esteve | si | si
+Adasat | Torres de león | adasatorres | si | si
