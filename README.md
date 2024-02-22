@@ -20,4 +20,5 @@ Listado
 | Adasat | Torres de león | adasatorres | Si | Si | 
 | Daniel | Sulbarán Socas | danielsulbaranbakata | Si | Si |
 | Yuniel | Villalon Rosales | Yuniel Villalon Rolsales | si | si |
-| Gabriel | Recio Rodríguez | Gabriel Recio(Sistemas de Datos) | Sí | Sí
+| Gabriel | Recio Rodríguez | Gabriel Recio(Sistemas de Datos) | Sí | Sí |
+| Angel | Martínez Serra | angelmartserr | si | si |
