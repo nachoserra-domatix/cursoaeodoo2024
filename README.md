@@ -18,4 +18,4 @@ Listado
 | Ruben | García Solís | potxolate | Si | Si | 
 | Vicent | Esteve Ferre | vicent_esteve | Si | Si | 
 | Adasat | Torres de león | adasatorres | Si | Si | 
-| Daniel | Sulbarán Socas | danielsulbaranbakata | Si | Si | 
+| Daniel | Sulbarán Socas | danielsulbaranbakata | Si | Si |
