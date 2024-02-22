@@ -1,5 +1,4 @@
 Listado
-
 | Nombre | Apellido | Discord | Instalacion Odoo | Git | 
 | --- | --- | --- | --- | --- |
 | Nacho | Serra Almenar | nachoserra_domatix | Si | Si | 
@@ -18,4 +17,4 @@ Listado
 | Ruben | García Solís | potxolate | Si | Si | 
 | Vicent | Esteve Ferre | vicent_esteve | Si | Si | 
 | Adasat | Torres de león | adasatorres | Si | Si | 
-| Daniel | Sulbarán Socas | danielsulbaranbakata | Si | Si | 
+| Daniel | Sulbarán Socas | danielsulbaranbakata | Si | Si |
