@@ -1,5 +1,4 @@
 Listado
-
 | Nombre | Apellido | Discord | Instalacion Odoo | Git | 
 | --- | --- | --- | --- | --- |
 | Nacho | Serra Almenar | nachoserra_domatix | Si | Si | 
@@ -20,3 +19,4 @@ Listado
 | Adasat | Torres de león | adasatorres | Si | Si | 
 | Daniel | Sulbarán Socas | danielsulbaranbakata | Si | Si | 
 | Arian | Zaghi | Arian (Punt Sistemes) | si | si |
+| Daniel | Sulbarán Socas | danielsulbaranbakata | Si | Si |
