@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sports_association_jordi.access_sports_issue,access_sports_issue,sports_association_jordi.model_sports_issue,base.group_user,1,1,1,1
