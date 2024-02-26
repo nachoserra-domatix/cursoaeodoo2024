@@ -17,5 +17,7 @@
         "base",
     ],
     
-    "data": [],    
+    "data": [
+        "security/ir.model.access.csv",
+    ],    
 }

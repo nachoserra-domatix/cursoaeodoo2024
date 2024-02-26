@@ -8,7 +8,7 @@ class SportIssue(models.Model):
     _description = "sport issue"
 
     name = fields.Char(string="name")
-    description = fields.Text(readonly=True, states={"draft": [("readonly", False)]})
+    description = fields.Text(string="Description")
     date = fields.Datetime(
         readonly=True,
         required=True,
