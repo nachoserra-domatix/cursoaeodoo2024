@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_report_issue" model="ir.actions.act_window">
+        <field name="name">Sport Issues</field>
+        <field name="res_model">sport.issue</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem 
+    id="sport_menu"
+    name="Sport Association"
+    sequence="10"
+    />
+
+    <menuitem 
+    id="sport_issue_menu"
+    name="Sport Issues"
+    action="action_report_issue"
+    sequence="10"
+    parent="sport_menu"
+    />
+</odoo>
