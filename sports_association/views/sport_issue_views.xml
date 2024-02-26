@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_sport_issue" model="ir.actions.act_window">
+        <field name="name">sport Issue</field>
+        <field name="res_model">sport.issue</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new issue
+            </p>
+        </field>
+    </record>
+
+    <!-- Menus -->
+    <menuitem id="sport_menu"
+        name="Sport Association"
+        sequence="10"
+        web_icon="calendar,static/description/icon.png"
+        groups="base.group_user">
+
+        <menuitem id="sport_issue_menu"
+            name="Sport Issue"
+            sequence="1"
+            action="action_sport_issue"            
+            groups="base.group_user"/>
+    
+    </menuitem>
+
+</odoo>

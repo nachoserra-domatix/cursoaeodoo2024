@@ -19,5 +19,6 @@
     
     "data": [
         "security/ir.model.access.csv",
+        "views/sport_issue_views.xml"
     ],    
 }
