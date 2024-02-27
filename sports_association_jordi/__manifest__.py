@@ -6,12 +6,16 @@
     "version": "17.0.1.0.0",
     "category": "Sports",
     "author": "<Jordi Navarro>, I2T",
-    "maintainers": ["your-github-login"],
+    "maintainers": ["JordiNavarro"],
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": [
         "base",
     ],
-   "data":["security/ir.model.access.csv","views/sport_issue.xml"],
+   "data":["security/grupos.xml",
+         "security/ir.model.access.csv",
+         "views/sport_issue_views.xml",
+         "views/sport_menuitems.xml"
+         ]
 }

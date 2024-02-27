@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sport_issue_tree_view" model="ir.ui.view">
+        <field name="name">sports_issue.tree.view</field>
+        <field name="model">sports.issue</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Issues">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="date" optional="show"/>
+                <field name="user_id" optional="hide"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>  
+
+    <record id="sport_issue_view_form" model="ir.ui.view">
+        <field name="name">sports_issue.view.form</field>
+        <field name="model">sports.issue</field>
+        <field name="arch" type="xml">
+            <form string="Issue">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,done" options="{'clickable':1}"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Issue Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="assistance" widget="boolean_toggle"/>
+                        </group>
+                        <notebook>
+                            <page name="description" string="Description">
+                                <field name="description"/>
+                            </page>
+                            <page name="solution" string="Solution">
+                                <field name="solution"/>
+                            </page> 
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_sport_issue" model="ir.actions.act_window">
+        <field name="name">sport.issues</field>
+        <field name="res_model">sports.issue</field>
+       <field name="view_mode">tree,form,kanban</field>
+       <field name="context">{}</field>
+       <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new issue
+            </p>
+        </field>
+    </record>
+</odoo>
