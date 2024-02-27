@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem
+        id="sport_menu"
+        name="Sport Association"
+        sequence="10"/>
+    
+    <menuitem
+        id="sport_issue_menu"
+        name="Sport Issues"
+        action="sports_association_gabriel.action_sport_issue"        
+        parent="sports_association_gabriel.sport_menu"
+        sequence="10"/>
+</odoo>

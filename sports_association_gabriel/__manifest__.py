@@ -14,7 +14,10 @@
     ],
     
     "data": [
-        "security/ir.model.access.csv",
-        "views/sport_issue.xml",
+        "data/sport_license_data.xml",
+        "security/groups.xml",
+        "security/ir.model.access.csv",        
+        "views/sport_issue_views.xml",
+        "views/sport_issue_menuitems.xml",        
     ],
 }
