@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright <YEAR(S)> <AUTHOR(S)>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+<record id="action_sport_issue" model="ir.action.act_window">
+    <field name="name">Sport Issue</field>
+    <field name="resmodel">model.name</field>
+    <field name="view_mode"></field>
+    <field name="context">{}</field>
+    <field name="help" type="html"></field>
+</record>
+
+
+<menuitem
+    id="sport_menu"
+    name="Sprot Association"
+    sequence="10"/>
+
+<menuitem
+    id="sport_issue_menu"
+    name="Sport Issues"
+    action="sport_asociation_jon.action_sport_issue"
+    parent="sport_asociation_jon.sport_menu"
+    sequence="10"/>
+
+</odoo>
