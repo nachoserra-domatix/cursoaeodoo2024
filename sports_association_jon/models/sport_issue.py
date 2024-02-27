@@ -9,9 +9,9 @@ class SportIssue(models.Model):
     date = fields.Date(string="Date")
     assistance = fields.Boolean(string="Assistance")
     state = fields.Selection(
-        [{"draft", "Draft"},
-         {"open", "Open"},
-         {"done", "Done"}],
+        [("draft", "Draft"),
+         ("open", "Open"),
+         ("done", "Done")],
          string="State",
          default="draft",
     )

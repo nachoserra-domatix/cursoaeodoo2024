@@ -4,8 +4,8 @@
     "name": "Sport Associations",
     "summary": "Manage sports association members, teams and events",
     "version": "17.0.1.0.0",
-    "category": "Sport module",
-    "author": "Jon",
+    "category": "Sports",
+    "author": "<Jon Gonzalez>, Digital5",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
@@ -13,7 +13,7 @@
         "base",
     ],
     "data":[
-        "views/sport_issue.xml",
-        "security/ir.model.access.csv"
+        # "views/sport_issue.xml",
+        # "security/ir.model.access.csv"
     ],
 }
