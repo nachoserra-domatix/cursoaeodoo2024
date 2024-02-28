@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="sport_issue_tags_view_tree" model="ir.ui.view">
+        <field name="name">sport_issue_tags.view.tree</field>
+        <field name="model">sport.issue.tag</field>
+        <field name="arch" type="xml">
+           <tree editable="bottom" string="Tags">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_issue_tag_action" model="ir.actions.act_window">
+        <field name="name">Sport Issue Tag Action</field>
+        <field name="res_model">sport.issue.tag</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new tag
+            </p>
+        </field>
+    </record>
+    </odoo>

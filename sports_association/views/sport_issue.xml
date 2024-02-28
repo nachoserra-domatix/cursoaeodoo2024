@@ -12,17 +12,25 @@
         </field>
     </record>
     
+
     <menuitem
         id="sport_menu"
-        name="Sport Associations"
+        name="Sport Association"
+        sequence="10"/>
+  
+
+    <menuitem
+        id="sport_issue_menu"
+        name="Sport Issues"
+        action="sports_association.action_sport_issue"
+        parent="sports_association.sport_menu"
         sequence="10"/>
 
-        <menuitem
-            id="sport_issue_menu"
-            name="Sport Issues"
-            action="sports_association.action_sport_issue"
-            parent="sports_association.sport_menu"
-            sequence="10"/>
-
+    <menuitem
+        id="sport_clinic_menu"
+        name="Sport Clinics"
+        action="sports_association.action_sport_clinic"
+        parent="sports_association.sport_menu"
+        sequence="20"/>
+    
 </odoo>
-

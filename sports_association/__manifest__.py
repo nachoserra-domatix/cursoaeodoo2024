@@ -31,12 +31,16 @@
     #     "module_name",
     # ],
     "data": [
-        # security/some_model_security.xml",
+        "security/groups.xml",
         "security/ir.model.access.csv",
         # "templates/assets.xml",
-        # "views/report_name.xml",
+        "views/sport_issue_views.xml",
+        "views/sport_clinic_views.xml",
+        "views/sport_issue.xml",
+        "views/sport_issue_tag_views.xml",
         "views/sport_issue.xml",
         # "wizards/wizard_model_view.xml",
+        "data/sport_license_data.xml",
     ],
     "demo": [
         "demo/assets.xml",
