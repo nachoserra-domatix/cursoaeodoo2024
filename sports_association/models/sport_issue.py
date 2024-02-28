@@ -17,3 +17,10 @@ class SportIssue(models.Model):
         string='State',
         default='draft',
     )
+
+    user_id = fields.Many2one(comodel_name='res.users', string='User')
+    sequence = fields.Integer(string='Sequence', default=10)
+    solution = fields.Html(string='Solution')
+    
+    
+    
