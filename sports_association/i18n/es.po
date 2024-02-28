@@ -1,0 +1,216 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sports_association
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-28 13:57+0000\n"
+"PO-Revision-Date: 2024-02-28 13:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sports_association
+#: model:res.groups,comment:sports_association.res_groups_sport_association_user
+msgid ""
+"\n"
+"            The user will be able to browse some model.\n"
+"        "
+msgstr ""
+
+#. module: sports_association
+#: model:res.groups,comment:sports_association.res_groups_sport_association_manager
+msgid ""
+"\n"
+"            The user will be able to manage some model.\n"
+"        "
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__assistance
+msgid "Assistance"
+msgstr "Asitencia"
+
+#. module: sports_association
+#: model_terms:ir.actions.act_window,help:sports_association.action_sport_issue
+msgid "Create a new issue"
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__create_uid
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__create_date
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__description
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
+msgid "Description"
+msgstr "Descripción"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__display_name
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields.selection,name:sports_association.selection__sport_issue__state__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: sports_association
+#: model:ir.model.fields.selection,name:sports_association.selection__sport_issue__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__end_date
+msgid "End Date"
+msgstr "Fecha Fin"
+
+#. module: sports_association
+#: model:ir.model.fields.selection,name:sports_association.selection__sport_issue__state__expired
+msgid "Expired"
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__id
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__id
+msgid "ID"
+msgstr ""
+
+#. module: sports_association
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
+msgid "Issue"
+msgstr ""
+
+#. module: sports_association
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
+msgid "Issue Name"
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields,help:sports_association.field_sport_issue__date
+#: model:ir.model.fields,help:sports_association.field_sport_license__end_date
+msgid "Issue date."
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__write_uid
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__write_date
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: sports_association
+#: model:res.groups,name:sports_association.res_groups_sport_association_manager
+msgid "Manager"
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields.selection,name:sports_association.selection__sport_issue__state__open
+msgid "Open"
+msgstr "Abierta"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__solution
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
+msgid "Solution"
+msgstr "Solucion"
+
+#. module: sports_association
+#: model:ir.ui.menu,name:sports_association.sport_menu
+msgid "Sport Association"
+msgstr "Asociación Deportiva"
+
+#. module: sports_association
+#: model:ir.actions.act_window,name:sports_association.action_sport_issue
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_issue_tree_view
+msgid "Sport Issue"
+msgstr "Incidencia"
+
+#. module: sports_association
+#: model:ir.ui.menu,name:sports_association.sport_issue_menu
+msgid "Sport Issues"
+msgstr "Incidencias"
+
+#. module: sports_association
+#: model:ir.model,name:sports_association.model_sport_license
+msgid "Sport License"
+msgstr "Licencias"
+
+#. module: sports_association
+#: model:ir.module.category,name:sports_association.ir_module_sport_association
+msgid "Sports association"
+msgstr "Asociación deportiva"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__start_date
+msgid "Start Date"
+msgstr "Inicio"
+
+#. module: sports_association
+#: model:ir.model.fields,help:sports_association.field_sport_license__start_date
+msgid "Start date."
+msgstr "Inicio"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__user_id
+#: model:res.groups,name:sports_association.res_groups_sport_association_user
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_issue_tree_view
+msgid "User"
+msgstr "Usuario"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__name
+#: model:ir.model.fields,field_description:sports_association.field_sport_license__name
+msgid "name"
+msgstr "nombre"
+
+#. module: sports_association
+#: model:ir.model,name:sports_association.model_sport_issue
+msgid "sport issue"
+msgstr "incidencia"
