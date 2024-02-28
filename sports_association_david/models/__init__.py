@@ -1,1 +1,1 @@
-from . import sport_issue, sport_license
+from . import sport_issue, sport_license, sport_clinic, sport_issue_tag

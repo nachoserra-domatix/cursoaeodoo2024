@@ -2,7 +2,7 @@
 <odoo>
 
     <menuitem 
-        id="sport_issue_menu" 
+        id="sport_association_menu" 
         name="Sport Association"  
         action="action_sport_issue" 
         sequence="90" 
@@ -11,8 +11,15 @@
     <menuitem 
         id="sport_issue_menuitem" 
         action="action_sport_issue" 
-        parent="sport_issue_menu" 
+        parent="sport_association_menu" 
         name="Sport Issues" 
+        sequence="90"/>
+
+    <menuitem 
+        id="sport_clinic_menuitem" 
+        action="action_sport_clinic" 
+        parent="sport_association_menu" 
+        name="Sport Clinic" 
         sequence="90"/>
     
 </odoo>

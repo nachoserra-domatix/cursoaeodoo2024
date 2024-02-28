@@ -18,3 +18,20 @@ class SportIssue(models.Model):
     user_id = fields.Many2one('res.users', string="Usuario")
     sequence = fields.Integer(string="Sequence")
     solution = fields.Html(string="Solution")
+
+    clinic_id = fields.Many2one('sport.clinic', string='Clinic')
+
+    tag_ids = fields.Many2many('sport.issue.tag')
+
+    def action_open(self):
+        for record in self:
+            record.state = 'open'
+
+    def action_draft(self):
+        for record in self:
+            record.state = 'draft'
+
+    def action_done(self):
+        for record in self:
+            record.state = 'done'
+
