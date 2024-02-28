@@ -187,7 +187,7 @@ msgstr ""
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_clinic__phone
 msgid "Phone"
-msgstr ""
+msgstr "Telefono"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__reference
