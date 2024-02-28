@@ -7,6 +7,8 @@ class SportLicense(models.Model):
     _name = 'sport.license'
     _description = "Sport License"
 
+    #=== FIELDS ===#
+    
     name = fields.Char(string="name", required=True)
     partner_id = fields.Many2one(comodel_name='res.partner')
     start_date = fields.Datetime(        

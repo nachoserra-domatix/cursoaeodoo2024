@@ -14,6 +14,8 @@ class SportIssue(models.Model):
     _name = 'sport.issue'
     _description = "sport issue"
 
+    #=== FIELDS ===#
+
     name = fields.Char(string="name")
     description = fields.Text(string="Description")
     date = fields.Datetime(
