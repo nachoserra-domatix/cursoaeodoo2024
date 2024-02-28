@@ -27,6 +27,9 @@
             <form string="Sport Issues">
                 <header>
                     <field name="state" widget="statusbar" options="{'clickable': '1'}" statusbar_visible="draft,open,done" />
+                    <button string="Draft" invisible="state not in ('open','done')" name="action_draft" type="object" class="oe_highlight" />
+                    <button string="Open" invisible="state not in ('draft')" name="action_open" type="object" class="oe_highlight" />
+                    <button string="Done" invisible="state not in ('done')" name="action_done" type="object" class="oe_highlight" />
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -40,6 +43,8 @@
                         </group>
                         <group>
                             <field name="date"/>
+                            <field name="clinic_id"/>
+                            <field name="tag_ids" widget="many2many_tags"/>
                             <field name="assistance" widget="boolean_toggle"/>
                         </group>
                     </group>
@@ -60,11 +65,24 @@
     <record id="action_sport_issue" model="ir.actions.act_window">
         <field name="name">sport.issue.action</field>
         <field name="res_model">sport.issue</field>
-        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Create a new sport issue
+            </p>
+        </field>
+    </record>
+
+    <!-- model.name action window -->
+    <record id="action_sport_clinic" model="ir.actions.act_window">
+        <field name="name">sport.clinic.action</field>
+        <field name="res_model">sport.clinic</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a new sport clinic
             </p>
         </field>
     </record>

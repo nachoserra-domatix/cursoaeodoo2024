@@ -2,5 +2,17 @@
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
     <menuitem id="sport_menu" name="Sport Issues" sequence="10"/>
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="sport_issue_menu" name="Sport Issues" parent="sport_menu" action="action_sport_issue" sequence="10"/>
+    <menuitem id="sport_issue_menu" 
+        name="Sport Issues" 
+        parent="sport_menu" 
+        action="action_sport_issue" 
+        sequence="10"
+        />
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="sport_clinic_menu_act" 
+        name="Sport Clinics" 
+        parent="sport_menu" 
+        action="action_sport_clinic" 
+        sequence="20"
+        />
 </odoo>
