@@ -43,7 +43,7 @@
                         <group name="group_product">
                             <field name="assistance" widget="boolean_toggle"/>
                             <field name="clinic_id" />
-                            <field name="tags_id" widget="many2many_tags"/>
+                            <field name="tag_ids" widget="many2many_tags"/>
                         </group>
                     </group>
                     <notebook>

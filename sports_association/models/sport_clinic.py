@@ -12,8 +12,12 @@ class SportClinic(models.Model):
     name = fields.Char(string="Name", required=True)  
     phone = fields.Char('phone')
     email = fields.Char('email')
-    issue_ids = fields.One2many('sport.issue', 'clinic_id')
+    issue_ids = fields.One2many(
+        comodel_name='sport.issue',
+        inverse_name='clinic_id')
 
+    #=== METHODS ===#
+    
     def action_check_assistance(self):
         for record in self.issue_ids:
             record.assistance = True

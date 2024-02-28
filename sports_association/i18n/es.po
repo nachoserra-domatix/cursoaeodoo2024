@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-28 13:57+0000\n"
-"PO-Revision-Date: 2024-02-28 13:57+0000\n"
+"POT-Creation-Date: 2024-02-28 21:15+0000\n"
+"PO-Revision-Date: 2024-02-28 21:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,18 +37,49 @@ msgid "Assistance"
 msgstr "Asitencia"
 
 #. module: sports_association
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_clinic_view_form
+msgid "Check Assistance"
+msgstr "Marcar asitencia"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__clinic_id
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_clinic_view_form
+msgid "Clinic"
+msgstr "Clínica"
+
+#. module: sports_association
+#: model:ir.ui.menu,name:sports_association.sport_clinic_menu
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_clinic_tree_view
+msgid "Clinics"
+msgstr "Clínicas"
+
+#. module: sports_association
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: sports_association
+#: model_terms:ir.actions.act_window,help:sports_association.action_sport_clinic
+msgid "Create a new clinic"
+msgstr "Crear una clinica nueva "
+
+#. module: sports_association
 #: model_terms:ir.actions.act_window,help:sports_association.action_sport_issue
 msgid "Create a new issue"
 msgstr ""
 
 #. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_clinic__create_uid
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__create_uid
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue_tag__create_uid
 #: model:ir.model.fields,field_description:sports_association.field_sport_license__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_clinic__create_date
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__create_date
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue_tag__create_date
 #: model:ir.model.fields,field_description:sports_association.field_sport_license__create_date
 msgid "Created on"
 msgstr ""
@@ -65,7 +96,9 @@ msgid "Description"
 msgstr "Descripción"
 
 #. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_clinic__display_name
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__display_name
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue_tag__display_name
 #: model:ir.model.fields,field_description:sports_association.field_sport_license__display_name
 msgid "Display Name"
 msgstr ""
@@ -77,6 +110,7 @@ msgstr "Hecho"
 
 #. module: sports_association
 #: model:ir.model.fields.selection,name:sports_association.selection__sport_issue__state__draft
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
 msgid "Draft"
 msgstr "Borrador"
 
@@ -91,12 +125,15 @@ msgid "Expired"
 msgstr ""
 
 #. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_clinic__id
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__id
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue_tag__id
 #: model:ir.model.fields,field_description:sports_association.field_sport_license__id
 msgid "ID"
 msgstr ""
 
 #. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_clinic__issue_ids
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
 msgid "Issue"
 msgstr ""
@@ -113,13 +150,22 @@ msgid "Issue date."
 msgstr ""
 
 #. module: sports_association
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_clinic_view_form
+msgid "Issues"
+msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_clinic__write_uid
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__write_uid
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue_tag__write_uid
 #: model:ir.model.fields,field_description:sports_association.field_sport_license__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_clinic__write_date
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__write_date
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue_tag__write_date
 #: model:ir.model.fields,field_description:sports_association.field_sport_license__write_date
 msgid "Last Updated on"
 msgstr ""
@@ -130,7 +176,14 @@ msgid "Manager"
 msgstr ""
 
 #. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_clinic__name
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue_tag__name
+msgid "Name"
+msgstr ""
+
+#. module: sports_association
 #: model:ir.model.fields.selection,name:sports_association.selection__sport_issue__state__open
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
 msgid "Open"
 msgstr "Abierta"
 
@@ -161,11 +214,21 @@ msgid "Sport Association"
 msgstr "Asociación Deportiva"
 
 #. module: sports_association
+#: model:ir.model,name:sports_association.model_sport_clinic
+msgid "Sport Clinic"
+msgstr "Clínica"
+
+#. module: sports_association
 #: model:ir.actions.act_window,name:sports_association.action_sport_issue
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_issue_tree_view
 msgid "Sport Issue"
 msgstr "Incidencia"
+
+#. module: sports_association
+#: model:ir.model,name:sports_association.model_sport_issue_tag
+msgid "Sport Issue Tag"
+msgstr ""
 
 #. module: sports_association
 #: model:ir.ui.menu,name:sports_association.sport_issue_menu
@@ -176,6 +239,11 @@ msgstr "Incidencias"
 #: model:ir.model,name:sports_association.model_sport_license
 msgid "Sport License"
 msgstr "Licencias"
+
+#. module: sports_association
+#: model:ir.actions.act_window,name:sports_association.action_sport_clinic
+msgid "Sport clinic"
+msgstr "Clínica"
 
 #. module: sports_association
 #: model:ir.module.category,name:sports_association.ir_module_sport_association
@@ -198,6 +266,11 @@ msgid "Status"
 msgstr "Estado"
 
 #. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_issue__tags_id
+msgid "Tag"
+msgstr "Etiqueta"
+
+#. module: sports_association
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__user_id
 #: model:res.groups,name:sports_association.res_groups_sport_association_user
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_issue_tree_view
@@ -205,10 +278,20 @@ msgid "User"
 msgstr "Usuario"
 
 #. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_clinic__email
+msgid "email"
+msgstr "e-mail"
+
+#. module: sports_association
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__name
 #: model:ir.model.fields,field_description:sports_association.field_sport_license__name
 msgid "name"
 msgstr "nombre"
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_clinic__phone
+msgid "phone"
+msgstr "teléfono"
 
 #. module: sports_association
 #: model:ir.model,name:sports_association.model_sport_issue

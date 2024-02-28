@@ -23,26 +23,28 @@ class SportIssue(models.Model):
         required=True,
         string="Date",
         default=fields.Datetime.now,        
-        help="Issue date.",
-    )
+        help="Issue date")
     assistance = fields.Boolean(string="Assistance")
     state = fields.Selection(
         selection=SPORT_ISSUE_STATE,
         string="Status",
-        default="draft",
-    )
+        default="draft")
     user_id = fields.Many2one(
         comodel_name='res.users',
-        string="User",
-    )
+        string="User")
     sequence = fields.Integer(
         string="Sequence",
-        default=10, 
-    )
+        default=10)
     solution = fields.Html(string="Solution")
 
-    clinic_id = fields.Many2one(comodel_name="sport.clinic", string="Clinic")
-    tags_id = fields.Many2many(comodel_name="sport.issue.tag", string="Tag")
+    clinic_id = fields.Many2one(
+        comodel_name="sport.clinic", 
+        string="Clinic")
+    tag_ids = fields.Many2many(
+        comodel_name="sport.issue.tag", 
+        string="Tag")
+
+    #=== METHODS ===#
 
     def action_draft (self):
         self.state='draft'
