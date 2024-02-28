@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    
+
     <record id="action_sport_issue" model="ir.actions.act_window">
         <field name="name">Issues</field>
         <field name="res_model">sport.issue</field>
@@ -8,23 +8,65 @@
         <field name="target">current</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
-        <field name="help" type="html" >
+        <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create new sport issue
             </p>
         </field>
     </record>
-    
+
+    <record id="action_sport_clinic" model="ir.actions.act_window">
+        <field name="name">Clinics</field>
+        <field name="res_model">sport.clinic</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="target">current</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new sport clinic
+            </p>
+        </field>
+    </record>
+
+    <record id="action_sport_issue_tag" model="ir.actions.act_window">
+        <field name="name">Issue Tags</field>
+        <field name="res_model">sport.issue.tag</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="target">current</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new sport issue tag
+            </p>
+        </field>
+    </record>
+
     <menuitem
         id="sport_menu"
         name="Sport Association"
-        sequence="10"/>
-    
+        sequence="10" />
+
     <menuitem
         id="sport_isuue_menu"
         name="Sport Issues"
         action="action_sport_issue"
         parent="sport_menu"
-        sequence="10"/>
+        sequence="10" />
+
+    <menuitem
+        id="sport_clinic_menu"
+        name="Sport Clinics"
+        action="action_sport_clinic"
+        parent="sport_menu"
+        sequence="20" />
+
+    <menuitem
+        id="sport_issue_tag_menu"
+        name="Sport Issue Tag"
+        action="action_sport_issue_tag"
+        parent="sport_menu"
+        sequence="20" />
 
 </odoo>

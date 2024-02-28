@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="sport_issue_tag_tree" model="ir.ui.view">
+        <field name="name">Sport Issue Tags</field>
+        <field name="model">sport.issue.tag</field>
+        <field name="type">tree</field>
+        <field name="priority" eval="16" />
+        <field name="arch" type="xml">
+            <tree editable="bottom" string="Issue Tags">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_issue_tag_form" model="ir.ui.view">
+        <field name="name">Sport Issue Tag Form</field>
+        <field name="model">sport.issue.tag</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Issue Tags">
+                <sheet>
+                    <field name="name" placeholder="Clinic Name" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
