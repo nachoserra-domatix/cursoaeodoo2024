@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem 
+        id="sport_issue_menu" 
+        name="Sport Association"  
+        action="action_sport_issue" 
+        sequence="90" 
+        web_icon="sports_association_david,static/description/icon.png"/>
+
+    <menuitem 
+        id="sport_issue_menuitem" 
+        action="action_sport_issue" 
+        parent="sport_issue_menu" 
+        name="Sport Issues" 
+        sequence="90"/>
+    
+</odoo>
