@@ -8,7 +8,7 @@
         groups="base.group_user">
 
         <menuitem id="sport_issue_menu"
-            name="Sport Issue"
+            name="Sport Issues"
             sequence="1"
             action="action_sport_issue"            
             groups="base.group_user"/>

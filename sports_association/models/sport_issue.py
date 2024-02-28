@@ -3,6 +3,13 @@
 
 from odoo import models, fields
 
+SPORT_ISSUE_STATE = [
+    ('draft', "Draft"),
+    ('open', "Open"),
+    ('done', "Done"),
+    ('expired', "Expired"),
+]
+
 class SportIssue(models.Model):
     _name = 'sport.issue'
     _description = "sport issue"
@@ -18,13 +25,8 @@ class SportIssue(models.Model):
     )
     assistance = fields.Boolean(string="Assistance")
     state = fields.Selection(
-        selection=[
-            ("draft", "Draft"),
-            ("open", "Open"),
-            ("done", "Done"),
-            ("expired", "Expired"),
-        ],
-        string="State",
+        selection=SPORT_ISSUE_STATE,
+        string="Status",
         default="draft",
     )
     user_id = fields.Many2one(
