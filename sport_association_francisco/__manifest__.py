@@ -12,7 +12,13 @@
         "base",
     ],
     "data":[
+        "security/groups.xml",
         "security/ir.model.access.csv",
-        "views/sport_issue.xml"
+        "views/sport_issue_menu_items.xml",
+        "views/sport_issue_views.xml",
+        "views/sport_clinic_menu_items.xml",
+        "views/sport_clinic_views.xml",
+        "views/sport_license_menu_items.xml",
+        "data/sport_license_data.xml"
     ]
 }
