@@ -22,5 +22,6 @@
         "security/ir.model.access.csv",        
         "views/sport_issue_views.xml",
         "views/sport_association_menus.xml",
+        "data/sport_license_data.xml",
     ],    
 }
