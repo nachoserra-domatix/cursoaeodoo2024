@@ -9,3 +9,6 @@ class SportIssue(models.Model):
     date = fields.Date(string='Date')
     assistence = fields.Boolean(string='Assistance', help='Show if the issue has assistance')
     state = fields.Selection([('draft', 'Draft'), ('open', 'Open'), ('done', 'Done')], string='State', default='draft')
+    user_id = fields.Many2one('res.users', string="User")
+    sequence = fields.Integer(string="Sequence", default=10)
+    solution = fields.Html(string='Solution')

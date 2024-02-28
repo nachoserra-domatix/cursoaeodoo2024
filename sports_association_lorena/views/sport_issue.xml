@@ -3,7 +3,7 @@
     <record id="action_sport_issue" model="ir.actions.act_window">
         <field name="name">Sport Issues</field>
         <field name="res_model">sport.issue</field>
-        <field name="view_mode">form,tree</field>
+        <field name="view_mode">tree,form,kanban</field>
         <field name="name">Sport Issues</field>
     </record>
         
