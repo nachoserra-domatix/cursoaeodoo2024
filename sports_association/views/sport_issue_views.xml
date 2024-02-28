@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sport_issue_tree_view" model="ir.ui.view">
+        <field name="name">Sport Issue Tree View</field>
+        <field name="model">sport.issue</field>
+        <field name="type">tree</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="16" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <tree string="Issues">
+                <field name="secuence" widget="handle" />
+                <field name="name" />
+                <field name="date" optional="show" />
+                <field name="user_id" optional="hide" />
+                <field name="state" widget="badge" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_issue_view_form" model="ir.ui.view">
+        <field name="name">sport_issue.view.form</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <form string="Issues">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,done" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Issue Name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="user_id" />
+                        </group>
+                        <group>
+                            <field name="date" />
+                            <field name="assistance" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                            <field name="description" />
+                        </page>
+                        <page name="solution" string="Solution">
+                            <field name="solution" />
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

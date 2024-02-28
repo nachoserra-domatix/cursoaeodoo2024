@@ -16,3 +16,7 @@ class SportIssue(models.Model):
         string="State",
         default='draft'
     )
+
+    user_id = fields.Many2one('res.users', string='User')
+    secuence = fields.Integer(string='secuence', default=10)
+    solution = fields.Html(string="Solution")
