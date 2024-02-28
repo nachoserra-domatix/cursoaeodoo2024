@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="sport_issue_tree_view" model="ir.ui.view">
+            <field name="name">sport.issue.tree.view</field>
+            <field name="model">sport.issue</field>
+            <field name="arch" type="xml">
+                <tree string="Sport Issue" multi_edit='1'>
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="date" optional="show"/>
+                    <field name="state" widget="badge"/>
+                    <field name="solution"/>
+                    <field name="assistance" optional="hide"/>
+                    <field name="user_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="sport_issue_form_view" model="ir.ui.view">
+            <field name="name">sport.issue.form.view</field>
+            <field name="model">sport.issue</field>
+            <field name="arch" type="xml">
+                <form string="Sport Issue">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button name="action_open" string="To Open" type="object" invisible="state == 'open'" class="btn-primary"/>
+                        <button name="action_draft" string="To Draft" type="object" invisible="state in ['draft','done']" class="btn-secondary"/>
+                        <button name="action_done" string="Done" type="object" invisible="state == 'Done'" class="btn-success"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Issue name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="sequence"/>
+                                <field name="description"/>
+                                <field name="date" widget="remaining_days"/>
+                            </group>
+                            <group>
+                                <field name="solution"/>
+                                <field name="assistance" widget="boolean_toggle"/>
+                                <field name="user_id" />
+                                <field name="tag_ids" widget="many2many_tags"/>
+                                <field name="clinic_id" />
+                            </group>
+                            <notebook>
+                                <page name="description" string="Description">
+                                    <field name="description"/>
+                                </page>
+                                <page name="solution" string="Solution">
+                                    <field name="solution"/>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+    </odoo>
