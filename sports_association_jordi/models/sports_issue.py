@@ -17,4 +17,8 @@ class SportsIssue(models.Model):
     user_id = fields.Many2one('res.users', string='User')
     sequence = fields.Integer(string='Sequence',default=10)
     solution = fields.Html(string='Solution')
-          
+    clinic_id = fields.Many2one('sports.clinic', string='Clinic')
+    tag_ids = fields.Many2many('sports.issue.tag', string='Tags')
+
+    def action_done(self):
+        self.state='done'

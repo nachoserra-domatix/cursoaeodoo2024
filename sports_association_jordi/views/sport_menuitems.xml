@@ -10,4 +10,10 @@
         action="action_sport_issue"
         parent="sport_menu"
         sequence="10"/>
+    <menuitem
+        id="sport_clinic_menu"
+        name="Sports Clinics"
+        action="action_sport_clinic"
+        parent="sport_menu"
+        sequence="20"/>
 </odoo>

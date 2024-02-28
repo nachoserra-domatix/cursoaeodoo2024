@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sport_clinic_tree_view" model="ir.ui.view">
+        <field name="name">sports_clinic.tree.view</field>
+        <field name="model">sports.clinic</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Clinics">
+                <field name="name"/>
+                <field name="phone" optional="show"/>
+                <field name="email" optional="hide"/>
+            </tree>
+        </field>
+    </record>  
+
+    <record id="sport_clinic_view_form" model="ir.ui.view">
+        <field name="name">sports_clinic.view.form</field>
+        <field name="model">sports.clinic</field>
+        <field name="arch" type="xml">
+            <form string="Clinic">
+                <header>
+                    <button string="Check assistance" name="action_check_assistance" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Issue Name"/>
+                        </h1>
+                    </div>
+                    
+                    <group>
+                        <field name="phone"/>
+                        <field name="email"/>   
+                    </group>
+                    <notebook>
+                        <page name="name" string="string">
+                            <field name="issue_ids">
+                                <tree editable="bottom" string="Issues">
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                    <field name="assistance"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_sport_clinic" model="ir.actions.act_window">
+        <field name="name">sport.clinics</field>
+        <field name="res_model">sports.clinic</field>
+       <field name="view_mode">tree,form</field>
+       <field name="context">{}</field>
+       <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new clinic
+            </p>
+        </field>
+    </record>
+</odoo>

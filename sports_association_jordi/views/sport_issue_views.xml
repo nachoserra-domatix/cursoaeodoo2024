@@ -21,6 +21,7 @@
             <form string="Issue">
                 <header>
                     <field name="state" widget="statusbar" statusbar_visible="draft,open,done" options="{'clickable':1}"/>
+                    <button string="Done" name="action_done" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -31,10 +32,12 @@
                     <group>
                         <group>
                             <field name="user_id"/>
+                            <field name="clinic_id"/>
                         </group>
                         <group>
                             <field name="date"/>
                             <field name="assistance" widget="boolean_toggle"/>
+                            <field name="tag_ids" widget="many2many"/>
                         </group>
                         <notebook>
                             <page name="description" string="Description">
