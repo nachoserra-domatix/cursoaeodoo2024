@@ -9,16 +9,14 @@ class SportLicense(models.Model):
 
     name = fields.Char(string="name", required=True)
     partner_id = fields.Many2one(comodel_name='res.partner')
-    start_date = fields.Datetime(
-        readonly=True,
+    start_date = fields.Datetime(        
         required=True,
         default=fields.Datetime.now,        
         help="Start date.",
     )
-    end_date = fields.Datetime(
-        readonly=True,
+    end_date = fields.Datetime(        
         required=True,
         default=fields.Datetime.now,        
         help="Issue date.",
     )
-    reference = fields.Text(string="Reference")
+    reference = fields.Char(string="Reference")
