@@ -24,3 +24,4 @@ Listado
 | Yuniel | Villalon Rosales | Yuniel Villalon Rolsales | si | si |
 | Gabriel | Recio Rodríguez | Gabriel Recio(Sistemas de Datos) | Sí | Sí |
 | Angel | Martínez Serra | angelmartserr | si | si |
+| Gonzalo | Crosio | Punt Sistemes | si | si |
