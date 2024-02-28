@@ -40,4 +40,16 @@ class SportIssue(models.Model):
         default=10, 
     )
     solution = fields.Html(string="Solution")
+
+    clinic_id = fields.Many2one(comodel_name="sport.clinic", string="Clinic")
+    tags_id = fields.Many2many(comodel_name="sport.issue.tag", string="Tag")
+
+    def action_draft (self):
+        self.state='draft'
+    
+    def action_open (self):
+        self.write({'state':'open'})
+
+    def action_close (self):
+        self.state='done'
     

@@ -12,6 +12,12 @@
             sequence="1"
             action="action_sport_issue"            
             groups="base.group_user"/>
+        
+        <menuitem id="sport_clinic_menu"
+            name="Clinics"
+            sequence="20"
+            action="action_sport_clinic"            
+            groups="base.group_user"/>
     
     </menuitem>
 </odoo>

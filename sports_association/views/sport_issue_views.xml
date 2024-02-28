@@ -25,6 +25,9 @@
                 <sheet>
                     <header>                                        
                         <field name="state" widget="statusbar" statusbar_visible="draft,open,done" options="{'clickable': '1'}"/>
+                        <button string="Draft"  invisible="state == 'draft'" class="btn-primary" name="action_draft" type="object" />
+                        <button string="Open" invisible="state == 'open'" name="action_open" type="object" class="btn-primary" />
+                        <button string="Close" invisible="state == 'close'" name="action_close" type="object" class="btn-secundary" />
                     </header>
                     <label for="name" string="Issue"/>
                     <div class="oe_title">
@@ -39,6 +42,8 @@
                         </group>
                         <group name="group_product">
                             <field name="assistance" widget="boolean_toggle"/>
+                            <field name="clinic_id" />
+                            <field name="tags_id" widget="many2many_tags"/>
                         </group>
                     </group>
                     <notebook>

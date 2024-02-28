@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- VIEWS -->
+    
+    <record id="sport_clinic_tree_view" model="ir.ui.view">
+        <field name="name">sport.clinic.tree.view</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <tree string="Clinics" multi_edit="1">                
+                <field name="name"/>                
+            </tree>
+        </field>
+    </record>    
+
+    <!-- ACTIONS (WINDOW) -->
+
+    <record id="action_sport_clinic" model="ir.actions.act_window">
+        <field name="name">Sport clinic</field>
+        <field name="res_model">sport.clinic</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new clinic
+            </p>
+        </field>
+    </record>
+</odoo>

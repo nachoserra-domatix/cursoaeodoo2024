@@ -21,7 +21,8 @@
         "security/sport_issue_security.xml",
         "security/ir.model.access.csv",        
         "views/sport_issue_views.xml",
-        "views/sport_association_menus.xml",
+        "views/sport_clinic_views.xml",
+        "views/sport_association_menus.xml",        
         "data/sport_license_data.xml",
     ],    
 }
