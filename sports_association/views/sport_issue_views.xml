@@ -17,7 +17,7 @@
         </field>
     </record>
 
-     <record id="sport_issue__form_view" model="ir.ui.view">
+    <record id="sport_issue__form_view" model="ir.ui.view">
         <field name="name">sport.issue.form.view</field>
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">

@@ -12,3 +12,8 @@ class SportPlayer(models.Model):
     position = fields.Char(string='Position')
     team_id = fields.Many2one('sport.team', string='Team')
     is_starter = fields.Boolean(string='Starter')
+
+    #=== METHODS ===#
+
+    def action_starter (self):
+        self.is_starter=True
