@@ -12,6 +12,7 @@
     ],
     "data": [
         "data/sport_license_data.xml",
+        "data/sport_issue_tags_data.xml",
         "security/groups.xml",
         "security/ir.model.access.csv",
         "views/clinic_view.xml",

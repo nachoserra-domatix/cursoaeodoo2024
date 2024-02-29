@@ -15,4 +15,22 @@
         action="action_sport_clinic" 
         sequence="20"
         />
+    <menuitem id="sport_sport_menu_act" 
+        name="Sports" 
+        parent="sport_menu" 
+        action="action_sport_sport" 
+        sequence="30"
+        />
+    <menuitem id="sport_team_menu_act" 
+        name="Teams" 
+        parent="sport_menu" 
+        action="action_sport_team" 
+        sequence="40"
+        />
+    <menuitem id="sport_player_menu_act" 
+        name="Players" 
+        parent="sport_menu" 
+        action="action_sport_player" 
+        sequence="50"
+        />
 </odoo>

@@ -21,7 +21,7 @@
 
     <!-- sport.issue form view -->
     <record id="sport_issue_view_form" model="ir.ui.view">
-        <field name="name">sport.issue.view.form</field>
+        <field name="name">Sport Issues</field>
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
             <form string="Sport Issues">
@@ -61,7 +61,95 @@
         </field>
     </record>
 
-    <!-- model.name action window -->
+    <record id="sport_sport_view_form" model="ir.ui.view">
+        <field name="name">Sports</field>
+        <field name="model">sport.sport</field>
+        <field name="arch" type="xml">
+            <form string="Sports">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Sport Name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="image"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description" name="description">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_team_view_form" model="ir.ui.view">
+        <field name="name">Team</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <form string="Team">
+                <sheet>
+                    <header>
+                        <button string="Set players to starters" name="set_substitutes" type="object" class="oe_highlight btn-primary" />
+                        <button string="Set players to starters" name="set_starters" type="object" class="oe_highlight btn-danger" />
+                    </header>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Team Name" />
+                        </h1>
+                        <field name="logo" widget="image" options="{'size': [150, 150]}"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sport_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Issues" name="issues">
+                                <field name="player_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="age"/>
+                                        <field name="position"/>
+                                        <field name="team_id"/>
+                                        <field name="starter" widget="boolean_toggle" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_player_view_form" model="ir.ui.view">
+        <field name="name">Player</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <form string="Player">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Player Name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="age"/>
+                            <field name="position"/>
+                            <field name="team_id"/>
+                            <field name="starter" widget="boolean_toggle" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <record id="action_sport_issue" model="ir.actions.act_window">
         <field name="name">sport.issue.action</field>
         <field name="res_model">sport.issue</field>
@@ -74,7 +162,6 @@
         </field>
     </record>
 
-    <!-- model.name action window -->
     <record id="action_sport_clinic" model="ir.actions.act_window">
         <field name="name">sport.clinic.action</field>
         <field name="res_model">sport.clinic</field>
@@ -83,6 +170,42 @@
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Create a new sport clinic
+            </p>
+        </field>
+    </record>
+
+    <record id="action_sport_sport" model="ir.actions.act_window">
+        <field name="name">sport.sport.action</field>
+        <field name="res_model">sport.sport</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a new sport
+            </p>
+        </field>
+    </record>
+
+    <record id="action_sport_team" model="ir.actions.act_window">
+        <field name="name">sport.team.action</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a new sport team
+            </p>
+        </field>
+    </record>
+
+    <record id="action_sport_player" model="ir.actions.act_window">
+        <field name="name">sport.player.action</field>
+        <field name="res_model">sport.player</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a new sport player
             </p>
         </field>
     </record>
