@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-28 16:19+0000\n"
-"PO-Revision-Date: 2024-02-28 16:19+0000\n"
+"POT-Creation-Date: 2024-02-29 15:33+0000\n"
+"PO-Revision-Date: 2024-02-29 15:33+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,6 +38,11 @@ msgstr ""
 "        "
 
 #. module: sport_association_francisco
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__age
+msgid "Age"
+msgstr "Edad"
+
+#. module: sport_association_francisco
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_issue__assistance
 msgid "Assistance"
 msgstr "Asistencia"
@@ -51,6 +56,11 @@ msgstr "Marcar todos"
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_issue__clinic_id
 msgid "Clinic"
 msgstr "Clínica"
+
+#. module: sport_association_francisco
+#: model_terms:ir.actions.act_window,help:sport_association_francisco.action_sport_team
+msgid "Create new Team"
+msgstr "Crar nuevo Equipo"
 
 #. module: sport_association_francisco
 #: model_terms:ir.actions.act_window,help:sport_association_francisco.action_sport_clinic
@@ -68,10 +78,23 @@ msgid "Create new license"
 msgstr "Crear nueva licencia"
 
 #. module: sport_association_francisco
+#: model_terms:ir.actions.act_window,help:sport_association_francisco.action_sport_player
+msgid "Create new player"
+msgstr "Crear nuevo Deportista"
+
+#. module: sport_association_francisco
+#: model_terms:ir.actions.act_window,help:sport_association_francisco.action_sport_sport
+msgid "Create new sport"
+msgstr "Crear nuevo Deporte"
+
+#. module: sport_association_francisco
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_clinic__create_uid
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_issue__create_uid
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_license__create_uid
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__create_uid
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_sport__create_uid
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_tag__create_uid
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_team__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
@@ -79,7 +102,10 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_clinic__create_date
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_issue__create_date
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_license__create_date
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__create_date
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_sport__create_date
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_tag__create_date
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_team__create_date
 msgid "Created on"
 msgstr "Creado el"
 
@@ -95,6 +121,7 @@ msgstr "Fecha"
 
 #. module: sport_association_francisco
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_issue__description
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_sport__description
 #: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_issue_form_view
 msgid "Description"
 msgstr "Descripción"
@@ -103,7 +130,10 @@ msgstr "Descripción"
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_clinic__display_name
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_issue__display_name
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_license__display_name
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__display_name
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_sport__display_name
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_tag__display_name
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_team__display_name
 msgid "Display Name"
 msgstr "Nombre a mostrar"
 
@@ -132,18 +162,23 @@ msgstr "Fecha Fin"
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_clinic__id
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_issue__id
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_license__id
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__id
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_sport__id
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_tag__id
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_team__id
 msgid "ID"
 msgstr ""
 
 #. module: sport_association_francisco
 #: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_clinic_form_view
 #: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_issue_form_view
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_player_form_view
 msgid "Issue name"
 msgstr "Nombre de Incidencia"
 
 #. module: sport_association_francisco
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_clinic__issue_ids
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_clinic_form_view
 msgid "Issues"
 msgstr "Incidencias"
 
@@ -151,7 +186,10 @@ msgstr "Incidencias"
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_clinic__write_uid
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_issue__write_uid
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_license__write_uid
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__write_uid
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_sport__write_uid
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_tag__write_uid
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_team__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
@@ -159,9 +197,17 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_clinic__write_date
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_issue__write_date
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_license__write_date
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__write_date
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_sport__write_date
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_tag__write_date
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_team__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
+
+#. module: sport_association_francisco
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_team__logo
+msgid "Logo"
+msgstr ""
 
 #. module: sport_association_francisco
 #: model:res.groups,name:sport_association_francisco.res_groups_sports_association_manager
@@ -169,10 +215,23 @@ msgid "Manager"
 msgstr "Gestor"
 
 #. module: sport_association_francisco
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_team_form_view
+msgid "Mark all as titular"
+msgstr "Marcar todos como titulares"
+
+#. module: sport_association_francisco
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_player_form_view
+msgid "Mark as titular"
+msgstr "Marcar como titular"
+
+#. module: sport_association_francisco
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_clinic__name
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_issue__name
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_license__name
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__name
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_sport__name
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_tag__name
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_team__name
 msgid "Name"
 msgstr "Nombre"
 
@@ -185,6 +244,16 @@ msgstr "Abierto"
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_clinic__phone
 msgid "Phone"
 msgstr "Teléfono"
+
+#. module: sport_association_francisco
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_team__player_ids
+msgid "Players"
+msgstr "Deportistas"
+
+#. module: sport_association_francisco
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__position
+msgid "Position"
+msgstr "Posición"
 
 #. module: sport_association_francisco
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_license__reference
@@ -203,8 +272,15 @@ msgid "Solution"
 msgstr "Solución"
 
 #. module: sport_association_francisco
+#: model:ir.actions.act_window,name:sport_association_francisco.action_sport_sport
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_team__sport_id
+#: model:ir.ui.menu,name:sport_association_francisco.sport__menu
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_sport_form_view
+msgid "Sport"
+msgstr "Deporte"
+
+#. module: sport_association_francisco
 #: model:ir.module.category,name:sport_association_francisco.ir_module_spots_association
-#: model:ir.ui.menu,name:sport_association_francisco.sport_menu
 msgid "Sport Association"
 msgstr "Asociación Deportiva"
 
@@ -220,6 +296,9 @@ msgstr "Clinica Deportiva"
 #: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_clinic_tree_view
 #: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_issue_form_view
 #: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_issue_tree_view
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_player_tree_view
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_sport_tree_view
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_team_tree_view
 msgid "Sport Issue"
 msgstr "Incidencia Deportiva"
 
@@ -236,15 +315,53 @@ msgid "Sport License"
 msgstr "Licencia Deportiva"
 
 #. module: sport_association_francisco
+#: model:ir.model,name:sport_association_francisco.model_sport_player
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_player_form_view
+msgid "Sport Player"
+msgstr "Deportista"
+
+#. module: sport_association_francisco
+#: model:ir.actions.act_window,name:sport_association_francisco.action_sport_player
+#: model:ir.ui.menu,name:sport_association_francisco.sport_player_menu
+msgid "Sport Players"
+msgstr "Deportistas"
+
+#. module: sport_association_francisco
+#: model:ir.model,name:sport_association_francisco.model_sport_sport
+msgid "Sport Sport"
+msgstr "Deporte"
+
+#. module: sport_association_francisco
 #: model:ir.model,name:sport_association_francisco.model_sport_tag
 msgid "Sport Tag"
 msgstr "Etiqueta Deportiva"
+
+#. module: sport_association_francisco
+#: model:ir.actions.act_window,name:sport_association_francisco.action_sport_team
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_team_form_view
+msgid "Sport Team"
+msgstr "Equipo"
+
+#. module: sport_association_francisco
+#: model:ir.ui.menu,name:sport_association_francisco.sport_team_menu
+msgid "Sport Teams"
+msgstr "Equipos"
 
 #. module: sport_association_francisco
 #: model:ir.actions.act_window,name:sport_association_francisco.action_sport_clinic
 #: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_clinic_form_view
 msgid "Sport clinic"
 msgstr "Clínica Deportiva"
+
+#. module: sport_association_francisco
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_sport_form_view
+msgid "Sport name"
+msgstr "Nombre del deporte"
+
+#. module: sport_association_francisco
+#: model:ir.model,name:sport_association_francisco.model_sport_team
+msgid "Sport team"
+msgstr "Equipo Deportivo"
 
 #. module: sport_association_francisco
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_license__start_date
@@ -262,6 +379,26 @@ msgid "Tag"
 msgstr "Etiqueta"
 
 #. module: sport_association_francisco
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__team_id
+msgid "Team"
+msgstr "Equipo"
+
+#. module: sport_association_francisco
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_team_form_view
+msgid "Team name"
+msgstr "Nombre del Equipo"
+
+#. module: sport_association_francisco
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_player_form_view
+msgid "Teams"
+msgstr "Equipos"
+
+#. module: sport_association_francisco
+#: model:ir.model.fields,field_description:sport_association_francisco.field_sport_player__titular
+msgid "Titular"
+msgstr "Titular"
+
+#. module: sport_association_francisco
 #: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_issue_form_view
 msgid "To Draft"
 msgstr "A Borrador"
@@ -270,6 +407,16 @@ msgstr "A Borrador"
 #: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_issue_form_view
 msgid "To Open"
 msgstr "A Abierto"
+
+#. module: sport_association_francisco
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_team_form_view
+msgid "Unmark all as titular"
+msgstr "Desmarcar a todos como titulares"
+
+#. module: sport_association_francisco
+#: model_terms:ir.ui.view,arch_db:sport_association_francisco.sport_player_form_view
+msgid "Unmark as titular"
+msgstr "Desmarcar como titular"
 
 #. module: sport_association_francisco
 #: model:res.groups,name:sport_association_francisco.res_groups_sports_association_user
@@ -285,3 +432,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:sport_association_francisco.field_sport_tag__issue_ids
 msgid "isue"
 msgstr "Incidencia"
+
+#. module: sport_association_francisco
+#: model:ir.ui.menu,name:sport_association_francisco.sport_menu
+msgid "sport_menu"
+msgstr "Asociación Deportiva"

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="sport_player_tree_view" model="ir.ui.view">
+            <field name="name">sport.player.tree.view</field>
+            <field name="model">sport.player</field>
+            <field name="arch" type="xml">
+                <tree string="Sport Issue" multi_edit='1'>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="titular"/>
+                    <field name="team_id"/>
+                    <field name="position"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sport_player_form_view" model="ir.ui.view">
+            <field name="name">sport.player.form.view</field>
+            <field name="model">sport.player</field>
+            <field name="arch" type="xml">
+                <form string="Sport Player">
+                    <header>
+                        <button name="mark_as_titular" type="object" class="btn-success" string="Mark as titular"/>
+                        <button name="unmark_as_titular" type="object" class="btn-secondary" string="Unmark as titular"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Issue name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="age"/>
+                                <field name="position"/>
+                                <field name="titular"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="teams" string="Teams">
+                                <group>
+                                    <field name="team_id"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+    </odoo>

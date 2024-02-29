@@ -19,6 +19,13 @@
         "views/sport_clinic_menu_items.xml",
         "views/sport_clinic_views.xml",
         "views/sport_license_menu_items.xml",
-        "data/sport_license_data.xml"
+        "views/sport_player_menu_items.xml",
+        "views/sport_sport_menu_items.xml",
+        "views/sport_team_menu_items.xml",
+        "views/sport_player_views.xml",
+        "views/sport_sport_views.xml",
+        "views/sport_team_views.xml",
+        "data/sport_license_data.xml",
+        "data/sport_tag_data.xml"
     ]
 }

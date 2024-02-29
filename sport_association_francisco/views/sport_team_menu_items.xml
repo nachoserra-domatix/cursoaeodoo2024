@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="action_sport_team" model="ir.actions.act_window">
+            <field name="name">Sport Team</field>
+            <field name="res_model">sport.team</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create new Team
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="sport_menu">
+            <menuitem id="sport_team_menu" name="Sport Teams" sequence="10" action="sport_association_francisco.action_sport_team"/>
+        </menuitem>
+        
+    </odoo>
