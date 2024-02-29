@@ -17,3 +17,6 @@ class SportPlayer(models.Model):
 
     def action_starter (self):
         self.is_starter=True
+    
+    def action_reserve (self):
+        self.is_starter=False
