@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class SportLicense(models.Model):
     _name = "sport.license"
     _description= "Sport License"

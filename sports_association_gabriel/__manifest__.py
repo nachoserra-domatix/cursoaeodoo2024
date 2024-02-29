@@ -15,11 +15,16 @@
     
     "data": [
         "data/sport_license_data.xml",
+        "data/sport_issue_tag_data.xml",
         "security/groups.xml",
-        "security/ir.model.access.csv",        
+        "security/ir.model.access.csv",
+        "views/sport_license_views.xml",        
         "views/sport_issue_views.xml",
         "views/sport_clinic_views.xml",
         "views/sport_issue_tag_views.xml",
-        "views/sport_issue_menuitems.xml",        
+        "views/sport_team_views.xml",
+        "views/sport_sport_views.xml",
+        "views/sport_player_views.xml",
+        "views/sport_association_menuitems.xml",
     ],
 }

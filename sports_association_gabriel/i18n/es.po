@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-28 17:26+0000\n"
-"PO-Revision-Date: 2024-02-28 17:26+0000\n"
+"POT-Creation-Date: 2024-02-29 17:27+0000\n"
+"PO-Revision-Date: 2024-02-29 17:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,14 +32,29 @@ msgid ""
 msgstr ""
 
 #. module: sports_association_gabriel
+#: model:sport.issue.tag,name:sports_association_gabriel.sport_issue_tag_data_2
+msgid "Accident"
+msgstr "Accidente"
+
+#. module: sports_association_gabriel
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__age
+msgid "Age"
+msgstr "Edad"
+
+#. module: sports_association_gabriel
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__assistance
 msgid "Assistance"
-msgstr "Asistencia"
+msgstr "Asistencia médica"
 
 #. module: sports_association_gabriel
 #: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_clinic_view_form
 msgid "Check Assistance"
-msgstr "Marcar asistencia"
+msgstr "Marcar asistencia médica"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_team_view_form
+msgid "Check Starter"
+msgstr "Marcar titulares"
 
 #. module: sports_association_gabriel
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__clinic_id
@@ -53,6 +68,21 @@ msgid "Clinics"
 msgstr "Clínicas"
 
 #. module: sports_association_gabriel
+#: model:sport.issue.tag,name:sports_association_gabriel.sport_issue_tag_data_4
+msgid "Cramp"
+msgstr "Calambre"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.actions.act_window,help:sports_association_gabriel.action_sport_license
+msgid "Create a new license"
+msgstr "Crear una nueva licencia"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.actions.act_window,help:sports_association_gabriel.sport_sport_action
+msgid "Create a new sport"
+msgstr "Crear un nuevo deporte"
+
+#. module: sports_association_gabriel
 #: model_terms:ir.actions.act_window,help:sports_association_gabriel.action_sport_clinic
 msgid "Create a new sport clinic"
 msgstr "Crear una nueva clínica"
@@ -61,6 +91,16 @@ msgstr "Crear una nueva clínica"
 #: model_terms:ir.actions.act_window,help:sports_association_gabriel.action_sport_issue
 msgid "Create a new sport issue"
 msgstr "Crear una nueva incidencia"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.actions.act_window,help:sports_association_gabriel.sport_player_action
+msgid "Create a new sport player"
+msgstr "Crear un nuevo jugador"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.actions.act_window,help:sports_association_gabriel.sport_team_action
+msgid "Create a new sport team"
+msgstr "Crear un nuevo equipo"
 
 #. module: sports_association_gabriel
 #: model_terms:ir.actions.act_window,help:sports_association_gabriel.sport_issue_tag_action
@@ -72,6 +112,9 @@ msgstr "Crear una nueva etiqueta"
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__create_uid
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue_tag__create_uid
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_license__create_uid
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__create_uid
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_sport__create_uid
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_team__create_uid
 msgid "Created by"
 msgstr ""
 
@@ -80,6 +123,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__create_date
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue_tag__create_date
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_license__create_date
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__create_date
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_sport__create_date
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_team__create_date
 msgid "Created on"
 msgstr ""
 
@@ -90,6 +136,7 @@ msgstr "Fecha"
 
 #. module: sports_association_gabriel
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__description
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_sport__description
 #: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_issue_view_form
 msgid "Description"
 msgstr "Descripción"
@@ -99,6 +146,9 @@ msgstr "Descripción"
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__display_name
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue_tag__display_name
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_license__display_name
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__display_name
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_sport__display_name
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_team__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -124,12 +174,25 @@ msgid "End Date"
 msgstr "Fecha de fin"
 
 #. module: sports_association_gabriel
+#: model:sport.issue.tag,name:sports_association_gabriel.sport_issue_tag_data_3
+msgid "Fatigue"
+msgstr "Fatiga"
+
+#. module: sports_association_gabriel
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_clinic__id
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__id
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue_tag__id
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_license__id
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__id
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_sport__id
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_team__id
 msgid "ID"
 msgstr ""
+
+#. module: sports_association_gabriel
+#: model:sport.issue.tag,name:sports_association_gabriel.sport_issue_tag_data_1
+msgid "Injury"
+msgstr "Lesión"
 
 #. module: sports_association_gabriel
 #: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_issue_view_form
@@ -149,6 +212,9 @@ msgstr "Incidencias"
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__write_uid
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue_tag__write_uid
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_license__write_uid
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__write_uid
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_sport__write_uid
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_team__write_uid
 msgid "Last Updated by"
 msgstr ""
 
@@ -157,8 +223,36 @@ msgstr ""
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__write_date
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue_tag__write_date
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_license__write_date
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__write_date
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_sport__write_date
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_team__write_date
 msgid "Last Updated on"
 msgstr ""
+
+#. module: sports_association_gabriel
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_license_view_form
+msgid "License"
+msgstr "Licencia"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_license_view_tree
+msgid "Licenses"
+msgstr "Licencias"
+
+#. module: sports_association_gabriel
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_team__logo
+msgid "Logo"
+msgstr "Logo"
+
+#. module: sports_association_gabriel
+#: model:ir.ui.menu,name:sports_association_gabriel.sport_management_issues_menu
+msgid "Management Issues"
+msgstr "Gestionar Incidencias"
+
+#. module: sports_association_gabriel
+#: model:ir.ui.menu,name:sports_association_gabriel.sport_management_sports_menu
+msgid "Management Sports"
+msgstr "Gestionar Deportes"
 
 #. module: sports_association_gabriel
 #: model:res.groups,name:sports_association_gabriel.res_groups_sports_association_manager
@@ -166,10 +260,18 @@ msgid "Manager"
 msgstr "Responsable"
 
 #. module: sports_association_gabriel
+#: model:sport.issue.tag,name:sports_association_gabriel.sport_issue_tag_data_5
+msgid "Muscle strain"
+msgstr "Desgarre muscular"
+
+#. module: sports_association_gabriel
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_clinic__name
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__name
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue_tag__name
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_license__name
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__name
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_sport__name
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_team__name
 msgid "Name"
 msgstr "Nombre"
 
@@ -189,6 +291,34 @@ msgid "Phone"
 msgstr "Teléfono"
 
 #. module: sports_association_gabriel
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__photo
+msgid "Photo"
+msgstr "Foto"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_player_view_form
+msgid "Player"
+msgstr "Jugador"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_license_view_form
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_player_view_form
+msgid "Player Name"
+msgstr "Nombre del jugador"
+
+#. module: sports_association_gabriel
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_team__player_ids
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_player_view_tree
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_team_view_form
+msgid "Players"
+msgstr "Jugadores"
+
+#. module: sports_association_gabriel
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__position
+msgid "Position"
+msgstr "Posición"
+
+#. module: sports_association_gabriel
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__sequence
 msgid "Sequence"
 msgstr "Secuencia"
@@ -196,7 +326,7 @@ msgstr "Secuencia"
 #. module: sports_association_gabriel
 #: model:ir.model.fields,help:sports_association_gabriel.field_sport_issue__assistance
 msgid "Show if the issue has assistance"
-msgstr "Muestra si la incidencia tiene asistencia"
+msgstr "Muestra si la incidencia tiene asistencia médica"
 
 #. module: sports_association_gabriel
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__solution
@@ -205,17 +335,23 @@ msgid "Solution"
 msgstr "Solución"
 
 #. module: sports_association_gabriel
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_team__sport_id
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_sport_view_form
+msgid "Sport"
+msgstr "Deporte"
+
+#. module: sports_association_gabriel
 #: model:ir.ui.menu,name:sports_association_gabriel.sport_menu
 msgid "Sport Association"
 msgstr "Asociación Deportiva"
 
 #. module: sports_association_gabriel
-#: model:ir.actions.act_window,name:sports_association_gabriel.action_sport_clinic
 #: model:ir.model,name:sports_association_gabriel.model_sport_clinic
 msgid "Sport Clinic"
 msgstr "Clínica"
 
 #. module: sports_association_gabriel
+#: model:ir.actions.act_window,name:sports_association_gabriel.action_sport_clinic
 #: model:ir.ui.menu,name:sports_association_gabriel.sport_clinic_menu
 msgid "Sport Clinics"
 msgstr "Clínicas"
@@ -248,8 +384,57 @@ msgstr "Incidencias"
 
 #. module: sports_association_gabriel
 #: model:ir.model,name:sports_association_gabriel.model_sport_license
+#: model:ir.ui.menu,name:sports_association_gabriel.sport_license_menu
 msgid "Sport License"
-msgstr "Licencia Deportiva"
+msgstr "Licencias Deportivas"
+
+#. module: sports_association_gabriel
+#: model:ir.actions.act_window,name:sports_association_gabriel.action_sport_license
+msgid "Sport Licenses"
+msgstr "Licencias Deportivas"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_sport_view_form
+msgid "Sport Name"
+msgstr "Nombre del deporte"
+
+#. module: sports_association_gabriel
+#: model:ir.model,name:sports_association_gabriel.model_sport_player
+msgid "Sport Player"
+msgstr "Jugador"
+
+#. module: sports_association_gabriel
+#: model:ir.actions.act_window,name:sports_association_gabriel.sport_player_action
+#: model:ir.ui.menu,name:sports_association_gabriel.sport_player_menu
+msgid "Sport Players"
+msgstr "Jugadores"
+
+#. module: sports_association_gabriel
+#: model:ir.model,name:sports_association_gabriel.model_sport_sport
+msgid "Sport Sport"
+msgstr "Deporte"
+
+#. module: sports_association_gabriel
+#: model:ir.actions.act_window,name:sports_association_gabriel.sport_sport_action
+msgid "Sport Sports"
+msgstr "Deportes"
+
+#. module: sports_association_gabriel
+#: model:ir.model,name:sports_association_gabriel.model_sport_team
+msgid "Sport Team"
+msgstr "Equipo"
+
+#. module: sports_association_gabriel
+#: model:ir.actions.act_window,name:sports_association_gabriel.sport_team_action
+#: model:ir.ui.menu,name:sports_association_gabriel.sport_team_menu
+msgid "Sport Teams"
+msgstr "Equipos"
+
+#. module: sports_association_gabriel
+#: model:ir.ui.menu,name:sports_association_gabriel.sport_sport_menu
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_sport_view_tree
+msgid "Sports"
+msgstr "Deportes"
 
 #. module: sports_association_gabriel
 #: model:ir.module.category,name:sports_association_gabriel.ir_module_sports_association
@@ -257,9 +442,19 @@ msgid "Sports Association"
 msgstr "Asociación Deportiva"
 
 #. module: sports_association_gabriel
+#: model:sport.issue.tag,name:sports_association_gabriel.sport_issue_tag_data_6
+msgid "Sprain"
+msgstr "Esguince"
+
+#. module: sports_association_gabriel
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_license__start_date
 msgid "Start Date"
 msgstr "Fecha de inicio"
+
+#. module: sports_association_gabriel
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__starter
+msgid "Starter"
+msgstr "Titular"
 
 #. module: sports_association_gabriel
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__state
@@ -273,6 +468,22 @@ msgid "Tags"
 msgstr "Etiquetas"
 
 #. module: sports_association_gabriel
+#: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_player__team_id
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_team_view_form
+msgid "Team"
+msgstr "Equipo"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_team_view_form
+msgid "Team Name"
+msgstr "Nombre del equipo"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_team_view_tree
+msgid "Teams"
+msgstr "Equipos"
+
+#. module: sports_association_gabriel
 #: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_issue_view_form
 msgid "To draft"
 msgstr "Pasar a borrador"
@@ -281,6 +492,11 @@ msgstr "Pasar a borrador"
 #: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_issue_view_form
 msgid "To open"
 msgstr "Pasar a abierto"
+
+#. module: sports_association_gabriel
+#: model_terms:ir.ui.view,arch_db:sports_association_gabriel.sport_team_view_form
+msgid "Uncheck Starter"
+msgstr "Desmarcar titulares"
 
 #. module: sports_association_gabriel
 #: model:ir.model.fields,field_description:sports_association_gabriel.field_sport_issue__user_id

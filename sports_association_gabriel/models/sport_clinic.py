@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class SportClinic(models.Model):
     _name = "sport.clinic"
     _description = "Sport Clinic"

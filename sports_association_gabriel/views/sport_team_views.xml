@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sport_team_view_tree" model="ir.ui.view">
+        <field name="name">sport_team.view.tree</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <tree string="Teams" multi_edit="1">
+                <field name="name"/>
+                <field name="sport_id"/>
+                <field name="player_ids" optional="show" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_team_view_form" model="ir.ui.view">
+        <field name="name">sport_team.view.form</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <form string="Team">
+                <header>
+                    <button string="Check Starter" name="action_check_players_starter" type="object" class="oe_highlight"/>
+                    <button string="Uncheck Starter" name="action_uncheck_players_starter" type="object"/>
+                </header>
+                <sheet>
+                    <field name="logo" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;avatar_128&quot;}"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Team Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sport_id"/>
+                        </group>
+                        <notebook>
+                            <page name="Players" string="Players">
+                                <field name="player_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="age"/>
+                                        <field name="position"/>
+                                        <field name="starter"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>                    
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_team_action" model="ir.actions.act_window">
+        <field name="name">Sport Teams</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport team
+            </p>
+        </field>
+    </record>
+</odoo>

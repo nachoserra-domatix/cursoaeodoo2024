@@ -43,7 +43,7 @@
     </record>
 
     <record id="action_sport_clinic" model="ir.actions.act_window">
-        <field name="name">Sport Clinic</field>
+        <field name="name">Sport Clinics</field>
         <field name="res_model">sport.clinic</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
