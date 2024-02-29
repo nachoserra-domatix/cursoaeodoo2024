@@ -30,7 +30,7 @@
                     </div>
                     <group>
                         <group>
-                            <field name="logo" />
+                            <field name="logo" widget="image" class="ooavatar"/>
                         </group>
                         <group>
                             <field name="sport_id" />
