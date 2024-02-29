@@ -27,3 +27,11 @@ class Sportplayer(models.Model):
     starter = fields.Boolean(
         string='Starter',
     )
+
+    def action_check_starter(self):
+        for record in self:
+            record.starter = True
+
+    def action_uncheck_starter(self):
+        for record in self:
+            record.starter = False

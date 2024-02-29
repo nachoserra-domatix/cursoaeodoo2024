@@ -29,9 +29,9 @@ class SportTeam(models.Model):
     def action_check_starter(self):
         for record in self:
             for player in record.player_ids:
-                player.starter = True
+                player.action_check_starter()
 
     def action_uncheck_starter(self):
         for record in self:
             for player in record.player_ids:
-                player.starter = False
+                player.action_uncheck_starter()
