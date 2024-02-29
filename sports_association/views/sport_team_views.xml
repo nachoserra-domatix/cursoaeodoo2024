@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="sport_team_tree" model="ir.ui.view">
+        <field name="name">Sport teams</field>
+        <field name="model">sport.team</field>
+        <field name="type">tree</field>
+        <field name="priority" eval="16" />
+        <field name="arch" type="xml">
+            <tree string="Teams">
+                <field name="name" />
+                <field name="sport_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_team_form" model="ir.ui.view">
+        <field name="name">Sport team Form</field>
+        <field name="model">sport.team</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="team">
+                <header>
+                    <button name="action_check_starter" string="Check Starters"
+                        type="object"
+                        class="oe_highlight" />
+                    <button name="action_uncheck_starter"
+                        string="Uncheck Starters"
+                        type="object"
+                        class="oe_highlight" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="team Name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="sport_id" />
+                    </group>
+                    <group>
+                        <field name="logo" widget="image" class="oe_avatar" />
+                    </group>
+                    <notebook>
+                        <page string="Players">
+                            <field name="player_ids">
+                                <tree string="Players">
+                                    <field name="name" />
+                                    <field name="age" />
+                                    <field name="position" />
+                                    <field name="starter" widget="boolean_toggle" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

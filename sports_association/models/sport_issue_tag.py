@@ -8,5 +8,6 @@ class SportIssueTag(models.Model):
     
     name = fields.Char(
         string='name',
+        translate=True
     )
     
