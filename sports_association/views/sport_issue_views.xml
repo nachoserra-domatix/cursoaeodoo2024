@@ -26,6 +26,7 @@
                 <!-- <button string="To done" invisible="state in ('done')" name="action_done" type="object" class="oe_highlight"/> -->
                 <button string="To done" invisible="state in ('done')" name="action_done" type="object" class="btn-sucess"/>
                 </header>
+                
                 <sheet>
                     <div class="oe_title">
                         <h1>

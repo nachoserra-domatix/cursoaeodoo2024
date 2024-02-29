@@ -45,8 +45,8 @@ class SportIssue(models.Model):
             record.state = 'done'
             
     # cambiamos el estado a todas
-    def action_open_all_issues(self):
-        issues = self.env['sport.issue'].search([])
-        issues.action.open()
+    # def action_open_all_issues(self):
+    #     issues = self.env['sport.issue'].search([])
+    #     issues.action.open()
         
         

@@ -32,5 +32,26 @@
         action="sports_association.action_sport_clinic"
         parent="sports_association.sport_menu"
         sequence="20"/>
-    
+
+    <menuitem
+        id="sport_sport_menu"
+        name="Sports"
+        action="sports_association.action_sport_sport"
+        parent="sports_association.sport_menu"
+        sequence="30"/>
+
+        <menuitem
+        id="sport_team_menu"
+        name="Sport Teams"
+        action="sports_association.action_sport_team"
+        parent="sports_association.sport_menu"
+        sequence="40"/>
+
+        <menuitem
+        id="sport_player_menu"
+        name="Players"
+        action="sports_association.action_sport_player"
+        parent="sports_association.sport_menu"
+        sequence="50"/>
+
 </odoo>

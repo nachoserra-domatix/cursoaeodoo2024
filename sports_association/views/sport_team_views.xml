@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_sport_team" model="ir.actions.act_window">
+        <field name="name">Sport Team</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport team
+            </p>
+        </field>
+    </record>
+    
+    <record id="sport_team_view_tree" model="ir.ui.view">
+        <field name="name">sport_team.view.tree</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Sport">
+                <field name="name"></field>
+                <field name="sport_id" optional="show"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_team_view_form" model="ir.ui.view">
+        <field name="name">sport_team.view.form</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <form string="Sport Teams">
+                <header>
+                    <button string="To Principal" name="action_principal_all" type="object" class="btn-primary"/>
+                    <button string="To secondary" name="action_secondary_all" type="object" class="btn-secondary"/>
+                </header>
+                
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="sport_id" />
+                    </group>
+
+                    <notebook>
+                        <page name="players" string="Players">
+                            <field name="player_list_ids">
+                                <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="years" />
+                                    <field name="position"/>
+                                    <field name="tittle"/>
+                                </tree>
+                                </field>
+                        </page>
+                    </notebook>
+                  </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
