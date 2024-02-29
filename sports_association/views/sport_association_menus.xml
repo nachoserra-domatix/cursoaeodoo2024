@@ -18,6 +18,24 @@
             sequence="20"
             action="action_sport_clinic"            
             groups="base.group_user"/>
+        
+        <menuitem id="sport_team_menu"
+            name="Teams"
+            sequence="30"
+            action="action_sport_team"            
+            groups="base.group_user"/>
+        
+        <menuitem id="sport_player_menu"
+            name="Players"
+            sequence="30"
+            action="action_sport_player"            
+            groups="base.group_user"/>
+
+        <menuitem id="sport_sport_menu"
+            name="Sports"
+            sequence="30"
+            action="action_sport_sport"            
+            groups="base.group_user"/>
     
     </menuitem>
 </odoo>

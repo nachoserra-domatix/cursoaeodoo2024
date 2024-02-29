@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Sport Issue Tags -->
+        <record id="sport_issue_tag_injury" model="sport.issue.tag">
+            <field name="name">Lesión</field>
+        </record>
+        <record id="sport_issue_tag_accident" model="sport.issue.tag">
+            <field name="name">Accidente</field>
+        </record>
+        <record id="sport_issue_tag_fatigue" model="sport.issue.tag">
+            <field name="name">Fatiga</field>
+        </record>
+        <record id="sport_issue_tag_cramp" model="sport.issue.tag">
+            <field name="name">Calambre</field>
+        </record>
+        <record id="sport_issue_tag_muscle_tear" model="sport.issue.tag">
+            <field name="name">Desgarro muscular</field>
+        </record>
+        <record id="sport_issue_tag_sprain" model="sport.issue.tag">
+            <field name="name">Esguince</field>
+        </record>
+    </data>
+</odoo>
