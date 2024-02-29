@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="sport_menu"
+        name="Sport Association"
+        sequence="10"/>
+
+    <menuitem
+        id="sport_issue_menu"
+        name="Sport Isuues"
+        action="action_sport_issue"
+        parent="sport_menu"
+        sequence="10"/>
+        
+    <menuitem
+        id="sport_clinic_menu"
+        name="Sport Clinics"
+        action="sports_association_vicent.action_sport_clinic"
+        parent="sports_association_vicent.sport_menu"
+        sequence="20"/>
+
+    <menuitem
+        id="sport_issue_tag_menu"
+        name="Sport Issue Tags"
+        action="sports_association_vicent.sport_issue_tag_action"
+        parent="sports_association_vicent.sport_menu"
+        sequence="40"/>
+
+</odoo>
