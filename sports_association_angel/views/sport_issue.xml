@@ -1,23 +1,89 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="action_report_issue" model="ir.actions.act_window">
+    <record id="action_sport_issue" model="ir.actions.act_window">
         <field name="name">Sport Issues</field>
         <field name="res_model">sport.issue</field>
         <field name="view_mode">tree,form,kanban</field>
         <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport issue
+            </p>
+        </field>
     </record>
+    <record id="action_sport_license" model="ir.actions.act_window">
+        <field name="name">Sport Licenses</field>
+        <field name="res_model">sport.license</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport license
+            </p>
+        </field>
+    </record>    
 
-    <menuitem 
-    id="sport_menu"
-    name="Sport Association"
-    sequence="10"
-    />
+    <record id="action_sport_clinic" model="ir.actions.act_window">
+        <field name="name">Sport Clinic</field>
+        <field name="res_model">sport.clinic</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport clinic
+            </p>
+        </field>
+    </record>      
 
-    <menuitem 
-    id="sport_issue_menu"
-    name="Sport Issues"
-    action="action_report_issue"
-    sequence="10"
-    parent="sport_menu"
-    />
+    <record id="action_sport_issue_tag" model="ir.actions.act_window">
+        <field name="name">Sport Clinic</field>
+        <field name="res_model">sport.issue.tag</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport issue tag
+            </p>
+        </field>
+    </record>        
+
+    action_sport_issue_tag
+    <menuitem
+        id="sport_menu"
+        name="Sport Association"
+        sequence="10">
+
+        <menuitem 
+            id="sport_menu_list"
+            name="Sport Issues List"
+            sequence="10">
+
+            <menuitem 
+                id="sport_issue_menu"
+                name="Sport Issues"
+                sequence="10"
+                action="sports_association_sergio.action_sport_issue">
+            </menuitem>
+            <menuitem 
+                id="sport_license_menu"
+                name="Sport Licenses"
+                sequence="20"
+                action="sports_association_sergio.action_sport_license">
+            </menuitem>      
+            <menuitem 
+                id="sport_clinic_menu"
+                name="Sport Clinics"
+                sequence="30"
+                action="sports_association_sergio.action_sport_clinic">
+            </menuitem>       
+            <menuitem 
+                id="sport_issue_tag_menu"
+                name="Sport Issue Tags"
+                sequence="40"
+                action="sports_association_sergio.action_sport_issue_tag">
+            </menuitem>                            
+        </menuitem>
+    </menuitem>
+                
+
 </odoo>
