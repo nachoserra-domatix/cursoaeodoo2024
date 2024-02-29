@@ -12,14 +12,35 @@
         id="sport_issue_menuitem" 
         action="action_sport_issue" 
         parent="sport_association_menu" 
-        name="Sport Issues" 
+        name="Issues" 
         sequence="90"/>
 
     <menuitem 
         id="sport_clinic_menuitem" 
         action="action_sport_clinic" 
         parent="sport_association_menu" 
-        name="Sport Clinic" 
+        name="Clinics" 
+        sequence="90"/>
+        
+    <menuitem 
+        id="sport_team_menuitem" 
+        action="action_sport_team" 
+        parent="sport_association_menu" 
+        name="Teams" 
+        sequence="90"/>
+
+    <menuitem 
+        id="sport_player_menuitem" 
+        action="action_sport_player" 
+        parent="sport_association_menu" 
+        name="Players" 
+        sequence="90"/>
+
+    <menuitem 
+        id="sport_sport_menuitem" 
+        action="action_sport_sport" 
+        parent="sport_association_menu" 
+        name="Sports" 
         sequence="90"/>
     
 </odoo>

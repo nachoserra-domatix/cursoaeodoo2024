@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-28 16:49+0000\n"
-"PO-Revision-Date: 2024-02-28 16:49+0000\n"
+"POT-Creation-Date: 2024-02-29 15:46+0000\n"
+"PO-Revision-Date: 2024-02-29 15:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,19 +32,46 @@ msgid ""
 msgstr ""
 
 #. module: sports_association_david
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_team_view_form
+msgid "Add all to Titular"
+msgstr "Añadir todos a Titular"
+
+#. module: sports_association_david
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_player_view_form
+msgid "Add to Titular"
+msgstr "Añadir a Titular"
+
+#. module: sports_association_david
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__age
+msgid "Age"
+msgstr "Edad"
+
+#. module: sports_association_david
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__assistance
 msgid "Assistance"
 msgstr "Asistencia"
 
 #. module: sports_association_david
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_clinic_view_form
+msgid "Check Assistance"
+msgstr "Comprobar Asistencia"
+
+#. module: sports_association_david
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__clinic_id
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_clinic_view_form
 msgid "Clinic"
 msgstr "Clinica"
 
 #. module: sports_association_david
+#: model:ir.ui.menu,name:sports_association_david.sport_clinic_menuitem
 #: model_terms:ir.ui.view,arch_db:sports_association_david.sport_clinic_view_tree
 msgid "Clinics"
 msgstr "Clinicas"
+
+#. module: sports_association_david
+#: model_terms:ir.actions.act_window,help:sports_association_david.action_sport_sport
+msgid "Create a new sport"
+msgstr "Crea un nuevo deporte"
 
 #. module: sports_association_david
 #: model_terms:ir.actions.act_window,help:sports_association_david.action_sport_clinic
@@ -53,20 +80,36 @@ msgid "Create a new sport issue"
 msgstr ""
 
 #. module: sports_association_david
+#: model_terms:ir.actions.act_window,help:sports_association_david.action_sport_player
+msgid "Create a new sport player"
+msgstr "Crea un nuevo jugador"
+
+#. module: sports_association_david
+#: model_terms:ir.actions.act_window,help:sports_association_david.action_sport_team
+msgid "Create a new team"
+msgstr "Crea un nuevo equipo"
+
+#. module: sports_association_david
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_clinic__create_uid
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__create_uid
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue_tag__create_uid
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_license__create_uid
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__create_uid
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_sport__create_uid
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_team__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: sports_association_david
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_clinic__create_date
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__create_date
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue_tag__create_date
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_license__create_date
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__create_date
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_sport__create_date
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_team__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado en"
 
 #. module: sports_association_david
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__date
@@ -75,6 +118,7 @@ msgstr "Fecha"
 
 #. module: sports_association_david
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__description
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_sport__description
 #: model_terms:ir.ui.view,arch_db:sports_association_david.sport_issue_view_form
 msgid "Description"
 msgstr "Descripción"
@@ -84,6 +128,9 @@ msgstr "Descripción"
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__display_name
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue_tag__display_name
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_license__display_name
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__display_name
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_sport__display_name
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_team__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -99,17 +146,25 @@ msgid "Draft"
 msgstr "Borrador"
 
 #. module: sports_association_david
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_license__end_date
+msgid "End Date"
+msgstr "Fecha Final"
+
+#. module: sports_association_david
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_clinic__id
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__id
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue_tag__id
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_license__id
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__id
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_sport__id
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_team__id
 msgid "ID"
 msgstr ""
 
 #. module: sports_association_david
-#: model:ir.model.fields,field_description:sports_association_david.field_sport_clinic__issue_id
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_clinic__issue_ids
 msgid "Issue"
-msgstr "Incidencias"
+msgstr "Incidencia"
 
 #. module: sports_association_david
 #: model_terms:ir.ui.view,arch_db:sports_association_david.sport_issue_view_form
@@ -117,6 +172,7 @@ msgid "Issue Name"
 msgstr "Nombre incidencia"
 
 #. module: sports_association_david
+#: model:ir.ui.menu,name:sports_association_david.sport_issue_menuitem
 #: model_terms:ir.ui.view,arch_db:sports_association_david.sport_issue_view_form
 #: model_terms:ir.ui.view,arch_db:sports_association_david.sport_issue_view_tree
 msgid "Issues"
@@ -127,6 +183,9 @@ msgstr "Incidencias"
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__write_uid
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue_tag__write_uid
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_license__write_uid
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__write_uid
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_sport__write_uid
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_team__write_uid
 msgid "Last Updated by"
 msgstr ""
 
@@ -135,11 +194,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__write_date
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue_tag__write_date
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_license__write_date
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__write_date
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_sport__write_date
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_team__write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: sports_association_david
-#: model:ir.model.fields,field_description:sports_association_david.field_sport_clinic__mail
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_clinic__email
 msgid "Mail"
 msgstr "Correo"
 
@@ -153,6 +215,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__name
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue_tag__name
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_license__name
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__name
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_sport__name
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_team__name
 msgid "Name"
 msgstr "Nombre"
 
@@ -167,20 +232,54 @@ msgid "Partner"
 msgstr ""
 
 #. module: sports_association_david
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_player_view_form
+msgid "Player"
+msgstr "Jugador"
+
+#. module: sports_association_david
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_team__player_ids
+#: model:ir.ui.menu,name:sports_association_david.sport_player_menuitem
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_player_view_tree
+msgid "Players"
+msgstr "Jugadores"
+
+#. module: sports_association_david
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__position
+msgid "Position"
+msgstr "Posición"
+
+#. module: sports_association_david
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_license__reference
 msgid "Reference"
 msgstr "Referencia"
 
 #. module: sports_association_david
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_team_view_form
+msgid "Remove all from Titular"
+msgstr "Eliminar todos de Titular"
+
+#. module: sports_association_david
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_player_view_form
+msgid "Remove from Titular"
+msgstr "Eliminar de Titular"
+
+#. module: sports_association_david
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__sequence
 msgid "Sequence"
-msgstr "Seqüencia"
+msgstr "Secuencia"
 
 #. module: sports_association_david
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__solution
 #: model_terms:ir.ui.view,arch_db:sports_association_david.sport_issue_view_form
 msgid "Solution"
 msgstr "Solución"
+
+#. module: sports_association_david
+#: model:ir.model,name:sports_association_david.model_sport_sport
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_team__sport_id
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_sport_view_form
+msgid "Sport"
+msgstr "Deporte"
 
 #. module: sports_association_david
 #: model:ir.ui.menu,name:sports_association_david.sport_association_menu
@@ -190,26 +289,47 @@ msgstr "Associación Deportiva"
 #. module: sports_association_david
 #: model:ir.actions.act_window,name:sports_association_david.action_sport_clinic
 #: model:ir.model,name:sports_association_david.model_sport_clinic
-#: model:ir.ui.menu,name:sports_association_david.sport_clinic_menuitem
 msgid "Sport Clinic"
-msgstr "Clinica Deportiva"
+msgstr "Clinica"
 
 #. module: sports_association_david
 #: model:ir.model,name:sports_association_david.model_sport_issue
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue_tag__issue_ids
 msgid "Sport Issue"
-msgstr "Incidencia Deportiva"
+msgstr "Incidencia"
 
 #. module: sports_association_david
 #: model:ir.actions.act_window,name:sports_association_david.action_sport_issue
-#: model:ir.ui.menu,name:sports_association_david.sport_issue_menuitem
 msgid "Sport Issues"
-msgstr "Incidencias Deportivas"
+msgstr "Incidencias"
 
 #. module: sports_association_david
 #: model:ir.model,name:sports_association_david.model_sport_license
 msgid "Sport License"
-msgstr "Licencia Deportiva"
+msgstr "Licencia"
+
+#. module: sports_association_david
+#: model:ir.actions.act_window,name:sports_association_david.action_sport_player
+#: model:ir.model,name:sports_association_david.model_sport_player
+msgid "Sport Player"
+msgstr "Jugador"
+
+#. module: sports_association_david
+#: model:ir.actions.act_window,name:sports_association_david.action_sport_team
+#: model:ir.model,name:sports_association_david.model_sport_team
+msgid "Sport Team"
+msgstr "Equipo"
+
+#. module: sports_association_david
+#: model:ir.actions.act_window,name:sports_association_david.action_sport_sport
+msgid "Sport sport"
+msgstr "Deporte"
+
+#. module: sports_association_david
+#: model:ir.ui.menu,name:sports_association_david.sport_sport_menuitem
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_sport_view_tree
+msgid "Sports"
+msgstr "Deportes"
 
 #. module: sports_association_david
 #: model:ir.module.category,name:sports_association_david.ir_module_sports_association
@@ -217,7 +337,6 @@ msgid "Sports Association"
 msgstr "Associación Deportiva"
 
 #. module: sports_association_david
-#: model:ir.model.fields,field_description:sports_association_david.field_sport_license__end_date
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_license__start_date
 msgid "Start Date"
 msgstr "Fecha Inicial"
@@ -231,6 +350,28 @@ msgstr "Estado"
 #: model:ir.model.fields,field_description:sports_association_david.field_sport_issue__tag_ids
 msgid "Tag"
 msgstr "Etiqueta"
+
+#. module: sports_association_david
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__team_id
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_team_view_form
+msgid "Team"
+msgstr "Equipo"
+
+#. module: sports_association_david
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_team__logo
+msgid "Team Logo"
+msgstr "Logo"
+
+#. module: sports_association_david
+#: model:ir.ui.menu,name:sports_association_david.sport_team_menuitem
+#: model_terms:ir.ui.view,arch_db:sports_association_david.sport_team_view_tree
+msgid "Teams"
+msgstr "Equipos"
+
+#. module: sports_association_david
+#: model:ir.model.fields,field_description:sports_association_david.field_sport_player__titular
+msgid "Titular"
+msgstr "Titular"
 
 #. module: sports_association_david
 #: model_terms:ir.ui.view,arch_db:sports_association_david.sport_issue_view_form

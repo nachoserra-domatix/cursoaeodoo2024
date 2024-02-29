@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_sport_team" model="ir.actions.act_window">
+        <field name="name">Teams</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <!-- <field name="domain">[]</field> -->
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new team
+            </p>
+        </field>   
+    </record>
+    
+    <record id="sport_team_view_tree" model="ir.ui.view">
+        <field name="name">sport.team.view.tree</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Teams">
+                <field name="name" />
+                <field name="player_ids" widget="many2many_tags"/>
+                <field name="sport_id" />
+                <!-- <field name="trainer" /> -->
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_team_view_form" model="ir.ui.view">
+        <field name="name">sport_team.view.form</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <form string="Team">
+                <header>
+                    <button string="Add all to Titular" name="add_all_titular" type="object" class="oe_highlight"/>
+                    <button string="Remove all from Titular" name="remove_all_titular" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="logo" widget="image"/>
+                        <field name="player_ids" />
+                        <field name="sport_id" />
+                        <!-- <field name="trainer" /> -->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
