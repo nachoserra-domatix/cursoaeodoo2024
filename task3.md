@@ -15,6 +15,7 @@ A debatir pero podrían ser:
 
 * Modelo de equipo (sport.team)
   * Nombre
+  * Logo
   * Lista de jugadores
   * Deporte
   * ~~Entrenador~~
@@ -22,7 +23,7 @@ A debatir pero podrían ser:
 * Modelo de deporte (sport.sport)
   * Nombre
   * Descripción
-  * Imagen
+   
     
 * Modelo de jugador (sport.player)
   * Nombre
