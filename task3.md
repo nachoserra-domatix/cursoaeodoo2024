@@ -50,3 +50,8 @@ Añadir método y botón en el equipo que recorra la lista de jugadores y llame 
 # Traducir
 
 Traducir todo de nuevo
+
+# Ordenar menuitems
+* Juntar Jugadores, equipos y deportes en un único menú
+* Juntar etiquetas de incidencia e incidencias en otro
+
