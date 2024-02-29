@@ -22,3 +22,4 @@ class SportsIssue(models.Model):
 
     def action_done(self):
         self.state='done'
+        

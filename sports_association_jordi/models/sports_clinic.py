@@ -10,6 +10,7 @@ class SportsClinic(models.Model):
     issue_ids = fields.One2many('sports.issue', 'clinic_id', string='Issues')
 
     def action_check_assistance(self):
+        import pdb;pdb.set_trace()
         for record in self:
             for issue in record.issue_ids:
                 issue.assistance = True
