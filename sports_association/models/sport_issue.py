@@ -20,3 +20,5 @@ class SportIssue(models.Model):
     user_id = fields.Many2one('res.users', string='User')
     sequence = fields.Integer(string='Sequence', default=10)
     solution = fields.Html('Solution')
+
+    tag_ids = fields.Many2many('sport.issue.tag', string='Tags')

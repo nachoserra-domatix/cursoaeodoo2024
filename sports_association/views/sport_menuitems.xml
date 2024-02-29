@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem
+        id="sport_menu"
+        name="Sport Association"
+        sequence="10">
+  
+        <menuitem
+            id="sport_issue_menu"
+            name="Sport Issues"
+            action="action_sport_issue"
+            sequence="10"/>
+
+        <menuitem
+            id="sport_issue_tag_menu"
+            name="Sport Issue Tags"
+            action="sports_association.action_sport_issue_tag"
+            sequence="10"/>
+
+        <menuitem
+            id="sport_player_menu"
+            name="Sport Players"
+            action="sports_association.action_sport_player"
+            sequence="10"/>
+
+        <menuitem
+            id="sport_sport_menu"
+            name="Sport Sport"
+            action="sports_association.action_sport_sport"
+            sequence="10"/>
+
+        <menuitem
+            id="sport_team_menu"
+            name="Sport Team"
+            action="sports_association.action_sport_team"
+            sequence="10"/>
+    </menuitem>
+</odoo>
