@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-28 17:20+0000\n"
-"PO-Revision-Date: 2024-02-28 17:20+0000\n"
+"POT-Creation-Date: 2024-02-29 15:50+0000\n"
+"PO-Revision-Date: 2024-02-29 15:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,6 @@ msgid ""
 "    "
 msgstr ""
 
-
 #. module: sports_association_jordi
 #: model:res.groups,comment:sports_association_jordi.res_groups_sports_association_user
 msgid ""
@@ -33,14 +32,44 @@ msgid ""
 msgstr ""
 
 #. module: sports_association_jordi
+#: model:sports.issue.tag,name:sports_association_jordi.sports_issue_tag_data_2
+msgid "Accidente"
+msgstr ""
+
+#. module: sports_association_jordi
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__age
+msgid "Age"
+msgstr "Edad"
+
+#. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__assistance
 msgid "Assistance"
 msgstr "Asistencia"
 
 #. module: sports_association_jordi
+#: model:sports.issue.tag,name:sports_association_jordi.sports_issue_tag_data_4
+msgid "Calambre"
+msgstr ""
+
+#. module: sports_association_jordi
 #: model_terms:ir.ui.view,arch_db:sports_association_jordi.sport_clinic_view_form
 msgid "Check assistance"
 msgstr "Marcar asistencia"
+
+#. module: sports_association_jordi
+#: model_terms:ir.actions.act_window,help:sports_association_jordi.action_player_team
+msgid "Click to create a new Player"
+msgstr "Clic para crear un nuevo jugador"
+
+#. module: sports_association_jordi
+#: model_terms:ir.actions.act_window,help:sports_association_jordi.action_sport_sport
+msgid "Click to create a new Sport"
+msgstr "Clic para crear un nuevo deporte"
+
+#. module: sports_association_jordi
+#: model_terms:ir.actions.act_window,help:sports_association_jordi.action_sport_team
+msgid "Click to create a new Team"
+msgstr "Clic para crear un nuevo equipo"
 
 #. module: sports_association_jordi
 #: model_terms:ir.actions.act_window,help:sports_association_jordi.action_sport_clinic
@@ -59,6 +88,7 @@ msgid "Clinic"
 msgstr "Clínica"
 
 #. module: sports_association_jordi
+#: model:ir.ui.menu,name:sports_association_jordi.sport_clinic_menu
 #: model_terms:ir.ui.view,arch_db:sports_association_jordi.sport_clinic_tree_view
 msgid "Clinics"
 msgstr "Clinica"
@@ -68,16 +98,22 @@ msgstr "Clinica"
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__create_uid
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue_tag__create_uid
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__create_uid
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__create_uid
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_sport__create_uid
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_team__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_clinic__create_date
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__create_date
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue_tag__create_date
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__create_date
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__create_date
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_sport__create_date
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_team__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado el"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__date
@@ -86,8 +122,14 @@ msgstr "Fecha"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__description
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_sport__description
 #: model_terms:ir.ui.view,arch_db:sports_association_jordi.sport_issue_view_form
 msgid "Description"
+msgstr "Descripción"
+
+#. module: sports_association_jordi
+#: model:sports.issue.tag,name:sports_association_jordi.sports_issue_tag_data_5
+msgid "Desgarro muscular"
 msgstr ""
 
 #. module: sports_association_jordi
@@ -95,6 +137,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__display_name
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue_tag__display_name
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__display_name
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__display_name
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_sport__display_name
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_team__display_name
 msgid "Display Name"
 msgstr "Nombre"
 
@@ -120,10 +165,23 @@ msgid "End Date"
 msgstr "Fecha final"
 
 #. module: sports_association_jordi
+#: model:sports.issue.tag,name:sports_association_jordi.sports_issue_tag_data_6
+msgid "Esguince"
+msgstr ""
+
+#. module: sports_association_jordi
+#: model:sports.issue.tag,name:sports_association_jordi.sports_issue_tag_data_3
+msgid "Fatiga"
+msgstr ""
+
+#. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_clinic__id
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__id
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue_tag__id
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__id
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__id
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_sport__id
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_team__id
 msgid "ID"
 msgstr "Id"
 
@@ -150,6 +208,9 @@ msgstr "Incidencias"
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__write_uid
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue_tag__write_uid
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__write_uid
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__write_uid
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_sport__write_uid
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_team__write_uid
 msgid "Last Updated by"
 msgstr "Ultima actualizacion por"
 
@@ -158,31 +219,47 @@ msgstr "Ultima actualizacion por"
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__write_date
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue_tag__write_date
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__write_date
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__write_date
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_sport__write_date
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_team__write_date
 msgid "Last Updated on"
+msgstr "Ultima actualización el"
+
+#. module: sports_association_jordi
+#: model:sports.issue.tag,name:sports_association_jordi.sports_issue_tag_data_1
+msgid "Lesión"
 msgstr ""
+
+#. module: sports_association_jordi
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_team__logo
+msgid "Logo"
+msgstr "Logotipo"
 
 #. module: sports_association_jordi
 #: model:res.groups,name:sports_association_jordi.res_groups_sports_association_manager
 msgid "Manager"
-msgstr ""
+msgstr "Administrador"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_clinic__name
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__name
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue_tag__name
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__name
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__name
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_sport__name
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_team__name
 msgid "Name"
 msgstr "Nombre"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields.selection,name:sports_association_jordi.selection__sports_issue__state__open
 msgid "Open"
-msgstr ""
+msgstr "Abierto"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__partner_id
 msgid "Partner"
-msgstr ""
+msgstr "Contacto"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_clinic__phone
@@ -190,82 +267,160 @@ msgid "Phone"
 msgstr "Telefono"
 
 #. module: sports_association_jordi
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_player_view_form
+msgid "Player"
+msgstr "Jugador"
+
+#. module: sports_association_jordi
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_player_view_form
+msgid "Player Name"
+msgstr "Nombre jugador"
+
+#. module: sports_association_jordi
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_team__players_ids
+#: model:ir.ui.menu,name:sports_association_jordi.sport_player_menu
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_player_tree_view
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_sport_view_form
+msgid "Players"
+msgstr "Jugadores"
+
+#. module: sports_association_jordi
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__position
+msgid "Position"
+msgstr "Posición"
+
+#. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__reference
 msgid "Reference"
-msgstr ""
+msgstr "Referencia"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "sequencia"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,help:sports_association_jordi.field_sports_issue__assistance
 msgid "Show if the issue has assitastance"
-msgstr ""
+msgstr "Muestra si la incidencia tiene asistencia"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__solution
 #: model_terms:ir.ui.view,arch_db:sports_association_jordi.sport_issue_view_form
 msgid "Solution"
-msgstr ""
+msgstr "Solucion"
+
+#. module: sports_association_jordi
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_team__sport_id
+msgid "Sport"
+msgstr "Deporte"
+
+#. module: sports_association_jordi
+#: model:ir.ui.menu,name:sports_association_jordi.sport_sport_menu
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_sport_tree_view
+msgid "Sports"
+msgstr "Deportes"
 
 #. module: sports_association_jordi
 #: model:ir.module.category,name:sports_association_jordi.ir_module_sports_association
 #: model:ir.ui.menu,name:sports_association_jordi.sport_menu
 msgid "Sports Association"
-msgstr ""
+msgstr "Associación deportiva"
 
 #. module: sports_association_jordi
 #: model:ir.model,name:sports_association_jordi.model_sports_clinic
 msgid "Sports Clinic"
-msgstr ""
-
-#. module: sports_association_jordi
-#: model:ir.ui.menu,name:sports_association_jordi.sport_clinic_menu
-msgid "Sports Clinics"
-msgstr ""
+msgstr "Clinica deportiva"
 
 #. module: sports_association_jordi
 #: model:ir.model,name:sports_association_jordi.model_sports_issue
 msgid "Sports Issue"
-msgstr ""
+msgstr "Incidencia deportiva"
 
 #. module: sports_association_jordi
 #: model:ir.model,name:sports_association_jordi.model_sports_issue_tag
 msgid "Sports Issue Tag"
-msgstr ""
+msgstr "Etiquetas de incidencia"
 
 #. module: sports_association_jordi
 #: model:ir.ui.menu,name:sports_association_jordi.sport_issue_menu
 msgid "Sports Issues"
-msgstr ""
+msgstr "Incidencia"
 
 #. module: sports_association_jordi
 #: model:ir.model,name:sports_association_jordi.model_sports_license
 msgid "Sports License"
-msgstr ""
+msgstr "Licencia"
+
+#. module: sports_association_jordi
+#: model:ir.model,name:sports_association_jordi.model_sports_player
+msgid "Sports Player"
+msgstr "Jugador"
+
+#. module: sports_association_jordi
+#: model:ir.model,name:sports_association_jordi.model_sports_sport
+msgid "Sports Sport"
+msgstr "Deporte"
+
+#. module: sports_association_jordi
+#: model:ir.model,name:sports_association_jordi.model_sports_team
+msgid "Sports Team"
+msgstr "Equipo"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_license__start_date
 msgid "Start Date"
-msgstr ""
+msgstr "Fecha de inicio"
+
+#. module: sports_association_jordi
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__starter
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_player_view_form
+msgid "Starter"
+msgstr "Titular"
+
+#. module: sports_association_jordi
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_sport_view_form
+msgid "Starters"
+msgstr "Titulares"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__state
 msgid "State"
-msgstr ""
+msgstr "Estado"
+
+#. module: sports_association_jordi
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_player_view_form
+msgid "Substitute"
+msgstr "Sustituto"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__tag_ids
 msgid "Tags"
-msgstr ""
+msgstr "Etiquetas"
+
+#. module: sports_association_jordi
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_player__team_id
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_sport_view_form
+msgid "Team"
+msgstr "Equipo"
+
+#. module: sports_association_jordi
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_sport_view_form
+msgid "Team Name"
+msgstr "Nombre Equipo"
+
+#. module: sports_association_jordi
+#: model:ir.model.fields,field_description:sports_association_jordi.field_sports_sport__team_ids
+#: model:ir.ui.menu,name:sports_association_jordi.sport_team_menu
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_team_tree_view
+msgid "Teams"
+msgstr "Equipos"
 
 #. module: sports_association_jordi
 #: model:ir.model.fields,field_description:sports_association_jordi.field_sports_issue__user_id
 #: model:res.groups,name:sports_association_jordi.res_groups_sports_association_user
 msgid "User"
-msgstr ""
+msgstr "Usuario"
 
 #. module: sports_association_jordi
 #: model:ir.actions.act_window,name:sports_association_jordi.action_sport_clinic
@@ -278,6 +433,22 @@ msgid "sport.issues"
 msgstr ""
 
 #. module: sports_association_jordi
+#: model:ir.actions.act_window,name:sports_association_jordi.action_player_team
+msgid "sport.player"
+msgstr ""
+
+#. module: sports_association_jordi
+#: model:ir.actions.act_window,name:sports_association_jordi.action_sport_sport
+msgid "sport.sport"
+msgstr ""
+
+#. module: sports_association_jordi
+#: model:ir.actions.act_window,name:sports_association_jordi.action_sport_team
+msgid "sport.team"
+msgstr ""
+
+#. module: sports_association_jordi
 #: model_terms:ir.ui.view,arch_db:sports_association_jordi.sport_clinic_view_form
+#: model_terms:ir.ui.view,arch_db:sports_association_jordi.sports_sport_view_form
 msgid "string"
 msgstr ""

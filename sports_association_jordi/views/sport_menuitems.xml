@@ -12,8 +12,26 @@
         sequence="10"/>
     <menuitem
         id="sport_clinic_menu"
-        name="Sports Clinics"
+        name="Clinics"
         action="action_sport_clinic"
         parent="sport_menu"
         sequence="20"/>
+    <menuitem 
+        id="sport_player_menu"
+        name="Players"
+        action="action_player_team"
+        parent="sport_menu"
+        sequence="30"/>
+    <menuitem 
+        id="sport_team_menu"
+        name="Teams"
+        action="action_sport_team"
+        parent="sport_menu"
+        sequence="40"/>
+    <menuitem 
+        id="sport_sport_menu"
+        name="Sports"
+        action="action_sport_sport"
+        parent="sport_menu"
+        sequence="50"/>
 </odoo>

@@ -4,4 +4,4 @@ class SportsIssueTag(models.Model):
     _name = 'sports.issue.tag'
     _description = 'Sports Issue Tag'
 
-    name = fields.Char(string='Name',required=True)
+    name = fields.Char(string='Name',required=True,translate=True)

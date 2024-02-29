@@ -18,6 +18,10 @@
          "views/sport_issue_views.xml",
          "views/sport_clinic_views.xml",
          "data/sport_license_data.xml",
+         "data/sports_issue_tag.xml",
+         "views/sports_sport_views.xml",
+         "views/sports_player_views.xml",
+         "views/sports_team_views.xml",
          "views/sport_menuitems.xml"
          ]
 }
