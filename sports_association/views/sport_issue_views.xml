@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright NuoBiT Solutions - Kilian Niubo <kniubo@nuobit.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl) -->
+<odoo>
+    <record id="sport_issue_view_tree" model="ir.ui.view">
+        <field name="name">sport.issue.tree.view</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="date" optional="show" />
+                <field name="user_id" optional="hide" />
+                <field name="state" widget="badge" />
+            </tree>
+        </field>
+    </record>
+    <record id="sport_issue_view_form" model="ir.ui.view">
+        <field name="name">sport.issue.view.form</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <form string="Issues">
+                <header>
+                    <field
+            name="state"
+            options="{'clickable':1}"
+            widget="statusbar"
+            statusbar_visible="draft,open,done"
+          />
+                    <button
+            string="To open"
+            invisible="state not in ('draft')"
+            name="action_open"
+            type="object"
+            class="btn-primary"
+          />
+                    <button
+            string="To draft"
+            invisible="state in ('draft')"
+            name="action_draft"
+            type="object"
+            class="btn-secondary"
+          />
+                    <button
+            string="Done"
+            invisible="state not in ('done')"
+            name="action_done"
+            type="object"
+            class="btn-success"
+          />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Issue Name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="user_id" />
+                        </group>
+                        <group>
+                            <field name="date" />
+                            <field name="assistance" widget="boolean_toggle" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                            <field name="description" />
+                        </page>
+                        <page name="solutions" string="Solutions">
+                            <field name="solution" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_sport_issue" model="ir.actions.act_window">
+        <field name="name">Sport issues</field>
+        <field name="res_model">sport.issue</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new product
+            </p>
+        </field>
+    </record>
+
+</odoo>
