@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-    <record id="sport_issue_tree_view" model="ir.ui.view">
-        <field name="name">sport.issue.tree.view</field>
+    <record id="sport_issue_view_tree" model="ir.ui.view">
+        <field name="name">sport.issue.view.tree</field>
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
             <tree multi_edit="1" string="Issues">
@@ -15,13 +15,16 @@
         </field>
     </record>
 
-    <record id="sport_issue_tree_view_form" model="ir.ui.view">
-        <field name="name">sport.issue.tree.form</field>
+    <record id="sport_issue_view_form" model="ir.ui.view">
+        <field name="name">sport.issue.view.form</field>
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
             <form string="Issues">
                 <header>
                     <field name="state" options="{'clickable':1}" widget="statusbar" statusbar_visible="draft,open,done" />
+                    <button string="To open" invisible="state not in ('draft')" name="action_open" type="object" class="oe_highlight"></button>
+                    <button string="To draft" invisible="state in ('draft')" name="action_draft" type="object" class="btn-secondary"></button>
+                    <button string="Done" invisible="state in ('done')" name="action_done" type="object" class="oe_highlight"></button>
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -32,9 +35,11 @@
                     <group>
                         <group>
                             <field name="user_id"/>
+                            <field name="clinic_ids"/>
                         </group>
                         <group>
                             <field name="date"/>
+                            <field name="tag_ids" widget="many2many_tag"/>
                             <field name="assistance" widget="boolean_toggle"/>
                         </group>
                         <notebook>
