@@ -7,7 +7,7 @@
     "category": "Sports",
     "author": "Lorena Garrido, Ontinet",
     "license": "AGPL-3",
-    "application": False,
+    "application": True,
     "installable": True,
     "depends": [
         "base",
@@ -15,7 +15,14 @@
     "data": [
         "security/groups.xml",
         "security/ir.model.access.csv",
-        "views/sport_issue.xml",
         "views/sport_issue_views.xml",
+        "views/sport_clinic_views.xml",
+        "views/sport_issue_tag_views.xml",
+        "views/sport_team_views.xml",
+        "views/sport_sport_views.xml",
+        "views/sport_player_views.xml",
+        "views/sport_issue_menu.xml",
+        "data/sport_issue_tag.xml",
+        "data/sport_license_data.xml",
     ],
 }

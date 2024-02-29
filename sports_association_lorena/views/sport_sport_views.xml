@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sport_sport_view_tree" model="ir.ui.view">
+        <field name="name">sport_sport.view.tree</field>
+        <field name="model">sport.sport</field>
+        <field name="arch" type="xml">
+            <tree string="Sports">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_sport_view_form" model="ir.ui.view">
+        <field name="name">sport_sport.view.form</field>
+        <field name="model">sport.sport</field>
+        <field name="arch" type="xml">
+            <form string="Sports">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sport_sport" model="ir.actions.act_window">
+        <field name="name">Sport</field>
+        <field name="res_model">sport.sport</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_sport_issue" model="ir.actions.act_window">
+        <field name="name">Sport Issues</field>
+        <field name="res_model">sport.issue</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="name">Sport Issues</field>
+    </record>
+        
+    <menuitem
+        id="sport_root_menu"
+        name="Association"
+        sequence="10">
+
+        <menuitem
+            id="sport_issue_menu"
+            name="Issues"
+            action="action_sport_issue"
+            sequence="10"/>
+
+        <menuitem
+            id="sport_clinic_menu"
+            name="Clinics"
+            action="action_sport_clinic"
+            sequence="20"/>
+
+        <menuitem
+            id="sport_issue_tag_menu"
+            name="Issue Tags"
+            action="action_sport_issue_tag"
+            sequence="30"/>
+
+        <menuitem
+            id="sport_team_menu"
+            name="Team"
+            action="action_sport_team"
+            sequence="40"/>
+
+        <menuitem
+            id="sport_sport_menu"
+            name="Sport"
+            action="action_sport_sport"
+            sequence="50"/>
+
+        <menuitem
+            id="sport_player_menu"
+            name="Player"
+            action="action_sport_player"
+            sequence="60"/>
+    </menuitem>
+</odoo>
