@@ -28,8 +28,12 @@
                         </h1>
                     </div>
                     <group>
-                        <field name="logo"/>
-                        <field name="sport_id"/>
+                        <group>
+                            <field name="sport_id"/>
+                        </group>
+                        <group>
+                            <field name="logo" widget="image" class="oe-avatar"/>
+                        </group>
                     </group>
                     <notebook>
                         <page name="name" string="Players">

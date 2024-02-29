@@ -1,37 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <menuitem
-        id="sport_menu"
+        id="main_menu"
         name="Sports Association"
         sequence="10"/> 
+    <menuitem 
+        id="medical_menu"
+        name="Medical"
+        parent="main_menu"
+        sequence="10"/>
+    <menuitem 
+        id="sport_menu"
+        name="Sports"
+        parent="main_menu"
+        sequence="20"/>
     <menuitem
         id="sport_issue_menu"
         name="Sports Issues"
         action="action_sport_issue"
-        parent="sport_menu"
+        parent="medical_menu"
         sequence="10"/>
     <menuitem
         id="sport_clinic_menu"
         name="Clinics"
         action="action_sport_clinic"
-        parent="sport_menu"
+        parent="medical_menu"
         sequence="20"/>
     <menuitem 
         id="sport_player_menu"
         name="Players"
         action="action_player_team"
         parent="sport_menu"
-        sequence="30"/>
+        sequence="10"/>
     <menuitem 
         id="sport_team_menu"
         name="Teams"
         action="action_sport_team"
         parent="sport_menu"
-        sequence="40"/>
+        sequence="20"/>
     <menuitem 
         id="sport_sport_menu"
         name="Sports"
         action="action_sport_sport"
         parent="sport_menu"
-        sequence="50"/>
+        sequence="30"/>
 </odoo>
