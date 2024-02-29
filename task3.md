@@ -41,7 +41,8 @@ Crear menú, acción y vista de árbol y formulario para cada modelo.
 
 # Métodos
 
-Añadir un botón que marque a todos los jugadores como titulares
+Añadir un método que marque a un jugador como titular y otro que lo desmarque
+Añadir método y botón en el equipo que recorra la lista de jugadores y llame al método anterior
 
 
 
