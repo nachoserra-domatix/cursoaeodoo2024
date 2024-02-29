@@ -19,5 +19,6 @@ class SportClinic(models.Model):
     #=== METHODS ===#
     
     def action_check_assistance(self):
+        #import pdb; pdb.set_trace()
         for record in self.issue_ids:
             record.assistance = True
