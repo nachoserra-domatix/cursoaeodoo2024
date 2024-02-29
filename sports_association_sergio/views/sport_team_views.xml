@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sport_team_view_tree" model="ir.ui.view">
+        <field name="name">sport_team.view.tree</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <tree string="Teams">
+                <field name="name"></field>
+                <field name="sport_id"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_team_view_form" model="ir.ui.view">
+        <field name="name">sport_team.view.tree</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <form string="Team">
+                <header>
+                    <button string="Mark starters" name="action_mark_starters" type="object" class="oe_highlight"></button>
+                    <button string="Unmark starters" name="action_unmark_starters" type="object" class="oe_highlight"></button>
+                </header>                
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="sport_id"></field>
+                    </group>
+                    <notebook>
+                        <page name="players" string="Players">
+                            <field name="player_ids">
+                                <tree editable="bottom">
+                                    <field name="name"></field>
+                                    <field name="age"></field>
+                                    <field name="position"></field>
+                                    <field name="starter"></field>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>                        
+                </sheet>
+            </form>
+        </field>
+    </record> 
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sport_clinic_view_tree" model="ir.ui.view">
+        <field name="name">sport_clinic.view.tree</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <tree string="Clinics">
+                <field name="name"></field>
+                <field name="phone"></field>
+                <field name="email"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_clinic_view_form" model="ir.ui.view">
+        <field name="name">sport_clinic.view.form</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <form string="Clinic">
+                <header>
+                    <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"></button>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="phone"></field>
+                        <field name="email"></field>   
+                    </group>
+                    <notebook>
+                        <page name="issues" string="Issues">
+                            <field name="issue_ids">
+                                <tree editable="bottom">
+                                    <field name="name"></field>
+                                    <field name="date"></field>
+                                    <field name="assistance"></field>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record> 
+</odoo>
