@@ -17,7 +17,7 @@ A debatir pero podrían ser:
   * Nombre
   * Lista de jugadores
   * Deporte
-  * Entrenador(?)
+  * ~~Entrenador~~
     
 * Modelo de deporte (sport.sport)
   * Nombre
