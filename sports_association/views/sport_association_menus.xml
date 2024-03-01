@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- Menus -->
-    <menuitem id="sport_menu"
+    <menuitem id="sport_association_menu"
         name="Sport Association"
         sequence="10"
         web_icon="calendar,static/description/icon.png"
@@ -17,25 +17,30 @@
             name="Clinics"
             sequence="20"
             action="action_sport_clinic"            
-            groups="base.group_user"/>
+            groups="base.group_user"/>        
         
-        <menuitem id="sport_team_menu"
-            name="Teams"
-            sequence="30"
-            action="action_sport_team"            
-            groups="base.group_user"/>
-        
-        <menuitem id="sport_player_menu"
-            name="Players"
-            sequence="30"
-            action="action_sport_player"            
-            groups="base.group_user"/>
-
         <menuitem id="sport_sport_menu"
             name="Sports"
-            sequence="30"
-            action="action_sport_sport"            
-            groups="base.group_user"/>
+            groups="sales_team.group_sale_salesman"
+            sequence="30">
+
+            <menuitem id="menu_product_template_action"
+                action="action_sport_sport"
+                sequence="10"/>
+
+            <menuitem id="sport_team_menu"
+                name="Teams"
+                sequence="30"
+                action="action_sport_team"            
+                groups="base.group_user"/>
+                
+            <menuitem id="sport_player_menu"
+                name="Players"
+                sequence="30"
+                action="action_sport_player"            
+                groups="base.group_user"/>
+
+        </menuitem>        
     
     </menuitem>
 </odoo>

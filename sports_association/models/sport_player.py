@@ -12,6 +12,7 @@ class SportPlayer(models.Model):
     position = fields.Char(string='Position')
     team_id = fields.Many2one('sport.team', string='Team')
     is_starter = fields.Boolean(string='Starter')
+    photo = fields.Image(string="Photo")
 
     #=== METHODS ===#
 

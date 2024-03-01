@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-29 15:32+0000\n"
-"PO-Revision-Date: 2024-02-29 15:32+0000\n"
+"POT-Creation-Date: 2024-03-01 16:41+0000\n"
+"PO-Revision-Date: 2024-03-01 16:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr ""
 #. module: sports_association
 #: model:ir.model.fields,field_description:sports_association.field_sport_player__age
 msgid "Age"
-msgstr ""
+msgstr "Edad"
 
 #. module: sports_association
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__assistance
@@ -233,12 +233,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue_tag__name
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_player__form_view
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: sports_association
 #: model:ir.model.fields,field_description:sports_association.field_sport_team__name
 msgid "Nombre"
-msgstr "Nombre"
+msgstr ""
 
 #. module: sports_association
 #: model:ir.model.fields.selection,name:sports_association.selection__sport_issue__state__open
@@ -250,6 +250,11 @@ msgstr "Abierta"
 #: model:ir.model.fields,field_description:sports_association.field_sport_license__partner_id
 msgid "Partner"
 msgstr ""
+
+#. module: sports_association
+#: model:ir.model.fields,field_description:sports_association.field_sport_player__photo
+msgid "Photo"
+msgstr "Foto"
 
 #. module: sports_association
 #: model:ir.model,name:sports_association.model_sport_player
@@ -362,6 +367,7 @@ msgstr "Equipo"
 #. module: sports_association
 #: model:ir.actions.act_window,name:sports_association.action_sport_sport
 #: model:ir.model,name:sports_association.model_sport_sport
+#: model:ir.ui.menu,name:sports_association.menu_product_template_action
 #: model:ir.ui.menu,name:sports_association.sport_sport_menu
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_sport_tree_view
 msgid "Sports"
@@ -385,6 +391,7 @@ msgstr "Inicio"
 #. module: sports_association
 #: model:ir.model.fields,field_description:sports_association.field_sport_player__is_starter
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_player__form_view
+#: model_terms:ir.ui.view,arch_db:sports_association.sport_team__form_view
 msgid "Starter"
 msgstr "Titular"
 

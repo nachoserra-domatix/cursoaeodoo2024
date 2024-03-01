@@ -11,7 +11,7 @@
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="user_id" string="User" optional="hide"/>
-                <field name="date" optional="show"/>
+                <field name="date" optional="show"  widget="date"/>
                 <field name="state" widget="badge"/>
             </tree>
         </field>
