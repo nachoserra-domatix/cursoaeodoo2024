@@ -11,7 +11,12 @@ class SportsPlayer(models.Model):
     starter = fields.Boolean(string='Starter')
 
     def make_starter(self):
-        self.write({'starter': True})
-
+        self.starter = True
+        return True
+    
     def make_substitute(self):
-        self.write({'starter': False})
+        self.starter = False
+        return True
+
+
+   
