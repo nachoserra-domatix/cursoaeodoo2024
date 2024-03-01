@@ -11,6 +11,7 @@ class SportTeam(models.Model):
     player_ids = fields.One2many('sport.player', 'team_id', string='Players')
     sport_id = fields.Many2one('sport.sport', string='Sport')
     coach_id = fields.Many2one('res.partner', string='Coach')
+    logo = fields.Image('Logo')
 
     #=== METHODS ===#
 

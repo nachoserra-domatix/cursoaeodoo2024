@@ -8,6 +8,7 @@
         <field name="model">sport.player</field>
         <field name="arch" type="xml">
             <tree string="Players">                
+                <field name="photo" string="" widget="image" class="oe_right oe_avatar" options="{'size': [25, 25]}"/>
                 <field name="name"/>
                 <field name="team_id"/>
             </tree>

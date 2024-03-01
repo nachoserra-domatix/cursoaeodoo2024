@@ -20,10 +20,11 @@
             <form string="Team">
                 <sheet>
                     <header>                        
-                        <button string="Starter"  class="btn-primary" name="action_all_starters" type="object" />
+                        <button string="Starter"  class="btn-succes" name="action_all_starters" type="object"/>
                     </header>
+                    <field name="logo" widget="image" class="oe_right oe_avatar"/>
                     <label for="name" string="Team"/>
-                    <div class="oe_title">
+                    <div class="oe_title text-center">
                         <h1>
                             <field name="name" placeholder="Team Name"/>
                         </h1>
@@ -31,7 +32,8 @@
                     <notebook>
                         <page name="players" string="Players">
                             <field name="player_ids">
-                                <tree editable="bottom" multi_edit="1">
+                                <tree multi_edit="1">
+                                    <field name="photo" string="" widget="image" class="oe_left oe_avatar" options="{'size': [25, 25]}"/>
                                     <field name="name"/>
                                     <field name="position"/>
                                     <field name="is_starter" widget="boolean_toggle"/>
