@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="sport.license" id="sport_license_1">
+            <field name="name">Licencia 1</field>
+            <field name="partner_id" ref="base.user_root"></field>
+            <field name="start_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="end_date"/>
+            <!-- <field name="end_date" eval="((datetime.datetime.now() + datetime.timedelta(days=20)).strftime('%Y-%m-%d %H:%M:%S'))" /> -->
+        </record>
+        <record model="sport.license" id="sport_license_2">
+            <field name="name">Licencia 2</field>
+            <field name="partner_id" ref="base.user_root"></field>
+            <field name="start_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="end_date"/>
+        </record>
+        <record model="sport.license" id="sport_license_3">
+            <field name="name">Licencia 3</field>
+            <field name="partner_id" ref="base.user_root"></field>
+            <field name="start_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="end_date"/>
+            <!-- <field name="end_date" eval="((datetime.datetime.now() + datetime.timedelta(days=20)).strftime('%Y-%m-%d %H:%M:%S'))" /> -->
+        </record>
+        <record model="sport.license" id="sport_license_4">
+            <field name="name">Licencia 4</field>
+            <field name="partner_id" ref="base.user_root"></field>
+            <field name="start_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="end_date"/>
+            <!-- <field name="end_date" eval="((datetime.datetime.now() + datetime.timedelta(days=20)).strftime('%Y-%m-%d %H:%M:%S'))" /> -->
+        </record>
+        <record model="sport.license" id="sport_license_5">
+            <field name="name">Licencia 5</field>
+            <field name="partner_id" ref="base.user_root"></field>
+            <field name="start_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="end_date"/>
+            <!-- <field name="end_date" eval="((datetime.datetime.now() + datetime.timedelta(days=20)).strftime('%Y-%m-%d %H:%M:%S'))" /> -->
+        </record>
+    </data>
+</odoo>

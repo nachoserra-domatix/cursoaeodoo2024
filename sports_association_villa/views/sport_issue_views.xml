@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sport_issue_tree_view" model="ir.ui.view">
+        <field name="name">sport.issue.tree.view</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <tree  multi_edit = "1" string="Issues">
+                <field name="sequense" widget = "handle"></field>
+                <field name="name"/>
+                <field name="date" optional = "show"/>
+                <field name = "user_id" optional = "hide"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_issue_view_form" model="ir.ui.view">
+        <field name="name">sport.issue.view.form</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <form string="Issues">
+                <header>
+                    <field name="state" widget = "statusbar" statusbar_visible = "draft,open,done"/>
+                    <button string="Confirm"  invisible = "state != 'draft'" type="object" name="action_open" class = "btn-primary"/>
+                    <button string="To Draf" invisible = "state == 'draft'" type="object" name="action_draft" class = "secondary"/>
+                    <button string="Done" invisible = "state == 'done'" type="object" name="action_done" class = "btn-success"/>
+                </header>
+                <sheet>
+                    <div class = "oe_title">
+                        <h1>
+                            <field name="name" placeholder = "Issue Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="clinic_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="tag_ids" widget = "many2many_tags"/>
+                            <field name = "assistance" widget = "boolean_toggle"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page name="solution" string="Solution">
+                            <field name="solution"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sport_issue" model="ir.actions.act_window">
+        <field name="name">Sport Issue</field>
+        <field name="res_model">sport.issue</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new issue.
+            </p>
+        </field>
+    </record>
+</odoo>
