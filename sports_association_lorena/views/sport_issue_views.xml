@@ -52,7 +52,7 @@
         <field name="name">sport_issue.view.search</field>
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
-            <search string="Incidencias">
+            <search string="Issues">
                 <field name="name" filter_domain="['|',('name','ilike',self), ('description','ilike',self)]"/>
                 <field name="clinic_id"/>
                 <field name="tag_ids"/>
