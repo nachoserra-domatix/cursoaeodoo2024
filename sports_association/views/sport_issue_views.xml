@@ -61,7 +61,7 @@
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
             <search string="Issues">
-                <field name="name" filter_domain="['|', ('name','ilike','self'), ('description','ilike','self')]"/>
+                <field name="name" filter_domain="['|', ('name','ilike',self), ('description','ilike',self)]"/>
                 <field name="user_id"/>
                 <field name="tag_ids"/>
                 <filter string="Draft" name="draft" domain="[('state','=', 'draft')]"/>
