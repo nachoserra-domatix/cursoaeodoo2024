@@ -10,7 +10,8 @@
             <tree string="Sport Issue" multi_edit="1">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
-                <field name="user_id" string="User" optional="hide"/>
+                <field name="user_id" string="User" optional="show"/>
+                <field name="clinic_id" string="Clinic" optional="show"/>
                 <field name="date" optional="show"  widget="date"/>
                 <field name="state" widget="badge"/>
             </tree>

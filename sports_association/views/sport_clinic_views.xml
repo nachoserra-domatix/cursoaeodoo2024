@@ -8,7 +8,8 @@
         <field name="model">sport.clinic</field>
         <field name="arch" type="xml">
             <tree string="Clinics" multi_edit="1">                
-                <field name="name"/>                
+                <field name="name"/>
+                <field name="issue_ids"/>
             </tree>
         </field>
     </record>

@@ -30,7 +30,7 @@ class SportIssue(models.Model):
         string="Status",
         default="draft")
     user_id = fields.Many2one(
-        comodel_name='res.users',
+        comodel_name='sport.player',
         string="User")
     sequence = fields.Integer(
         string="Sequence",
