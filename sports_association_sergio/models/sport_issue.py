@@ -23,6 +23,8 @@ class SportIssue(models.Model):
     clinic_id = fields.Many2one('sport.clinic', string='Clinic')   
 
     tags_ids = fields.Many2many('sport.issue.tag', string='Tags')
+    color = fields.Integer(string="Color",default=0)
+    cost =fields.Float(string="Cost", default=0.0)
                                  
     def action_open(self):
         # import pdb;pdb.set_trace()
