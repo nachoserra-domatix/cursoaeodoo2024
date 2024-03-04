@@ -19,7 +19,8 @@ class SportsIssue(models.Model):
     solution = fields.Html(string='Solution')
     clinic_id = fields.Many2one('sports.clinic', string='Clinic')
     tag_ids = fields.Many2many('sports.issue.tag', string='Tags')
-
+    color = fields.Integer(string='Color Index',default=0)
+    cost=fields.Float(string='Cost')
     def action_done(self):
         self.state='done'
         
