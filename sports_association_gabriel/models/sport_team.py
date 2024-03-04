@@ -8,7 +8,8 @@ class SportTeam(models.Model):
     name = fields.Char(string='Name', required=True)
     player_ids = fields.One2many('sport.player', 'team_id', string='Players')
     sport_id = fields.Many2one('sport.sport', string='Sport')
-    logo = fields.Binary(string="Logo")
+    logo = fields.Binary(string="Logo", attachment=True)
+    color = fields.Integer(string='Color', default=0)
 
     def action_check_players_starter(self):
         for record in self.player_ids:

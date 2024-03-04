@@ -5,4 +5,6 @@ class SportIssueTag(models.Model):
     _name = "sport.issue.tag"
     _description = "Sport Issue Tag"
 
-    name = fields.Char(String='Name', required=True, translate=True)
+    name = fields.Char(string='Name', required=True, translate=True)
+    color = fields.Integer(string='Color', default=0)
+    
