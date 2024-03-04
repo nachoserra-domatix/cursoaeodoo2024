@@ -39,7 +39,8 @@
                     <group>
                         <group>                        
                             <field name="user_id"/>
-                            <field name="date"/>                        
+                            <field name="date"/>
+                            <field name="cost"/>                        
                         </group>
                         <group name="group_product">
                             <field name="assistance" widget="boolean_toggle"/>
@@ -68,10 +69,10 @@
                 date_start="date"                
                 string="Issues"
                 mode="month"
-                scales="month,year"
+                scales="week,month,year"
                 event_open_popup="true"
                 quick_create="0"
-                color="name">
+                color="user_id">
                 <field name="name"/>
                 <field name="user_id" widget="many2one_avatar_user" invisible="not user_id"/>                
                 <field name="tag_ids" widget="many2many_tags" invisible="not tag_ids"/>
@@ -83,14 +84,14 @@
         <field name="name">sport.issue.kanban</field>
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_mobile" sample="1" quick_create="false">
+            <kanban default_group_by="state" class="o_kanban_mobile" sample="1" quick_create="false">
                 <field name="name"/>
                 <field name="user_id"/>
                 <field name="clinic_id"/>
                 <field name="date"/>
                 <field name="state"/>                
                 <progressbar field="state"
-                    colors='{"done": "success", "open": "warning", "expired": "danger"}'/>
+                    colors='{"draft": "info", "open": "warning", "expired": "danger", "done": "success"}'/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
@@ -108,14 +109,45 @@
         </field>
     </record>
 
+    <record id="sport_issue_search_view" model="ir.ui.view">
+        <field name="name">sport.issue.search</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <search string="Search Issue">
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="clinic_id"/>
+                <separator/>
+                <filter name="state" string="Open" domain="[('state','=','open')]" help="Show open issues"/>
+                <filter name="state" string="Close" domain="[('state','=','close')]" help="Show close issues"/>
+                <group string="Group By">
+                    <filter string="User" name="user_id" domain="[]" context="{'group_by':'user_id'}"/>
+                    <filter string="Clinic" name="clinic_id" domain="[]" context="{'group_by':'clinic_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <record id="sport_issue_graph_view" model="ir.ui.view">
         <field name="name">sport.issue.graph</field>
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
             <graph string="Issues" sample="1">
                 <field name="name"/>
-                <field name="user_id" />
+                <field name="cost" />
             </graph>            
+        </field>
+    </record>
+
+    <record id="sport_issue_pivot_view" model="ir.ui.view">
+        <field name="name">sport.issue.pivot</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <pivot string="Timesheet">
+                <field name="user_id" type="row"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="cost" type="measure" />
+            </pivot>            
         </field>
     </record>
 
@@ -124,7 +156,7 @@
     <record id="action_sport_issue" model="ir.actions.act_window">
         <field name="name">Sport Issue</field>
         <field name="res_model">sport.issue</field>
-        <field name="view_mode">tree,form,kanban,calendar,graph</field>
+        <field name="view_mode">tree,form,kanban,calendar,graph,pivot</field>
         <field name="context">{}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">

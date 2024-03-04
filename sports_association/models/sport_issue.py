@@ -43,6 +43,7 @@ class SportIssue(models.Model):
     tag_ids = fields.Many2many(
         comodel_name="sport.issue.tag", 
         string="Tag")
+    cost = fields.Integer(string="Cost")
 
     #=== METHODS ===#
 
