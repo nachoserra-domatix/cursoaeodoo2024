@@ -12,5 +12,8 @@ Medida coste / columna date / fila usuario asignado
 # Vista graph
 Usuario y coste de medida
 
+# Vista Calendar
+Añadir calendario donde aparezca el nombre de la incidencia.
+
 # Filter domain
 Añadir un filter_domain para el campo name del search, que consista en filtrar por nombre o descripción.
