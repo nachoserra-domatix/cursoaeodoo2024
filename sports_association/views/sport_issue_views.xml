@@ -60,12 +60,31 @@
         </field>
     </record>
 
+     <record id="sport_issue_calendar_view" model="ir.ui.view">
+        <field name="name">sport.issue.calendar</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <calendar
+                date_start="date"                
+                string="Issues"
+                mode="month"
+                scales="month,year"
+                event_open_popup="true"
+                quick_create="0"
+                color="name">
+                <field name="name"/>
+                <field name="user_id" widget="many2one_avatar_user" invisible="not user_id"/>                
+                <field name="tag_ids" widget="many2many_tags" invisible="not tag_ids"/>
+            </calendar>
+        </field>
+    </record>
+
     <!-- ACTIONS (WINDOW) -->
 
     <record id="action_sport_issue" model="ir.actions.act_window">
         <field name="name">Sport Issue</field>
         <field name="res_model">sport.issue</field>
-        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_mode">tree,form,kanban,calendar</field>
         <field name="context">{}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
