@@ -152,12 +152,14 @@
             <field name="model">sport.issue</field>
             <field name="arch" type="xml">
                 <search string="Issues">
-                    <field name="name"/>
+                    <field name="name" filter_domain="['|', ('name', 'ilike', self), ('description', 'ilike', self)]"/>
                     <field name="user_id"/>
+                    <field name="tag_ids"/>
                     <separator/>
-                    <filter name="filter_state" string="State" domain="[('state', '=', 'open')]"/>
+                    <filter name="filter_state" string="State Open" domain="[('state', '=', 'open')]"/>
+                    <filter name="filter_state" string="State Draft" domain="[('state', '=', 'draft')]"/>
                     <separator/>
-                    <filter name="group_state" string="State" context="{'group_by': 'state'}" />
+                    <filter name="group_users" string="Users" context="{'group_by': 'user_id'}" />
                 </search>
                 
             </field>
