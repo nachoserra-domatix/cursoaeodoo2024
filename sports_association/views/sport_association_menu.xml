@@ -4,7 +4,7 @@
     <record id="action_sport_issue" model="ir.actions.act_window">
         <field name="name">Issues</field>
         <field name="res_model">sport.issue</field>
-        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_mode">tree,form,kanban,pivot,calendar,graph</field>
         <field name="target">current</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
@@ -85,50 +85,75 @@
         </field>
     </record>
 
+    <record id="action_sport_license" model="ir.actions.act_window">
+        <field name="name">Licenses</field>
+        <field name="res_model">sport.license</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="target">current</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new sport license
+            </p>
+        </field>
+    </record>
+
     <menuitem
         id="sport_menu"
         name="Sport Association"
         sequence="10" />
 
     <menuitem
-        id="sport_isuue_menu"
+        id="sport_issue_menu"
         name="Sport Issues"
-        action="action_sport_issue"
         parent="sport_menu"
-        sequence="10" />
+        sequence="10">
+        <menuitem
+            id="sport_isuue_menu"
+            name="Sport Issues"
+            action="action_sport_issue"
+            sequence="10" />
 
-    <menuitem
-        id="sport_clinic_menu"
-        name="Sport Clinics"
-        action="action_sport_clinic"
-        parent="sport_menu"
-        sequence="20" />
+        <menuitem
+            id="sport_clinic_menu"
+            name="Sport Clinics"
+            action="action_sport_clinic"
+            sequence="20" />
 
-    <menuitem
-        id="sport_issue_tag_menu"
-        name="Sport Issue Tag"
-        action="action_sport_issue_tag"
-        parent="sport_menu"
-        sequence="20" />
+        <menuitem
+            id="sport_issue_tag_menu"
+            name="Sport Issue Tag"
+            action="action_sport_issue_tag"
+            sequence="20" />
+    </menuitem>
 
-    <menuitem
-        id="sport_team_menu"
-        name="Sport Team"
-        action="action_sport_team"
+    <menuitem id="sport_config_menu"
+        name="Configuration"
         parent="sport_menu"
-        sequence="20" />
+        sequence="20">
 
-    <menuitem
-        id="sport_sport_menu"
-        name="Sport"
-        action="action_sport_sport"
-        parent="sport_menu"
-        sequence="20" />
+        <menuitem
+            id="sport_team_menu"
+            name="Sport Team"
+            action="action_sport_team"
+            sequence="20" />
 
-    <menuitem
-        id="sport_player_menu"
-        name="Sport Player"
-        action="action_sport_player"
-        parent="sport_menu"
-        sequence="20" />
+        <menuitem
+            id="sport_sport_menu"
+            name="Sport"
+            action="action_sport_sport"
+            sequence="20" />
+
+        <menuitem
+            id="sport_player_menu"
+            name="Sport Player"
+            action="action_sport_player"
+            sequence="20" />
+        <menuitem
+            id="sport_license_menu"
+            name="Licenses"
+            action="action_sport_license"
+            sequence="20" />
+    </menuitem>
 </odoo>

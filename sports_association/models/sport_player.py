@@ -1,14 +1,13 @@
 from odoo import models, fields
 
+
 class Sportplayer(models.Model):
     _name = "sport.player"
     _description = "Sport Player"
 
-    
     name = fields.Char(
         string='Name',
     )
-    
     
     age = fields.Integer(
         string='Age',
@@ -17,7 +16,6 @@ class Sportplayer(models.Model):
     position = fields.Char(
         string='Position',
     )
-    
     
     team_id = fields.Many2one(
         string='Team',

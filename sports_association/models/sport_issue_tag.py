@@ -10,4 +10,5 @@ class SportIssueTag(models.Model):
         string='name',
         translate=True
     )
+    color = fields.Integer(string="Color", default=0)
     
