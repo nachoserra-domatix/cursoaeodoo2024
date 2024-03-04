@@ -14,6 +14,8 @@ class SportIssue(models.Model):
     solution = fields.Html(string='Solution')
     clinic_id = fields.Many2one('sport.clinic', string='Clinic')
     tag_ids = fields.Many2many('sport.issue.tag', string='Tags')
+    color = fields.Integer(string='Color', default=0)
+    cost = fields.Float(string='Cost')
 
     def action_open(self):
         for record in self:
