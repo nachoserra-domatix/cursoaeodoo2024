@@ -11,9 +11,5 @@
                 </p>
             </field>
         </record>
-
-        <menuitem id="sport_menu">
-            <menuitem id="sport__menu" name="Sport" sequence="10" action="sport_association_francisco.action_sport_sport"/>
-        </menuitem>
-        
-    </odoo>
+        <menuitem id="sport_sport_menu" name="Sport" sequence="10" action="sport_association_francisco.action_sport_sport" parent="sport_association_francisco.sport_menu"/>
+</odoo>

@@ -12,7 +12,7 @@
             </field>
         </record>
 
-        <menuitem id="sport_menu">
+        <menuitem id="sport_sport_menu">
             <menuitem id="sport_team_menu" name="Sport Teams" sequence="10" action="sport_association_francisco.action_sport_team"/>
         </menuitem>
         

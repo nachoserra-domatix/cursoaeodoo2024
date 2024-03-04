@@ -14,10 +14,10 @@
     "data":[
         "security/groups.xml",
         "security/ir.model.access.csv",
-        "views/sport_issue_menu_items.xml",
-        "views/sport_issue_views.xml",
         "views/sport_clinic_menu_items.xml",
         "views/sport_clinic_views.xml",
+        "views/sport_issue_menu_items.xml",
+        "views/sport_issue_views.xml",
         "views/sport_license_menu_items.xml",
         "views/sport_player_menu_items.xml",
         "views/sport_sport_menu_items.xml",
