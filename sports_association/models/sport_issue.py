@@ -19,12 +19,16 @@ class SportIssue(models.Model):
         default='draft',
     )
 
+    color = fields.Integer(string='Color')
     user_id = fields.Many2one(comodel_name='res.users', string='User')
     sequence = fields.Integer(string='Sequence', default=10)
     solution = fields.Html(string='Solution')
     
     clinic_id = fields.Many2one(comodel_name='sport.clinic', string='Clinic')
     tag_ids = fields.Many2many(comodel_name='sport.issue.tag', string='')
+
+    cost = fields.Float(string='Cost')
+    
     
     
     def action_draft(self):
