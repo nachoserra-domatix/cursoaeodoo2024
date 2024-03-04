@@ -16,6 +16,12 @@
             name="Sport Issue Tags"
             action="sports_association.action_sport_issue_tag"
             sequence="10"/>
+        
+        <menuitem
+            id="sport_clinic_menu"
+            name="Sport Clinics"
+            action="sports_association.action_sport_clinic"
+            sequence="10"/>
 
         <menuitem
             id="sport_player_menu"
