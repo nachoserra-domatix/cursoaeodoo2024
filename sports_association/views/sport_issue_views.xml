@@ -45,7 +45,7 @@
                         <group name="group_product">
                             <field name="assistance" widget="boolean_toggle"/>
                             <field name="clinic_id" />
-                            <field name="tag_ids" widget="many2many_tags"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         </group>
                     </group>
                     <notebook>
@@ -76,6 +76,7 @@
                 <field name="name"/>
                 <field name="user_id" widget="many2one_avatar_user" invisible="not user_id"/>                
                 <field name="tag_ids" widget="many2many_tags" invisible="not tag_ids"/>
+                <field name="state" filters="1" invisible="1"/>
             </calendar>
         </field>
     </record>
@@ -114,7 +115,7 @@
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
             <search string="Search Issue">
-                <field name="name"/>
+                <field name="name" filter_domain="['|', ('description', 'ilike', self), ('name', 'ilike', self)]"/>
                 <field name="user_id"/>
                 <field name="clinic_id"/>
                 <separator/>

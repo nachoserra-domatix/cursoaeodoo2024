@@ -44,6 +44,7 @@ class SportIssue(models.Model):
         comodel_name="sport.issue.tag", 
         string="Tag")
     cost = fields.Integer(string="Cost")
+    color = fields.Integer(string="Color")
 
     #=== METHODS ===#
 
