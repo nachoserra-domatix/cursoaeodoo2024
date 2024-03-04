@@ -11,8 +11,10 @@ class SportTeam(models.Model):
 
     def action_checkall_starter(self):
         for record in self.player_ids:
-            record.starter = True
+            #record.starter = True
+            record.action_check_starter()
 
     def action_uncheckall_starter(self):
         for record in self.player_ids:
-            record.starter = False
+            #record.starter = False
+            record.action_uncheck_starter()

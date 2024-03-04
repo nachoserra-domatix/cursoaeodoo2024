@@ -19,6 +19,8 @@ class SportIssue(models.Model):
     user_id = fields.Many2one('res.users', string="User")
     sequence = fields.Integer(string="Sequence", default="10")
     solution = fields.Html(string="Solutions")
+    color = fields.Integer(string="Color", default=0)
+    cost = fields.Float(string="cost")
 
     clinic_ids= fields.Many2one('sport.clinic', string='Clinic')
 

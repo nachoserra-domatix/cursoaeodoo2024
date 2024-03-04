@@ -28,7 +28,7 @@
                             <field name="sport_id"></field>
                         </group>
                         <group>
-                            <field name="logo"></field>
+                            <field name="logo" widget="image" class="oe_avatar"></field>
                         </group>
                     </group>
                     <notebook>
