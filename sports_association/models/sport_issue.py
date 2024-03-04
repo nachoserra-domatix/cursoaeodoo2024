@@ -17,11 +17,12 @@ class SportIssue(models.Model):
         string='State',
         default='draft',
     )
-        
+    
+    color = fields.Integer('color', default=0)    
     user_id = fields.Many2one('res.users', string='User')
     sequence = fields.Integer('Sequence', default=10)
     solution = fields.Html('Solution')
-    
+    cost = fields.Float('Cost')
     
     clinic_id = fields.Many2one('sport.clinic', string='Clinic')
 
