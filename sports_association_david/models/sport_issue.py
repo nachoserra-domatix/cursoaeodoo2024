@@ -23,6 +23,9 @@ class SportIssue(models.Model):
 
     tag_ids = fields.Many2many('sport.issue.tag')
 
+    color = fields.Integer(string='Color', default=0)
+    cost = fields.Float(string='Cost')
+
     def action_open(self):
         for record in self:
             record.state = 'open'
