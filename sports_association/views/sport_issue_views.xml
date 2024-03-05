@@ -25,6 +25,8 @@
                 <button string="To draft" invisible="state in ('draft')" name="action_draft" type="object" class="btn-secondary"/>
                 <!-- <button string="To done" invisible="state in ('done')" name="action_done" type="object" class="oe_highlight"/> -->
                 <button string="To done" invisible="state in ('done')" name="action_done" type="object" class="btn-sucess"/>
+                <button string="Tags" name="action_add_tags" type="object" class="btn-sucess"/>
+
                 </header>
                 
                 <sheet>
@@ -34,15 +36,19 @@
                         </h1>
                     </div>
                     <group>
-                        <field name="user_id" />
-                        <field name="clinic_id" />
+                        <group>
+                            <field name="assigned"></field>
+                            <field name="user_id" />
+                            <field name="clinic_id" />
+                        </group>
+                        <group>
+                            <field name="date"></field>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            <field name="assistance" widget="boolean_toggle"></field>
+                            <field name="cost"></field>
+                        </group>
                     </group>
-                    <group>
-                        <field name="date"></field>
-                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                        <field name="assistance" widget="boolean_toggle"></field>
-                        <field name="cost"></field>
-                    </group>
+
                     <notebook>
                         <page name="description" string="Description">
                             <field name="description"></field>

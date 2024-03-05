@@ -36,8 +36,10 @@
                 <sheet>
                     <group>
                         <field name="name" />
+                        <field name="birthday"></field>
                         <field name="years" />
                         <field name="team_id"></field>
+                        <field name="sport_name"></field>
                         <field name="position"></field>
                         <field name="tittle" widget="boolean_toggle"></field>
                     </group>

@@ -7,4 +7,3 @@ class SportSport(models.Model):
     name = fields.Char(string='Name', required=True)
     description = fields.Char(string='Description')
     image = fields.Image(string='Image', max_width=100, max_height=100)
-
