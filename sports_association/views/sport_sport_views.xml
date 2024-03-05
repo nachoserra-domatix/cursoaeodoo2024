@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+     
+     <record id="sport_sport_form_view" model="ir.ui.view">
+        <field name="name">sport.sport.form</field>
+        <field name="model">sport.sport</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    
+                   
+                    <div class="oe_title mb24">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page name="description" string="Description">
+                          <field name="description" wigdet="html"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sport_sport_tree_view" model="ir.ui.view">
+        <field name="name">sport.sport.tree</field>
+        <field name="model">sport.sport</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sport_sport_search_view" model="ir.ui.view">
+        <field name="name">sport.sport.search</field>
+        <field name="model">sport.sport</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+    <record id="sport_sport_action" model="ir.actions.act_window">
+        <field name="name">Sports</field>
+        <field name="res_model">sport.sport</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="sport_sport_menu" 
+    name="Sports" 
+    parent="sports_association.sport_menu"/>
+    <menuitem id="sport_sport_menu2" 
+    name="Sports" 
+    parent="sports_association.sport_sport_menu"/>
+    <menuitem id="sport_sport_menu_menu" 
+    name="Sports" 
+    parent="sports_association.sport_sport_menu2" 
+    action="sport_sport_action"/>
+
+</odoo>

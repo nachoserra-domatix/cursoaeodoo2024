@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="sport_team_form_view" model="ir.ui.view">
+        <field name="name">sport.team.form</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <button type="object" name="action_headline_player" string="change Headline"/>
+                    </header>
+                    <field name="image_1920" 
+                    widget="image" 
+                    class="oe_avatar" 
+                    options="{&quot;preview_image&quot;: &quot;avatar_128&quot;}"/>
+                    <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1 >
+                                <field name="name"/>
+                            </h1>
+                    </div>
+                   <group>
+                        <group>
+                            <field name="trainer_id"/>
+                        </group>
+                        <group>
+                            <field name="sport_id"/>  
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="players" string="Player">
+                            <field name="player_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="position_id"/>
+                                    <field name="headline"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sport_team_tree_view" model="ir.ui.view">
+        <field name="name">sport.team.tree</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="trainer_id"/>
+                <field name="sport_id"/>   
+            </tree>
+        </field>
+    </record>
+    <record id="sport_team_search_view" model="ir.ui.view">
+        <field name="name">sport.team.search</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="trainer_id"/>
+                <field name="sport_id"/>   
+            </search>
+        </field>
+    </record>
+    <record id="sport_team_action" model="ir.actions.act_window">
+        <field name="name">Teams</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="sport_team_menu2" 
+    name="Teams" 
+    parent="sports_association.sport_sport_menu" 
+    />
+    
+    <menuitem id="sport_team_menu" 
+    name="Teams" 
+    parent="sports_association.sport_team_menu2" 
+    action="sport_team_action"/>
+</odoo>
