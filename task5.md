@@ -15,4 +15,4 @@
 * En una incidencia, crearemos un botón que buscará etiquetas que contengan un nombre parecido al de nuestra incidencia y las añadiremos.
 Si no existe ninguna, crearemos una etiqueta con el mismo nombre que la incidencia
 
-* Añadir un botón en los equipos que busque los jugadores menores de 30 años y los añada al equipo
+* Añadir un botón en los equipos que busque los jugadores que no tengan equipo, menores de 30 años, y los añada al equipo.
