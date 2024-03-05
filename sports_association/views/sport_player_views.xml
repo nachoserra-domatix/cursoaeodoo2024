@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <tree string="players">
                 <field name="name" />
+                <field name="birthdate" />
                 <field name="age" />
                 <field name="position" />
                 <field name="team_id" />
@@ -34,9 +35,11 @@
                         </h1>
                     </div>
                     <group>
+                        <field name="birthdate" />
                         <field name="age" />
                         <field name="position" />
                         <field name="team_id" />
+                        <field name="sport" />
                         <field name="starter" widget="boolean_toggle" />
                     </group>
                 </sheet>

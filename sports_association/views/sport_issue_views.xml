@@ -35,6 +35,7 @@
                         invisible="state in ('done')" />
                     <button name="action_draft" string="Draft" type="object" class="oe_danger"
                         invisible="state in ('draft')" />
+                    <button name="action_tags" string="Set Tags" type="object" class="oe_primary" />
 
                 </header>
                 <sheet>
@@ -46,6 +47,7 @@
                     <group>
                         <group>
                             <field name="user_id" />
+                            <field name="assigned" />
                             <field name="clinic_id" />
                             <field name="cost" />
                         </group>
