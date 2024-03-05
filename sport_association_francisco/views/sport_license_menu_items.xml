@@ -11,9 +11,7 @@
                 </p>
             </field>
         </record>
-
         
-        <menuitem id="sport_clinic_menu" name="Sport Association" sequence="1">
-            <menuitem id="sport_license_menu" name="Sport License" sequence="10" action="sport_association_francisco.action_sport_license"/>
-        </menuitem>
+        <menuitem id="sport_license_menu" name="Sport License" sequence="10" action="sport_association_francisco.action_sport_license"
+            parent="sport_association_francisco.sport_clinic_menu"/>
     </odoo>

@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api, Command
 
 class SportIssue(models.Model):
 
@@ -17,6 +17,25 @@ class SportIssue(models.Model):
     clinic_id = fields.Many2one('sport.clinic', string='Clinic')
     color = fields.Integer(string='Color', default=0)
     cost = fields.Float('Cost')
+    assigned = fields.Boolean('Assigned', compute='_compute_assigned', inverse='_inverse_asigned', search='_search_asigned', store=False)
+    
+    def _compute_assigned(self):
+        for record in self:
+            record.assigned = bool(record.user_id)
+
+    @api.depends('user_ids')
+    def _inverse_asigned(self):
+        for record in self:
+            if not record.assigned:
+                record.user_id = False
+            else:
+                record.user_id = self.env.user
+
+    def _search_asigned(self, operator, value):
+        if operator == '=':
+            return [('user_id','=',value)]
+        else:
+            return []
 
     def action_open(self):
         for record in self:

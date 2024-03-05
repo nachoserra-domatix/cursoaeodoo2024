@@ -12,8 +12,7 @@
             </field>
         </record>
 
-        <menuitem id="sport_sport_menu">
-            <menuitem id="sport_player_menu" name="Sport Players" sequence="10" action="sport_association_francisco.action_sport_player"/>
-        </menuitem>
+        <menuitem id="sport_player_menu" name="Sport Players" sequence="10" action="sport_association_francisco.action_sport_player"
+            parent="sport_association_francisco.sport_clinic_menu"/>
         
     </odoo>
