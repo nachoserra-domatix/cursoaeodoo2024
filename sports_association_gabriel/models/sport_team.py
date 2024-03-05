@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import UserError
 
 
 class SportTeam(models.Model):
@@ -10,6 +11,16 @@ class SportTeam(models.Model):
     sport_id = fields.Many2one('sport.sport', string='Sport')
     logo = fields.Binary(string="Logo", attachment=True)
     color = fields.Integer(string='Color', default=0)
+    num_players = fields.Integer(string='Number of players', compute='_compute_num_players')
+
+    @api.depends('player_ids')
+    def _compute_num_players(self):
+        for record in self:
+            if record.player_ids:
+                for index, player in enumerate(record.player_ids):
+                    record.num_players = index + 1
+            else:
+                record.num_players = 0
 
     def action_check_players_starter(self):
         for record in self.player_ids:
@@ -18,3 +29,13 @@ class SportTeam(models.Model):
     def action_uncheck_players_starter(self):
         for record in self.player_ids:
             record.uncheck_starter()
+
+    def action_add_players(self):
+        for record in self:
+            players_no_team = self.env['sport.player'].search([('team_id', '=', False),('age', '<', 30)])
+            if players_no_team:
+                # record.write({'player_ids': [(6, 0, players_no_team.ids)]})
+                record.player_ids = [(6, 0, players_no_team.ids)]
+            else:
+                raise UserError("There are no players without an assigned team and under 30 years of age")
+

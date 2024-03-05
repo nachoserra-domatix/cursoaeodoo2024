@@ -20,6 +20,7 @@
                 <header>
                     <button string="Check Starter" name="action_check_players_starter" type="object" class="oe_highlight"/>
                     <button string="Uncheck Starter" name="action_uncheck_players_starter" type="object"/>
+                    <button string="Add Players" name="action_add_players" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <field name="logo" widget="image" class="oe_avatar"/>
@@ -31,6 +32,7 @@
                     <group>
                         <group>
                             <field name="sport_id"/>
+                            <field name="num_players"/>
                         </group>
                         <notebook>
                             <page name="Players" string="Players">
