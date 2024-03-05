@@ -3,7 +3,7 @@
     <record id="action_sport_issue" model="ir.actions.act_window">
         <field name="name">Sport Issues</field>
         <field name="res_model">sport.issue</field>
-        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_mode">tree,form,kanban,pivot,graph,calendar</field>
         <field name="context">{}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -47,6 +47,42 @@
         </field>
     </record>        
 
+    <record id="action_sport_player" model="ir.actions.act_window">
+        <field name="name">Sport Player</field>
+        <field name="res_model">sport.player</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport player
+            </p>
+        </field>
+    </record>     
+
+    <record id="action_sport_sport" model="ir.actions.act_window">
+        <field name="name">Sport Sport</field>
+        <field name="res_model">sport.sport</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport sport
+            </p>
+        </field>
+    </record>     
+    
+    <record id="action_sport_team" model="ir.actions.act_window">
+        <field name="name">Sport Team</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport team
+            </p>
+        </field>
+    </record>         
+
     action_sport_issue_tag
     <menuitem
         id="sport_menu"
@@ -62,26 +98,44 @@
                 id="sport_issue_menu"
                 name="Sport Issues"
                 sequence="10"
-                action="sports_association_sergio.action_sport_issue">
+                action="sports_association_angel.action_sport_issue">
             </menuitem>
             <menuitem 
                 id="sport_license_menu"
                 name="Sport Licenses"
                 sequence="20"
-                action="sports_association_sergio.action_sport_license">
+                action="sports_association_angel.action_sport_license">
             </menuitem>      
             <menuitem 
                 id="sport_clinic_menu"
                 name="Sport Clinics"
                 sequence="30"
-                action="sports_association_sergio.action_sport_clinic">
+                action="sports_association_angel.action_sport_clinic">
             </menuitem>       
             <menuitem 
                 id="sport_issue_tag_menu"
                 name="Sport Issue Tags"
                 sequence="40"
-                action="sports_association_sergio.action_sport_issue_tag">
-            </menuitem>                            
+                action="sports_association_angel.action_sport_issue_tag">
+            </menuitem>
+            <menuitem 
+                id="sport_player_menu"
+                name="Sport Player"
+                sequence="50"
+                action="sports_association_angel.action_sport_player">
+            </menuitem>
+            <menuitem 
+                id="sport_sport_menu"
+                name="Sport Sport"
+                sequence="60"
+                action="sports_association_angel.action_sport_sport">
+            </menuitem>
+            <menuitem 
+                id="sport_team_menu"
+                name="Sport Team"
+                sequence="70"
+                action="sports_association_angel.action_sport_team">
+            </menuitem>                                                                 
         </menuitem>
     </menuitem>
                 

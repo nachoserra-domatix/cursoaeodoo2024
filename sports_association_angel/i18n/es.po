@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* sports_association_sergio
+# 	* sports_association_angel
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-28 17:06+0000\n"
-"PO-Revision-Date: 2024-02-28 17:06+0000\n"
+"POT-Creation-Date: 2024-02-29 16:15+0000\n"
+"PO-Revision-Date: 2024-02-29 16:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,283 +15,452 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: sports_association_sergio
-#: model:res.groups,comment:sports_association_sergio.res_groups_sports_association_user
+#. module: sports_association_angel
+#: model:res.groups,comment:sports_association_angel.res_groups_sports_association_user
 msgid ""
 "\n"
 "            The user will be able to browse some model.\n"
 "        "
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:res.groups,comment:sports_association_sergio.res_groups_sports_association_manager
+#. module: sports_association_angel
+#: model:res.groups,comment:sports_association_angel.res_groups_sports_association_manager
 msgid ""
 "\n"
 "            The user will be able to manage some model.\n"
 "        "
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__assistance
+#. module: sports_association_angel
+#: model:sport.issue.tag,name:sports_association_angel.sport_issue_tag_data_2
+msgid "Accident"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__age
+msgid "Age"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__assistance
 msgid "Assistance"
-msgstr "Asistencia"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_clinic_view_form
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_clinic_view_form
 msgid "Check Assistance"
-msgstr "Marcar Asistencia"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__clinic_id
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_clinic_view_form
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__clinic_id
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_clinic_view_form
 msgid "Clinic"
-msgstr "Clínica"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_clinic_view_tree
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_clinic_view_tree
 msgid "Clinics"
-msgstr "Clínicas"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model_terms:ir.actions.act_window,help:sports_association_sergio.action_sport_clinic
+#. module: sports_association_angel
+#: model:sport.issue.tag,name:sports_association_angel.sport_issue_tag_data_4
+msgid "Cramp"
+msgstr ""
+
+#. module: sports_association_angel
+#: model_terms:ir.actions.act_window,help:sports_association_angel.action_sport_clinic
 msgid "Create a new sport clinic"
-msgstr "Crear nueva clínica"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model_terms:ir.actions.act_window,help:sports_association_sergio.action_sport_issue
+#. module: sports_association_angel
+#: model_terms:ir.actions.act_window,help:sports_association_angel.action_sport_issue
 msgid "Create a new sport issue"
-msgstr "Crear nueva inicidencia"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model_terms:ir.actions.act_window,help:sports_association_sergio.action_sport_license
+#. module: sports_association_angel
+#: model_terms:ir.actions.act_window,help:sports_association_angel.action_sport_issue_tag
+msgid "Create a new sport issue tag"
+msgstr ""
+
+#. module: sports_association_angel
+#: model_terms:ir.actions.act_window,help:sports_association_angel.action_sport_license
 msgid "Create a new sport license"
-msgstr "Crear nueva licencia"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_clinic__create_uid
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__create_uid
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue_tag__create_uid
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__create_uid
+#. module: sports_association_angel
+#: model_terms:ir.actions.act_window,help:sports_association_angel.action_sport_player
+msgid "Create a new sport player"
+msgstr ""
+
+#. module: sports_association_angel
+#: model_terms:ir.actions.act_window,help:sports_association_angel.action_sport_sport
+msgid "Create a new sport sport"
+msgstr ""
+
+#. module: sports_association_angel
+#: model_terms:ir.actions.act_window,help:sports_association_angel.action_sport_team
+msgid "Create a new sport team"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_clinic__create_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__create_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue_tag__create_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__create_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__create_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_sport__create_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_team__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_clinic__create_date
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__create_date
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue_tag__create_date
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__create_date
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_clinic__create_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__create_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue_tag__create_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__create_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__create_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_sport__create_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_team__create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__date
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__date
 msgid "Date"
-msgstr "Fecha"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__description
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_issue_view_form
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__description
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_sport__description
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_issue_view_form
 msgid "Description"
-msgstr "Descripción"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_clinic__display_name
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__display_name
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue_tag__display_name
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__display_name
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_clinic__display_name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__display_name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue_tag__display_name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__display_name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__display_name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_sport__display_name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_team__display_name
 msgid "Display Name"
-msgstr "Nombre"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields.selection,name:sports_association_sergio.selection__sport_issue__state__done
+#. module: sports_association_angel
+#: model:ir.model.fields.selection,name:sports_association_angel.selection__sport_issue__state__done
 msgid "Done"
-msgstr "Hecho"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields.selection,name:sports_association_sergio.selection__sport_issue__state__draft
+#. module: sports_association_angel
+#: model:ir.model.fields.selection,name:sports_association_angel.selection__sport_issue__state__draft
 msgid "Draft"
-msgstr "Borrador"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__end_date
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__end_date
 msgid "End Date"
-msgstr "Fecha Fin"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_clinic__id
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__id
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue_tag__id
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__id
+#. module: sports_association_angel
+#: model:sport.issue.tag,name:sports_association_angel.sport_issue_tag_data_3
+msgid "Fatigue"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_clinic__id
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__id
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue_tag__id
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__id
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__id
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_sport__id
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_team__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_issue_view_form
+#. module: sports_association_angel
+#: model:sport.issue.tag,name:sports_association_angel.sport_issue_tag_data_1
+msgid "Injury"
+msgstr ""
+
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_issue_tag_view_tree
+msgid "Issue Tags"
+msgstr ""
+
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_issue_view_form
 msgid "Issue name"
-msgstr "Nombre de Incicencia"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_clinic__issue_ids
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_issue_view_form
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_issue_view_tree
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_clinic__issue_ids
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_clinic_view_form
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_issue_view_form
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_issue_view_tree
 msgid "Issues"
-msgstr "Incidencias"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_clinic__write_uid
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__write_uid
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue_tag__write_uid
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__write_uid
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_clinic__write_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__write_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue_tag__write_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__write_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__write_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_sport__write_uid
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_team__write_uid
 msgid "Last Updated by"
-msgstr "Última modificación por"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_clinic__write_date
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__write_date
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue_tag__write_date
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__write_date
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_clinic__write_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__write_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue_tag__write_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__write_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__write_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_sport__write_date
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_team__write_date
 msgid "Last Updated on"
-msgstr "Última modificación en"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:res.groups,name:sports_association_sergio.res_groups_sports_association_manager
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_team__logo
+msgid "Logo"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:res.groups,name:sports_association_angel.res_groups_sports_association_manager
 msgid "Manager"
-msgstr "Gestor"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_clinic__name
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__name
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue_tag__name
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__name
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_team_view_form
+msgid "Mark starters"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:sport.issue.tag,name:sports_association_angel.sport_issue_tag_data_5
+msgid "Muscle tear"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_clinic__name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue_tag__name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_sport__name
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_team__name
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields.selection,name:sports_association_sergio.selection__sport_issue__state__open
+#. module: sports_association_angel
+#: model:ir.model.fields.selection,name:sports_association_angel.selection__sport_issue__state__open
 msgid "Open"
-msgstr "Abierto"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__partner_id
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__partner_id
 msgid "Partner"
-msgstr "Contacto"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__reference
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_player_view_form
+msgid "Player"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_team__player_ids
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_player_view_tree
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_team_view_form
+msgid "Players"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__position
+msgid "Position"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__reference
 msgid "Reference"
-msgstr "Referencia"
+msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__sequence
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__sequence
 msgid "Sequence"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,help:sports_association_sergio.field_sport_issue__assistance
+#. module: sports_association_angel
+#: model:ir.model.fields,help:sports_association_angel.field_sport_issue__assistance
 msgid "Show if the issue had external assistance (paramedics)"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__solution
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_issue_view_form
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__solution
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_issue_view_form
 msgid "Solution"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.ui.menu,name:sports_association_sergio.sport_menu
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_team__sport_id
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_sport_view_form
+msgid "Sport"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:ir.ui.menu,name:sports_association_angel.sport_menu
 msgid "Sport Association"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.actions.act_window,name:sports_association_sergio.action_sport_clinic
-#: model:ir.model,name:sports_association_sergio.model_sport_clinic
+#. module: sports_association_angel
+#: model:ir.actions.act_window,name:sports_association_angel.action_sport_clinic
+#: model:ir.actions.act_window,name:sports_association_angel.action_sport_issue_tag
+#: model:ir.model,name:sports_association_angel.model_sport_clinic
 msgid "Sport Clinic"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.ui.menu,name:sports_association_sergio.sport_clinic_menu
+#. module: sports_association_angel
+#: model:ir.ui.menu,name:sports_association_angel.sport_clinic_menu
 msgid "Sport Clinics"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model,name:sports_association_sergio.model_sport_issue
+#. module: sports_association_angel
+#: model:ir.model,name:sports_association_angel.model_sport_issue
 msgid "Sport Issue"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model,name:sports_association_sergio.model_sport_issue_tag
+#. module: sports_association_angel
+#: model:ir.model,name:sports_association_angel.model_sport_issue_tag
 msgid "Sport Issue Tag"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.actions.act_window,name:sports_association_sergio.action_sport_issue
-#: model:ir.ui.menu,name:sports_association_sergio.sport_issue_menu
+#. module: sports_association_angel
+#: model:ir.ui.menu,name:sports_association_angel.sport_issue_tag_menu
+msgid "Sport Issue Tags"
+msgstr ""
+
+#. module: sports_association_angel
+#: model:ir.actions.act_window,name:sports_association_angel.action_sport_issue
+#: model:ir.ui.menu,name:sports_association_angel.sport_issue_menu
 msgid "Sport Issues"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.ui.menu,name:sports_association_sergio.sport_menu_list
+#. module: sports_association_angel
+#: model:ir.ui.menu,name:sports_association_angel.sport_menu_list
 msgid "Sport Issues List"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model,name:sports_association_sergio.model_sport_license
+#. module: sports_association_angel
+#: model:ir.model,name:sports_association_angel.model_sport_license
 msgid "Sport License"
-msgstr ""
+msgstr "Licencia Deportiva"
 
-#. module: sports_association_sergio
-#: model:ir.actions.act_window,name:sports_association_sergio.action_sport_license
-#: model:ir.ui.menu,name:sports_association_sergio.sport_license_menu
+#. module: sports_association_angel
+#: model:ir.actions.act_window,name:sports_association_angel.action_sport_license
+#: model:ir.ui.menu,name:sports_association_angel.sport_license_menu
 msgid "Sport Licenses"
-msgstr ""
+msgstr "Licencias deportiva"
 
-#. module: sports_association_sergio
-#: model:ir.module.category,name:sports_association_sergio.ir_module_sports_association
+#. module: sports_association_angel
+#: model:ir.actions.act_window,name:sports_association_angel.action_sport_player
+#: model:ir.model,name:sports_association_angel.model_sport_player
+#: model:ir.ui.menu,name:sports_association_angel.sport_player_menu
+msgid "Sport Player"
+msgstr "Jugador Deportivo"
+
+#. module: sports_association_angel
+#: model:ir.actions.act_window,name:sports_association_angel.action_sport_sport
+#: model:ir.model,name:sports_association_angel.model_sport_sport
+#: model:ir.ui.menu,name:sports_association_angel.sport_sport_menu
+msgid "Sport Sport"
+msgstr "Deporte"
+
+#. module: sports_association_angel
+#: model:ir.actions.act_window,name:sports_association_angel.action_sport_team
+#: model:ir.model,name:sports_association_angel.model_sport_team
+#: model:ir.ui.menu,name:sports_association_angel.sport_team_menu
+msgid "Sport Team"
+msgstr "Equipo Deportivo"
+
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_sport_view_tree
+msgid "Sports"
+msgstr "Deportes"
+
+#. module: sports_association_angel
+#: model:ir.module.category,name:sports_association_angel.ir_module_sports_association
 msgid "Sports Association"
+msgstr "Asociación Deportiva"
+
+#. module: sports_association_angel
+#: model:sport.issue.tag,name:sports_association_angel.sport_issue_tag_data_6
+msgid "Sprain"
 msgstr ""
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_license__start_date
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_license__start_date
 msgid "Start Date"
-msgstr ""
+msgstr "Fecha Inicial"
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__state
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__starter
+msgid "Starter"
+msgstr "Titular"
+
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__state
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__tags_ids
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__tags_ids
 msgid "Tags"
-msgstr ""
+msgstr "Etiquetas"
 
-#. module: sports_association_sergio
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_issue_view_form
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_player__team_id
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_team_view_form
+msgid "Team"
+msgstr "Equipo"
+
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_team_view_tree
+msgid "Teams"
+msgstr "Equipos"
+
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_issue_view_form
 msgid "To done"
-msgstr ""
+msgstr "A Hecho"
 
-#. module: sports_association_sergio
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_issue_view_form
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_issue_view_form
 msgid "To draft"
-msgstr ""
+msgstr "A Borrador"
 
-#. module: sports_association_sergio
-#: model_terms:ir.ui.view,arch_db:sports_association_sergio.sport_issue_view_form
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_issue_view_form
 msgid "To open"
-msgstr ""
+msgstr "A Abierto"
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_issue__user_id
-#: model:res.groups,name:sports_association_sergio.res_groups_sports_association_user
+#. module: sports_association_angel
+#: model_terms:ir.ui.view,arch_db:sports_association_angel.sport_team_view_form
+msgid "Unmark starters"
+msgstr "Quitar tituales"
+
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_issue__user_id
+#: model:res.groups,name:sports_association_angel.res_groups_sports_association_user
 msgid "User"
-msgstr ""
+msgstr "Usuario"
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_clinic__email
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_clinic__email
 msgid "email"
-msgstr ""
+msgstr "correo electrónico"
 
-#. module: sports_association_sergio
-#: model:ir.model.fields,field_description:sports_association_sergio.field_sport_clinic__phone
+#. module: sports_association_angel
+#: model:ir.model.fields,field_description:sports_association_angel.field_sport_clinic__phone
 msgid "phone"
-msgstr ""
+msgstr "teléfono"
