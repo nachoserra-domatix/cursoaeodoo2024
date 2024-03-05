@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import fields, models, Command
 
 class SportIssue(models.Model):
     _name = 'sport.issue'
@@ -55,6 +55,6 @@ class SportIssue(models.Model):
         for record in self:
             existing_tag_ids = self.env['sport.issue.tag'].search([('name', 'like', record.name)])
             if len(existing_tag_ids):
-                record.tag_ids = [(6, 0, existing_tag_ids.ids)]
+                record.tag_ids = [Command.set(existing_tag_ids.ids)]
             else:
-                self.env['sport.issue.tag'].create({'name': record.name})
+                record.tag_ids = [Command.create({'name': record.name})]
