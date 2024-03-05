@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <tree multi_edit="1" string="Players">
                 <field name="name" />
-                <field name="bird_date" optional="show" />
+                <field name="birth_date" optional="show" />
                 <field name="position" optional="hide" />
                 <field name="team_id" />
                 <field name="regular" />
@@ -30,8 +30,10 @@
                     </div>
                     <group>
                         <group>
-                            <field name="bird_date" />
+                            <field name="birth_date" />
+                            <field name="age" />
                             <field name="team_id" />
+                            <field name="sport_name" />
                         </group>
                         <group>
                             <field name="position" />

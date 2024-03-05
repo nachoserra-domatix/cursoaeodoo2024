@@ -20,6 +20,7 @@
                 <header>
                     <button string="Mark as regular" name="action_mark_players_regular" type="object" class="btn-primary"/>
                     <button string="Unmark as regular" name="action_unmark_players_regular" type="object" class="btn-secondary"/>
+                    <button string="Add Young Players" name="action_add_young_players" type="object" class="btn-success"/>
                     <!-- <field name="state" options="{'clickable':1}" widget="statusbar" statusbar_visible="draft,open,done"/> -->
                 </header>
                 <sheet>
@@ -34,6 +35,7 @@
                         </group>
                         <group>
                             <field name="sport_id" />
+                            <field name="players_count" />
                         </group>
                     </group>
                     <notebook>

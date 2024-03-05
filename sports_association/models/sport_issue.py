@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api, Command
 
 class SportIssue(models.Model):
     _name = 'sport.issue'
@@ -21,12 +21,44 @@ class SportIssue(models.Model):
     user_id = fields.Many2one('res.users', string='User')
     sequence = fields.Integer(string='Sequence', default=10)
     solution = fields.Html('Solution')
+    assigned = fields.Boolean('Assigned', compute='_compute_assigned', inverse='_inverse_assigned', search='_search_assigned', store=True)
 
     clinic_id = fields.Many2one('sport.clinic', string='Clinic')
 
     tag_ids = fields.Many2many('sport.issue.tag', string='Tags')
 
     cost = fields.Float('Cost')
+
+    user_phone = fields.Char('User Phone', related='user_id.phone', store=True,readonly=False)
+
+    @api.depends('user_id')
+    def _compute_assigned(self):
+        for record in self:
+            record.assigned = bool(record.user_id)
+
+    def _inverse_assigned(self):
+        for record in self:
+            if not record.assigned:
+                record.user_id = False
+            else:
+                record.user_id = self.env.user
+
+    def _search_assigned(self,operator,value):
+        if operator == '=':
+            return [('user_id', operator, value)]
+        else:
+            return []
+    
+    def action_fill_tags(self):
+        for record in self:
+            similar_tags = self.env['sport.issue.tag'].search([('name','ilike',record.name)])
+            if similar_tags:
+                record.tag_ids = [(6,0,similar_tags.ids)]
+                #record.tag_ids = [Command.set(similar_tags.ids)]
+            else:
+                #record.tag_ids = self.env['sport.issue.tag'].create({'name': record.name})
+                record.tag_ids = [(0,0,{'name':record.name})]
+                #record.tag_ids = [Command.create({'name':record.name})]
 
     def action_open(self):
         for record in self:

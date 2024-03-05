@@ -24,6 +24,7 @@
                     <button string="To open" invisible="state not in ('draft')" name="action_open" type="object" class="btn-primary"/>
                     <button string="To draft" invisible="state in ('draft')" name="action_draft" type="object" class="btn-secondary"/>
                     <button string="Done" invisible="state in ('done')"  name="action_done" type="object" class="btn-success"/>
+                    <button string="Add Similar Tags" name="action_fill_tags" type="object" class="btn-success"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -33,7 +34,9 @@
                     </div>
                     <group>
                         <group>
+                            <field name="assigned" />
                             <field name="user_id" />
+                            <field name="user_phone" />
                             <field name="clinic_id" />
                             <field name="cost" />
                         </group>
