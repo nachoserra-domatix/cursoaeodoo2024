@@ -24,6 +24,7 @@
                 <form string="Sport Issue">
                     <header>
                         <field name="state" widget="statusbar"/>
+                        <button name="assign_tags" string="Asign tags" type="object" class="btn-primary"/>
                         <button name="action_open" string="To Open" type="object" invisible="state == 'open'" class="btn-primary"/>
                         <button name="action_draft" string="To Draft" type="object" invisible="state in ['draft','done']" class="btn-secondary"/>
                         <button name="action_done" string="Done" type="object" invisible="state == 'Done'" class="btn-success"/>

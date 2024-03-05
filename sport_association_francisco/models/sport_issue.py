@@ -56,3 +56,15 @@ class SportIssue(models.Model):
     def action_open_all_issues(self):
         issues= self.env['sport.issue'].search([])
         issues.action_open()
+
+    def assign_tags(self):
+        for record in self:
+            tag_ids = self.env['sport.tag'].search([('name', 'like', self.name)]).ids
+            if not tag_ids:
+                self.write({
+                    'tag_ids': [(0,0,{'name': self.name})]
+                })
+            else:
+                self.write({
+                    'tag_ids': [(6,0,tag_ids)]
+                })

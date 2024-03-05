@@ -31,6 +31,7 @@
                         </div>
                         <group>
                             <group>
+                                <field name="birth_date"/>
                                 <field name="age"/>
                                 <field name="position"/>
                                 <field name="titular"/>
@@ -40,6 +41,7 @@
                             <page name="teams" string="Teams">
                                 <group>
                                     <field name="team_id"/>
+                                    <field name="sport_name"/>
                                 </group>
                             </page>
                         </notebook>
