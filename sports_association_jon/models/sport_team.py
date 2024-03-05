@@ -10,11 +10,10 @@ class SportTeam(models.Model):
     )
     
     player_ids = fields.One2many(
-        'sport.player',
-        'team_id',
+        comodel_name='sport.player',
+        inverse_name='team_id',
         string='player',
     )
-    
     
     sport_id = fields.Many2one(
         'sport.sport',
