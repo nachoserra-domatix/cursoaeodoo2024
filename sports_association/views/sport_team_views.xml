@@ -23,6 +23,7 @@
                     <group>
                         <group>
                             <field name="trainer_id"/>
+                            <field name="player_count"/>
                         </group>
                         <group>
                             <field name="sport_id"/>

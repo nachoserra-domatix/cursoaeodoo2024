@@ -13,6 +13,14 @@ class SportTeam(models.Model):
         comodel_name="sport.sport", string=_("Sport"), required=True
     )
     trainer_id = fields.Many2one(comodel_name="res.partner", string=_("Trainer"))
+    player_count = fields.Integer(
+        compute="_compute_player_count", string=_("Players Count"), store=True
+    )
+
+    @api.depends("player_ids")
+    def _compute_player_count(self):
+        for record in self:
+            record.player_count = len(record.player_ids)
 
     def action_headline_player(self):
         return {
