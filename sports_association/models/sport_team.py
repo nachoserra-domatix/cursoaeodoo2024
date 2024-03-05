@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, Command
 
 class SportTeam(models.Model):
     _name = "sport.team"
@@ -47,6 +47,5 @@ class SportTeam(models.Model):
     def action_add_free_players(self):
         for record in self:
             free_players = self.env['sport.player'].search([('team_id', '=', False), ('age', '<', 30)])
-            if len(free_players):
-                for player in free_players:
-                    record.player_ids = [(4,player.id,0)]
+            free_players |= record.player_ids
+            record.player_ids = [Command.set(free_players.ids)]
