@@ -1,6 +1,7 @@
 # Campos calculados
 
 * Crear campo Asignado en Incidencias, el cual comprobará: Si hay usuario, asignado pasa a ser True y si no lo hay estará a False
+* Crear un campo calculado en equipos que cuente todos los integrantes del equipo
 
 # Campos relacionales
 
