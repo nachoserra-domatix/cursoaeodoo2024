@@ -20,11 +20,13 @@
                 <header>
                     <button string="Mark starters" name="action_mark_starters" type="object" class="oe_highlight"></button>
                     <button string="Unmark starters" name="action_unmark_starters" type="object" class="oe_highlight"></button>
+                    <button string="Add Free Players" name="action_add_players" type="object" class="oe_highlight"></button>
                 </header>                
                 <sheet>
                     <group>
                         <field name="name"></field>
                         <field name="sport_id"></field>
+                        <field name="player_count"></field>
                     </group>
                     <notebook>
                         <page name="players" string="Players">

@@ -8,6 +8,7 @@
             <tree string="Players">
                 <field name="name"></field>
                 <field name="age"></field>
+                <field name="sport"></field>
                 <field name="position"></field>
                 <field name="starter"></field>
                 <field name="team_id"></field>
@@ -23,9 +24,11 @@
                 <sheet>
                     <group>
                         <field name="name"></field>
+                        <field name="birthdate"></field>
                         <field name="age"></field>
                     </group>
                     <group>
+                        <field name="sport"></field>
                         <field name="position"></field>
                         <field name="starter"></field>
                         <field name="team_id"></field>
