@@ -4,8 +4,11 @@ Crear campo Asignado en Incidencias, el cual comprobará: Si hay usuario, asigna
 
 # Campos relacionales
 
+Añadir un campo en Jugadores, que se traiga el nombre del deporte del equipo seleccionado.
 
 # Campo calculado guardado en base de datos
+
+Crear un campo de tipo fecha en Jugadores que al ser establecido calcule la edad y la guarde en base de datos
 
 # ORM
 
