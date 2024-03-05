@@ -8,6 +8,7 @@
             <tree multi_edit="1" string="Sports">
                 <field name="name" />
                 <field name="sport_id" />
+                <field name="player_count" />
             </tree>
         </field>
     </record>
@@ -20,12 +21,14 @@
                 <header>
                     <button string="Check All Starter" name="action_checkall_starter" type="object" class="oe_highlight"></button>
                     <button string="Uncheck All Starter" name="action_uncheckall_starter" type="object" class="oe_highlight"></button>
+                    <button string="Add Lonely Players" name="action_add_lonely_player" type="object" class="oe_highlight"></button>
                 </header>
                 <sheet>
                     <group>
                         <group>
                             <field name="name"></field>
                             <field name="sport_id"></field>
+                            <field name="player_count" />
                         </group>
                         <group>
                             <field name="logo" widget="image" class="oe_avatar"></field>

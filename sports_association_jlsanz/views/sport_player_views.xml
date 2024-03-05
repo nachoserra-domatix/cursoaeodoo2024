@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <tree multi_edit="1" string="Sports">
                 <field name="name" />
-                <field name="age" />
+                <field name="birthdate" />
                 <field name="position" />
                 <field name="team_id" />
                 <field name="starter" />
@@ -22,11 +22,17 @@
             <form string="Player">
                 <sheet>
                     <group>
+                        <group>
                         <field name="name" />
+                        <field name="birthdate" />
                         <field name="age" />
                         <field name="position" />
+                        </group>
+                        <group>
                         <field name="team_id" />
                         <field name="starter" />
+                        <field name="sport_name" />
+                        </group>
                     </group>
                 </sheet>
             </form>
