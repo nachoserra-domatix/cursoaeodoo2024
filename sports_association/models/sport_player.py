@@ -25,4 +25,4 @@ class SportPlayer(models.Model):
     @api.depends("birth_date")
     def _compute_age(self):
         for record in self:
-            record.age = date.today().year - record.birth_date.year
+            record.age = (date.today() - record.birth_date).days // 365

@@ -8,23 +8,24 @@
                 <sheet>
                     <header>
                         <button type="object" name="action_headline_player" string="change Headline"/>
+                        <button type="object" name="action_add_player_in_team" string="Add players"/>
                     </header>
                     <field name="image_1920" 
                     widget="image" 
                     class="oe_avatar" 
                     options="{&quot;preview_image&quot;: &quot;avatar_128&quot;}"/>
                     <div class="oe_title">
-                            <label for="name" class="oe_edit_only"/>
-                            <h1 >
-                                <field name="name"/>
-                            </h1>
+                        <label for="name" class="oe_edit_only"/>
+                        <h1 >
+                            <field name="name"/>
+                        </h1>
                     </div>
-                   <group>
+                    <group>
                         <group>
                             <field name="trainer_id"/>
                         </group>
                         <group>
-                            <field name="sport_id"/>  
+                            <field name="sport_id"/>
                         </group>
                     </group>
                     <notebook>
@@ -49,7 +50,7 @@
             <tree>
                 <field name="name"/>
                 <field name="trainer_id"/>
-                <field name="sport_id"/>   
+                <field name="sport_id"/>
             </tree>
         </field>
     </record>
@@ -60,7 +61,7 @@
             <search>
                 <field name="name"/>
                 <field name="trainer_id"/>
-                <field name="sport_id"/>   
+                <field name="sport_id"/>
             </search>
         </field>
     </record>
@@ -73,7 +74,6 @@
     name="Teams" 
     parent="sports_association.sport_sport_menu" 
     />
-    
     <menuitem id="sport_team_menu" 
     name="Teams" 
     parent="sports_association.sport_team_menu2" 
