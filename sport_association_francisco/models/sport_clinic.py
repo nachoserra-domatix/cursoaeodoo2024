@@ -8,6 +8,7 @@ class SportClinic(models.Model):
     name = fields.Char(string="Name")
     phone = fields.Char(string="Phone")
     email = fields.Char(string="Email")
+    available = fields.Boolean('Available')
     
     issue_ids = fields.One2many('sport.issue', 'clinic_id',string="Issues")
 

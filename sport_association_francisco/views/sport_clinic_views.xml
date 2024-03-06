@@ -4,11 +4,11 @@
             <field name="name">sport.clinic.tree.view</field>
             <field name="model">sport.clinic</field>
             <field name="arch" type="xml">
-                <tree string="Sport Issue" multi_edit='1'>
+                <tree string="Sport Clinic" multi_edit='1'>
                     <field name="name"/>
                     <field name="phone"/>
                     <field name="email"/>
-                    
+                    <field name="available"/>
                 </tree>
             </field>
         </record>
@@ -26,13 +26,14 @@
                     <sheet>
                         <div class="oe_title">
                             <h1>
-                                <field name="name" placeholder="Issue name"/>
+                                <field name="name" placeholder="Clinic name"/>
                             </h1>
                         </div>
                         <group>
                             <group>
                                 <field name="phone"/>
                                 <field name="email"/>
+                                <field name="available"/>
                                 <field name="issue_ids">
                                     <tree>
                                         <field name="name"/>

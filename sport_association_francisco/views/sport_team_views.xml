@@ -32,14 +32,8 @@
                                 <field name="logo"/>
                                 <field name="sport_id"/>
                                 <field name="members"/>
-                                <field name="player_ids">
-                                    <tree>
-                                        <field name="name"></field>
-                                        <field name="age"></field>
-                                        <field name="titular"></field>
-                                        <field name="position"></field>
-                                    </tree>
-                                </field>
+                                <field name="player_ids" context="{'tree_view_ref':'sport_association_francisco.sport_player_tree_simple_view',
+                                'form_view_ref':'sport_association_francisco.sport_player_form_simple_view'}"/>
                             </group>
                         </group>
                     </sheet>

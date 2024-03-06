@@ -46,9 +46,9 @@
                             <group>
                                 <field name="solution"/>
                                 <field name="assistance" widget="boolean_toggle"/>
-                                <field name="user_id" />
-                                <field name="tag_ids" widget="many2many_tags"/>
-                                <field name="clinic_id" />
+                                <field name="user_id" options="{'no_quick_create':True,'no_open':True}"/>
+                                <field name="tag_ids" widget="many2many_tags" options="{'no_create':True}"/>
+                                <field name="clinic_id" domain="[('available','=',True)]"/>
                             </group>
                             <notebook>
                                 <page name="description" string="Description">
@@ -56,6 +56,29 @@
                                 </page>
                                 <page name="solution" string="Solution">
                                     <field name="solution"/>
+                                </page>
+                                <page name="actions" string="Actions">
+                                    <field name="action_ids" context="{'default_state':state}">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="state"/>
+                                        </tree>
+                                        <form>
+                                            <sheet>
+                                                <div class="oe_title">
+                                                    <h1>
+                                                        <field name="name" placeholder="Action name"/>
+                                                    </h1>
+                                                </div>
+                                                <group>
+                                                    <group>
+                                                        <field name="state"/>
+                                                        <field name="issue_id"/>
+                                                    </group>
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
                                 </page>
                             </notebook>
                         </group>

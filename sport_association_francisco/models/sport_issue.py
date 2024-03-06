@@ -16,6 +16,7 @@ class SportIssue(models.Model):
     tag_ids = fields.Many2many('sport.tag', string='Tag')
     clinic_id = fields.Many2one('sport.clinic', string='Clinic')
     color = fields.Integer(string='Color', default=0)
+    action_ids = fields.One2many('sport.action', 'issue_id', string='Actions')
     cost = fields.Float('Cost')
     assigned = fields.Boolean('Assigned', compute='_compute_assigned', inverse='_inverse_asigned', search='_search_asigned', store=False)
     
