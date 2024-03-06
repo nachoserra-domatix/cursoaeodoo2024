@@ -22,6 +22,7 @@ class SportsIssue(models.Model):
     color = fields.Integer(string='Color Index',default=0)
     cost=fields.Float(string='Cost')
     assigned=fields.Boolean(string="Assigned",compute='_compute_asigned')
+    action_ids = fields.One2many('sports.action','issue_id',string='Actions')
 
     def action_done(self):
         for record in self:

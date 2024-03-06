@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="sport_action_form_view" model="ir.ui.view">
+            <field name="name">sports.action.form</field>
+            <field name="model">sports.action</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,open,done" options="{'clickable':1}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Issue Name"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="sports_action_tree_view" model="ir.ui.view">
+            <field name="name">sports.action.tree</field>
+            <field name="model">sports.action</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" optional="show"/>
+                    <field name="state" widget="badge"/>    
+                </tree>
+            </field>
+        </record>
+        <record id="action_sports_action" model="ir.actions.act_window">
+            <field name="name">Sports Actions</field>
+            <field name="res_model">sports.action</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

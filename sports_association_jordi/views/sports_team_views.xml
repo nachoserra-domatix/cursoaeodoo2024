@@ -39,14 +39,15 @@
                     </group>
                     <notebook>
                         <page name="name" string="Players">
-                            <field name="players_ids">
-                                <tree editable="bottom" string="Players">
+                            <field name="players_ids" context="{'tree_view_ref':'sports_association_jordi.sports_player_simple_tree_view', 
+                                                                'form_view_ref':'sports_association_jordi.sports_player_simple_view_form'}"/>
+                                <!-- <tree editable="bottom" string="Players">
                                     <field name="name"/>
                                     <field name="age"/>
                                     <field name="position"/>
                                     <field name="starter"/>
                                 </tree>
-                            </field>
+                            </field>-->
                         </page>
                     </notebook>
                     

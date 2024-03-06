@@ -44,4 +44,10 @@
         action="action_sport_sport"
         parent="sport_menu"
         sequence="30"/>
+    <menuitem 
+        id="sport_action_menu" 
+        name="Sports Actions List" 
+        parent="medical_menu" 
+        action="action_sports_action" 
+        sequence="30"/>
 </odoo>

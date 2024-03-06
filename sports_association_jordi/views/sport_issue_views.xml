@@ -34,14 +34,14 @@
                     <group>
                         <group>
                             <field name="assigned"/>
-                            <field name="user_id"/>
-                            <field name="clinic_id"/>
+                            <field name="user_id" options="{'no_quick_create': True,'no_open':True}"/>
+                            <field name="clinic_id" domain="[('available', '=', True)]" />
                             <field name="cost"/>
                         </group>
                         <group>
                             <field name="date"/>
                             <field name="assistance" widget="boolean_toggle"/>
-                            <field name="tag_ids" widget="many2many_tags"/>
+                            <field name="tag_ids" options="{'no_quick_create': True,'no_create':True}" widget="many2many_tags"/>
                         </group>
                         <notebook>
                             <page name="description" string="Description">
@@ -50,6 +50,10 @@
                             <page name="solution" string="Solution">
                                 <field name="solution"/>
                             </page> 
+                                <page name="name" string="Actions">
+                                    <field name="action_ids" context="{'tree_view_ref':'sports_association_jordi.sports_action_tree_view', 
+                                                                        'form_view_ref':'sports_association_jordi.sport_action_form_view','default_state':state}"/>
+                                </page>
                         </notebook>
                     </group>
                 </sheet>
