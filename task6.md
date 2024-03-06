@@ -22,3 +22,7 @@ Vamos a añadir este modelo como vista embebida en incidencias
 # Contexto
 
 Vamos a decir desde contexto, que el campo por defecto sea el mismo que la incidencia
+
+# Dominio
+Añadimos un campo boolean de disponible a la clínica
+Hacemos un dominio en la incidencia que filtre las clínicas que están disponibles
