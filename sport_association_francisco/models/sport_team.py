@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api, Command
 
 class SportTeam(models.Model):
 
@@ -10,6 +10,8 @@ class SportTeam(models.Model):
     sport_id = fields.Many2one('sport.sport', string='Sport')
     player_ids = fields.One2many('sport.player', 'team_id', string='Players')
 
+    members = fields.Integer('Members', compute='_compute_members')
+
     def mark_all_as_titular(self):
         self.player_ids.write({
             "titular": True
@@ -19,3 +21,14 @@ class SportTeam(models.Model):
         self.player_ids.write({
             "titular": False
         })
+
+    def get_all_unasigned(self):
+        for rec in self:
+            unasigned_players = self.env['sport.player'].search([('team_id', '=', False)])
+            for player in unasigned_players:
+                player.team_id = rec
+                
+
+    @api.depends('player_ids')
+    def _compute_members(self):
+        self.members = len(self.player_ids)

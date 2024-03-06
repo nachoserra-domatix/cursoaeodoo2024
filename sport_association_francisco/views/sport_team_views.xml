@@ -18,6 +18,7 @@
                 <form string="Sport Team">
                     <sheet>
                         <header>
+                            <button name="get_all_unasigned" type="object" class="btn-primary" string="Get all unasigned"/>
                             <button name="mark_all_as_titular" type="object" class="btn-success" string="Mark all as titular"/>
                             <button name="unmark_all_as_titular" type="object" class="btn-secondary" string="Unmark all as titular"/>
                         </header>
@@ -30,6 +31,7 @@
                             <group>
                                 <field name="logo"/>
                                 <field name="sport_id"/>
+                                <field name="members"/>
                                 <field name="player_ids">
                                     <tree>
                                         <field name="name"></field>

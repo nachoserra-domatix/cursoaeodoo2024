@@ -62,9 +62,10 @@ class SportIssue(models.Model):
             tag_ids = self.env['sport.tag'].search([('name', 'like', self.name)]).ids
             if not tag_ids:
                 self.write({
-                    'tag_ids': [(0,0,{'name': self.name})]
+                    # 'tag_ids': [(0,0,{'name': self.name})]
+                    'tag_ids': [Command.create({'name': self.name})]
                 })
             else:
                 self.write({
-                    'tag_ids': [(6,0,tag_ids)]
+                    'tag_ids': [Command.set(tag_ids)]
                 })
