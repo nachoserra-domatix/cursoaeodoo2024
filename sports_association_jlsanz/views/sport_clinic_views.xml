@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <tree multi_edit="1" string="Clinics">
                 <field name="name" />
+                <field name="available" />
                 <field name="phone" />
                 <field name="email" />
             </tree>
@@ -24,6 +25,7 @@
                 <sheet>
                     <group>
                         <field name="name"></field>
+                        <field name="available" />
                         <field name="phone"></field>
                         <field name="email"></field>
                         <field name="issue_ids"></field>

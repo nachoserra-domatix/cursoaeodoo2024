@@ -15,6 +15,19 @@
         </field>
     </record>
 
+
+    <record id="sport_player_view_simple_tree" model="ir.ui.view">
+        <field name="name">sport.player.simple.view.tree</field>
+        <field name="model">sport.player</field>
+        <field name="priority" eval="100"></field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Sports">
+                <field name="name" />
+                <field name="age" />
+            </tree>
+        </field>
+    </record>
+
     <record id="sport_player_view_form" model="ir.ui.view">
         <field name="name">sport.player.view.form</field>
         <field name="model">sport.player</field>
@@ -29,10 +42,26 @@
                         <field name="position" />
                         </group>
                         <group>
-                        <field name="team_id" />
+                        <field name="team_id" domain="[('sport_id', '!=', False)]"/>
                         <field name="starter" />
                         <field name="sport_name" />
                         </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_player_view_simple_form" model="ir.ui.view">
+        <field name="name">sport.player.view.simple.form</field>
+        <field name="model">sport.player</field>
+        <field name="priority" eval="100"></field>
+        <field name="arch" type="xml">
+            <form string="Player">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="birthdate" />
                     </group>
                 </sheet>
             </form>

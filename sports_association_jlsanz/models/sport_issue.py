@@ -26,6 +26,8 @@ class SportIssue(models.Model):
 
     clinic_ids= fields.Many2one('sport.clinic', string='Clinic')
 
+    action_ids= fields.One2many('sport.issue.action', 'issue_id', string='Action')
+
     tag_ids = fields.Many2many('sport.issue.tag', string='Tags')
 
     #user_phone = fields.Char(string='User_phone', related='uiser_id.phone', store=True. readonly=False)

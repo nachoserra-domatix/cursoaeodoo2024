@@ -36,13 +36,14 @@
                     </group>
                     <notebook>
                         <page name="players" string="Players">
-                            <field name="player_ids">
-                                <tree editable="bottom">
+                            <!-- <field name="player_ids" context="{'default_position': 'Delantero'}"> -->
+                            <field name="player_ids" context="{'tree_view_ref':'sports_association_jlsanz.sport_player_view_simple_tree', 'form_view_ref':'sports_association_jlsanz.sport_player_view_simple_form'}">
+                                <!-- <tree editable="bottom">
                                     <field name="name" />
                                     <field name="age" />
                                     <field name="position" />
                                     <field name="starter" widget="boolean_toggle"/>
-                                </tree>
+                                </tree> -->
                            </field>
                         </page>
                     </notebook>

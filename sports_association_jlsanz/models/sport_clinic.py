@@ -8,6 +8,7 @@ class SportClinic(models.Model):
     phone = fields.Char(string="phone")
     email = fields.Char('email')
     issue_ids = fields.One2many('sport.issue', 'clinic_ids', string="Issues")
+    available = fields.Boolean('Available')
 
     def action_check_assistance(self):
         for record in self.issue_ids:
