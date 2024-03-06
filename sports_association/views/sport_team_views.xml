@@ -47,14 +47,9 @@
                     </group>
                     <notebook>
                         <page string="Players">
-                            <field name="player_ids">
-                                <tree string="Players">
-                                    <field name="name" />
-                                    <field name="age" />
-                                    <field name="position" />
-                                    <field name="sport" />
-                                    <field name="starter" widget="boolean_toggle" />
-                                </tree>
+                            <field name="player_ids"
+                                context="{'tree_view_ref': 'sports_association.sport_player_simple_tree',
+                                        'form_view_ref': 'sports_association.sport_player_form_tree'}">
                             </field>
                         </page>
                     </notebook>

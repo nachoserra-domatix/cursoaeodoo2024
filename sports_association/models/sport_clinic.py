@@ -14,12 +14,15 @@ class SportClinic(models.Model):
     email = fields.Char(
         string='email',
     )
-  
     issue_ids = fields.One2many(
         string='Issues',
         comodel_name='sport.issue',
         inverse_name='clinic_id',
     )
+    available = fields.Boolean(
+        string='Available',
+    )
+   
     
     def action_check_assistance(self):
         for record in self:

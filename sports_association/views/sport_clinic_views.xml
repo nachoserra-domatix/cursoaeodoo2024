@@ -34,6 +34,7 @@
                     <group>
                         <field name="phone" />
                         <field name="email" />
+                        <field name="available" />
                     </group>
                     <notebook>
                         <page string="Issues">

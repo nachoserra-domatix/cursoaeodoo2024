@@ -32,6 +32,7 @@ class SportIssue(models.Model):
     cost = fields.Float(string="Cost")
 
     assigned = fields.Boolean(string="Assigned", compute="_compute_assigned", readonly=True)
+    actions_ids = fields.One2many(string="Actions To Do", comodel_name='sport.issue.action', inverse_name='issue_id',)
 
     def _compute_assigned(self):
         self.assigned = False

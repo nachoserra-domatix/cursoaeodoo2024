@@ -46,17 +46,25 @@
                     </div>
                     <group>
                         <group>
-                            <field name="user_id" />
+                            <field name="user_id"
+                                options="{'no_quick_create': True, 'no_open': True}" />
                             <field name="assigned" />
-                            <field name="clinic_id" />
+                            <field name="clinic_id" domain="[('available', '=', True)]" />
                             <field name="cost" />
                         </group>
                         <group>
                             <field name="date" />
                             <field name="assistance" />
                             <field name="tag_ids"
-                                widget="many2many_tags" options="{'color_field': 'color'}"
+                                widget="many2many_tags"
+                                options="{'color_field': 'color', 'no_create': True}"
                             />
+                            <field name="actions_ids" context="{'default_state': state}">
+                                <tree string="Actions" editable="bottom">
+                                    <field name="name" />
+                                    <field name="state" />
+                                </tree>
+                            </field>
                         </group>
                     </group>
                     <notebook>

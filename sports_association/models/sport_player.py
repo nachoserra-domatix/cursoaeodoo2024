@@ -11,7 +11,7 @@ class Sportplayer(models.Model):
     
     age = fields.Integer(
         string='Age',
-        compute='_compute_field',
+        compute='_compute_age',
         store=True
     )
 
@@ -38,7 +38,7 @@ class Sportplayer(models.Model):
 
 
     @api.depends('birthdate')
-    def _compute_field(self):
+    def _compute_age(self):
         for record in self:
             if record.birthdate:
                 record.age = relativedelta(fields.Date.today(), record.birthdate).years
