@@ -1,8 +1,8 @@
 from odoo import models, fields
 
-class SportToDoAction(models.Model):
-    _name = 'sport.to.do.action'
-    _description = "Sport Issue"
+class SportIssueAction(models.Model):
+    _name = 'sport.issue.action'
+    _description = "Sport Issue Action"
     
     name = fields.Char(string='Name', required=True)
     state = fields.Selection([

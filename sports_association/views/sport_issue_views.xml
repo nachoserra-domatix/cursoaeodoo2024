@@ -54,7 +54,7 @@
                             <field name="solution" />
                         </page>
                         <page name="to_do_actions" string="To do actions">
-                            <field name="to_do_action_ids" context="{'default_state':state}">
+                            <field name="issue_action_ids" context="{'default_state':state}">
                                 <tree editable="bottom">
                                     <field name="name" />
                                     <field name="state" widget='badges'/>
