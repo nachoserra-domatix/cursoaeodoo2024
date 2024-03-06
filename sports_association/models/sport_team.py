@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, Command
 
 
 
@@ -18,5 +18,12 @@ class SportTeam(models.Model):
     def set_substitutes(self):
         for player in self.player_ids:
             player.set_substitute()
+
+    def action_add_players(self):
+        for record in self:
+            players = self.env['sport.player'].search([('team_id', '=', False),('age','<',30)])
+            record.player_ids = [Command.set(players.ids)]
+            # for player in players:
+            #     player.team_id = record.id
     
     
