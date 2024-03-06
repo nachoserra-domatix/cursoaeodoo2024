@@ -38,6 +38,7 @@
                     <button string="To open" name="action_open" type="object" class="oe_highlight" invisible="state != 'draft'"/>
                     <button string="To draft" name="action_draft" type="object" class="oe_highlight" invisible="state in 'draft'"/>
                     <button string="Done" name="action_done" type="object" class="oe_highlight" invisible="state in 'done'" />
+                    <button string="Add Tag" name="action_add_tag" type="object" class="oe_highlight" />
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -47,8 +48,8 @@
                     </div>
                     <group>
                         <group>
-                            <field name="user_id"/>
-                            <field name="clinic_id"/>
+                            <field name="user_id"  options="{'no_create': True, 'no_open': True }"/>
+                            <field name="clinic_id" domain="[('available', '=', True)]" />
                             <field name="cost"/>
                         </group>
                         <group>
@@ -63,6 +64,14 @@
                         </page>
                         <page name="solution" string="Solution">
                             <field name="solution"/>
+                        </page>
+                        <page name="to_do" string="Actions To Do">
+                            <field name="to_do_ids" context="{'default_state': state}">
+                                <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="state" />
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>

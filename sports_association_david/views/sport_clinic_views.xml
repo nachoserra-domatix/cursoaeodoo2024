@@ -40,6 +40,7 @@
                         <field name="phone"/>
                         <field name="email" />
                         <field name="issue_ids" />
+                        <field name="available" />
                     </group>
                 </sheet>
             </form>

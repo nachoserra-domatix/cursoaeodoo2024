@@ -25,6 +25,9 @@ class SportIssue(models.Model):
 
     color = fields.Integer(string='Color', default=0)
     cost = fields.Float(string='Cost')
+    assigned = fields.Boolean(compute="_compute_assigned", string="Assigned")
+
+    to_do_ids = fields.One2many('sport.to.do', 'issue_id', string="To Do")
 
     def action_open(self):
         for record in self:
@@ -37,4 +40,20 @@ class SportIssue(models.Model):
     def action_done(self):
         for record in self:
             record.state = 'done'
+
+    def _compute_assigned(self):
+        for record in self:
+            if record.user_id:
+                record.assigned = True
+            else:
+                record.assigned = False
+
+    def action_add_tag(self):
+        for record in self:
+            tag_ids = self.env['sport.issue.tag'].search([('name','ilike', record.name)])
+            if tag_ids:
+                record.tag_ids = [(6,0, tag_ids.ids)]
+            else:
+                record.tag_ids = [(0,0, {'name': record.name })]
+
 

@@ -40,10 +40,16 @@
                     <group>
                         <field name="name" />
                         <field name="logo" widget="image"/>
-                        <field name="player_ids" />
+                        
                         <field name="sport_id" />
                         <!-- <field name="trainer" /> -->
                     </group>
+                    <notebook>
+                        <page name="players" string="Players">
+                            <field name="player_ids" context="{'tree_view_ref' : 'sports_association_david.sport_player_view_tree_simple',
+                                                            'form_view_ref' : 'sports_association_david.sport_player_view_form_simple'}"></field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
