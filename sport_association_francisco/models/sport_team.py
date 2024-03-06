@@ -24,7 +24,7 @@ class SportTeam(models.Model):
 
     def get_all_unasigned(self):
         for rec in self:
-            unasigned_players = self.env['sport.player'].search([('team_id', '=', False)])
+            unasigned_players = self.env['sport.player'].search([('team_id', '=', False),('age','<',30)])
             for player in unasigned_players:
                 player.team_id = rec
                 
