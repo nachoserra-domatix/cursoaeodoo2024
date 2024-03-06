@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, Command
 
 class SportsIssue(models.Model):
     _name = 'sports.issue'
@@ -21,6 +21,31 @@ class SportsIssue(models.Model):
     tag_ids = fields.Many2many('sports.issue.tag', string='Tags')
     color = fields.Integer(string='Color Index',default=0)
     cost=fields.Float(string='Cost')
+    assigned=fields.Boolean(string="Assigned",compute='_compute_asigned')
+
     def action_done(self):
-        self.state='done'
+        for record in self:
+            record.state='done'
+    
+    def action_open(self):
+        for record in self:
+            record.state='open'
+    
+    def action_draft(self):
+        for record in self:
+            record.state='draft'
         
+    def _compute_asigned(self):
+        for issue in self:
+            issue.assigned=bool(issue.user_id)
+
+    
+    def action_add_tag(self):
+        for record in self:
+            tag_ids = self.env['sports.issue.tag'].search([("name", "ilike", record.name)])
+            if tag_ids:
+                record.tag_ids = [Command.set(tag_ids.ids)]
+                #record.tag_ids = [6,0,tag_ids.ids]
+            else:
+                record.tag_ids = [Command.create({'name': record.name})]
+            

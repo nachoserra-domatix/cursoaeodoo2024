@@ -30,10 +30,12 @@
                         </h1>
                     </div>
                     <group>
+                        <field name="date_of_birth"></field>
                         <field name="age"/>
                         <field name="position"/>
                         <field name="team_id"/>
                         <field name="starter"/>
+                        <field name="sport_name"/>
                     </group>
                     
                 </sheet>

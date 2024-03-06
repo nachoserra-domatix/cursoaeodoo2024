@@ -32,7 +32,6 @@
                                 <tree editable="bottom" string="Teams">
                                     <field name="name"/>
                                     <field name="logo"/>
-                                    <field name="sport_id"/>
                                 </tree>
                             </field>
                         </page>
