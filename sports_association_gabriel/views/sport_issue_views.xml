@@ -35,8 +35,8 @@
                 <group>
                     <group>
                         <field name="assigned"/>
-                        <field name="user_id"/>
-                        <field name="clinic_id"/>
+                        <field name="user_id" options="{'no_quick_create': True, 'no_open': True}"/>
+                        <field name="clinic_id" domain="[('available', '=', True)]"/>
                         <field name="cost"/>
                     </group>
                     <group>
@@ -50,6 +50,14 @@
                         </page>
                         <page name="solution" string="Solution">
                             <field name="solution"></field>
+                        </page>
+                        <page name="actions" string="Actions">
+                            <field name="action_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="state" context="{'default_state': state}"/>
+                                </tree>
+                            </field>
                         </page>
                     </notebook>                    
                 </group>

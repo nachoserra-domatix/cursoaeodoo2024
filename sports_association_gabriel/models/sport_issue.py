@@ -24,6 +24,7 @@ class SportIssue(models.Model):
     color = fields.Integer(string='Color', default=0)
     cost = fields.Float('Cost')
     assigned = fields.Boolean('Assigned', compute='_compute_assigned', inverse='_inverse_assigned', search='_search_assigned', store=True)
+    action_ids = fields.One2many('sport.issue.action', 'issue_id', string='Action')
 
     @api.depends('user_id')
     def _compute_assigned(self):
