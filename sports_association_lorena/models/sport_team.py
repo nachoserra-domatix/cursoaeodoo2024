@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, Command
 
 class SportTeam(models.Model):
     _name = 'sport.team'
@@ -16,3 +16,8 @@ class SportTeam(models.Model):
     def desmark_headline(self):
         for player in self.player_ids:
             player.headline = False
+
+    def action_add_players(self):
+        for record in self:
+            players = self.env['sport.player'].search([('team_id', '=', False), ('age', '<', 30)])
+            record.player_ids = [Command.set(players.ids)]

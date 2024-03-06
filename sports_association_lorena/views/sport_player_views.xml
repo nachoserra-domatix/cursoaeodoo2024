@@ -22,10 +22,14 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="date_birth"/>
                         <field name="age"/>
                         <field name="position"/>
+                    </group>
+                    <group>
                         <field name="team_id"/>
                         <field name="headline"/>
+                        <field name="sport" />
                     </group>
                 </sheet>
             </form>

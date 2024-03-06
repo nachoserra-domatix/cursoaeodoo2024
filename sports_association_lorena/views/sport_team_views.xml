@@ -23,13 +23,14 @@
                 <header>
                     <button string="Headline" name="mark_headline" type="object" class="oe_highlight" />
                     <button string="Desmark Headline" name="desmark_headline" type="object" class="oe_highlight" />
+                    <button string="Add free players" name="action_add_players" type="object" class="btn-warning" />
                 </header>
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="sport_id"/>
                         <field name="logo"/>
                         <field name="player_ids"/>
-                        <field name="sport_id"/>
                     </group>
                 </sheet>
             </form>
