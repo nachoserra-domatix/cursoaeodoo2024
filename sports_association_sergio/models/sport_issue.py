@@ -29,6 +29,8 @@ class SportIssue(models.Model):
     assigned = fields.Boolean(name="Assigned", compute="_compute_assigned", inverse="_inverse_assigned", search="_search_assigned",store=True)
     user_phone = fields.Char(string='User Phone', related='user_id.partner_id.phone', store=True)  
 
+    task_ids = fields.One2many('sport.task', 'issue_id', string='Tasks')
+
     @api.depends('user_id')
     def _compute_assigned(self):
         for record in self:

@@ -23,6 +23,8 @@ class SportTeam(models.Model):
 
     def action_add_players(self):
         for record in self:
+            # import pdb; pdb.set_trace()
+            # import wdb; wdb.set_trace()
             players = self.env['sport.player'].search([('team_id', '=', False), ('age','<',30)])
 
             # for player in players:

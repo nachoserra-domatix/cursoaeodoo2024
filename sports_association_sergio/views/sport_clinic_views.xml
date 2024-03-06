@@ -25,7 +25,8 @@
                     <group>
                         <field name="name"></field>
                         <field name="phone"></field>
-                        <field name="email"></field>   
+                        <field name="email"></field>
+                        <field name="available" widget='boolean_toogle'></field>   
                     </group>
                     <notebook>
                         <page name="issues" string="Issues">

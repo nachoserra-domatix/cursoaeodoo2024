@@ -30,14 +30,18 @@
                     </group>
                     <notebook>
                         <page name="players" string="Players">
-                            <field name="player_ids">
+                            <field name="player_ids" context="{'tree_view_ref': 'sports_association_sergio.sport_player_view_simple_tree',
+                                                                'form_view_ref': 'sports_association_sergio.sport_player_view_simple_form'}"></field>
+                            <!--
+                            <field name="player_ids" context="{'default_position':'delantero','default_starter':False}">
                                 <tree editable="bottom">
                                     <field name="name"></field>
                                     <field name="age"></field>
-                                    <field name="position"></field>
+                                    <field name="position" ></field>
                                     <field name="starter"></field>
                                 </tree>
                             </field>
+                            -->
                         </page>
                     </notebook>                        
                 </sheet>
