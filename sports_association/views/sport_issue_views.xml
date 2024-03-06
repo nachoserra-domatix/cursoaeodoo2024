@@ -35,14 +35,14 @@
                     <group>
                         <group>
                             <field name="assigned" />
-                            <field name="user_id" />
+                            <field name="user_id" options="{'no_open':True,'no_quick_create':True}"/>
                             <field name="user_phone" />
-                            <field name="clinic_id" />
+                            <field name="clinic_id" options="{'no_open':True}" domain="[('available', '=', True)]"/>
                             <field name="cost" />
                         </group>
                         <group>
                             <field name="date" />
-                            <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color','no_create':True}"/>
                             <field name="assistance" widget="boolean_toggle"/>
                         </group>
                     </group>
@@ -52,6 +52,14 @@
                         </page>
                         <page name="solution" string="Solution">
                             <field name="solution" />
+                        </page>
+                        <page name="to_do_actions" string="To do actions">
+                            <field name="to_do_action_ids" context="{'default_state':state}">
+                                <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="state" widget='badges'/>
+                                </tree> 
+                            </field>
                         </page>
                     </notebook>
                 </sheet>

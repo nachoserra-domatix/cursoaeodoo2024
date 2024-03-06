@@ -6,10 +6,23 @@
         <field name="arch" type="xml">
             <tree multi_edit="1" string="Players">
                 <field name="name" />
-                <field name="birth_date" optional="show" />
+                <field name="age" optional="show" />
                 <field name="position" optional="hide" />
                 <field name="team_id" />
                 <field name="regular" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_player_view_simple_tree" model="ir.ui.view">
+        <field name="name">sport_player.view.simple.tree</field>
+        <field eval="100" name="priority"/>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Players">
+                <field name="name" />
+                <field name="age" optional="show" />
+                <field name="position" optional="hide" />
             </tree>
         </field>
     </record>
@@ -32,7 +45,7 @@
                         <group>
                             <field name="birth_date" />
                             <field name="age" />
-                            <field name="team_id" />
+                            <field name="team_id" domain="[('sport_id','!=',False)]"/>
                             <field name="sport_name" />
                         </group>
                         <group>
@@ -40,6 +53,20 @@
                             <field name="regular" widget="boolean_toggle"/>
                         </group>
                     </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_player_view_simple_form" model="ir.ui.view">
+        <field name="name">sport_player.view.simple.form</field>
+        <field eval="100" name="priority"/>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <form string="Players">
+
+                <sheet>
+                    <field name="name" placeholder="Player Name" />
                 </sheet>
             </form>
         </field>

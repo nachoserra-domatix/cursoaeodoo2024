@@ -16,12 +16,15 @@ class SportPlayer(models.Model):
     @api.depends('birth_date')
     def _compute_age(self):
         for record in self:
-            if (isinstance(record.birth_date, date)):
+            #if (isinstance(record.birth_date, date)):
+            if record.birth_date:
                 today = date.today()
                 record.age = today.year - record.birth_date.year - ((today.month, today.day) < (record.birth_date.month, record.birth_date.day))
                 # https://stackoverflow.com/questions/2217488/age-from-birthdate-in-python
                 # today = fields.Date.today()
                 # record.age = (today - record.birth_date).days / 365
+            else:
+                record.age = 0
             
 
     def action_mark_regular(self):

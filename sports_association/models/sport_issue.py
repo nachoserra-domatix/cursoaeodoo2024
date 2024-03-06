@@ -27,6 +27,8 @@ class SportIssue(models.Model):
 
     tag_ids = fields.Many2many('sport.issue.tag', string='Tags')
 
+    to_do_action_ids = fields.One2many('sport.to.do.action', 'issue_id', string='To do actions')
+
     cost = fields.Float('Cost')
 
     user_phone = fields.Char('User Phone', related='user_id.phone', store=True,readonly=False)
@@ -51,6 +53,7 @@ class SportIssue(models.Model):
     
     def action_fill_tags(self):
         for record in self:
+            import pdb;pdb.set_trace();
             similar_tags = self.env['sport.issue.tag'].search([('name','ilike',record.name)])
             if similar_tags:
                 record.tag_ids = [(6,0,similar_tags.ids)]

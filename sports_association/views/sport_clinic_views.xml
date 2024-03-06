@@ -25,6 +25,7 @@
                         <field name="name" />
                         <field name="phone"/>
                         <field name="email" />
+                        <field name="available" widget="boolean_toggle"/>
                         
                     </group>
                     <notebook>
