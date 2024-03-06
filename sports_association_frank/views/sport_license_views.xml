@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sport_license_action" model="ir.actions.act_window">
+        <field name="name">Sport License</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sport.license</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a sport license
+            </p>
+        </field>
+    </record>
+    <record id="view_sport_license_form" model="ir.ui.view">
+        <field name="name">sport.license.form</field>
+        <field name="model">sport.license</field>
+        <field name="arch" type="xml">
+            <form string="Sport License">
+                <sheet>
+                    <h1>
+                        <label for="name" />
+                        <div class="oe_title">
+                            <field name="name"/>
+                        </div>                     
+                    </h1>
+                    <h2>
+                        <group>
+                            <group col="2">
+                                <field name="partner_id" />
+                            </group>
+                            <group>
+                                <field name="start_date" />
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                    </h2>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_sport_license_tree" model="ir.ui.view">
+        <field name="name">sport.license.tree</field>
+        <field name="model">sport.license</field>
+        <field name="arch" type="xml">
+            <tree string="Sport License">
+                <field name="name" />
+                <field name="partner_id" />
+                <field name="start_date" />
+                <field name="end_date" />
+            </tree>
+        </field>
+    </record>
+</odoo>

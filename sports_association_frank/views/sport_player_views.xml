@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sport_player_tree_view" model="ir.ui.view">
+        <field name="name">sport.player.tree.view</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <tree string="Players" multi_edit="1">                
+                <field name="name"/>
+                <field name="team_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_player_view_simple_tree" model="ir.ui.view">
+        <field name="name">sport_player.view.simple.tree</field>
+        <field eval="100" name="priority"/>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <tree string="Players">
+                <field name="name" />
+                <field name="age" />
+                <field name="position" />
+                <field name="team_id" />
+                <field name="team_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_player_view_simple_form" model="ir.ui.view">
+        <field name="name">sport_player.view.simple.form</field>
+        <field name="model">sport.player</field>
+        <field eval="100" name="priority"/>
+        <field name="arch" type="xml">
+            <form string="Player">
+                <sheet>
+                    <field name="name" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_player__form_view" model="ir.ui.view">
+        <field name="name">sport.player.form.view</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <form string="Player">
+                <sheet>
+                    <header>                        
+                        <button string="Starter"  class="btn-primary" name="action_starter" type="object" />
+                        <button string="Reserve"  class="btn-primary" name="action_reserve" type="object" />
+                    </header>
+                    <label for="name" string="Name"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Player Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sport_name"/>
+                            <field name="age"/>
+                            <field name="position"/>                        
+                        </group>
+                        <group name="group_product">                            
+                            <field name="team_id" />
+                            <field name="is_starter" widget="boolean_toggle"/>
+                        </group>
+                    </group>               
+                </sheet>
+            </form>
+        </field>
+    </record>       
+
+    <record id="action_sport_player" model="ir.actions.act_window">
+        <field name="name">Sport player</field>
+        <field name="res_model">sport.player</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new player
+            </p>
+        </field>
+    </record>
+</odoo>

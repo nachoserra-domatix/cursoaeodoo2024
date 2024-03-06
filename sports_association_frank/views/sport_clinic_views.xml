@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sport_clinic_view_tree" model="ir.ui.view">
+        <field name="name">sport.clinic.tree</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <tree string="Sport Clinic">
+                <field name="name" />
+                <field name="phone" />
+                <field name="email" />
+            </tree>
+        </field>
+    </record>
+    <record id="sport_clinic_view_form" model="ir.ui.view">
+        <field name="name">sport.clinic.form</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <form string="Sport Clinic">
+                <sheet>
+                    <h1>
+                        <label for="name" />
+                        <div class="oe_title">
+                            <field name="name"/>
+                        </div>                     
+                    </h1>
+                    <h2>
+                        <group>
+                            <group col="2">
+                                <field name="phone" />
+                                <field name="email" />
+                                <field name="issue_ids" widget="many2many_tags" />
+                            </group>
+                        </group>
+                    </h2>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sport_clinic_action" model="ir.actions.act_window">
+        <field name="name">Sport Clinic</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sport.clinic</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a sport clinic
+            </p>
+        </field>
+    </record>
+</odoo>
