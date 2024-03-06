@@ -42,14 +42,17 @@
 
                     <notebook>
                         <page name="players" string="Players">
-                            <field name="player_list_ids">
+                            <!-- <field name="player_list_ids">
                                 <tree editable="bottom">
                                     <field name="name" />
                                     <field name="years" />
                                     <field name="position"/>
                                     <field name="tittle"/>
                                 </tree>
-                                </field>
+                                </field> -->
+                            <field name="player_list_ids"
+                                context="{'tree_view_ref':'sport_player_view_tree_simple','form_view_ref':'sport_player_view_form_simple'}"
+                            ></field>
                         </page>
                     </notebook>
                   </sheet>

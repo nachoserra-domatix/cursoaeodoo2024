@@ -50,4 +50,31 @@
         </field>
     </record>
 
+    <record id="sport_player_view_tree_simple" model="ir.ui.view">
+        <field name="name">sport_player.view.tree.simple</field>
+        <field name="model">sport.player</field>
+        <field eval="100" name="priority"/>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Sport">
+                <field name="name"></field>
+                <field name="position" optional="show"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_player_view_form_simple" model="ir.ui.view">
+        <field name="name">sport_player.view.form.simple</field>
+        <field name="model">sport.player</field>
+        <field eval="100" name="priority"/>
+        <field name="arch" type="xml">
+            <form string="Sport Player">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="position"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>
