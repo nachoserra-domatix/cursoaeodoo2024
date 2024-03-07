@@ -18,7 +18,7 @@
 * Puntuación
 
 ## Modelo de partidos
-* Deporte
+* Deporte (opciones de no poderse crear rápidamente el registro)
 * Fecha de partido con hora incluida
 * Equipo ganador
 * Puntuación que se lleva al ganar(por defecto pongamos 3)
