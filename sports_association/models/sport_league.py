@@ -36,7 +36,7 @@ class SportLeague(models.Model):
     def action_compute_classification(self):
         for record in self:
             for line in record.league_line_ids:
-                games_won = self.env["sport.game"].search([("team_winner_id", "=", line.team_id.id)])
+                games_won = self.env["sport.game"].search([("team_winner_id", "=", line.team_id.id),('league_id','=',self.id)])
                 line.points = sum(game["points"] for game in games_won)
 
 
