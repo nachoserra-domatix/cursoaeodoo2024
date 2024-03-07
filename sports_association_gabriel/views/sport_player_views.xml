@@ -68,6 +68,23 @@
         </field>
     </record>
 
+    <record id="sport_player_view_search" model="ir.ui.view">
+        <field name="name">sport_player.view.search</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <search string="Players">
+                <field name="name" filter_domain="[('name','ilike',self)]"/>
+                <field name="team_id"/>
+                <field name="sport_name" filter_domain="[('sport_name','ilike',self)]"/>
+                <filter string="Starters" name="starters" domain="[('starter','=','True')]"/>
+                <filter string="Non Starters" name="non_starters" domain="[('starter','!=','True')]"/>
+                <filter string="Team" name="team" context="{'group_by': 'team_id'}"/>
+                <filter string="Sport" name="sport" context="{'group_by': 'sport_name'}"/>
+                <filter string="Age" name="age" context="{'group_by': 'age'}"/>
+            </search>
+        </field>
+    </record>
+
     <record id="sport_player_action" model="ir.actions.act_window">
         <field name="name">Sport Players</field>
         <field name="res_model">sport.player</field>

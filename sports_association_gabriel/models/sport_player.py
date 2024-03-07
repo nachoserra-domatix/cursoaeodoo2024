@@ -10,9 +10,9 @@ class SportPlayer(models.Model):
     age = fields.Integer(string="Age", compute='_compute_age', store=True)
     position = fields.Char(string="Position")
     team_id = fields.Many2one('sport.team', string='Team')
-    starter = fields.Boolean(string="Starter")
+    starter = fields.Boolean(string="Starter", default="False")
     photo = fields.Binary(string="Photo")
-    sport_name = fields.Char('Sport Name', related='team_id.sport_id.name')
+    sport_name = fields.Char('Sport Name', related='team_id.sport_id.name', store=True)
     birthdate = fields.Date('Date')
 
     @api.depends('birthdate')
@@ -20,6 +20,8 @@ class SportPlayer(models.Model):
         for record in self:
             if record.birthdate and record.birthdate <= date.today():
                 self.age = (date.today() - self.birthdate).days // 365.25
+            else:
+                self.age = 0
 
     def check_starter(self):
         self.starter = True
