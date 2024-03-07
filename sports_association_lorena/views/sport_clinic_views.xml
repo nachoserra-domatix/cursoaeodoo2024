@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <tree string="Clinics">
                 <field name="name"/>
+                <field name="available"/>
                 <field name="phone"/>
                 <field name="email"/>
             </tree>
@@ -23,6 +24,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="available"/>
                         <field name="phone"/>
                         <field name="email"/>
                     </group>

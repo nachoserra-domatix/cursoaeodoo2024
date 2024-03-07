@@ -10,6 +10,8 @@
                 <field name="date" optional="show"/>
                 <field name="user_id" optional="hide"/>
                 <field name="state"/>
+                <field name="actions_ids"/>
+                <field name="clinic_id" domain="[('available', '=', True)]"/>
             </tree>
         </field>
     </record>
@@ -21,6 +23,7 @@
             <form string="Issues">
                 <header>
                     <field options="{'clickable':1}" name="state" widget='statusbar'/>
+                    <button string="Add Tag" name="action_add_tag" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -28,7 +31,9 @@
                     </div>
                     <group>
                         <group>
-                            <field name="user_id"/>
+                            <field name="user_id" options="{'no_quick_create': True}"/>
+                            <field name="tag_ids" options="{'no_create': True}"/>
+                            <field name="clinic_id" domain="[('available', '=', True)]"/>
                         </group>
                         <group>
                             <field name="date"/>
@@ -38,6 +43,9 @@
                     <notebook>
                         <page name="description" string="Description">
                             <field name="description"/>
+                        </page>
+                        <page name="actions" string="Actions to do">
+                            <field name="actions_ids"/>
                         </page>
                         <page name="solution" string="Solution">
                             <field name="solution"/>

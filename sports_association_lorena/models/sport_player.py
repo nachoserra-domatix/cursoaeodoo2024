@@ -6,7 +6,7 @@ class SportPlayer(models.Model):
     _description = 'Sport Player'
 
     name = fields.Char(string='Name', required=True)
-    age = fields.Integer(string='Age', computed='_compute_age', store='True')
+    age = fields.Integer(string='Age', compute='_compute_age', store='True')
     position = fields.Char(string='Position')
     team_id = fields.Many2one('sport.team', string='Team')
     headline = fields.Boolean(string='Headline')
@@ -14,7 +14,6 @@ class SportPlayer(models.Model):
     date_birth = fields.Date(string='Date birth')
 
     @api.depends('date_birth')
-    @api.onchange('date_birth')
     def _compute_age(self):
         hoy = datetime.now()
         for record in self:

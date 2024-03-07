@@ -156,7 +156,7 @@ msgstr ""
 #. module: sports_association_lorena
 #: model:ir.ui.menu,name:sports_association_lorena.sport_issue_tag_menu
 msgid "Issue Tags"
-msgstr "Etiquetas incidencia"
+msgstr "Etiquetas"
 
 #. module: sports_association_lorena
 #: model:ir.model.fields,field_description:sports_association_lorena.field_sport_clinic__issue_ids
