@@ -6,3 +6,7 @@ from . import sports_team
 from . import sports_sport
 from . import sports_player
 from . import sports_action
+from . import sports_league
+from . import sports_league_line
+from . import sports_match
+from . import sports_match_line

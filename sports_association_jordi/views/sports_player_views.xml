@@ -79,6 +79,21 @@
             </form>
         </field>
     </record>
+    <record id="sport_player_view_search" model="ir.ui.view">
+        <field name="name">sport_player_view_search</field>
+        <field name="model">sports.player</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="sport_name"/>
+                <field name="team_id"/>
+                <filter string="Starter" name="starter" domain="[('starter', '=', True)]"/>
+                <filter name="Sport" string="Sport" context="{'group_by': 'sport_name'}" />
+                <filter name="Team" string="Team" context="{'group_by': 'team_id'}" />
+                <filter name="Date Of Birth" string="Date Of Birth" context="{'group_by': 'date_of_birth'}" />
+            </search>
+        </field>
+    </record>
     <record id="action_player_team" model="ir.actions.act_window">
         <field name="name">sport.player</field>
         <field name="res_model">sports.player</field>
@@ -90,5 +105,5 @@
             </p>
         </field>
     </record>
-
+    
 </odoo>

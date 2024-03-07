@@ -14,6 +14,11 @@
         name="Sports"
         parent="main_menu"
         sequence="20"/>
+    <menuitem 
+        id="fifa_menu"
+        name="FIFA"
+        parent="main_menu"
+        sequence="30"/>
     <menuitem
         id="sport_issue_menu"
         name="Sports Issues"
@@ -50,4 +55,16 @@
         parent="medical_menu" 
         action="action_sports_action" 
         sequence="30"/>
-</odoo>
+    <menuitem
+        id="sport_league_menu"
+        name="Leagues"
+        action="action_sports_league"
+        parent="fifa_menu"
+        sequence="10"/>
+    <menuitem
+        id="sport_match_menu"
+        name="Matches"
+        action="action_sports_match"
+        parent="fifa_menu"
+        sequence="20"/>    
+    </odoo>

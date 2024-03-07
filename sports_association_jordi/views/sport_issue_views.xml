@@ -81,7 +81,7 @@
         <field name="arch" type="xml">
             <kanban default_group_by="state">
                 <field name="name"/>
-                <field name="date"/>
+                <field name="date"/> 
                 <field name="user_id"/>
                 <field name="state"/>
                 <field name="color"/>

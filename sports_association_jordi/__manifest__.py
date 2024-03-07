@@ -22,7 +22,9 @@
          "views/sports_sport_views.xml",
          "views/sports_player_views.xml",
          "views/sports_team_views.xml",
-         "views/sports_action_views.xml",   
+         "views/sports_action_views.xml",
+         "views/sports_league_views.xml",
+         "views/sports_match_views.xml",
          "views/sport_menuitems.xml"
          ]
 }
