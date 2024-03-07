@@ -21,7 +21,7 @@ Vamos a añadir este modelo como vista embebida en incidencias
 
 # Contexto
 
-Vamos a decir desde contexto, que el campo por defecto sea el mismo que la incidencia
+Vamos a decir desde contexto, que el campo por defecto del estado de la acción sea el estado de la incidencia
 
 # Dominio
 
