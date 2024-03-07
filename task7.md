@@ -32,6 +32,8 @@
 # Vistas nuevos modelos
 * Vistas embebidas para las líneas de liga y de partidos
 
+# Dominios
+* En las ligas, añadir dominio al equipo de las lineas para que solo encuentre equipos con el mismo deporte que la liga
 
 # Vistas cont.
 * Vista pivot, graph y calendario de los partidos
