@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="sport_game_tree" model="ir.ui.view">
+        <field name="name">Sport Game</field>
+        <field name="model">sport.game</field>
+        <field name="type">tree</field>
+        <field name="priority" eval="16" />
+        <field name="arch" type="xml">
+            <tree string="Games">
+                <field name="date" />
+                <field name="league_id" />
+                <field name="team_winner_id" />
+                <field name="points" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_game_form" model="ir.ui.view">
+        <field name="name">Sport Game Form</field>
+        <field name="model">sport.game</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Games">
+                <sheet>
+                    <group>
+                        <field name="date" />
+                        <field name="league_id" options="{'no_create': True}" />
+                        <field name="sport_id" options="{'no_create': True}" />
+                    </group>
+                    <group>
+                        <field name="team_winner_id" />
+                        <field name="points" />
+                    </group>
+                    <field name="game_line_ids">
+                        <tree string="Marcador" create="true" delete="true" edit="true"
+                            editable="bottom">
+                            <field name="team_id" />
+                            <field name="score" />
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_game_view_calendar" model="ir.ui.view">
+        <field name="name">sport_game.view.calendar</field>
+        <field name="model">sport.game</field>
+        <field name="arch" type="xml">
+            <calendar string="Games" date_start="date" color="team_winner_id">
+                <field name="date" />
+                <field name="sport_id" />
+                <field name="league_id" filters="1" invisible="1" />
+            </calendar>
+        </field>
+    </record>
+
+    <record id="sport_game_view_graph" model="ir.ui.view">
+        <field name="name">sport_game.view.graph</field>
+        <field name="model">sport.game</field>
+        <field name="arch" type="xml">
+            <graph string="Games" sample="1">
+                <field name="date" />
+                <field name="team_winner_id" />
+            </graph>
+        </field>
+    </record>
+
+    <record id="sport_game_view_pivot" model="ir.ui.view">
+        <field name="name">sport_game.view_pivot</field>
+        <field name="model">sport.game</field>
+        <field name="arch" type="xml">
+            <pivot string="Games">
+                <field type="row" name="team_winner_id" />
+                <field type="col" name="date" interval="month" />
+                <field type="measure" name="points" />
+            </pivot>
+
+        </field>
+    </record>
+
+    <record id="action_sport_game" model="ir.actions.act_window">
+        <field name="name">Games</field>
+        <field name="res_model">sport.game</field>
+        <field name="view_mode">tree,form,pivot,graph,calendar</field>
+        <field name="target">current</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new sport game
+            </p>
+        </field>
+    </record>
+
+    <!-- menu for "sport.game" -->
+    <menuitem
+        id="sport_game_menu"
+        name="Games"
+        action="action_sport_game"
+        parent="sport_menu"
+        sequence="20" />
+
+</odoo>

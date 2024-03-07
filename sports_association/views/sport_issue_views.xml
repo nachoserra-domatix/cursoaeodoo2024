@@ -61,7 +61,7 @@
                             />
                             <field name="actions_ids" context="{'default_state': state}">
                                 <tree string="Actions" editable="bottom">
-                                    <field name="name" />
+                                    <field name="name" readonly="1" />
                                     <field name="state" />
                                 </tree>
                             </field>

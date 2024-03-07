@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="sport_league_tree" model="ir.ui.view">
+        <field name="name">Sport league</field>
+        <field name="model">sport.league</field>
+        <field name="type">tree</field>
+        <field name="priority" eval="16" />
+        <field name="arch" type="xml">
+            <tree string="Leagues">
+                <field name="name" />
+                <field name="date_start" />
+                <field name="date_end" />
+                <field name="sport_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_league_form" model="ir.ui.view">
+        <field name="name">Sport league Form</field>
+        <field name="model">sport.league</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Leagues">
+                <header>
+                    <button name="action_compute_classification" string="Compute Classifications"
+                        type="object" class="oe_highlight"
+                    />
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="date_start" />
+                        <field name="date_end" />
+                    </group>
+                    <group>
+                        <field name="sport_id" />
+                    </group>
+                    <notebook>
+                        <page name="Classification" string="Classification">
+                            <field name="league_line_ids">
+                                <tree string="Classification" create="true" delete="true"
+                                    edit="true"
+                                    editable="bottom">
+                                    <field name="team_id"
+                                        domain="[('sport_id', '=', parent.sport_id)]" />
+                                    <field name="points" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sport_league" model="ir.actions.act_window">
+        <field name="name">leagues</field>
+        <field name="res_model">sport.league</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new sport league
+            </p>
+        </field>
+    </record>
+
+    <!-- menu for "sport.league" -->
+    <menuitem
+        id="sport_league_menu"
+        name="Leagues"
+        action="action_sport_league"
+        parent="sport_menu"
+        sequence="20" />
+
+</odoo>

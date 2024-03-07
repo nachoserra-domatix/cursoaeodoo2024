@@ -24,7 +24,11 @@ class SportTeam(models.Model):
         comodel_name='sport.sport',
     )
 
-        
+    game_line_ids = fields.One2many(
+        string='Games',
+        comodel_name='sport.game.line',
+        inverse_name='team_id',
+    )
     logo = fields.Image(
         string='Logo',
     )

@@ -31,7 +31,8 @@ class Sportplayer(models.Model):
     
     sport = fields.Char(
         string="Sport",
-        related='team_id.sport_id.name'
+        related='team_id.sport_id.name',
+        store=True
     )
     
     birthdate = fields.Date(string="Birthdate")

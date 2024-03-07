@@ -23,10 +23,10 @@
         <field name="type">tree</field>
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
-            <tree string="players">
+            <tree string="players" editable="bottom">
                 <field name="name" />
                 <field name="age" />
-                <field name="position" />
+                <field name="position" readonly="1" />
                 <field name="starter" widget="boolean_toggle" />
             </tree>
         </field>
@@ -51,6 +51,9 @@
                     </div>
                     <group>
                         <field name="position" />
+                        <field name="birthdate" />
+                        <field name="age" />
+                        <field name="team_id" />
                         <field name="starter" widget="boolean_toggle" />
                     </group>
                 </sheet>
@@ -69,6 +72,26 @@
                     <field name="name" placeholder="player Name" />
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="sport_player_view_search" model="ir.ui.view">
+        <field name="name">sport_player.view.search</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <search string="Players">
+                <field name="name" />
+                <field name="sport" />
+                <field name="team_id" />
+                <filter
+                    string="Starter" name="starter" domain="[('starter', '=', True)]" />
+                <filter
+                    string="Team" name="team" context="{'group_by': 'team_id'}" />
+                <filter
+                    string="Sport" name="sport" context="{'group_by': 'sport'}" />
+                <filter
+                    string="Birthdate" name="birthdate" context="{'group_by': 'birthdate'}" />
+            </search>
         </field>
     </record>
 
