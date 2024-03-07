@@ -10,6 +10,7 @@
             <tree string="Players">                
                 <field name="photo" string="" widget="image" class="oe_right oe_avatar" options="{'size': [25, 25]}"/>
                 <field name="name"/>
+                <field name="age"/>
                 <field name="team_id"/>
             </tree>
         </field>
@@ -22,10 +23,10 @@
             <form string="Player">
                 <sheet>
                     <header>                        
-                        <button string="Starter"  class="btn-primary" name="action_starter" type="object" />
-                        <button string="Reserve"  class="btn-primary" name="action_reserve" type="object" />
+                        <button string="Starter"  class="btn-primary" name="action_starter" type="object"/>
+                        <button string="Reserve"  class="btn-primary" name="action_reserve" type="object"/>
                     </header>                    
-                    <field name="photo" widget="image" class="oe_avatar" />
+                    <field name="photo" widget="image" class="oe_avatar"/>
                     <label for="name" string="Name"/>
                     <div class="oe_title">                        
                         <h1>
@@ -34,11 +35,13 @@
                     </div>
                     <group>
                         <group>                        
+                            <field name="birthdate"/>
                             <field name="age"/>
                             <field name="position"/>                        
                         </group>
                         <group name="group_product">                            
                             <field name="team_id" />
+                            <field name="sport_name"/>
                             <field name="is_starter" widget="boolean_toggle"/>
                         </group>
                     </group>               
