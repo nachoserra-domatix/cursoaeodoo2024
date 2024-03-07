@@ -6,3 +6,5 @@ from . import sport_team
 from . import sport_sport
 from . import sport_player
 from . import sport_task
+from . import sport_league
+from . import sport_match

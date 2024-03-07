@@ -12,7 +12,7 @@ class SportPlayer(models.Model):
     starter = fields.Boolean(string='Starter')
     team_id = fields.Many2one('sport.team', string='Team')
 
-    sport = fields.Char(string='Sport', related='team_id.sport_id.name')
+    sport = fields.Char(string='Sport', related='team_id.sport_id.name', store=True)
 
     def action_markself_starter(self):
         self.starter=True

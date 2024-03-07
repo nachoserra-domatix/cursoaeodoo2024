@@ -5,7 +5,7 @@ class SportTeam(models.Model):
     _description = 'Sport Team'
 
     name = fields.Char(string='Name', required=True)
-    logo = fields.Binary(string='Logo')
+    logo = fields.Image(string='Logo')
     sport_id = fields.Many2one('sport.sport', string='Sport')
     player_ids = fields.One2many('sport.player', 'team_id', string="Players")
     player_count = fields.Integer(string='Player Count', compute='_compute_player_count')
