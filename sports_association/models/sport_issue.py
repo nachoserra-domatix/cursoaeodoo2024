@@ -1,5 +1,5 @@
 from odoo import models, fields, api, Command
-# import Pdb
+# import pdb
 
 class SportIssue(models.Model):
     _name = 'sport.issue'
@@ -32,6 +32,8 @@ class SportIssue(models.Model):
     cost = fields.Float(string='Cost')
 
     user_phone = fields.Char(string='User phone', related='user_id.phone', store=True, readonly=False)
+
+    action_ids = fields.One2many(comodel_name='sport.issue.action', inverse_name='issue_id', string='Actions')
     
     @api.depends('user_id.phone')
     def _compute_assigned(self):

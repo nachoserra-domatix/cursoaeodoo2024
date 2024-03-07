@@ -9,6 +9,7 @@
                 <!-- Add your fields here -->
                 <field name="name"/>
                 <field name="phone"/>
+                <field name="available"/>
                 <field name="email"/>
                 <field name="issue_ids"/>
             </tree>
@@ -28,6 +29,7 @@
                     <group>
                         <!-- Add your fields here -->
                         <field name="name"/>
+                        <field name="available"/>
                         <field name="phone"/>
                         <field name="email"/>
                     </group>
