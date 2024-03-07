@@ -22,6 +22,7 @@
                 <sheet>
                     <header>                        
                         <button string="Starter"  class="btn-succes" name="action_all_starters" type="object"/>
+                        <button string="Add free players" name="action_add_players" type="object" class="btn-warning"/>
                     </header>
                     <field name="logo" widget="image" class="oe_right oe_avatar"/>
                     <label for="name" string="Team"/>

@@ -1,7 +1,7 @@
 # Copyright 2024 potxolate
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import api, models, fields
+from odoo import api, models, fields, Command
 
 SPORT_ISSUE_STATE = [
     ('draft', "Draft"),
@@ -75,4 +75,15 @@ class SportIssue(models.Model):
 
     def action_close (self):
         self.state='done'
+
+    def action_add_tag(self):
+        for record in self:
+            tag_ids = self.env['sport.issue.tag'].search([('name', 'ilike', record.name)])
+            if tag_ids:
+                record.tag_ids = [Command.set(tag_ids.ids)]
+                 # record.tag_ids = [(6, 0, tag_ids.ids)]
+            else:
+                record.tag_ids = [Command.create({'name': record.name})]
+                record.tag_ids
+               # record.tag_ids = [(0, 0, {'name': record.name})]
     

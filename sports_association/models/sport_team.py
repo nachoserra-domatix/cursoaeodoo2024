@@ -1,7 +1,7 @@
 # Copyright 2024 potxolate
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import api, models, fields
+from odoo import api, models, fields, Command
 
 class SportTeam(models.Model):
     _name = 'sport.team'
@@ -24,3 +24,16 @@ class SportTeam(models.Model):
     def action_all_starters (self):
         for rec in self.player_ids:            
                 rec.action_starter()
+
+    def action_add_players(self):
+        for record in self:
+            players = self.env['sport.player'].search([('team_id', '=', False), ('age', '<', 30)])
+            players |= record.player_ids
+            record.player_ids = [Command.set(players.ids)]
+    
+    # Otra opción para el método action_add_players
+    # def action_add_players(self):
+    #     players = self.env['sport.player'].search([('team_id', '=', False), ('age', '<', 30)])
+    #     for player in players:
+    #         player.team_id = self.id
+    #     return True
