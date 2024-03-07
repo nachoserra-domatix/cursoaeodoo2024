@@ -7,3 +7,5 @@ class SportSport(models.Model):
     name = fields.Char(string='Name', required=True)
     description = fields.Text(string='Description')
     team_ids = fields.One2many('sport.team', 'sport_id', string='Teams')
+    league_ids = fields.One2many('sport.league', 'sport_id', string='Leagues')
+    game_ids = fields.One2many('sport.game', 'sport_id', string='Game')

@@ -40,5 +40,17 @@
             name="Sport Team"
             action="sports_association.action_sport_team"
             sequence="50"/>
+        
+        <menuitem
+            id="sport_league_menu"
+            name="Sport League"
+            action="sports_association.action_sport_league"
+            sequence="60"/>
+
+        <menuitem
+            id="sport_game_menu"
+            name="Sport Game"
+            action="sports_association.action_sport_game"
+            sequence="70"/>
     </menuitem>
 </odoo>

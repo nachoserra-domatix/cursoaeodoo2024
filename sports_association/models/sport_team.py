@@ -9,6 +9,9 @@ class SportTeam(models.Model):
     player_ids = fields.One2many('sport.player', 'team_id', string='Players')
     sport_id = fields.Many2one('sport.sport', string='Sport')
     players_count = fields.Integer('Players Count', compute='_compute_players_count')
+    league_line_ids = fields.One2many('sport.league.line', 'team_id', string='League Lines')
+    winner_game_ids = fields.One2many('sport.game', 'winner_team_id', string='Winner game')
+    game_line_ids = fields.One2many('sport.game.line', 'team_id', string='Game Line')
 
     def _compute_players_count(self):
         for record in self:
