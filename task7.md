@@ -39,5 +39,5 @@
 * Vista pivot, graph y calendario de los partidos
 
 # Campos calculados
-En los partidos, se debe calcular el equipo ganador dependiendo de la puntuación de las lineas.
-En la liga, tiene que haber un botón que calcule las puntuaciones de todos los equipos
+* En los partidos, se debe calcular el equipo ganador dependiendo de la puntuación de las lineas.
+* En la liga, tiene que haber un botón que calcule las puntuaciones de todos los equipos
