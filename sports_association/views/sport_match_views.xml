@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- VIEWS -->
+    
+    <record id="sport_match_tree_view" model="ir.ui.view">
+        <field name="name">sport.match.tree.view</field>
+        <field name="model">sport.match</field>
+        <field name="arch" type="xml">
+            <tree string="Matchs" multi_edit="1">                
+                <field name="date"/>                
+            </tree>
+        </field>
+    </record>       
+
+    <!-- ACTIONS (WINDOW) -->
+
+    <record id="action_sport_match" model="ir.actions.act_window">
+        <field name="name">Matchs</field>
+        <field name="res_model">sport.match</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new match
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -40,17 +40,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__action_ids
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
 msgid "Actions to do"
-msgstr ""
+msgstr "Acciones a realizar"
 
 #. module: sports_association
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_issue__form_view
 msgid "Add Tag"
-msgstr ""
+msgstr "Añadir etiqueta"
 
 #. module: sports_association
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_team__form_view
 msgid "Add free players"
-msgstr ""
+msgstr "Fichar jugadores"
 
 #. module: sports_association
 #: model:ir.model.fields,field_description:sports_association.field_sport_player__age

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- VIEWS -->
+    
+    <record id="sport_league_tree_view" model="ir.ui.view">
+        <field name="name">sport.league.tree.view</field>
+        <field name="model">sport.league</field>
+        <field name="arch" type="xml">
+            <tree string="Sports" multi_edit="1">                
+                <field name="name"/>                
+            </tree>
+        </field>
+    </record>
+    
+    <record id="sport_league__form_view" model="ir.ui.view">
+        <field name="name">sport.league.form.view</field>
+        <field name="model">sport.league</field>
+        <field name="arch" type="xml">
+            <form string="League">
+                <sheet>                                        
+                    <label for="name" string="League"/>
+                    <div class="oe_title text-center">
+                        <h1>
+                            <field name="name" placeholder="League Name"/>
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page name="Lines" string="Lines">                            
+                            <field name="league_line_ids">
+                                <tree editable="bottom">                                    
+                                    <field name="team_id"/>
+                                    <field name="score"/>                                    
+                                </tree>                            
+                           </field>                             
+                        </page>
+                    </notebook>                
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ACTIONS (WINDOW) -->
+
+    <record id="action_sport_league" model="ir.actions.act_window">
+        <field name="name">Leagues</field>
+        <field name="res_model">sport.league</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport
+            </p>
+        </field>
+    </record>
+</odoo>

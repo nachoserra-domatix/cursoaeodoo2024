@@ -54,6 +54,16 @@
                 action="action_sport_license"            
                 groups="base.group_user"/>
 
+            <menuitem id="sport_leagues_menu"
+                name="Leagues"                
+                action="action_sport_league"            
+                groups="base.group_user"/>
+
+            <menuitem id="sport_matchs_menu"
+                name="Matchs"                
+                action="action_sport_match"            
+                groups="base.group_user"/>
+                
         </menuitem>
         
     </menuitem>
