@@ -21,7 +21,7 @@
 * Deporte
 * Fecha de partido con hora incluida
 * Equipo ganador
-* Puntuación que se lleva al ganar(por defecto
+* Puntuación que se lleva al ganar(por defecto pongamos 3)
 * Lineas de partidos (o2m)
 
 ## Modelo lineas de partidos
@@ -38,4 +38,4 @@
 
 # Campos calculados
 En los partidos, se debe calcular el equipo ganador dependiendo de la puntuación de las lineas.
-En la liga, tiene que haber un botón rellene las líneas y calcule las puntuaciones de todos los equipos
+En la liga, tiene que haber un botón que calcule las puntuaciones de todos los equipos
