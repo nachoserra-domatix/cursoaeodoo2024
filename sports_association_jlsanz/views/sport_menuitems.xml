@@ -60,4 +60,18 @@
         parent="sport_sport_management_menu"
         sequence="30" />
 
+    <menuitem
+        id="sport_league_menu"
+        name="Sport League"
+        action="action_sport_league"
+        parent="sport_sport_management_menu"
+        sequence="40" />
+
+    <menuitem
+        id="sport_match_menu"
+        name="Sport Match"
+        action="action_sport_match"
+        parent="sport_sport_management_menu"
+        sequence="50" />
+
     </odoo>
