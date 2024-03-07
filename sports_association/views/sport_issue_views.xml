@@ -11,7 +11,7 @@
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="user_id" string="User" optional="show" options="{'no_open': True, 'no_quick_create':True}"/>
-                <field name="clinic_id" string="Clinic" optional="show" domain="[('avaible','=',True)]"/>
+                <field name="clinic_id" string="Clinic" optional="show" domain="[('available','=',True)]"/>
                 <field name="date" optional="show"  widget="date"/>
                 <field name="state" widget="badge"/>
             </tree>
@@ -46,7 +46,7 @@
                         </group>
                         <group name="group_product">
                             <field name="assistance" widget="boolean_toggle"/>
-                            <field name="clinic_id" domain="[('avaible','=',True)]" />
+                            <field name="clinic_id" domain="[('available','=',True)]" />
                             <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         </group>
                     </group>

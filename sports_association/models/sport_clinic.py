@@ -15,7 +15,7 @@ class SportClinic(models.Model):
     issue_ids = fields.One2many(
         comodel_name='sport.issue',
         inverse_name='clinic_id')
-    avaible = fields.Boolean('Avaible')
+    available = fields.Boolean('Available')
 
     #=== METHODS ===#
     

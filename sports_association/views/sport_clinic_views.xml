@@ -30,7 +30,7 @@
                             <field name="email" />                        
                         </group>
                         <group>
-                            <field name="avaible" widget="boolean_toggle"/>                                                
+                            <field name="available" widget="boolean_toggle"/>                                                
                         </group>
                     </group>
                     <notebook>
