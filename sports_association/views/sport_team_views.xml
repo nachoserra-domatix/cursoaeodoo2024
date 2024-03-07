@@ -33,8 +33,11 @@
                     </div>
                     <notebook>
                         <page name="players" string="Players">
-                            <field name="player_ids">
-                                <tree multi_edit="1">
+                            <!-- <field name="player_ids" context="{'tree_view_ref':'sports_association.sport_player_view_simple_tree',
+                                                                    'form_view_ref':'sports_association.sport_player_view_simple_form'}">
+                            </field> -->
+                            <field name="player_ids" context="{'default':name}">
+                                <tree editable="bottom">
                                     <field name="photo" string="" widget="image" class="oe_left oe_avatar" options="{'size': [25, 25]}"/>
                                     <field name="name"/>
                                     <field name="position"/>

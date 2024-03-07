@@ -24,9 +24,14 @@
                 </header>
                 <sheet>
                     <group>
-                        <field name="name" />
-                        <field name="phone"/>
-                        <field name="email" />                        
+                        <group>
+                            <field name="name" />
+                            <field name="phone"/>
+                            <field name="email" />                        
+                        </group>
+                        <group>
+                            <field name="avaible" widget="boolean_toggle"/>                                                
+                        </group>
                     </group>
                     <notebook>
                         <page name="issues" string="Issues">

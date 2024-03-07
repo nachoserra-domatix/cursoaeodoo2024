@@ -10,8 +10,8 @@
             <tree string="Sport Issue" multi_edit="1">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
-                <field name="user_id" string="User" optional="show"/>
-                <field name="clinic_id" string="Clinic" optional="show"/>
+                <field name="user_id" string="User" optional="show" options="{'no_open': True, 'no_quick_create':True}"/>
+                <field name="clinic_id" string="Clinic" optional="show" domain="[('avaible','=',True)]"/>
                 <field name="date" optional="show"  widget="date"/>
                 <field name="state" widget="badge"/>
             </tree>
@@ -39,20 +39,28 @@
                     </div>
                     <group>
                         <group>                        
-                            <field name="assigned" />
+                            <field name="assigned"/>
                             <field name="user_id"/>
                             <field name="date"/>
                             <field name="cost"/>                        
                         </group>
                         <group name="group_product">
                             <field name="assistance" widget="boolean_toggle"/>
-                            <field name="clinic_id" />
+                            <field name="clinic_id" domain="[('avaible','=',True)]" />
                             <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         </group>
                     </group>
                     <notebook>
                         <page string="Description" name="description">
                             <field name="description"/>
+                        </page>
+                        <page name="actions" string="Actions to do">
+                            <field name="action_ids" context="{'default_state': state}">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
                         </page>
                         <page string="Solution" name="solution">
                             <field name="solution"/>
@@ -96,6 +104,11 @@
                 <progressbar field="state"
                     colors='{"draft": "info", "open": "warning", "expired": "danger", "done": "success"}'/>
                 <templates>
+                    <t t-name="kanban-menu">
+                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                    </t>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
                             <div class="row">

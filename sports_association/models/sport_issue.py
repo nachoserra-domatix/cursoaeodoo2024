@@ -45,19 +45,20 @@ class SportIssue(models.Model):
         string="Tag")
     cost = fields.Integer(string="Cost")
     color = fields.Integer(string="Color")
-    assigned = fields.Boolean('Assigned', compute='_compute_assigned', inverse='_inverse_assigned', store=True)
+    assigned = fields.Boolean('Assigned', compute='_compute_assigned', store=True)
+    action_ids = fields.One2many('sport.issue.action', 'issue_id', string='Actions to do')
 
     @api.depends('user_id')
     def _compute_assigned(self):
         for record in self:
             record.assigned = bool(record.user_id)
     
-    def _inverse_assigned(self):
-        for record in self:
-            if not record.assigned:
-                record.user_id = False
-            else:
-                record.user_id = self.env.user
+    # def _inverse_assigned(self):
+    #     for record in self:
+    #         if not record.assigned:
+    #             record.user_id = self.user_id;
+    #         else:
+    #             record.user_id = self.env.user
 
     def _search_assigned(self, operator, value):
         if operator == '=':

@@ -15,10 +15,10 @@ class SportClinic(models.Model):
     issue_ids = fields.One2many(
         comodel_name='sport.issue',
         inverse_name='clinic_id')
+    avaible = fields.Boolean('Avaible')
 
     #=== METHODS ===#
     
-    def action_check_assistance(self):
-        #import pdb; pdb.set_trace()
+    def action_check_assistance(self):        
         for record in self.issue_ids:
             record.assistance = True
