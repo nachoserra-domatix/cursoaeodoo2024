@@ -11,14 +11,72 @@
                 <field name="date"/>                
             </tree>
         </field>
-    </record>       
+    </record>
+
+    <record id="sport_match_form_view" model="ir.ui.view">
+        <field name="name">sport.match.form.view</field>
+        <field name="model">sport.match</field>
+        <field name="arch" type="xml">
+            <form string="Match">
+                <sheet>                                                            
+                    <notebook>
+                        <page name="Lines" string="Lines">                            
+                            <field name="match_line_ids">
+                                <tree editable="bottom">                                    
+                                    <field name="team_id"/>
+                                    <field name="score"/>                                    
+                                </tree>                            
+                           </field>                             
+                        </page>
+                    </notebook>                
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_match_calendar_view" model="ir.ui.view">
+        <field name="name">sport.match.calendar</field>
+        <field name="model">sport.match</field>
+        <field name="arch" type="xml">
+            <calendar
+                date_start="date"                
+                string="Matchs"
+                mode="month"
+                scales="week,month,year"
+                event_open_popup="true"
+                quick_create="0">
+                <field name="winner_team_id"/>                
+            </calendar>
+        </field>
+    </record>
+
+    <record id="sport_match_graph_view" model="ir.ui.view">
+        <field name="name">sport.match.graph</field>
+        <field name="model">sport.match</field>
+        <field name="arch" type="xml">
+            <graph string="Issues" sample="1">
+                <field name="date"/>
+                <field name="winner_team_id" />
+            </graph>            
+        </field>
+    </record>
+
+    <record id="sport_match_pivot_view" model="ir.ui.view">
+        <field name="name">sport.match.pivot</field>
+        <field name="model">sport.match</field>
+        <field name="arch" type="xml">
+            <pivot string="Timesheet">                
+                <field name="date" interval="month" type="col"/>                
+            </pivot>            
+        </field>
+    </record>
 
     <!-- ACTIONS (WINDOW) -->
 
     <record id="action_sport_match" model="ir.actions.act_window">
         <field name="name">Matchs</field>
         <field name="res_model">sport.match</field>
-        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_mode">tree,form,kanban,calendar,pivot</field>
         <field name="context">{}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">

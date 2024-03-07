@@ -149,7 +149,7 @@
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
             <graph string="Issues" sample="1">
-                <field name="name"/>
+                <field name="date"/>
                 <field name="cost" />
             </graph>            
         </field>
@@ -159,10 +159,8 @@
         <field name="name">sport.issue.pivot</field>
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
-            <pivot string="Timesheet">
-                <field name="user_id" type="row"/>
-                <field name="date" interval="month" type="col"/>
-                <field name="cost" type="measure" />
+            <pivot string="Timesheet">                
+                <field name="date" interval="month" type="col"/>                
             </pivot>            
         </field>
     </record>
