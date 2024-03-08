@@ -50,4 +50,16 @@
             </form>
         </field>
     </record>
+
+    <record id="action_sport_clinic" model="ir.actions.act_window">
+        <field name="name">Clinics</field>
+        <field name="res_model">sport.clinic</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a new sport clinic
+            </p>
+        </field>
+    </record>
 </odoo>

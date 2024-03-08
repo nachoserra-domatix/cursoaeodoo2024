@@ -1,36 +1,50 @@
 <odoo>
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
-    <menuitem id="sport_menu" name="Sport Issues" sequence="10"/>
+    <menuitem id="sport_association_menu" name="Sport Association" sequence="10"/>
+    <menuitem id="sport_management" parent="sport_association_menu" name="Sport Management" sequence="20"/>
+    <menuitem id="sport_issues_management" parent="sport_association_menu" name="Issues Management" sequence="20"/>
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="sport_issue_menu" 
         name="Sport Issues" 
-        parent="sport_menu" 
+        parent="sport_issues_management" 
         action="action_sport_issue" 
-        sequence="10"
+        sequence="30"
         />
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="sport_clinic_menu_act" 
         name="Sport Clinics" 
-        parent="sport_menu" 
+        parent="sport_issues_management" 
         action="action_sport_clinic" 
-        sequence="20"
+        sequence="30"
         />
     <menuitem id="sport_sport_menu_act" 
         name="Sports" 
-        parent="sport_menu" 
+        parent="sport_management" 
         action="action_sport_sport" 
-        sequence="30"
+        sequence="20"
         />
     <menuitem id="sport_team_menu_act" 
         name="Teams" 
-        parent="sport_menu" 
+        parent="sport_management" 
         action="action_sport_team" 
-        sequence="40"
+        sequence="20"
         />
     <menuitem id="sport_player_menu_act" 
         name="Players" 
-        parent="sport_menu" 
+        parent="sport_management" 
         action="action_sport_player" 
-        sequence="50"
+        sequence="20"
+        />
+    <menuitem id="sport_league_menu_act" 
+        name="Leagues" 
+        parent="sport_management"
+        action="sport_league_action" 
+        sequence="20"
+        />
+    <menuitem id="sport_match_menu_act" 
+        name="Match" 
+        parent="sport_management"
+        action="sport_match_action" 
+        sequence="20"
         />
 </odoo>

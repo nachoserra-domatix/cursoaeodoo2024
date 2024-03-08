@@ -8,6 +8,7 @@ class SportTeam(models.Model):
 
     name = fields.Char(string='Name', required=True, translate=True)
     logo = fields.Image(string='Logo')
+    color = fields.Integer(string='Color')
     player_ids = fields.One2many(comodel_name='sport.player', inverse_name='team_id', string='Jugadores')
     sport_id = fields.Many2one(comodel_name='sport.sport', string='Sport')
     
