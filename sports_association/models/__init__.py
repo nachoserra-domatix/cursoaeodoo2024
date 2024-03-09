@@ -8,3 +8,5 @@ from . import sport_player
 from . import sport_sport
 from . import sport_team
 from . import sport_actions_todo
+from . import sport_league
+from . import sport_match

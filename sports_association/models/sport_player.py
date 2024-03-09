@@ -11,8 +11,7 @@ class SportPlayer(models.Model):
     position = fields.Char(string='Position')
     team_id = fields.Many2one('sport.team', string='team')
     tittle = fields.Boolean(string='Tittle',help='Show if the player is Principal')
-    
-    sport_name = fields.Char('Sport', related='team_id.sport_id.name')
+    sport_name = fields.Char('Sport', related='team_id.sport_id.name', store=True)
     
     @api.depends('birthday')
     def _compute_years(self):

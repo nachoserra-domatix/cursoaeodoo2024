@@ -32,7 +32,6 @@
         <field name="model">sport.player</field>
         <field name="arch" type="xml">
             <form string="Sport Player">
-             
                 <sheet>
                     <group>
                         <field name="name" />
@@ -43,8 +42,6 @@
                         <field name="position"></field>
                         <field name="tittle" widget="boolean_toggle"></field>
                     </group>
-
-
                 </sheet>
             </form>
         </field>
@@ -75,6 +72,21 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="sport_player_view_search" model="ir.ui.view">
+        <field name="name">sport_player.view.search</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <search string="Players">
+                <field name="name" filter_domain="['|',('sport_name', 'ilike', self), ('team_id', 'ilike', self)]"></field>
+                <filter name="tittle" string="Tittle" domain="[('tittle', '=', 'True')]"/>
+                <filter name="player" string="Player" context="{'group_by': 'name'}" />
+                <filter name="sport_name" string="Sport" context="{'group_by': 'sport_name'}" />
+                <filter name="birthday" string="Birthday" context="{'group_by': 'birthday'}" />
+            </search>
+        
         </field>
     </record>
 </odoo>
