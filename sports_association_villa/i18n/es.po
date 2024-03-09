@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0-20240216\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-03 13:35+0000\n"
-"PO-Revision-Date: 2024-03-03 14:43+0100\n"
+"POT-Creation-Date: 2024-03-04 12:42+0000\n"
+"PO-Revision-Date: 2024-03-04 13:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -38,6 +38,21 @@ msgstr ""
 "        El usuario podrá gestionar algún modelo."
 
 #. module: sports_association_villa
+#: model:ir.actions.act_window,name:sports_association_villa.action_sport_player
+msgid " Add Player"
+msgstr " Añadir Jugador"
+
+#. module: sports_association_villa
+#: model:ir.actions.act_window,name:sports_association_villa.action_sport
+msgid "Add Sport"
+msgstr "Añadir Deporte"
+
+#. module: sports_association_villa
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__age
+msgid "Age"
+msgstr "Edad"
+
+#. module: sports_association_villa
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__assistance
 msgid "Assistance"
 msgstr "Asistencia"
@@ -63,9 +78,24 @@ msgid "Click to create a new issue."
 msgstr "Haga clic para crear una nueva incidencia."
 
 #. module: sports_association_villa
+#: model_terms:ir.actions.act_window,help:sports_association_villa.action_sport_player
+msgid "Click to create a new player."
+msgstr "Haz clic para crear un nuevo jugador."
+
+#. module: sports_association_villa
+#: model_terms:ir.actions.act_window,help:sports_association_villa.action_sport
+msgid "Click to create a new sport."
+msgstr "Haz clic para crear un nuevo deporte."
+
+#. module: sports_association_villa
 #: model_terms:ir.actions.act_window,help:sports_association_villa.action_sport_issue_tag
 msgid "Click to create a new tag."
 msgstr "Haga clic para crear una nueva etiqueta"
+
+#. module: sports_association_villa
+#: model_terms:ir.actions.act_window,help:sports_association_villa.action_sport_team
+msgid "Click to create a new team."
+msgstr "Haz clic para crear un nuevo equipo."
 
 #. module: sports_association_villa
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__clinic_id
@@ -88,6 +118,9 @@ msgstr "Confirmar"
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__create_uid
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue_tag__create_uid
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_license__create_uid
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__create_uid
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_sport__create_uid
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_team__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
@@ -96,6 +129,9 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__create_date
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue_tag__create_date
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_license__create_date
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__create_date
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_sport__create_date
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_team__create_date
 msgid "Created on"
 msgstr "Creado el"
 
@@ -106,6 +142,7 @@ msgstr "Fecha"
 
 #. module: sports_association_villa
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__description
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_sport__description
 #: model_terms:ir.ui.view,arch_db:sports_association_villa.sport_issue_view_form
 msgid "Description"
 msgstr "Descripción"
@@ -115,6 +152,9 @@ msgstr "Descripción"
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__display_name
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue_tag__display_name
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_license__display_name
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__display_name
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_sport__display_name
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_team__display_name
 msgid "Display Name"
 msgstr "Mostrar nombre"
 
@@ -144,8 +184,11 @@ msgstr "Fecha Final"
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__id
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue_tag__id
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_license__id
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__id
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_sport__id
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_team__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: sports_association_villa
 #: model_terms:ir.ui.view,arch_db:sports_association_villa.sport_issue_view_form
@@ -165,6 +208,9 @@ msgstr "Insidencias"
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__write_uid
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue_tag__write_uid
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_license__write_uid
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__write_uid
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_sport__write_uid
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_team__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización"
 
@@ -173,8 +219,16 @@ msgstr "Última actualización"
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__write_date
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue_tag__write_date
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_license__write_date
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__write_date
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_sport__write_date
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_team__write_date
 msgid "Last Updated on"
 msgstr "Última actualización"
+
+#. module: sports_association_villa
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_team__logo
+msgid "Logo"
+msgstr "Logo"
 
 #. module: sports_association_villa
 #: model:res.groups,name:sports_association_villa.res_groups_sports_association_manager
@@ -186,6 +240,9 @@ msgstr "Responsable"
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__name
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue_tag__name
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_license__name
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__name
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_sport__name
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_team__name
 msgid "Name"
 msgstr "Nombre"
 
@@ -205,6 +262,18 @@ msgid "Phone"
 msgstr "Teléfono"
 
 #. module: sports_association_villa
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_team__players_ids
+#: model_terms:ir.ui.view,arch_db:sports_association_villa.view_sport_player_tree
+#: model_terms:ir.ui.view,arch_db:sports_association_villa.view_sport_team_form
+msgid "Players"
+msgstr "Jugadores"
+
+#. module: sports_association_villa
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__position
+msgid "Position"
+msgstr "Posición"
+
+#. module: sports_association_villa
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__sequense
 msgid "Sequense"
 msgstr "Secuencia"
@@ -214,6 +283,13 @@ msgstr "Secuencia"
 #: model_terms:ir.ui.view,arch_db:sports_association_villa.sport_issue_view_form
 msgid "Solution"
 msgstr "Solución"
+
+#. module: sports_association_villa
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_team__sport_id
+#: model:ir.ui.menu,name:sports_association_villa.menu_general_sport_sport
+#: model:ir.ui.menu,name:sports_association_villa.menu_sport_sport
+msgid "Sport"
+msgstr "Deporte"
 
 #. module: sports_association_villa
 #: model:ir.ui.menu,name:sports_association_villa.menu_sport
@@ -230,6 +306,7 @@ msgstr "Clínica de deporte"
 #. module: sports_association_villa
 #: model:ir.actions.act_window,name:sports_association_villa.action_sport_issue
 #: model:ir.model,name:sports_association_villa.model_sport_issue
+#: model:ir.ui.menu,name:sports_association_villa.menu_general_sport_issue
 #: model:ir.ui.menu,name:sports_association_villa.menu_sport_issue
 msgid "Sport Issue"
 msgstr "Incidencia Deportiva"
@@ -238,7 +315,7 @@ msgstr "Incidencia Deportiva"
 #: model:ir.model,name:sports_association_villa.model_sport_issue_tag
 #: model:ir.ui.menu,name:sports_association_villa.menu_sport_issue_tag
 msgid "Sport Issue Tag"
-msgstr "Etiqueta de Incidencia Deportiva"
+msgstr "Etiquetas de Incidencia Deportiva"
 
 #. module: sports_association_villa
 #: model:ir.actions.act_window,name:sports_association_villa.action_sport_issue_tag
@@ -251,6 +328,29 @@ msgid "Sport License"
 msgstr "Licencia Deportiva"
 
 #. module: sports_association_villa
+#: model:ir.model,name:sports_association_villa.model_sport_player
+#: model:ir.ui.menu,name:sports_association_villa.menu_sport_player
+msgid "Sport Player"
+msgstr "Jugadores"
+
+#. module: sports_association_villa
+#: model:ir.model,name:sports_association_villa.model_sport_sport
+msgid "Sport Sport"
+msgstr "Deporte"
+
+#. module: sports_association_villa
+#: model:ir.actions.act_window,name:sports_association_villa.action_sport_team
+#: model:ir.model,name:sports_association_villa.model_sport_team
+#: model:ir.ui.menu,name:sports_association_villa.menu_sport_team
+msgid "Sport Team"
+msgstr "Equipo Deportivo"
+
+#. module: sports_association_villa
+#: model_terms:ir.ui.view,arch_db:sports_association_villa.view_sport_tree
+msgid "Sports"
+msgstr "Deportes"
+
+#. module: sports_association_villa
 #: model:ir.module.category,name:sports_association_villa.ir_module_sports_association
 msgid "Sports Associations"
 msgstr "Asociaciones Deportivas"
@@ -259,6 +359,21 @@ msgstr "Asociaciones Deportivas"
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_license__start_date
 msgid "Start Date"
 msgstr "Fecha de Inicio"
+
+#. module: sports_association_villa
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__starting_player
+msgid "Starting Player"
+msgstr "Titular"
+
+#. module: sports_association_villa
+#: model_terms:ir.ui.view,arch_db:sports_association_villa.view_sport_team_form
+msgid "Starting Player Off"
+msgstr "Quitar de Tilular"
+
+#. module: sports_association_villa
+#: model_terms:ir.ui.view,arch_db:sports_association_villa.view_sport_team_form
+msgid "Starting Player On"
+msgstr "Hacer Titular"
 
 #. module: sports_association_villa
 #: model:ir.model.fields,field_description:sports_association_villa.field_sport_issue__state
@@ -270,6 +385,17 @@ msgstr "Estado"
 #: model_terms:ir.ui.view,arch_db:sports_association_villa.view_sport_issue_tag_tree
 msgid "Tags"
 msgstr "Etiquetas"
+
+#. module: sports_association_villa
+#: model:ir.model.fields,field_description:sports_association_villa.field_sport_player__team_id
+#: model_terms:ir.ui.view,arch_db:sports_association_villa.view_sport_team_form
+msgid "Team"
+msgstr "Equipo"
+
+#. module: sports_association_villa
+#: model_terms:ir.ui.view,arch_db:sports_association_villa.view_sport_team_tree
+msgid "Teams"
+msgstr "Equipos"
 
 #. module: sports_association_villa
 #: model_terms:ir.ui.view,arch_db:sports_association_villa.sport_issue_view_form

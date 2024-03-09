@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="sport_league_tree_view" model="ir.ui.view">
+            <field name="name">sport.league.tree.view</field>
+            <field name="model">sport.league</field>
+            <field name="arch" type="xml">
+                <tree string="Leagues">
+                    <field name="name"/>
+                    <field name="begin_date"/>
+                    <field name="end_date"/>
+                    <field name="sport_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="sport_league_view_form" model="ir.ui.view">
+            <field name="name">sport.league.view.form</field>
+            <field name="model">sport.league</field>
+            <field name="arch" type="xml">
+                <form string="Leagues">
+                    <header>
+                        <button string="Set Score" type="object" name="set_score" class="btn-warning"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="League Name"/>
+                            </h1>
+                        </div>
+                            <group>
+                                <field name="begin_date"/>
+                                <field name="end_date"/>
+                                <field name="sport_id"/>
+                            </group>
+                        <notebook>
+                            <page name="sport_league_line" string="Sport League Line">
+                                <field name="sport_league_ids">
+                                    <tree editable="bottom">
+                                        <field name="team_id" domain= "[('sport_id' , '=', parent.sport_id)]"/>
+                                        <field name="points"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_sport_league" model="ir.actions.act_window">
+            <field name="name">Sport League</field>
+            <field name="res_model">sport.league</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

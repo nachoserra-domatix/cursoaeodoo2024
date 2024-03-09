@@ -9,6 +9,7 @@
                     <field name="name"/>
                     <field name="phone"/>
                     <field name="email"/>
+                    <field name ="available" widget = "boolean_toggle"/>
                 </tree>
             </field>
         </record>
@@ -21,8 +22,14 @@
                         <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"/>
                     </header>
                     <sheet>
+                        <div class = "oe_title">
+                            <h1>
+                                <field name="name" placeholder = "Clinic Name"/>
+                            </h1>
+                        </div>
                             <group>
                                 <field name="name"/>
+                                <field name ="available" widget = "boolean_toggle"/>
                                 <field name="phone"/>
                                 <field name="email"/>
                             </group>
@@ -32,7 +39,7 @@
                                         <tree editable = "bottom">
                                             <field name="name"/>
                                             <field name="date"/>
-                                            <field name="assistance"/>
+                                            <field name="assistance" widget = "boolean_toggle"/>
                                         </tree>
                                     </field>
                                 </page>

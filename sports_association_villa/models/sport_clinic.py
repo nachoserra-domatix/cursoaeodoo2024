@@ -8,6 +8,7 @@ class SportClinic(models.Model):
     phone = fields.Char('Phone')
     email = fields.Char('Email')
     issue_ids =  fields.One2many('sport.issue', 'clinic_id', string='Issues')
+    available = fields.Boolean('Available', default=False)
 
     def action_check_assistance(self):
         #import pdb; pdb.set_trace()
