@@ -50,6 +50,10 @@ class SportIssue(models.Model):
     assigned = fields.Boolean('Assigned', compute='_compute_assigned', store=True)
     action_ids = fields.One2many('sport.issue.action', 'issue_id', string='Actions to do')
 
+    _sql_constraints = [
+        ('name_uniq', 'unique(name)', 'Name must be unique.'),
+    ]
+    
     @api.depends('user_id')
     def _compute_assigned(self):
         for record in self:
