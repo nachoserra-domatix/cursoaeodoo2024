@@ -28,12 +28,16 @@
                 </header>
                 <sheet>
                     <group>
-                        <field name="name" />
-                        <field name="date_start" />
-                        <field name="date_end" />
-                    </group>
-                    <group>
-                        <field name="sport_id" />
+                        <group>
+                            <field name="name" />
+                            <field name="date_start" />
+                            <field name="date_end" />
+                        </group>
+                        <group>
+                            <field name="sport_id" />
+                            <field name="points_winner" />
+                            <field name="points_looser" />
+                        </group>
                     </group>
                     <notebook>
                         <page name="Classification" string="Classification">

@@ -26,6 +26,7 @@ class Sportplayer(models.Model):
 
     starter = fields.Boolean(
         string='Starter',
+        default=True
     )
     
     

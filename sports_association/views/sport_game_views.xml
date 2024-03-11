@@ -10,7 +10,7 @@
                 <field name="date" />
                 <field name="league_id" />
                 <field name="team_winner_id" />
-                <field name="points" />
+                <field name="team_looser_id" />
             </tree>
         </field>
     </record>
@@ -29,7 +29,8 @@
                     </group>
                     <group>
                         <field name="team_winner_id" />
-                        <field name="points" />
+                        <field name="points_winner" />
+                        <field name="points_looser" />
                     </group>
                     <field name="game_line_ids">
                         <tree string="Marcador" create="true" delete="true" edit="true"
@@ -48,9 +49,8 @@
         <field name="model">sport.game</field>
         <field name="arch" type="xml">
             <calendar string="Games" date_start="date" color="team_winner_id">
-                <field name="date" />
-                <field name="sport_id" />
-                <field name="league_id" filters="1" invisible="1" />
+                <field name="team_winner_id" />
+                <field name="team_looser_id" />
             </calendar>
         </field>
     </record>
@@ -72,8 +72,8 @@
         <field name="arch" type="xml">
             <pivot string="Games">
                 <field type="row" name="team_winner_id" />
+                <field type="row" name="team_looser_id" />
                 <field type="col" name="date" interval="month" />
-                <field type="measure" name="points" />
             </pivot>
 
         </field>

@@ -27,5 +27,6 @@
         "views/sport_sport_views.xml",
         "data/sport_license_data.xml",
         "data/sport_issue_tag_data.xml",
+        "data/ir_cron.xml"
     ],
 }

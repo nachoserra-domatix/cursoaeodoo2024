@@ -53,3 +53,12 @@ class SportTeam(models.Model):
             free_players = self.env['sport.player'].search([('team_id', '=', False), ('age', '<', 30)])
             free_players |= record.player_ids
             record.player_ids = [Command.set(free_players.ids)]
+
+    def action_view_players(self):
+        return{
+            "name": "Players",
+            "type": "ir.actions.act_window",
+            "res_model": "sport.player",
+            "view_mode": "tree,form",
+            "domain": [("team_id", '=', self.id)]
+        }

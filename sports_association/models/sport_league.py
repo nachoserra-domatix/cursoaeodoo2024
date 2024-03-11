@@ -30,6 +30,14 @@ class SportLeague(models.Model):
         string='End Date',
         default=fields.Date.context_today,
     )
+    
+    points_winner = fields.Integer(
+        string='Winner Points',
+    )
+    
+    points_looser = fields.Integer(
+        string='Looser Points',
+    )
 
     league_line_ids = fields.One2many('sport.league.line', 'league_id', string='League Classifications')
 
@@ -37,7 +45,10 @@ class SportLeague(models.Model):
         for record in self:
             for line in record.league_line_ids:
                 games_won = self.env["sport.game"].search([("team_winner_id", "=", line.team_id.id),('league_id','=',self.id)])
-                line.points = sum(game["points"] for game in games_won)
+                games_lost = self.env["sport.game"].search([("team_looser_id", "=", line.team_id.id),('league_id','=',self.id)])
+                line.points = sum(game["points_winner"] for game in games_won)
+                line.points += sum(game["points_looser"] for game in games_lost)
 
-
-
+    def _cron_set_classification(self):
+        leagues = self.search([])
+        leagues.action_compute_classification()
