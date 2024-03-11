@@ -19,7 +19,7 @@
             <field name="model">sport.player</field>
             <field eval="100" name="priority"/>
             <field name="arch" type="xml">
-                <tree string="Sport Issue">
+                <tree string="Sport Issue" editable="bottom">
                     <field name="name"/>
                     <field name="team_id"/>
                 </tree>
@@ -85,6 +85,24 @@
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record id="sport_player_view_search" model="ir.ui.view">
+            <field name="name">sport.player.view.search</field>
+            <field name="model">sport.player</field>
+            <field name="arch" type="xml">
+                <search string="Players">
+                    <field name="name"/>
+                    <field name="team_id"/>
+                    <field name="sport_name"/>
+                    <separator/>
+                    <filter name="filter_titular" string="Titular Players" domain="[('titular', '=', True)]"/>
+                    <separator/>
+                    <filter name="group_team" string="Team" context="{'group_by': 'team_id'}" />
+                    <filter name="group_sport" string="Sport" context="{'group_by': 'sport_name'}" />
+                    <filter name="group_birth_date" string="Birth Date" context="{'group_by': 'birth_date'}" />
+                </search>
             </field>
         </record>
         

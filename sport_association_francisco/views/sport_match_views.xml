@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="sport_match_tree_view" model="ir.ui.view">
+            <field name="name">sport.match.tree.view</field>
+            <field name="model">sport.match</field>
+            <field name="arch" type="xml">
+                <tree string="Sport Issue" multi_edit='1'>
+                    <field name="sport_id"/>
+                    <field name="match_date"/>
+                    <field name="winner_team_id"/>
+                    <field name="up_score"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sport_match_form_view" model="ir.ui.view">
+            <field name="name">sport.match.form.view</field>
+            <field name="model">sport.match</field>
+            <field name="arch" type="xml">
+                <form string="Sport match">
+                    <sheet>
+                        <!-- <header>
+                            <button name="compute_winner_team" string="Get winner" type="object" class="btn-primary"/>
+                        </header> -->
+                        <group>
+                            <group>
+                                <field name="sport_id" options="{'no_quick_create':True}"/>
+                                <field name="match_date"/>
+                                <field name="winner_team_id" domain="[('sport_id', '=', sport_id)]"/>
+                                <field name="up_score"/>
+                                <field name="match_line_ids">
+                                    <tree>
+                                        <field name="team_id"/>
+                                        <field name="total_score"/>
+                                    </tree>
+                                    <form>
+                                        <field name="team_id" domain="[('sport_id', '=', parent.sport_id)]"/>
+                                        <field name="total_score"/>
+                                        <field name="match_id" invisible="1"/>
+                                    </form>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sport_match_view_pivot" model="ir.ui.view">
+            <field name="name">sport.match.view.pivot</field>
+            <field name="model">sport.match</field>
+            <field name="arch" type="xml">
+                <pivot string="Match" disable_linking="true">
+                    <field name="winner_team_id" type="col" />
+                    <field name="sport_id" type="row" />
+                    <field name="up_score" type="measure" />
+                </pivot>
+            </field>
+        </record>
+
+        <record id="sport_match_view_graph" model="ir.ui.view">
+            <field name="name">sport.match.view.graph</field>
+            <field name="model">sport.match</field>
+            <field name="arch" type="xml">
+                <graph string="Match" type="bar">
+                    <field name="winner_team_id" />
+                    <field name="up_score" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="sport_match_view_calendar" model="ir.ui.view">
+            <field name="name">sport.match.view.calendar</field>
+            <field name="model">sport.match</field>
+            <field name="arch" type="xml">
+                <calendar string="Match" date_start="match_date" color="color">
+                    <field name="winner_team_id" />
+                    <field name="up_score" />
+                </calendar>
+            </field>
+        </record>
+
+    </odoo>

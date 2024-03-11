@@ -26,6 +26,10 @@
         "views/sport_sport_views.xml",
         "views/sport_team_views.xml",
         "data/sport_license_data.xml",
+        "views/sport_leage_menu_items.xml",
+        "views/sport_leage_views.xml",
+        "views/sport_match_menu_items.xml",
+        "views/sport_match_views.xml",
         "data/sport_tag_data.xml"
     ]
 }

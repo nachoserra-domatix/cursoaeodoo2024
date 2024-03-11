@@ -6,9 +6,10 @@ class SportTeam(models.Model):
     _description = 'Sport team'
 
     name = fields.Char(string="Name")
-    logo = fields.Binary('Logo')
+    logo = fields.Image('Logo')
     sport_id = fields.Many2one('sport.sport', string='Sport')
     player_ids = fields.One2many('sport.player', 'team_id', string='Players')
+    color = fields.Integer('Color')
 
     members = fields.Integer('Members', compute='_compute_members')
 
