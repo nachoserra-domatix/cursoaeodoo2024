@@ -113,8 +113,7 @@ class SportIssue(models.Model):
         issues = self.env['sport.issue'].search([])
         issues.action_open()
 
-    def unlink_unused_tags(self):
-
+    def _cron_unlink_unused_tags(self):
         tags_ids = self.env['sport.issue.tag'].search([])
         for tag in tags_ids:
             issue = self.env['sport.issue'].search([('tags_ids','in',tag.id)])
