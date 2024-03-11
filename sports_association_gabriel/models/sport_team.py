@@ -16,11 +16,7 @@ class SportTeam(models.Model):
     @api.depends('player_ids')
     def _compute_num_players(self):
         for record in self:
-            if record.player_ids:
-                for index, player in enumerate(record.player_ids):
-                    record.num_players = index + 1
-            else:
-                record.num_players = 0
+            record.num_players = len(record.player_ids)
 
     def action_check_players_starter(self):
         for record in self.player_ids:
@@ -38,4 +34,13 @@ class SportTeam(models.Model):
                 record.player_ids = [(6, 0, players_no_team.ids)]
             else:
                 raise UserError("There are no players without an assigned team and under 30 years of age")
+            
+    def action_view_players(self):
+        return {
+            'name': 'Players',
+            'type': 'ir.actions.act_window',
+            'res_model': 'sport.player',
+            'view_mode': 'tree,form',
+            'domain': [('team_id', '=', self.id)]
+        }
 

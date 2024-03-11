@@ -36,6 +36,7 @@
                     <group>
                         <field name="assigned"/>
                         <field name="user_id" options="{'no_quick_create': True, 'no_open': True}"/>
+                        <field name="user_phone"/>
                         <field name="clinic_id" domain="[('available', '=', True)]"/>
                         <field name="cost"/>
                     </group>

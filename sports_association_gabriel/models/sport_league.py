@@ -18,6 +18,10 @@ class SportLeague(models.Model):
                 for match_won in match_won_ids:
                     line.points += match_won.points
 
+    def _cron_set_points(self):
+        leagues = self.search([])
+        leagues.action_calculate_points()
+
 
 class SportLeagueLine(models.Model):
     _name = "sport.league.line"
