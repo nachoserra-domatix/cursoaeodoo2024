@@ -42,6 +42,7 @@
                             <field name="date"/>
                             <field name="assistance" widget="boolean_toggle"/>
                             <field name="tag_ids" options="{'no_quick_create': True,'no_create':True}" widget="many2many_tags"/>
+                            <field name="user_phone"/>
                         </group>
                         <notebook>
                             <page name="description" string="Description">

@@ -31,6 +31,12 @@
         action="action_sport_clinic"
         parent="medical_menu"
         sequence="20"/>
+        <menuitem
+        id="sport_issue_tag_menu"
+        name="Issue Tags"
+        action="sport_issue_tag_action"
+        parent="medical_menu"
+        sequence="30"/>
     <menuitem 
         id="sport_player_menu"
         name="Players"

@@ -21,6 +21,12 @@
                     <button string="Check assistance" name="action_check_assistance" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
+                    <!-- Smart button Issues -->
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_show_issues" icon="fa-stethoscope">
+                            <field string="Issues" name="issue_count" widget="statinfo"/>
+                        </button>
+                    </div>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Issue Name"/>

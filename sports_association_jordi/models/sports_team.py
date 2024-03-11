@@ -29,3 +29,13 @@ class SportsTeam(models.Model):
     def _compute_count_players(self):
         for record in self:
             record.count_players=len(record.players_ids)
+    
+    # new action to show the players of the team
+    def action_show_players(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Players',
+            'res_model': 'sports.player',
+            'view_mode': 'tree,form',
+            'domain': [('team_id', '=', self.id)],
+        }
