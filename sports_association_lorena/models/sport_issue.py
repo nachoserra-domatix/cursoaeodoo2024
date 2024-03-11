@@ -1,4 +1,5 @@
-from odoo import models, fields, Command
+from odoo import models, fields, Command, api, _
+from odoo.exceptions import ValidationError
 
 class SportIssue(models.Model):
     _name = 'sport.issue'
@@ -19,6 +20,21 @@ class SportIssue(models.Model):
     assigned = fields.Boolean(string='Assigned', compute='_computed_assigned')
     actions_ids = fields.One2many('sport.action', 'issue_id', string='Actions')
 
+    @api.constrains('cost')
+    def _check_cost(self):
+        for record in self:
+            if record.cost < 0:
+                raise ValidationError(_('The cost must be positive.'))
+            
+    @api.onchange('clinic_id')
+    def _onchange_clinic(self):
+        for record in self:
+            if record.clinic_id:
+                record.assistance = True
+            else:
+                record.assistance = False
+            
+    @api.depends('user_id')
     def _computed_assigned(self):
         for record in self:
             if record.user_id:

@@ -67,6 +67,21 @@
         </field>
     </record>
 
+    <record id="sport_player_view_search" model="ir.ui.view">
+        <field name="name">sport.player.view.search</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="sport" />
+                <field name="team_id" />
+                <filter string='Headline' name='headline' domain="[('headline', '=', True)]"/>
+                <filter string="Team" name="team_id" context="{'group_by':'team_id'}"/>
+                <filter string="Sport" name="sport" context="{'group_by':'sport'}"/>
+                <filter string="Date birth" name="date_birth" context="{'group_by':'date_birth'}"/>
+            </search>
+        </field>
+    </record>
+
     <record id="action_sport_player" model="ir.actions.act_window">
         <field name="name">Sport Player</field>
         <field name="res_model">sport.player</field>

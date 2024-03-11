@@ -47,5 +47,12 @@
             name="Player"
             action="action_sport_player"
             sequence="60"/>
+        
+        <menuitem
+            id="sport_league_menu"
+            name="League"
+            action="action_sport_league"
+            sequence="70"/>
+        
     </menuitem>
 </odoo>

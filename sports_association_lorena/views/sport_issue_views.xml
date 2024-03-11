@@ -81,6 +81,7 @@
                 <field name="clinic_id" />
                 <field name="date" />
                 <field name="tag_ids" />
+                <field name="state" />
                 <field name="color" />
                 <templates>
                     <t t-name="kanban-menu">

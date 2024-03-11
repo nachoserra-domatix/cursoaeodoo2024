@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sport_league_view_tree" model="ir.ui.view">
+        <field name="name">sport_league.view.tree</field>
+        <field name="model">sport.league</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Leagues">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="sport_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_league_view_form" model="ir.ui.view">
+        <field name="name">sport_league.view.form</field>
+        <field name="model">sport.league</field>
+        <field name="arch" type="xml">
+            <form string="Leagues">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="league name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="sport_id"/>
+                        </group>
+                        <field name="league_line">
+                            <tree editable="bottom">
+                                <field name="team_id"/>
+                                <field name="rating"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sport_league" model="ir.actions.act_window">
+        <field name="name">Sport league</field>
+        <field name="res_model">sport.league</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

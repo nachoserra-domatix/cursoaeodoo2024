@@ -8,6 +8,7 @@ class SportTeam(models.Model):
     logo = fields.Binary(string="Logo")
     player_ids = fields.One2many('sport.player', 'team_id', string='Players')
     sport_id = fields.Many2one('sport.sport', string='Sport')
+    color = fields.Integer(string='Color', default=0)
 
     def mark_headline(self):
         for player in self.player_ids:
