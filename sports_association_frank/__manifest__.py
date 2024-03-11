@@ -13,6 +13,7 @@
         "base",
     ],
     "data": [
+        "data/ir_cron.xml",
         "data/sport_license_data.xml",
         "data/sport_issue_tag.xml",
         "data/sport_sport_data.xml",

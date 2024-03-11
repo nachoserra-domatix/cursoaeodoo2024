@@ -5,10 +5,10 @@ class SportPlayer(models.Model):
     _description = 'Player'
 
     name = fields.Char(string='Player Name', required=True)
-    age = fields.Integer(string='Age')
-    position = fields.Char(string='Position')
-    team_id = fields.Many2one('sport.team', string='Team')
-    is_starter = fields.Boolean(string='Starter')
+    age = fields.Integer()
+    position = fields.Char()
+    team_id = fields.Many2one(comodel_name='sport.team')
+    is_starter = fields.Boolean(default=True)
     sport_name = fields.Char(related='team_id.sport_id.name', store=True)
 
     def action_starter (self):

@@ -21,3 +21,13 @@ class SportTeam(models.Model):
         for rec in self:
             players = self.env['sport.player'].search([('team_id', '=', False), ('age', '<', 30)])
             rec.player_ids |= players
+
+    def action_view_players(self):
+        self.ensure_one()
+        return {
+            'name': 'Players',
+            'type': 'ir.actions.act_window',
+            'res_model': 'sport.player',
+            'view_mode': 'tree,form',
+            'domain': [('team_id', '=', self.id)],
+        }

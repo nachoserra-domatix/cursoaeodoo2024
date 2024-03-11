@@ -19,4 +19,9 @@ class SportLeague(models.Model):
             rec.points = sum(self.env['sport.match'].search([
                 ('sport_id', '=', self.sport_id.id),
                 ('winner_team_id', '=', rec.team_id.id),
-            ]).mapped('score_winner_team'))
+            ]).mapped('score_winning'))
+
+    def _cron_set_score(self):
+        leagues = self.search([])
+        leagues.set_score()
+        return True

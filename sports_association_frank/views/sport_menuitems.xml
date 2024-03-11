@@ -36,18 +36,29 @@
             action="action_sport_player"            
             groups="base.group_user"/>
 
-        <menuitem id="sport_sport_menu"
+        <menuitem 
+            id="sport_association_sport_menu"
             name="Sports"
             sequence="60"
-            action="action_sport_sport"            
-            groups="base.group_user"/>
-        <menuitem id="sport_league_menu"
-            name="Sport League"
-            action="sport_league_action"
-            sequence="70"/>
-        <menuitem id="sport_match_menu"
-            name="Sport Match"
-            action="sport_match_action"
-            sequence="80"/>
+        >
+            <menuitem 
+                id="sport_sport_menu"
+                name="Sports"
+                sequence="10"
+                action="action_sport_sport"            
+            />
+            <menuitem 
+                id="sport_league_menu"
+                name="Sport League"
+                action="sport_league_action"
+                sequence="20"
+            />
+            <menuitem 
+                id="sport_match_menu"
+                name="Sport Match"
+                action="sport_match_action"
+                sequence="30"
+            />
+        </menuitem>
     </menuitem>
 </odoo>
