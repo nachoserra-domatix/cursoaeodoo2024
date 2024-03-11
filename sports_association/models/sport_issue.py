@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, models, fields, Command
+from odoo.exceptions import ValidationError
 
 SPORT_ISSUE_STATE = [
     ('draft', "Draft"),
@@ -52,6 +53,17 @@ class SportIssue(models.Model):
     def _compute_assigned(self):
         for record in self:
             record.assigned = bool(record.user_id)
+    
+    @api.constrains('cost')
+    def _check_coste_no_negativo(self):
+        for record in self:
+            if record.cost < 0:
+                raise ValidationError("The cost must be positive.")
+            
+    @api.onchange( 'clinic_id')
+    def _onchange_clinic_id (self):
+        for record in self:
+            record.assistance = True
     
     # def _inverse_assigned(self):
     #     for record in self:

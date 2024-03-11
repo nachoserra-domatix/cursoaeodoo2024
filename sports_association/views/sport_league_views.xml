@@ -8,7 +8,8 @@
         <field name="model">sport.league</field>
         <field name="arch" type="xml">
             <tree string="Sports" multi_edit="1">                
-                <field name="name"/>                
+                <field name="name"/>
+                <field name="sport_id" string="sport"/>              
             </tree>
         </field>
     </record>
@@ -25,8 +26,11 @@
                             <field name="name" placeholder="League Name"/>
                         </h1>
                     </div>
+                    <group>                        
+                        <field name="sport_id" string="sport"/>
+                    </group>
                     <notebook>
-                        <page name="Lines" string="Lines">                            
+                        <page name="Teams" string="Teams">                            
                             <field name="league_line_ids">
                                 <tree editable="bottom">                                    
                                     <field name="team_id"/>

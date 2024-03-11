@@ -8,7 +8,9 @@
         <field name="model">sport.match</field>
         <field name="arch" type="xml">
             <tree string="Matchs" multi_edit="1">                
-                <field name="date"/>                
+                <field name="sport_id"/>
+                <field name="date"/> 
+                <field name="winner_team_id"/>               
             </tree>
         </field>
     </record>
@@ -18,9 +20,11 @@
         <field name="model">sport.match</field>
         <field name="arch" type="xml">
             <form string="Match">
-                <sheet>                                                            
+                <sheet>
+                    <field name="sport_id"/>
+                    <field name="date"/>                                                            
                     <notebook>
-                        <page name="Lines" string="Lines">                            
+                        <page name="teams" string="Teams">                            
                             <field name="match_line_ids">
                                 <tree editable="bottom">                                    
                                     <field name="team_id"/>

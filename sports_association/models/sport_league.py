@@ -11,5 +11,5 @@ class SportLeague(models.Model):
     name = fields.Char(string='Name')
     date_start = fields.Date(string='Date Start')
     date_end = fields.Date(string='Fecha de fin')
-    #sport = fields.Char('sport', related='sport.sport.name')
+    sport_id = fields.Many2one('sport.sport', string='Sport')
     league_line_ids = fields.One2many('sport.league.line', 'league_id', string='League Lines')
