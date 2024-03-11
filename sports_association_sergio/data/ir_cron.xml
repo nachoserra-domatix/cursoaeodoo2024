@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ir_cron_set_score_leagues" model="ir.cron">
+        <field name="name">Set score for leagues</field>
+        <field name="model_id" ref="model_sport_league"></field>
+        <field name="state">code</field>
+        <field name="code">model._cron_set_score()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+    </record>
+    <record id="ir_cron_remove_unused_tags" model="ir.cron">
+        <field name="name">Remove unused tags</field>
+        <field name="model_id" ref="model_sport_issue_tag"></field>
+        <field name="state">code</field>
+        <field name="code">model._cron_remove_unused_tags()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>    
+</odoo>

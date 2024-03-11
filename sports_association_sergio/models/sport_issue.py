@@ -1,12 +1,16 @@
-from odoo import models, fields, api, Command   
+from odoo import models, fields, api, Command, _ 
+from odoo.exceptions import ValidationError, UserError
 
 class SportIssue(models.Model):
     _name =  'sport.issue'
     _description = 'Sport Issue'
 
+    # def _get_default_user(self):
+    #    return self.env.user
+
     name = fields.Char(string='Name',required=True)
     description = fields.Text(string='Description')
-    date = fields.Date(string='Date',required=True)
+    date = fields.Date(string='Date',required=True, default=fields.Date.today)
     assistance = fields.Boolean(string='Assistance',help='Show if the issue had external assistance (paramedics)')
     state = fields.Selection(
         [('draft','Draft'),
@@ -16,7 +20,7 @@ class SportIssue(models.Model):
          default='draft',
     )
 
-    user_id = fields.Many2one('res.users', string='User')
+    user_id = fields.Many2one('res.users', string='User', default=lambda self: self.env.user)
     sequence = fields.Integer(string='Sequence', default=10)
     solution = fields.Html(string='Solution')
 
@@ -27,9 +31,34 @@ class SportIssue(models.Model):
     cost =fields.Float(string="Cost", default=0.0)
 
     assigned = fields.Boolean(name="Assigned", compute="_compute_assigned", inverse="_inverse_assigned", search="_search_assigned",store=True)
-    user_phone = fields.Char(string='User Phone', related='user_id.partner_id.phone', store=True)  
+    user_phone = fields.Char(string='User Phone')  
 
     task_ids = fields.One2many('sport.task', 'issue_id', string='Tasks')
+
+    _sql_constraints = [
+        ('name_uniq', 'unique(name)', _('The name must be unique'))
+    ]
+
+    @api.constrains('cost')
+    def _check_cost(self):
+        for record in self:
+            if record.cost < 0:
+                raise ValidationError(_('The cost must be positive'))
+            
+    @api.onchange('clinic_id')
+    def _onchange_clinic(self):
+        for record in self:
+            if self.clinic_id:
+                self.assistance = True
+            else:
+                self.assistance = False
+
+    @api.onchange('user_id')
+    def _onchange_user_id(self):
+        if self.user_id:
+            self.user_phone = self.user_id.phone
+        else:
+            self.user_phone = False
 
     @api.depends('user_id')
     def _compute_assigned(self):
@@ -75,7 +104,10 @@ class SportIssue(models.Model):
 
     def action_done(self):
         for record in self:
-            record.state = 'done'
+            if not record.date:
+                raise UserError(_("The date is required"))
+            else:
+                record.state = 'done'
             
     def action_open_all_issues(self):
         issues = self.env['sport.issue'].search([])

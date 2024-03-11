@@ -22,6 +22,11 @@
                     <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"></button>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_issues" class="oe_stat_button" icon="fa-tasks">
+                            <field string="Issues" name="issue_cont" widget="statinfo"></field>
+                        </button>
+                    </div>
                     <group>
                         <field name="name"></field>
                         <field name="phone"></field>

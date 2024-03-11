@@ -57,6 +57,7 @@
                     <button string="Mark starters" name="action_mark_starters" type="object" class="oe_highlight"></button>
                     <button string="Unmark starters" name="action_unmark_starters" type="object" class="oe_highlight"></button>
                     <button string="Add Free Players" name="action_add_players" type="object" class="oe_highlight"></button>
+                    <button string="Players" type="object" name="action_view_players" class="oe_stat_button" icon="fa-players"></button>                    
                 </header>                
                 <sheet>
                     <group>
