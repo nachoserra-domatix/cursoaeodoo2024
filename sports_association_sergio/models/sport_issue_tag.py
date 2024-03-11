@@ -7,8 +7,3 @@ class SportIssueTag(models.Model):
     name = fields.Char(string='Name', required=True, translate=True)
     color = fields.Integer(string="Color", default=0)
 
-def _remove_unused_tags(self):
-# Remove tags that are not referenced by any issue
-    self.env['sport.issue.tag'].search([
-        ('id', 'not in', self.mapped('tags_ids').ids)
-    ]).unlink()

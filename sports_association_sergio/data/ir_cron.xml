@@ -11,9 +11,9 @@
     </record>
     <record id="ir_cron_remove_unused_tags" model="ir.cron">
         <field name="name">Remove unused tags</field>
-        <field name="model_id" ref="model_sport_issue_tag"></field>
+        <field name="model_id" ref="model_sport_issue"></field>
         <field name="state">code</field>
-        <field name="code">model._cron_remove_unused_tags()</field>
+        <field name="code">model._cron_unlink_unused_tags()</field>
         <field name="interval_number">1</field>
         <field name="interval_type">days</field>
         <field name="numbercall">-1</field>
