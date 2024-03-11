@@ -34,4 +34,12 @@ class SportTeam(models.Model):
             for player in new_players:
                 player.team_id = self
         
-            
+    #Smart Button
+    def action_view_players(self):
+        return {
+            'name': 'Players',
+            'type' : 'ir.actions.act_window',
+            'res_model' : 'sport.player',
+            'view_mode': 'tree,form',
+            'domain' : [('team_id', '=', self.id)]
+        }

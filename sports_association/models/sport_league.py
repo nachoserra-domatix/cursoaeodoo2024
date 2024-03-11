@@ -10,3 +10,13 @@ class SportLeague(models.Model):
     sport_id = fields.Many2one('sport.sport', string='Sport')
     league_line_ids = fields.One2many('sport.league.line', 'league_id', string='League Lines')
     game_ids = fields.One2many('sport.game', 'league_id', string='Games')
+
+    def set_score(self):
+        for record in self.league_line_ids:
+            team = record.team_id
+            score_points = self.env['sport.game'].search([('winner_team_id','=',team.id)]).mapped('winner_points')
+            record.points = sum(score_points)
+
+    def _cron_set_score(self):
+        leagues = self.search([])
+        leagues.set_score()
