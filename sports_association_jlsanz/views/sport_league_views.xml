@@ -19,9 +19,9 @@
         <field name="model">sport.league</field>
         <field name="arch" type="xml">
             <form string="Leagues">
-                <!-- <header>
-                    <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"></button>
-                </header> -->
+                <header>
+                    <button string="Set Score" name="set_score" type="object" class="oe_highlight"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="name"></field>

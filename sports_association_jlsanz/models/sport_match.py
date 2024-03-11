@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class SportMatch(models.Model):
     _name = 'sport.match'
@@ -6,11 +6,17 @@ class SportMatch(models.Model):
 
     sport_id = fields.Many2one('sport.sport', string='Sport')
     date_time = fields.Datetime(string='Date')
-    winner = fields.Many2one('sport.team', string='Winner')
+    winner = fields.Many2one('sport.team', string='Winner', compute="_compute_winner_team_id", store=True)
     matchpoints = fields.Integer(string='Points', default='3')
     match_result_ids = fields.One2many('sport.match.result', 'result_id', string='Result')
 
     #league_id = related
+
+    @api.depends('match_result_ids.score')
+    def _compute_winner_team_id(self):
+        for record in self:
+            winner = record.match_result_ids.sorted(key=lambda r: r.score, reverse=True)
+            record.winner = winner[0].team_id.id if winner else False
 
 class SportMatchResult(models.Model):
     _name = 'sport.match.result'

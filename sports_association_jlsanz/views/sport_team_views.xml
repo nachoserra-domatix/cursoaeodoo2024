@@ -23,7 +23,12 @@
                     <button string="Uncheck All Starter" name="action_uncheckall_starter" type="object" class="oe_highlight"></button>
                     <button string="Add Lonely Players" name="action_add_lonely_player" type="object" class="oe_highlight"></button>
                 </header>
-                <sheet>
+                <sheet>                    <!-- smart button -->
+                    <div class="oe_button_box" name="button_box" >
+                        <button type="object" name="action_view_players" class="oe_stat_button" icon="fa-users" >
+                            <field string="Players" name="player_count" widget="statinfo" />
+                        </button>
+                    </div>
                     <group>
                         <group>
                             <field name="name"></field>

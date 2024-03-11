@@ -37,6 +37,7 @@
                         <group>
                             <field name="assigned"></field>
                             <field name="user_id" options="{'no_open': True, 'no_quick_create': True}"/>
+                            <field name="user_phone" />
                             <field name="clinic_ids" domain="[('available','=',False)]"/>
                             <field name="cost" />
                         </group>
@@ -131,6 +132,7 @@
             </kanban>
         </field>
     </record>
+    
     <record id="sport_issue_view_pivot" model="ir.ui.view">
         <field name="name">sport_issue.view.pivot</field>
         <field name="model">sport.issue</field>

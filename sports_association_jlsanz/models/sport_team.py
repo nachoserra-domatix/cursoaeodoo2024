@@ -35,3 +35,13 @@ class SportTeam(models.Model):
             result_players = self.env['sport.player'].search([('team_id','=',False), ('age', '<', 30)])
             if result_players:
                 record.player_ids = [(6,0,result_players.ids)]
+
+    # Smart button
+    def action_view_players(self):
+        return {
+            'name': 'Players',
+            'type': 'ir.actions.act_window',
+            'res_model': 'sport.player',
+            'view_mode': 'tree,form',
+            'domain': [('team_id', '=', self.id)],
+        }
