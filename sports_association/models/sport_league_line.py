@@ -9,4 +9,4 @@ class SportLeagueLine(models.Model):
 
     team_id = fields.Many2one('sport.team', string='Team')
     league_id = fields.Many2one('sport.league', string='League')
-    score = fields.Integer(string='Score')
+    points = fields.Integer('Points')

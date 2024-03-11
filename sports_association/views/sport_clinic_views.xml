@@ -21,6 +21,9 @@
             <form string="Clinic">
                 <header>
                     <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_issues" icon="fa-tasks"/>
+                    </div>
                 </header>
                 <sheet>
                     <group>

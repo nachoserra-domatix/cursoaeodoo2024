@@ -1,7 +1,7 @@
 # Copyright 2024 potxolate
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import api, models, fields, Command
+from odoo import api, models, fields, Command, _
 from odoo.exceptions import ValidationError
 
 SPORT_ISSUE_STATE = [
@@ -32,7 +32,8 @@ class SportIssue(models.Model):
         default="draft")
     user_id = fields.Many2one(
         comodel_name='sport.player',
-        string="User")
+        string="User",
+        default=lambda self: self.env.user.id)
     sequence = fields.Integer(
         string="Sequence",
         default=10)
@@ -58,12 +59,11 @@ class SportIssue(models.Model):
     def _check_coste_no_negativo(self):
         for record in self:
             if record.cost < 0:
-                raise ValidationError("The cost must be positive.")
+                raise ValidationError(_("The cost must be positive."))
             
     @api.onchange( 'clinic_id')
     def _onchange_clinic_id (self):
-        for record in self:
-            record.assistance = True
+        self.assistance = True
     
     # def _inverse_assigned(self):
     #     for record in self:

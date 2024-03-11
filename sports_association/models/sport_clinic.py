@@ -1,7 +1,7 @@
 # Copyright 2024 potxolate
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import models, fields
+from odoo import api, models, fields
 
 class SportClinic(models.Model):
     _name = 'sport.clinic'
@@ -22,3 +22,15 @@ class SportClinic(models.Model):
     def action_check_assistance(self):        
         for record in self.issue_ids:
             record.assistance = True
+    
+    #=== ACTIONS ===#
+            
+    def action_view_issues(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Issues',
+            'view_mode': 'tree,form',
+            'res_model': 'sport.issue',  # Cambia esto al modelo de incidencias correcto
+            'domain': [('clinic_id', '=', self.id)],
+        }
