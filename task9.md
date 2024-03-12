@@ -8,3 +8,6 @@
   
 # Copy
 En jugadores, que lo único que se duplique sea el equipo
+
+# Activo
+Poder archivar jugadores
