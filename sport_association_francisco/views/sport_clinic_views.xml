@@ -21,6 +21,9 @@
                     <header>
                         <div class="oe_button_box" name="button_box">
                             <button name="action_check_assistance" type="object" class="oe_stat_button" string="Check all"/>
+                            <button class="oe_stat_button" type="object" name="action_view_issues" icon="a-sharp fa-solid fa-notes-medical">
+                                <field string="Issues" name="issue_count" widget="statinfo"/>
+                            </button>
                         </div>
                     </header>
                     <sheet>

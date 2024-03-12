@@ -28,8 +28,16 @@ class SportTeam(models.Model):
             unasigned_players = self.env['sport.player'].search([('team_id', '=', False),('age','<',30)])
             for player in unasigned_players:
                 player.team_id = rec
-                
-
+            
     @api.depends('player_ids')
     def _compute_members(self):
-        self.members = len(self.player_ids)
+        self.members = len(self.player_ids)    
+
+    def action_view_players(self):
+        return{
+            "name": "Players",
+            "type": 'ir.actions.act_window',
+            "view_mode": 'tree,form',
+            "res_model": "sport.player",
+            "domain": [('tema_id', '=', self.id)],
+        }

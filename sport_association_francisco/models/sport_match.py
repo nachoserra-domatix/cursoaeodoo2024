@@ -15,7 +15,8 @@ class SportMatch(models.Model):
     @api.depends('match_line_ids')
     def compute_winner_team(self):
         for rec in self:
-            winner_team = rec.match_line_ids.search([('match_id','=',rec.id)], order='total_score desc', limit=1).team_id
-            rec.winner_team_id = winner_team
+            if rec.match_line_ids:
+                winner_team = rec.match_line_ids[0].team_id
+                rec.winner_team_id = winner_team
 
     

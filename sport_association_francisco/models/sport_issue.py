@@ -1,4 +1,6 @@
-from odoo import models, fields, api, Command
+from odoo import models, fields, api, Command, _
+from odoo.exceptions import ValidationError
+from datetime import datetime
 
 class SportIssue(models.Model):
 
@@ -7,10 +9,11 @@ class SportIssue(models.Model):
 
     name = fields.Char(string='Name')
     description = fields.Text(string='Description')
-    date = fields.Date(string='Date')
+    date = fields.Date(string='Date', default=datetime.now())
     state = fields.Selection(string='State', selection=[('draft','Draft'),('open','Open'),('done','Done')], default='draft')
     assistance = fields.Boolean(string='Assistance')
-    user_id = fields.Many2one(string='Usuario', comodel_name='res.users')
+    user_id = fields.Many2one(string='Usuario', comodel_name='res.users', default=lambda self:self.env.user)
+    user_phone = fields.Char(string='Phone')
     sequence = fields.Integer(string='Sequence')
     solution = fields.Html(string='Solution')
     tag_ids = fields.Many2many('sport.tag', string='Tag')
@@ -19,6 +22,30 @@ class SportIssue(models.Model):
     action_ids = fields.One2many('sport.action', 'issue_id', string='Actions')
     cost = fields.Float('Cost')
     assigned = fields.Boolean('Assigned', compute='_compute_assigned', inverse='_inverse_asigned', search='_search_asigned', store=False)
+
+    _sql_constraints = [
+        ('name_uniq', 'unique (name)', "The Name must be unique, this one is already assigned to another Issue.")
+    ]
+
+    @api.constrains('cost')
+    def verify_cost(self):
+        for rec in self:
+            if rec.cost < 0:
+                raise ValidationError(_("The cost must be positive."))
+    
+    @api.onchange('clinic_id')
+    def _on_change_clinic(self):
+        for rec in self:
+            if rec.clinic_id:
+                rec.assistance = True
+
+    @api.onchange('user_id')
+    def _on_change_user(self):
+        for rec in self:
+            if rec.user_id and rec.user_id.partner_id.phone:
+                rec.user_phone = rec.user_id.partner_id.phone
+            else:
+                rec.user_phone = False
     
     def _compute_assigned(self):
         for record in self:

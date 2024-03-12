@@ -4,6 +4,7 @@ class SportMatchLine(models.Model):
 
     _name = 'sport.match.line'
     _description = 'Sport Match Line'
+    _order = 'total_score desc'
 
     team_id = fields.Many2one('sport.team', string='Team')
     total_score = fields.Integer('Total Score')

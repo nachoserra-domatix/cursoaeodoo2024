@@ -30,6 +30,7 @@
         "views/sport_leage_views.xml",
         "views/sport_match_menu_items.xml",
         "views/sport_match_views.xml",
-        "data/sport_tag_data.xml"
+        "data/sport_tag_data.xml",
+        "data/ir_cron.xml"
     ]
 }

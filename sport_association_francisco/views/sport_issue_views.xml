@@ -47,6 +47,7 @@
                                 <field name="solution"/>
                                 <field name="assistance" widget="boolean_toggle"/>
                                 <field name="user_id" options="{'no_quick_create':True,'no_open':True}"/>
+                                <field name="user_phone"/>
                                 <field name="tag_ids" widget="many2many_tags" options="{'no_create':True}"/>
                                 <field name="clinic_id" domain="[('available','=',True)]"/>
                             </group>

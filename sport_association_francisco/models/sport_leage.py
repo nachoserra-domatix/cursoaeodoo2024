@@ -21,4 +21,8 @@ class SportLeage(models.Model):
                 rec.write({
                     'leage_line_ids': [Command.create({'team_id': team.id, 'score':total_points})]
                 })
+
+    def update_all_leage_points(self):
+        leages = self.env['sport.leage'].search([])
+        leages.update_leage_points()
                 
