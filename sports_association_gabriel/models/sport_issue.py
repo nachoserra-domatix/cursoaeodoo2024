@@ -25,6 +25,7 @@ class SportIssue(models.Model):
     # user_id = fields.Many2one("res.users", string="User", default=_get_default_user)
     user_id = fields.Many2one("res.users", string="User", default=lambda self: self.env.user)
     user_phone = fields.Char(string="User phone")
+    player_id = fields.Many2one('sport.player', string='Player')
     sequence = fields.Integer('Sequence', default=10)
     solution = fields.Html('Solution')
     clinic_id = fields.Many2one('sport.clinic', string='Clinic')

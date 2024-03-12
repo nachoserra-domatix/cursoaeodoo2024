@@ -19,6 +19,8 @@
         "data/ir_cron.xml",
         "security/groups.xml",
         "security/ir.model.access.csv",
+        "wizards/sport_create_issue.xml",
+        "wizards/sport_check_issue_done.xml",
         "views/sport_license_views.xml",        
         "views/sport_issue_views.xml",
         "views/sport_clinic_views.xml",
@@ -28,6 +30,6 @@
         "views/sport_player_views.xml",
         "views/sport_league_views.xml",
         "views/sport_match_views.xml",
-        "views/sport_association_menuitems.xml",        
+        "views/sport_association_menuitems.xml",                
     ],
 }
