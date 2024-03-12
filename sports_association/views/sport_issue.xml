@@ -1,19 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-
-    
-
     <menuitem
         id="sport_menu"
         name="Sport Association"
         sequence="10"/>
-  
+
+    <menuitem
+        id="sport_issue_management_menu"
+        parent="sports_association.sport_menu"
+        name="Issue Management"
+        sequence="10"/>
+        
+    <menuitem
+        id="sport_sport_management_menu"
+        parent="sports_association.sport_menu"
+        name="Sport Management"
+        sequence="10"/>
 
     <menuitem
         id="sport_issue_menu"
         name="Sport Issues"
         action="sports_association.action_sport_issue"
-        parent="sports_association.sport_menu"
+        parent="sports_association.sport_issue_management_menu"
         sequence="10"/>
 
     <menuitem
@@ -24,24 +32,51 @@
         sequence="20"/>
 
     <menuitem
-        id="sport_sport_menu"
-        name="Sports"
-        action="sports_association.action_sport_sport"
+        id="sport_license_menu"
+        name="Sport Licenses"
+        action="sports_association.sport_license_action"
         parent="sports_association.sport_menu"
         sequence="30"/>
 
-        <menuitem
-        id="sport_team_menu"
-        name="Sport Teams"
-        action="sports_association.action_sport_team"
-        parent="sports_association.sport_menu"
+    <menuitem
+        id="sport_issue_tag_menu"
+        name="Sport Issue Tags"
+        action="sports_association.sport_issue_tag_action"
+        parent="sports_association.sport_issue_management_menu"
         sequence="40"/>
 
-        <menuitem
+    <menuitem
         id="sport_player_menu"
-        name="Players"
+        name="Sport Players"
         action="sports_association.action_sport_player"
-        parent="sports_association.sport_menu"
-        sequence="50"/>
+        parent="sports_association.sport_sport_management_menu"
+        sequence="10"/> 
+    <menuitem
+        id="sport_sport_menu"
+        name="Sport"
+        action="sports_association.action_sport_sport"
+        parent="sports_association.sport_sport_management_menu"
+        sequence="20"/>
+        
+    <menuitem
+        id="sport_team_menu"
+        name="Sport Team"
+        action="sports_association.action_sport_team"
+        parent="sports_association.sport_sport_management_menu"
+        sequence="30"/>
 
+    <menuitem
+        id="sport_league_menu"
+        name="Sport League"
+        action="sport_league_action"
+        parent="sports_association.sport_sport_management_menu"
+        sequence="40"/>
+    
+    <menuitem
+        id="sport_match_menu"
+        name="Sport Match"
+        action="sport_match_action"
+        parent="sports_association.sport_sport_management_menu"
+        sequence="50"/>
+        
 </odoo>

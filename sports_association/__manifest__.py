@@ -2,15 +2,15 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Sports Association",
-    "summary": "Module summary",
+    "summary": "Manage sports association members, teams and events, issues and clinics",
     "version": "17.0.1.0.0",
     # see https://odoo-community.org/page/development-status
-    #"development_status": "Alpha|Beta|Production/Stable|Mature",
+    "development_status": "Beta",
     "category": "Sports",
-    #"website": "https://github.com/OCA/<repo>" or "https://github.com/OCA/<repo>/tree/<branch>/<addon>",
-    #"author": "<AUTHOR(S)>, Odoo Community Association (OCA)",
+    "website": "https://github.com/cbmMazagon/cursoaeodoo2024",
+    "author": "Carlos Borras, Playa de Mazagon",
     # see https://odoo-community.org/page/maintainer-role for a description of the maintainer role and responsibilities
-    #"maintainers": ["your-github-login"],
+    "maintainers": ["https://github.com/cbmMazagon"],
     "license": "AGPL-3",
     "application": False,
     "installable": True,
@@ -41,14 +41,17 @@
         "views/sport_player_views.xml",
         "views/sport_team_views.xml",
         # "wizards/wizard_model_view.xml",
+        "views/sport_license_views.xml",
+        "views/sport_league_views.xml",
+        "views/sport_match_views.xml",
         "views/sport_issue.xml",
         "data/sport_license_data.xml",
         "data/sport_issue_tag_data.xml",
     ],
-    "demo": [
-        "demo/assets.xml",
-        "demo/res_partner_demo.xml",
-    ],
+    # "demo": [
+    #     "demo/assets.xml",
+    #     "demo/res_partner_demo.xml",
+    # ],
     # "qweb": [
     #     "static/src/xml/module_name.xml",
     # ]

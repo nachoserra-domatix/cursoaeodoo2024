@@ -16,8 +16,11 @@ class SportPlayer(models.Model):
     @api.depends('birthday')
     def _compute_years(self):
         for record in self:
-            record.years = (datetime.today().date() - record.birthday).days // 365
-            # player.age = (fields.Date.today() - player.birthdate).days // 365 es propia de odoo, probar despues
+            if record.birthday:
+                record.years = (fields.Date.today() - record.birthday).days / 365
+            else:
+                record.years = 0
+    
     def action_principal(self):
         for record in self:
             record.tittle = True
