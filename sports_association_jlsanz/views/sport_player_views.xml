@@ -34,6 +34,9 @@
         <field name="arch" type="xml">
             <form string="Player">
                 <sheet>
+                    <header>
+                        <button string="Create Issue" name="%(action_sport_create_issue)d" context="{'default_player_id': id}" type="action" class="oe_highlight"></button>
+                    </header>
                     <group>
                         <group>
                         <field name="name" />

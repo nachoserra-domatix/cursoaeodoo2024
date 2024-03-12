@@ -21,6 +21,7 @@
             <form string="Clinics">
                 <header>
                     <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"></button>
+                    <button string="Create Issue" name="%(action_sport_create_issue)d" context="{'default_clinic_id': id}" type="action" class="oe_highlight"></button>
                 </header>
                 <sheet>
                     <!-- smart button -->

@@ -6,14 +6,17 @@ class SportPlayer(models.Model):
 
     name = fields.Char(string='Name', required=True)
     #age = fields.Integer(string='Age')
-    position = fields.Char(string='Position')
+    position = fields.Char(string='Position', copy=False)
     team_id = fields.Many2one('sport.team', string='Team')
-    starter = fields.Boolean(string='Starter', default=True)
+    starter = fields.Boolean(string='Starter', default=True, copy=False)
 
     sport_name = fields.Char('Sport', related='team_id.sport_id.name', store=True)
 
-    birthdate = fields.Date(string='Birthdate')
-    age = fields.Integer(string='Age', compute='_compute_age')
+    birthdate = fields.Date(string='Birthdate', copy=False)
+    age = fields.Integer(string='Age', compute='_compute_age', store=True)
+
+    # Controla archivado desde acciones
+    active = fields.Boolean(string='Active', default=True)
 
     def action_check_starter(self):
         for record in self:
