@@ -7,36 +7,35 @@ class Sportplayer(models.Model):
 
     name = fields.Char(
         string='Name',
+        copy=False
     )
-    
     age = fields.Integer(
         string='Age',
         compute='_compute_age',
-        store=True
+        store=True,
+        copy=False
     )
-
     position = fields.Char(
         string='Position',
+        copy=False
     )
-    
     team_id = fields.Many2one(
         string='Team',
         comodel_name='sport.team',
     )
-
     starter = fields.Boolean(
         string='Starter',
-        default=True
+        default=True,
+        copy=False
     )
-    
-    
     sport = fields.Char(
         string="Sport",
         related='team_id.sport_id.name',
-        store=True
+        store=True,
+        copy=False
     )
-    
-    birthdate = fields.Date(string="Birthdate")
+    birthdate = fields.Date(string="Birthdate", copy=False)
+    active = fields.Boolean(string="Active", default=True)
 
 
     @api.depends('birthdate')

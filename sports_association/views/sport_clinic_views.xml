@@ -24,6 +24,8 @@
                 <header>
                     <button name="action_check_assistance" string="Check Assistance" type="object"
                         class="oe_highlight" />
+                    <button name="%(sport_create_issue_action)d" string="Create Issue" type="action"
+                        class="oe_highlight" context="{'default_clinic_id': id}" />
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">

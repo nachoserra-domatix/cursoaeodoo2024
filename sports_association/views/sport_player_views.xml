@@ -39,9 +39,8 @@
         <field name="arch" type="xml">
             <form string="player">
                 <header>
-                    <!-- <button name="action_check_assistance" string="Check Assistance"
-                    type="object" -->
-                    <!-- class="oe_highlight" /> -->
+                    <button string="Create Issue" name="%(sport_create_issue_action)d" type="action"
+                        class="btn-primary" context="{'default_player_id': id}" />
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -50,6 +49,7 @@
                         </h1>
                     </div>
                     <group>
+                        <field name="active" invisible="1" />
                         <field name="position" />
                         <field name="birthdate" />
                         <field name="age" />
@@ -86,6 +86,8 @@
                 <filter
                     string="Starter" name="starter" domain="[('starter', '=', True)]" />
                 <filter
+                    string="Archived" name="archived" domain="[('active', '=', False)]" />
+                <filter
                     string="Team" name="team" context="{'group_by': 'team_id'}" />
                 <filter
                     string="Sport" name="sport" context="{'group_by': 'sport'}" />
@@ -94,5 +96,16 @@
             </search>
         </field>
     </record>
+
+    <record id="sport_player_create_issue_action" model="ir.actions.act_window">
+        <field name="name">Create Issue</field>
+        <field name="res_model">sport.create.issue</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sport_create_issue_view" />
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_sport_player" />
+        <field name="binding_view_types">list,form</field>
+    </record>
+
 
 </odoo>

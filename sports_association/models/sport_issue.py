@@ -20,6 +20,7 @@ class SportIssue(models.Model):
         default='draft'
     )
     user_id = fields.Many2one('res.users', string='User', default=lambda self: self.env.user)
+    player_id = fields.Many2one(string='Player', comodel_name='sport.player')
     phone_user = fields.Char("User Phone", readonly=True)
     secuence = fields.Integer(string='secuence', default=10)
     solution = fields.Html(string="Solution")
