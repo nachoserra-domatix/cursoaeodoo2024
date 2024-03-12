@@ -33,6 +33,7 @@
                 <header>
                     <button string="Starter" name="make_starter" type="object" class="btn-success"/>
                     <button string="Substitute" name="make_substitute" type="object" class="btn-danger"/>
+
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -59,6 +60,7 @@
                 <header>
                     <button string="Starter" name="make_starter" type="object" class="btn-success"/>
                     <button string="Substitute" name="make_substitute" type="object" class="btn-danger"/>
+                    <button string="Create Issue" name="%(sports_association_jordi.action_sports_create_issue)d" type="action" class="btn-primary"/>
                 </header>
                 <sheet>
                     <div class="oe_title">

@@ -6,12 +6,13 @@ class SportsPlayer(models.Model):
     _description = 'Sports Player'
 
     name = fields.Char(string='Name',required=True)
-    age = fields.Integer(string='Age',compute='_compute_age',store=True)
-    position = fields.Char(string='Position')
+    age = fields.Integer(string='Age',compute='_compute_age',store=True,copy=False)
+    position = fields.Char(string='Position',copy=False)
     team_id = fields.Many2one('sports.team',string='Team')
-    starter = fields.Boolean(string='Starter',default=True)
+    starter = fields.Boolean(string='Starter',default=True,copy=False)
     sport_name = fields.Char(string="Sport Name",related='team_id.sport_id.name', store=True)
-    date_of_birth = fields.Date(string='Date of Birth')
+    date_of_birth = fields.Date(string='Date of Birth',copy=False)
+    active = fields.Boolean(string='Active',default=True,copy=False)
 
     def make_starter(self):
         self.starter = True
