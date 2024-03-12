@@ -19,6 +19,8 @@
             <form string="Clinic">
                 <header>
                     <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"/>
+                    <button string="Create Issue Assistance" name="%(action_sport_create_issue)d" type="action" class="oe_highlight"/>
+                    <!-- <button string="Create Issue Assistance" name="%(action_sport_create_issue)d" context="{'default_clinic_id': id}" type="action" class="oe_highlight"/> -->
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">

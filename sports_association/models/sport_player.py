@@ -6,12 +6,14 @@ class SportPlayer(models.Model):
     _description = "Sport Player"
 
     name = fields.Char(string='Name', required=True)
-    birth_date = fields.Date(string='Birth Date')
-    position = fields.Char(string='Position')
+    birth_date = fields.Date(string='Birth Date', copy=False)
+    position = fields.Char(string='Position', copy=False)
     team_id = fields.Many2one('sport.team',string='Team')
-    regular = fields.Boolean(string='Regular', default=True)
-    sport_name = fields.Char('Sport Name', related='team_id.sport_id.name', store=True)
-    age = fields.Integer('Age', compute='_compute_age', store=True)
+    regular = fields.Boolean(string='Regular', default=True, copy=False)
+    sport_name = fields.Char('Sport Name', related='team_id.sport_id.name', store=True, copy=False)
+    age = fields.Integer('Age', compute='_compute_age', store=True, copy=False)
+    issue_ids = fields.One2many('sport.issue', 'player_id', string='Issues', copy=False)
+    active = fields.Boolean('Active', default=True)
 
     @api.depends('birth_date')
     def _compute_age(self):

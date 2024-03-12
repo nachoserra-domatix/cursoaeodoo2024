@@ -42,6 +42,7 @@ class SportIssue(models.Model):
 
     #user_phone = fields.Char('User Phone', related='user_id.phone', store=True,readonly=False)
     user_phone = fields.Char('User Phone', store=True, readonly=False)
+    player_id = fields.Many2one('sport.player', string='Player')
 
     @api.constrains('cost')
     def _check_cost(self):

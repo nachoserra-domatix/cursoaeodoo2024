@@ -24,7 +24,7 @@
                     <button string="To open" invisible="state not in ('draft')" name="action_open" type="object" class="btn-primary"/>
                     <button string="To draft" invisible="state in ('draft')" name="action_draft" type="object" class="btn-secondary"/>
                     <button string="Done" invisible="state in ('done')"  name="action_done" type="object" class="btn-success"/>
-                    <button string="Add Similar Tags" name="action_fill_tags" type="object" class="btn-success"/>
+                    <button string="Add Similar Tags" name="action_fill_tags" groups="sports_association.res_groups_sports_association_manager" type="object" class="btn-success" />
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -41,6 +41,7 @@
                             <field name="cost" />
                         </group>
                         <group>
+                            <field name="player_id" />
                             <field name="date" />
                             <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color','no_create':True}"/>
                             <field name="assistance" widget="boolean_toggle"/>
