@@ -1,4 +1,5 @@
 from odoo import models, fields, api, Command
+from odoo.exceptions import ValidationError
 # import pdb
 
 class SportIssue(models.Model):
@@ -7,7 +8,7 @@ class SportIssue(models.Model):
 
     name = fields.Char(string='Name')
     description = fields.Text(string='Description')
-    date = fields.Date(string='Date')
+    date = fields.Date(string='Date', default=fields.Date.today)
     assistance = fields.Boolean(string='Assistance', help='Show if the issue needs assistance')
     state = fields.Selection(
         [
@@ -31,10 +32,36 @@ class SportIssue(models.Model):
 
     cost = fields.Float(string='Cost')
 
-    user_phone = fields.Char(string='User phone', related='user_id.phone', store=True, readonly=False)
+    user_phone = fields.Char(string='User phone', readonly=False)
 
     action_ids = fields.One2many(comodel_name='sport.issue.action', inverse_name='issue_id', string='Actions')
+
+    _sql_constraints = [
+        ('name_uniq', 'unique (name)', "Name must be unique!")
+    ]
     
+
+    @api.constrains('cost')
+    def _check_cost(self):
+        for record in self:
+            if record.cost < 0:
+                raise ValidationError('The cost must be positive')
+
+    @api.onchange('user_id')
+    def _onchange_user_id(self):
+        if self.user_id:
+            self.user_phone = self.user_id.phone
+        else:
+            self.user_phone = False
+    
+    @api.onchange('clinic_id')
+    def _onchange_clinic(self):
+        for record in self:
+            if record.clinic_id:
+                record.assistance = True
+            else:
+                record.assistance = False
+
     @api.depends('user_id.phone')
     def _compute_assigned(self):
         for record in self:
@@ -74,3 +101,10 @@ class SportIssue(models.Model):
             self.tag_ids = [(6, 0, tag_ids.ids)]
         else:
             self.tag_ids = [Command.create({'name': self.name})]
+
+    def cron_unlink_unused_tags(self):
+        tag_ids = self.env['sport.issue.tag'].search([])
+        for tag in tag_ids:
+            issue = self.env['sport.issue'].search([('tag_ids', 'in', tag.id)])
+            if not issue:
+                tag.unlink()

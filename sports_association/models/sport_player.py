@@ -10,7 +10,7 @@ class SportPlayer(models.Model):
     age = fields.Integer(string='Age', compute='_compute_age')
     position = fields.Char(string='Positionn', required=True, translate=True)
     team_id = fields.Many2one(comodel_name='sport.team', string='Equipo')
-    starter = fields.Boolean(string='Starter')
+    starter = fields.Boolean(string='Starter', default=True)
     sport = fields.Char(string='Sport', related='team_id.sport_id.name', store=False)
     
     @api.onchange('date_of_birth')

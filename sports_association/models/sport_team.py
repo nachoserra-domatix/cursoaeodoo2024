@@ -10,8 +10,14 @@ class SportTeam(models.Model):
     logo = fields.Image(string='Logo')
     color = fields.Integer(string='Color')
     player_ids = fields.One2many(comodel_name='sport.player', inverse_name='team_id', string='Jugadores')
+    player_count = fields.Integer(string='Player count', compute='_compute_player_count')
+    
     sport_id = fields.Many2one(comodel_name='sport.sport', string='Sport')
     
+    def _compute_player_count(self):
+        for record in self:
+            record.player_count = len(record.player_ids)
+
     def set_starters(self):
         for player in self.player_ids:
             player.set_starter()
@@ -27,4 +33,11 @@ class SportTeam(models.Model):
             # for player in players:
             #     player.team_id = record.id
     
-    
+    def action_view_players(self):
+        return {
+            'name': 'Players',
+            'type': 'ir.actions.act_window',
+            'res_model': 'sport.player',
+            'view_model': 'tree,form',
+            'domain': [('team_id', '=', self.id)],
+        }
