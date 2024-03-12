@@ -44,8 +44,11 @@
         <field name="model">sport.player</field>
         <field name="arch" type="xml">
             <form string="Player">
+                <header>
+                    <button string="Create Issue" name="%(action_sport_create_issue)d" type="action" class="oe_highlight" />
+                </header>
                 <sheet>
-                    <header>                        
+                    <header>
                         <button string="Starter"  class="btn-primary" name="action_starter" type="object" />
                         <button string="Reserve"  class="btn-primary" name="action_reserve" type="object" />
                     </header>

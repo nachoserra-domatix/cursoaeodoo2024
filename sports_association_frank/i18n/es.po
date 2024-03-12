@@ -263,12 +263,12 @@ msgstr "Clínica Deportiva"
 #: model:ir.model,name:sports_association_frank.model_sport_issue
 #: model_terms:ir.ui.view,arch_db:sports_association_frank.view_sport_issue_form
 msgid "Sport Issue"
-msgstr "Problema Deportivo"
+msgstr "Incidencia Deportivas"
 
 #. module: sports_association_frank
 #: model:ir.model,name:sports_association_frank.model_sport_issue_tag
 msgid "Sport Issue Tag"
-msgstr "Etiqueta de problema deportivo"
+msgstr "Etiqueta de incidencia deportiva"
 
 #. module: sports_association_frank
 #: model:ir.ui.menu,name:sports_association_frank.sport_issue_menu

@@ -30,5 +30,6 @@
         "views/sport_league_views.xml",
         "views/sport_match_views.xml",
         "views/sport_menuitems.xml",
+        "wizards/sport_create_issue_views.xml",
     ],
 }

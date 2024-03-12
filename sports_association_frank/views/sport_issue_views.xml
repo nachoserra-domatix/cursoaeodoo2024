@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record id="action_sport_mark_done" model="ir.actions.server">
+        <field name="name">Sport Issue Mark Done</field>
+        <field name="model_id" ref="model_sport_issue"/>
+        <field name="binding_model_id" ref="model_sport_issue"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_sport_mark_done()
+        </field>
+    </record>    
     <record id="sport_issue_action" model="ir.actions.act_window">
         <field name="name">Sport Issue</field>
         <field name="type">ir.actions.act_window</field>
@@ -17,11 +26,12 @@
         <field name="arch" type="xml">
             <form string="Sport Issue">
                 <header>
+                    <button string="Create Issue" name="%(action_sport_mark_done)d" type="action" class="oe_highlight" />
                     <field name="state" widget="statusbar" />
                     <button name="action_open" string="To open" invisible="state not in ('draft')" type="object" class="btn-primary" />
                     <button name="action_draft" string="To draft" invisible="state in ('draft')" type="object" class="btn-secondary" />
                     <button name="action_done" string="Done" invisible="state in ('done')" type="object" class="btn-success" />
-                    <button name="action_add_tag" string="Add Tag" type="object" class="btn-secondary" />
+                    <button name="action_add_tag" string="Add Tag" type="object" class="btn-secondary" groups="sports_association_frank.res_groups_sports_association_manager" />
                 </header>
                 <sheet>
                     <h1>

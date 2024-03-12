@@ -100,6 +100,12 @@ class SportIssue(models.Model):
         tags = self.env['sport.issue.tag'].search([])
         unused_tags = issues.tag_ids - tags
 
+    def action_sport_mark_done(self):
+        ids = self.env.context.get("active_ids", False)
+        if ids:
+            issues = self.browse(ids)
+            issues.state = "done"
+
     # Mis cambios
     # -----------------------------------------
     #

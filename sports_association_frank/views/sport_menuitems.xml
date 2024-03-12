@@ -4,7 +4,7 @@
         name="Sport Association"
         id="sports_association_menu"
         web_icon="sports_association_frank,static/description/icon.png"
-        groups="res_groups_sports_association_manager"
+        groups="res_groups_sports_association_manager,res_groups_sports_association_user"
     >
         <menuitem
             name="Sport Issues"

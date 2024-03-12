@@ -16,6 +16,9 @@
         <field name="model">sport.clinic</field>
         <field name="arch" type="xml">
             <form string="Sport Clinic">
+                <header>
+                    <button string="Create Issue" name="%(action_sport_create_issue)d" type="action" class="oe_highlight" />
+                </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button string="Issues" type="object" name="action_view_issues" class="oe_stat_button" icon="fa-stethoscope">
