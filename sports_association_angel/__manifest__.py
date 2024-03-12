@@ -15,6 +15,7 @@
 
     "data": ["data/sport_license_data.xml",
              "data/sport_issue_tag_data.xml",
+             "data/ir_cron.xml",
              "security/groups.xml",
              "security/ir.model.access.csv",
              "views/sport_issue.xml",
@@ -24,5 +25,7 @@
              "views/sport_sport_views.xml",
              "views/sport_team_views.xml",
              "views/sport_player_views.xml",
+             "views/sport_league_views.xml",
+             "views/sport_match_views.xml",
              ],
 }

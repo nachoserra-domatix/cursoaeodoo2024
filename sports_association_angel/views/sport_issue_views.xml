@@ -20,6 +20,7 @@
             <form string="Issues">
                 <header>
                     <field name="state" options="{'clickable':1}" widget="statusbar" statusbar_visible="draft,open,done"></field>
+                    <button string="Find Tags" name="action_find_tags" type="object" class="oe_highlight"/>
                     <button string="To draft" invisible="state in ('draft')" name="action_draft" type="object" class="oe_highlight"></button>
                     <button string="To open" invisible="state in ('open')" name="action_open" type="object" class="oe_highlight"></button>
                     <button string="To done" invisible="state in ('done')" name="action_done" type="object" class="oe_highlight"></button>
@@ -32,14 +33,17 @@
                     </div>
                     <group>
                         <group>
-                            <field name="user_id"></field>
-                            <field name= "clinic_id"></field>
+                            <field name="assigned"></field>
+                            <field name="user_id" options="{'no_quick_create':True,'no_open': True}"></field>
+                            <field name="user_phone"></field>
+                            <field name= "clinic_id" domain="[('available', '=', True)]"></field>
                             <field name= "cost"></field>
                         </group>
                         <group>
                             <field name="date"></field>
-                            <field name="tags_ids" widget="many2many_tags"></field>
+                            <field name="tags_ids" widget="many2many_tags" options="{'no_quick_create':True,'no_create': True}"></field>
                             <field name="assistance" widget="boolean_toogle"></field>
+                            
                         </group>
                     </group>
                     <notebook>
@@ -48,6 +52,14 @@
                         </page>
                         <page name="solution" string="Solution">
                             <field name="solution"></field>
+                        </page>
+                        <page name="tasks" string="Tasks">
+                            <field name="task_ids" context="{'default_state': state}">
+                                <tree editable="bottom">
+                                    <field name="name"></field>
+                                    <field name="state"></field>
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>

@@ -81,9 +81,32 @@
                 Create a new sport team
             </p>
         </field>
-    </record>         
+    </record>
+    
+    <record id="action_sport_league" model="ir.actions.act_window">
+        <field name="name">Sport League</field>
+        <field name="res_model">sport.league</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport team
+            </p>
+        </field>
+    </record> 
+    
+    <record id="action_sport_match" model="ir.actions.act_window">
+        <field name="name">Sport Match</field>
+        <field name="res_model">sport.match</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport team
+            </p>
+        </field>
+    </record>      
 
-    action_sport_issue_tag
     <menuitem
         id="sport_menu"
         name="Sport Association"
@@ -91,7 +114,7 @@
 
         <menuitem 
             id="sport_menu_list"
-            name="Sport Issues List"
+            name="Sport Association"
             sequence="10">
 
             <menuitem 
@@ -135,7 +158,19 @@
                 name="Sport Team"
                 sequence="70"
                 action="sports_association_angel.action_sport_team">
-            </menuitem>                                                                 
+            </menuitem>
+            <menuitem 
+                id="sport_league_menu"
+                name="Sport League"
+                sequence="80"
+                action="sports_association_angel.action_sport_league">
+            </menuitem>
+            <menuitem 
+                id="sport_match_menu"
+                name="Sport Match"
+                sequence="90"
+                action="sports_association_angel.action_sport_match">
+            </menuitem>                                                                                           
         </menuitem>
     </menuitem>
                 

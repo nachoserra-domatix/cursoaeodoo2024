@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record id="sport_player_view_search" model="ir.ui.view">
+        <field name="name">sport_player.view.search</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <search string="Players">
+                <field name="name" filter_domain="[('name', 'ilike', self)]"></field>
+                <field name="sport" filter_domain="[('sport','ilike',self)]"></field>
+                <field name="team_id" filter_domain="[('team_id','in',self)]"></field>
+                <filter string='Starters' name='starters' domain="[('starter', '=', True)]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Team" name="type" context="{'group_by':'team_id'}"/>
+                    <filter string="Sport" name="sport" context="{'group_by':'sport'}"/>
+                    <filter string="Birth Date" name="birthdate" context="{'group_by':'birthdate'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <record id="sport_player_view_tree" model="ir.ui.view">
         <field name="name">sport_player.view.tree</field>
         <field name="model">sport.player</field>
@@ -8,9 +26,22 @@
             <tree string="Players">
                 <field name="name"></field>
                 <field name="age"></field>
+                <field name="sport"></field>
                 <field name="position"></field>
                 <field name="starter"></field>
                 <field name="team_id"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_player_view_simple_tree" model="ir.ui.view">
+        <field name="name">sport_player.view.simple.tree</field>
+        <field name="model">sport.player</field>
+        <field eval="100" name="priority" />
+        <field name="arch" type="xml">
+            <tree string="Players">
+                <field name="name"></field>
+                <field name="age"></field>
             </tree>
         </field>
     </record>
@@ -23,15 +54,30 @@
                 <sheet>
                     <group>
                         <field name="name"></field>
+                        <field name="birthdate"></field>
                         <field name="age"></field>
                     </group>
                     <group>
+                        <field name="sport"></field>
                         <field name="position"></field>
                         <field name="starter"></field>
-                        <field name="team_id"></field>
+                        <field name="team_id" domain="[('sport_id','!=',False)]"></field>
                     </group>
                 </sheet>
             </form>
         </field>
-    </record> 
+    </record>
+
+    <record id="sport_player_view_simple_form" model="ir.ui.view">
+        <field name="name">sport_player.view.form</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <form string="Player">
+                <sheet>
+                    <field name="name"></field>
+                    <field name="position"></field>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>
