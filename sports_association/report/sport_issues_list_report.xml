@@ -14,6 +14,7 @@
                             <tr>
                                 <th name="th_name" class="text-start">Name</th>
                                 <th name="th_date" class="text-start">Date</th>
+                                <th name="th_date" class="text-start">User</th>
                                 <th name="th_assistance" class="text-end">Assistance</th>
                             </tr>
                         </thead>
@@ -22,6 +23,7 @@
                                 <tr>
                                     <td name="td_name" class="text-start"><span t-field="o.name"></span></td>
                                     <td name="td_date" class="text-start"><span t-field="o.date"></span></td>
+                                    <td name="td_user" class="text-start"><span t-field="o.user_id"></span></td>
                                     <td name="td_assistance" class="text-end"><span t-if="o.assistance">Sí</span><span t-else="">No</span></td>
                                 </tr>
                             </t>

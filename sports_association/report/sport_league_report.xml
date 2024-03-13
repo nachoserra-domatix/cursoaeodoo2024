@@ -20,6 +20,9 @@
                             </div>
                         </div>
 
+                        <h3 class="mt-4">
+                            <span >Classification</span>
+                        </h3>
                         <table class="table table-sm o_main_table table-borderless mt-4">
                             <!-- In case we want to repeat the header, remove "display: table-row-group" -->
                             <thead style="display: table-row-group">
@@ -38,6 +41,49 @@
                                     </tr>
 
                                     
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <h3 class="mt-4">
+                            <span >Games</span>
+                        </h3>
+                        <table class="table table-sm o_main_table table-borderless mt-4">
+                            <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+                            <thead style="display: table-row-group">
+                                <tr>
+                                    <th name="th_name" class="text-start">Game</th>
+                                    <th name="th_date" class="text-end">Date</th>
+                                    <th name="th_team1" class="text-end">Team 1</th>
+                                    <th name="th_team2" class="text-end">Team 2</th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+                                <t t-foreach="o.game_ids" t-as="game">
+                                    <tr>
+                                        <td name="td_name" class="text-start">
+                                            <span t-field="game.name"></span>
+                                        </td>
+                                        <td name="td_date" class="text-end">
+                                            <span t-field="game.game_date"></span>
+                                        </td>
+                                        
+                                        <t t-set="i" t-value="0"/>
+                                        <t t-foreach="game.game_line_ids" t-as="game_line">
+                                            <!-- <t t-debug="pdb"/> -->
+                                            <t t-if="i == 0">
+                                                <td name="td_team_1" class="text-end">
+                                                    <span t-field="game_line.team_id"></span>
+                                                </td>
+                                            </t>
+                                            <t t-elif="i == 1">
+                                                <td name="td_team_2" class="text-end">
+                                                    <span t-field="game_line.team_id"></span>
+                                                </td>
+                                            </t>
+                                            <t t-set="i" t-value="i+1"/>
+                                        </t>
+                                    </tr>
                                 </t>
                             </tbody>
                         </table>
