@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="report_sport_league">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="mt-4">
+                            <span t-field="o.name"></span>
+                        </h2>
+                        <div class="row mt-4 mb-2" id="info">
+                            <div t-if="o.sport_id" class="col-auto col-3 mw-100 mb-2"
+                                name="user">
+                                <strong>Sport: </strong>
+                                <br />
+                                <span class="m-0" t-field="o.sport_id"></span>
+                            </div>
+                            <div t-if="o.date_start" class="col-auto col-3 mw-100 mb-2"
+                                name="date_start">
+                                <strong>Date Start: </strong>
+                                <br />
+                                <span class="m-0" t-field="o.date_start"></span>
+                            </div>
+                            <div t-if="o.date_end" class="col-auto col-3 mw-100 mb-2"
+                                name="date_end">
+                                <strong>Date End: </strong>
+                                <br />
+                                <span class="m-0" t-field="o.date_end"></span>
+                            </div>
+                        </div>
+                        <table class="table table-sm table-borderless mt-1">
+                            <thead style="">
+                                <tr>
+                                    <th name="th_team" class="text-start">Team</th>
+                                    <th name="th_points" class="text-end">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.league_line_ids" t-as="line">
+                                    <tr>
+                                        <td name="td_team" class="text-start">
+                                            <span t-field="line.team_id" />
+                                        </td>
+                                        <td name="td_points" class="text-end">
+                                            <span t-field="line.points" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_sport_league" model="ir.actions.report">
+        <field name="name">Sport League</field>
+        <field name="model">sport.league</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sports_association.report_sport_league</field>
+        <field name="report_file">sports_association.report_sport_league</field>
+        <field name="print_report_name">(object.name)</field>
+        <field name="paperformat_id" ref="sports_association.paperformat_sport_association" />
+        <field name="binding_model_id" ref="model_sport_league" />
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

@@ -11,7 +11,7 @@
     "installable": True,
     "preloadable": True,
     "depends": [
-        "base",
+        "web"
     ],
     "data": [
         "security/groups.xml",
@@ -30,5 +30,7 @@
         "data/ir_cron.xml",
         "wizards/sport_create_issue.xml",
         "wizards/sport_issue_mark_all_done.xml",
+        "report/sport_issue_report.xml",
+        "report/sport_league_report.xml",
     ],
 }
