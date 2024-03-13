@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright NuoBiT Solutions - Kilian Niubo <kniubo@nuobit.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl) -->
+<odoo>
+    <record id="sport_team_view_tree" model="ir.ui.view">
+        <field name="name">sport.team.tree.view</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sport_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sport_team_view_form" model="ir.ui.view">
+        <field name="name">sport.team.view.form</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <form string="Players">
+                <header>
+                    <button
+                            string="Set Titular Players"
+                            name="set_true_titular_players"
+                            type="object"
+                            class="oe_highlight"
+                    />
+                </header>
+                <sheet>
+                    <field
+                            name="image_1920"
+                            widget="image"
+                            class="oe_avatar"
+                            options="{'preview_image': 'image_128'}"
+                    />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Team Name"/>
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page name="players" string="Players">
+                            <field name="player_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="age"/>
+                                    <field name="position"/>
+                                    <field name="titular"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_sport_team" model="ir.actions.act_window">
+        <field name="name">Sport Teams</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Team
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright NuoBiT Solutions - Kilian Niubo <kniubo@nuobit.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl) -->
+<odoo>
+    <record id="sport_player_view_tree" model="ir.ui.view">
+        <field name="name">sport.player.tree.view</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1">
+
+                <field name="name"/>
+                <field name="age"/>
+                <field name="position"/>
+                <field name="team_id"/>
+                <field name="titular"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sport_player_view_form" model="ir.ui.view">
+        <field name="name">sport.player.view.form</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <form string="Players">
+                <header>
+                    <button
+                            string="Change titularity"
+                            name="change_titularity"
+                            type="object"
+                            class="oe_highlight"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Player Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="birthday"/>
+                            <field name="position"/>
+                        </group>
+                        <group>
+                            <field name="team_id"/>
+                            <field name="titular" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_sport_player" model="ir.actions.act_window">
+        <field name="name">Sport Players</field>
+        <field name="res_model">sport.player</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Player
+            </p>
+        </field>
+    </record>
+
+</odoo>
