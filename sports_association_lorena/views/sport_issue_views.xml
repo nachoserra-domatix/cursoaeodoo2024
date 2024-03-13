@@ -38,6 +38,7 @@
                         <group>
                             <field name="date"/>
                             <field name="assistance"/>
+                            <field name="player_id"/>
                         </group>
                     </group>
                     <notebook>

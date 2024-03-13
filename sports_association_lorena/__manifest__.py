@@ -16,6 +16,8 @@
         "security/groups.xml",
         "security/ir.model.access.csv",
         "views/sport_issue_views.xml",
+        "wizards/sport_create_issue.xml",
+        "wizards/sport_mark_issue.xml",
         "views/sport_clinic_views.xml",
         "views/sport_issue_tag_views.xml",
         "views/sport_team_views.xml",

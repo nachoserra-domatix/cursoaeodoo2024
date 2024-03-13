@@ -1,5 +1,6 @@
 from odoo import models, fields, Command, api, _
 from odoo.exceptions import ValidationError
+import datetime
 
 class SportIssue(models.Model):
     _name = 'sport.issue'
@@ -7,7 +8,7 @@ class SportIssue(models.Model):
 
     name = fields.Char(string='Name')
     description = fields.Text(string='Description')
-    date = fields.Date(string='Date')
+    date = fields.Date(string='Date', default=fields.Date.today)
     assistance = fields.Boolean(string='Assistance', help='Show if the issue has assistance')
     state = fields.Selection([('draft', 'Draft'), ('open', 'Open'), ('done', 'Done')], string='State', default='draft')
     user_id = fields.Many2one('res.users', string="User")
@@ -19,12 +20,25 @@ class SportIssue(models.Model):
     cost = fields.Float(string='Cost')
     assigned = fields.Boolean(string='Assigned', compute='_computed_assigned')
     actions_ids = fields.One2many('sport.action', 'issue_id', string='Actions')
+    user_phone = fields.Char(string='User Phone')
+    player_id = fields.Many2one('sport.player', string='Player')
 
+    _sql_constraints = [
+        ("unique_name", "UNIQUE(name)", "The name of the incidence must be unique.")
+    ]
+    
     @api.constrains('cost')
     def _check_cost(self):
         for record in self:
             if record.cost < 0:
                 raise ValidationError(_('The cost must be positive.'))
+            
+    @api.onchange('user_id')
+    def _onchange_(self):
+        if self.user_id:
+            self.user_phone = self.user_id.phone
+        else:
+            self.user_phone = False
             
     @api.onchange('clinic_id')
     def _onchange_clinic(self):

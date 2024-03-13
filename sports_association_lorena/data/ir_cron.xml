@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="cron_set_score_leagues" model="ir.cron">
+        <field name="name">Set score for leagues</field>
+        <field name="model_id" ref="model_sport_league"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_set_score()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="name">Set score for leagues</field>
+        <field name="name">Set score for leagues</field>
+        <field name="name">Set score for leagues</field>
+    </record>
+</odoo>
