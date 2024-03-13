@@ -28,6 +28,9 @@
         "views/sport_team_views.xml",
         "views/sport_league_views.xml",
         "views/sport_game_views.xml",
-        "views/sport_menuitems.xml" #Siempre al final
+        "views/sport_menuitems.xml", #Siempre al final
+        "report/sport_issue_report.xml",
+        "report/sport_issues_list_report.xml",
+        "report/sport_league_report.xml",
     ],
 }

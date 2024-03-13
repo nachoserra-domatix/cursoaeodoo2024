@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_sport_league">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="mt-4">
+                            <span >League </span>
+                            <span t-field="o.name"></span>
+                        </h2>
+                        <div class="row mt-4 mb-2" id="informations">
+                            <div t-if="o.start_date" class="col-auto col-3 mw-100 mb-2" name="player">
+                                <strong>Start Date:</strong><br/>
+                                <span class="m-0" t-field="o.start_date">2023-12-31</span>
+                            </div>
+                            <div t-if="o.end_date" class="col-auto col-3 mw-100 mb-2" name="date">
+                                <strong>End Date:</strong><br/>
+                                <span class="m-0" t-field="o.end_date">2023-12-31</span>
+                            </div>
+                        </div>
+
+                        <table class="table table-sm o_main_table table-borderless mt-4">
+                            <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+                            <thead style="display: table-row-group">
+                                <tr>
+                                    <th name="th_name" class="text-start">Team</th>
+                                    <th name="th_state" class="text-end">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+
+                                <t t-foreach="o.league_line_ids" t-as="line">
+
+                                    <tr>
+                                        <td name="td_team" class="text-start"><span t-field="line.team_id"></span></td>
+                                        <td name="td_points" class="text-end"><span t-field="line.points"></span></td>
+                                    </tr>
+
+                                    
+                                </t>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_sport_league" model="report.paperformat">
+        <field name="name">Sport League Paperformat</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">32</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+    <record id="action_report_sport_league" model="ir.actions.report">
+    	<field name="name">League</field>
+    	<field name="model">sport.league</field>
+    	<field name="report_type">qweb-pdf</field>
+    	<field name="report_name">sports_association.report_sport_league</field>
+    	<field name="report_file">sports_association.report_sport_league</field> <!-- Deprecated?-->
+    	<field name="print_report_name">(object.name)</field>
+        <field name="paperformat_id" ref="sports_association.paperformat_sport_league" />
+    	<field name="binding_model_id" ref="model_sport_league"/>
+    	<field name="binding_type">report</field>
+	</record>
+
+</odoo>
