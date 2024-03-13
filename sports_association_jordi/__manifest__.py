@@ -11,7 +11,7 @@
     "application": False,
     "installable": True,
     "depends": [
-        "base",
+        "base","web"
     ],
    "data":["security/grupos.xml",
          "security/ir.model.access.csv",
@@ -30,5 +30,7 @@
          "views/sport_menuitems.xml",
          "wizards/sports_create_issue_views.xml",
          "wizards/sports_mark_issue_done_views.xml",
+         "report/sports_issue_report.xml",
+         "report/sports_league_report.xml"
          ]
 }
