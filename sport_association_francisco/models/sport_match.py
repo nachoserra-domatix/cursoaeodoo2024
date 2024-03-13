@@ -4,6 +4,7 @@ class SportMatch(models.Model):
 
     _name = 'sport.match'
     _description = 'Sport Match'
+    _rec_name = 'sport_id'
 
     sport_id = fields.Many2one('sport.sport', string='Sport')
     match_date = fields.Datetime('Match Date')

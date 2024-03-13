@@ -34,6 +34,7 @@
                     <header>
                         <button name="mark_as_titular" type="object" class="btn-success" string="Mark as titular"/>
                         <button name="unmark_as_titular" type="object" class="btn-secondary" string="Unmark as titular"/>
+                        <button name="%(action_sport_create_issue_wizard)d" context="{'default_player_id': id}" type="action" class="oe_stat_button" string="Create issue"/>
                     </header>
                     <sheet>
                         <div class="oe_title">

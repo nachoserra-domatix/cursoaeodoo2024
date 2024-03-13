@@ -16,15 +16,17 @@
             <field name="model">sport.team</field>
             <field name="arch" type="xml">
                 <form string="Sport Team">
+                    <header>
+                        <button name="get_all_unasigned" type="object" class="btn-primary" string="Get all unasigned"/>
+                        <button name="mark_all_as_titular" type="object" class="btn-success" string="Mark all as titular"/>
+                        <button name="unmark_all_as_titular" type="object" class="btn-secondary" string="Unmark all as titular"/>
+                    </header>
                     <sheet>
-                        <header>
-                            <button name="get_all_unasigned" type="object" class="btn-primary" string="Get all unasigned"/>
-                            <button name="mark_all_as_titular" type="object" class="btn-success" string="Mark all as titular"/>
-                            <button name="unmark_all_as_titular" type="object" class="btn-secondary" string="Unmark all as titular"/>
+                        <div class="oe_button_box" name="button_box">
                             <button class="oe_stat_button" type="object" name="action_view_players" icon="fa-user-plus">
                                 <field string="Members" name="members" widget="statinfo"/>
                             </button>
-                        </header>
+                        </div>
                         <div class="oe_title">
                             <h1>
                                 <field name="name" placeholder="Team name"/>

@@ -7,13 +7,14 @@ class SportPlayer(models.Model):
     _name = 'sport.player'
     _description = 'Sport Player'
 
-    name = fields.Char(string="Name")
-    age = fields.Integer(string='Age', compute='_computed_age', store=True)
-    position = fields.Char(string='Position')
+    name = fields.Char(string="Name", copy=False)
+    age = fields.Integer(string='Age', compute='_computed_age', store=True, copy=False)
+    position = fields.Char(string='Position', copy=False)
     team_id = fields.Many2one('sport.team', string='Team')
-    titular = fields.Boolean(string='Titular', default=True)
-    sport_name = fields.Char('Sport Name', related='team_id.sport_id.name', store=True)
-    birth_date = fields.Date('Birth Date')
+    titular = fields.Boolean(string='Titular', default=True, copy=False)
+    sport_name = fields.Char('Sport Name', related='team_id.sport_id.name', store=True, copy=False)
+    birth_date = fields.Date('Birth Date', copy=False)
+    active = fields.Boolean('Active', default=True)
 
     @api.depends('birth_date')
     def _computed_age(self):

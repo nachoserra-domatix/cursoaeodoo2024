@@ -9,11 +9,13 @@
     "license": "AGPL-3",
     "application": False,
     "depends": [
-        "base",
+        "base","web"
     ],
     "data":[
         "security/groups.xml",
         "security/ir.model.access.csv",
+        "wizard/sport_create_issue.xml",
+        "wizard/check_all_issues.xml",
         "views/sport_clinic_menu_items.xml",
         "views/sport_clinic_views.xml",
         "views/sport_issue_menu_items.xml",
@@ -31,6 +33,8 @@
         "views/sport_match_menu_items.xml",
         "views/sport_match_views.xml",
         "data/sport_tag_data.xml",
-        "data/ir_cron.xml"
+        "data/ir_cron.xml",
+        "report/paper_format.xml",
+        "report/sport_issue_report.xml"
     ]
 }

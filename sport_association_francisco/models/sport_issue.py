@@ -22,6 +22,7 @@ class SportIssue(models.Model):
     action_ids = fields.One2many('sport.action', 'issue_id', string='Actions')
     cost = fields.Float('Cost')
     assigned = fields.Boolean('Assigned', compute='_compute_assigned', inverse='_inverse_asigned', search='_search_asigned', store=False)
+    player_id = fields.Many2one('sport.player', string='Player')
 
     _sql_constraints = [
         ('name_uniq', 'unique (name)', "The Name must be unique, this one is already assigned to another Issue.")
