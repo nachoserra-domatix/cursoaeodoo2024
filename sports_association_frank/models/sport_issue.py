@@ -23,6 +23,7 @@ class SportIssue(models.Model):
         string="Responsible",
         default=lambda self: self.env.user,
     )
+    player_id = fields.Many2one(comodel_name="sport.player")
     sequence = fields.Integer(string="Sequence")
     solution = fields.Html(string="Solution")
     clinic_id = fields.Many2one(

@@ -46,6 +46,7 @@
                     </group>
                     <group string="Personal Info" col="2">
                         <group>
+                            <field name="player_id" />
                             <field name="user_phone" />
                             <field name="date" />
                         </group>
