@@ -10,6 +10,7 @@ class SportIssue(models.Model):
     description = fields.Text(string='Description')
     date = fields.Date(string='Date', default=fields.Date.today)
     assistance = fields.Boolean(string='Assistance', help='Show if the issue needs assistance')
+    
     state = fields.Selection(
         [
             ('draft', 'Draft'),
@@ -90,9 +91,9 @@ class SportIssue(models.Model):
         self.state = 'open'
     
     def action_done(self):
-        self.ensure_one()
-        self.env['sport.issue.tag'].create({})
-        self.state = 'done'
+        for record in self:
+            record.env['sport.issue.tag'].create({})
+            record.state = 'done'
     
     def action_add_tag(self):
         self.ensure_one()

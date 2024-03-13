@@ -23,7 +23,8 @@
         <field name="arch" type="xml">
             <form string="Clinic">
                 <header>
-                    <button name="action_check_assistance" type="object" string="Confirm assistance"/>
+                    <button class="oe_highlight" name="action_check_assistance" type="object" string="Confirm assistance"/>
+                    <button class="oe_highlight" name="%(sport_create_issue_action)d" context="{'default_clinic_id':id}" type="action" string="Create issue"/>
                 </header>
                 <div class="oe_button_box" name="button_box">
                     <button name="action_view_issues" type="object" icon="fa-stethoscope" class="oe_stat_button">

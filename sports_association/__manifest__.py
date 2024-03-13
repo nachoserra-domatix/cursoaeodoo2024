@@ -11,6 +11,8 @@
         "base",
     ],
     "data": [
+        "wizards/sport_create_issue.xml",
+        "wizards/sport_issue_state.xml",
         "data/sport_license_data.xml",
         "data/sport_issue_tags_data.xml",
         "security/groups.xml",

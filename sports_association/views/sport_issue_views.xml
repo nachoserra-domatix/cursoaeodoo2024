@@ -30,7 +30,7 @@
                     <button string="Draft" invisible="state not in ('open','done')" name="action_draft" type="object" class="oe_highlight" />
                     <button string="Open" invisible="state not in ('draft')" name="action_open" type="object" class="oe_highlight" />
                     <button string="Done" invisible="state not in ('done')" name="action_done" type="object" class="oe_highlight" />
-                    <button string="Add Tag" name="action_add_tag" type="object" class="btn-primary" />
+                    <button string="Add Tag" name="action_add_tag" groups="sports_association.res_groups_sports_association_manager" type="object" class="btn-primary" />
                 </header>
                 <sheet>
                     <div class="oe_title">

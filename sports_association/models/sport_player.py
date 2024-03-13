@@ -5,13 +5,13 @@ class SportPlayer(models.Model):
     _name = 'sport.player'
     _description = 'Sport Player'
 
-    name = fields.Char(string='Name', required=True, translate=True)
-    date_of_birth = fields.Date(string='Date of birth')
-    age = fields.Integer(string='Age', compute='_compute_age')
-    position = fields.Char(string='Positionn', required=True, translate=True)
+    name = fields.Char(string='Name', required=True, translate=True, copy=False)
+    date_of_birth = fields.Date(string='Date of birth', copy=False)
+    age = fields.Integer(string='Age', compute='_compute_age', copy=False)
+    position = fields.Char(string='Positionn', required=True, translate=True, copy=False)
     team_id = fields.Many2one(comodel_name='sport.team', string='Equipo')
-    starter = fields.Boolean(string='Starter', default=True)
-    sport = fields.Char(string='Sport', related='team_id.sport_id.name', store=False)
+    starter = fields.Boolean(string='Starter', default=True, copy=False)
+    sport = fields.Char(string='Sport', related='team_id.sport_id.name', store=False, copy=False)
     
     @api.onchange('date_of_birth')
     def _compute_age(self):

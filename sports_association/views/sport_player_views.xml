@@ -5,6 +5,9 @@
         <field name="model">sport.player</field>
         <field name="arch" type="xml">
             <form string="Player">
+                <header>
+                    <button name="%(sport_create_issue_action)d" type="action" string="Create Issue"/>
+                </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
