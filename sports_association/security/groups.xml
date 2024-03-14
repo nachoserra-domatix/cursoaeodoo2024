@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--License GPL-3.0 or later (https://www.gnu.org/licenses/gpl). -->
+
+<odoo>
+<!-- Category -->
+<record id="ir_module_sports_association" model="ir.module.category">
+    <field name="name">Sports Association</field>
+</record>
+<!-- Groups -->
+<record id="res_groups_sports_association_user" model="res.groups">
+    <field name="name">User</field>
+    <field name="category_id" ref="ir_module_sports_association"/>
+    <field name="comment">
+        The user will be able to browse some model.
+    </field>
+</record>
+
+<record id="res_groups_sports_association_manager" model="res.groups">
+    <field name="name">Manager</field>
+    <field name="category_id" ref="ir_module_sports_association"/>
+    <field name="implied_ids" eval="[(4, ref('res_groups_sports_association_user'))]"/>
+    <field name="comment">
+        The user will be able to manage some model.
+    </field>
+    <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+</record>
+
+<!-- Rules -->
+<record id="sports_association_personal_rule" model="ir.rule">
+    <field name="name">Personal Issues</field>
+    <field ref="model_sport_issue" name="model_id"/>
+    <field name="domain_force">[('user_id','=',user.id)]</field>
+    <field name="groups" eval="[(4, ref('res_groups_sports_association_user'))]"/>
+</record>
+
+<record id="sports_association_see_all" model="ir.rule">
+    <field name="name">All Issues</field>
+    <field ref="model_sport_issue" name="model_id"/>
+    <field name="domain_force">[(1,'=',1)]</field>
+    <field name="groups" eval="[(4, ref('res_groups_sports_association_manager'))]"/>
+</record>
+
+</odoo>
