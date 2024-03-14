@@ -25,8 +25,20 @@
                     <button name="action_compute_classification" string="Compute Classifications"
                         type="object" class="oe_highlight"
                     />
+                    <button name="%(sport_league_create_games_action)d" string="Create Game"
+                        type="action" class="oe_highlight"
+                    />
+                    <button name="%(sport_league_create_calendar_action)d" string="Create Calendar"
+                        type="action" class="oe_highlight"
+                    />
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_games" type="object" class="oe_stat_button"
+                            icon="fa-list">
+                            <field name="game_count" widget="statinfo" />
+                        </button>
+                    </div>
                     <group>
                         <group>
                             <field name="name" />

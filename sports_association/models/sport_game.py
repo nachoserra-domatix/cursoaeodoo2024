@@ -27,6 +27,7 @@ class SportGame(models.Model):
     sport_id = fields.Many2one(
         string='Sport',
         comodel_name='sport.sport',
+        related='league_id.sport_id'
     )
     
 

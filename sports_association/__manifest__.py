@@ -14,6 +14,7 @@
         "web"
     ],
     "data": [
+        "wizards/sport_league_create_games.xml",
         "security/groups.xml",
         "security/ir.model.access.csv",
         "views/sport_association_menu.xml",
@@ -30,7 +31,10 @@
         "data/ir_cron.xml",
         "wizards/sport_create_issue.xml",
         "wizards/sport_issue_mark_all_done.xml",
+        "wizards/sport_league_create_games.xml",
         "report/sport_issue_report.xml",
         "report/sport_league_report.xml",
+        "report/sport_game_report.xml",
+        "wizards/sport_league_create_calendar.xml"
     ],
 }
