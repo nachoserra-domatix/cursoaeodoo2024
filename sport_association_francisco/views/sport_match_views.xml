@@ -8,6 +8,7 @@
                     <field name="sport_id"/>
                     <field name="match_date"/>
                     <field name="winner_team_id"/>
+                    <field name="leage_id"/>
                     <field name="up_score"/>
                 </tree>
             </field>
@@ -28,6 +29,7 @@
                                 <field name="match_date"/>
                                 <field name="winner_team_id" domain="[('sport_id', '=', sport_id)]"/>
                                 <field name="up_score"/>
+                                <field name="leage_id"/>
                                 <field name="match_line_ids">
                                     <tree>
                                         <field name="team_id"/>

@@ -50,45 +50,6 @@
             </t>
         </t>
     </template>
-
-    <template id="report_sport_leage">
-        <t t-call="web.html_container">
-            <t t-call="web.external_layout">
-                <div class="page">
-                    <t t-foreach="docs" t-as="o">
-                        <h2>Leage Report</h2>
-                        <p>This leage is <span t-field="o.name"/>.</p>
-                        <p>The begin date is <span t-field="o.date_start"/>.</p>
-                        <p>The end date is <span t-field="o.date_end"/>.</p>
-                        <p>The updated ranking is:</p>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <td>
-                                        <span>Team</span>
-                                    </td>
-                                    <td>
-                                        <span>Points</span>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr t-foreach="o.leage_line_ids" t-as="leage">
-                                    <td>
-                                        <span t-field="leage.team_id"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="leage.score" class="ms-3"/>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </t>
-                </div>
-            </t>
-        </t>
-    </template>
-
     <record id="action_report_sport_issue" model="ir.actions.report">
     	<field name="name">Issue</field>
     	<field name="model">sport.issue</field>
@@ -112,21 +73,5 @@
         <field name="paperformat_id" ref="base.paperformat_euro"/>
     	<field name="binding_type">report</field>
 	</record>
-
-    <record id="action_report_sport_leage" model="ir.actions.report">
-    	<field name="name">Leage</field>
-    	<field name="model">sport.leage</field>
-    	<field name="report_type">qweb-pdf</field>
-    	<field name="report_name">sport_association_francisco.report_sport_leage</field>
-    	<field name="report_file">sport_association_francisco.report_sport_leage</field>
-    	<field name="print_report_name">'Leage - %s' % (object.name)</field>
-    	<field name="binding_model_id" ref="model_sport_leage"/>
-        <field name="paperformat_id" ref="sport_association_francisco.paperformat_sport_leage"/>
-    	<field name="binding_type">report</field>
-	</record>
-
     
-    
-
-
 </odoo>

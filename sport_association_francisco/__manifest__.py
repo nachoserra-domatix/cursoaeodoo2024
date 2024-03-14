@@ -16,6 +16,7 @@
         "security/ir.model.access.csv",
         "wizard/sport_create_issue.xml",
         "wizard/check_all_issues.xml",
+        "wizard/sport_create_match.xml",
         "views/sport_clinic_menu_items.xml",
         "views/sport_clinic_views.xml",
         "views/sport_issue_menu_items.xml",
@@ -35,6 +36,8 @@
         "data/sport_tag_data.xml",
         "data/ir_cron.xml",
         "report/paper_format.xml",
-        "report/sport_issue_report.xml"
+        "report/sport_issue_report.xml",
+        "report/sport_leage_report.xml",
+        "report/sport_match_report.xml",
     ]
 }
