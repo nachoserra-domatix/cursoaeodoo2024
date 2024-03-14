@@ -21,6 +21,11 @@
                     <button string="Recalculate Points" name="action_recalculate_points" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_show_matches" icon="fa-futbol-o">
+                            <field string="Matches" name="match_count" widget="statinfo"/>
+                        </button>
+                    </div>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="League Name"/>

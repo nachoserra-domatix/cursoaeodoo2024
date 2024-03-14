@@ -6,7 +6,7 @@ class SportsMatch(models.Model):
 
     date = fields.Datetime(string='Date')
     sport_id = fields.Many2one('sports.sport',string='Sport')
-    # league_id = fields.Many2one('sports.league',string='League')
+    league_id = fields.Many2one('sports.league',string='League')
     winner_team_id = fields.Many2one('sports.team',string='Winner Team',compute='_compute_winner_team_id',store=True)
     winner_score = fields.Integer(string='Winner Score', default=3)
     match_lines = fields.One2many('sports.match.line','match_id',string='Match Lines')

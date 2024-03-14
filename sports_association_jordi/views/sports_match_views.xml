@@ -7,7 +7,7 @@
             <tree multi_edit="1" string="Matches">
                 <field name="date" optional="show"/>
                 <field name="sport_id" optional="show"/>
-                <!-- <field name="league_id" optional="show"/> -->
+                <field name="league_id" optional="show"/>
                 <field name="winner_team_id" optional="show"/>
                 <field name="winner_score" optional="hide"/>
             </tree>
@@ -27,7 +27,7 @@
                     <group>
                         <group>
                             <field name="sport_id" options="{'no_create': True}"/>
-                            <!-- <field name="league_id"/> -->
+                            <field name="league_id"/>
                         </group>
                         <group>
                             <field name="winner_team_id"/>

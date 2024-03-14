@@ -18,7 +18,7 @@ class SportsCreateIssue(models.TransientModel):
             'name': self.name,
             'clinic_id': self.clinic_id.id
             }
-        self.env['sports.issue'].create(vals)
-        return {'name': 'Issues', 'type': 'ir.actions.act_window', 'res_model': 'sports.issue', 'view_mode': 'form', 'target': 'current'}
+        issue=self.env['sports.issue'].create(vals)
+        return {'name': 'Issues', 'type': 'ir.actions.act_window', 'res_model': 'sports.issue', 'view_mode': 'form', 'target': 'current','res_id': issue.id}
     
    
