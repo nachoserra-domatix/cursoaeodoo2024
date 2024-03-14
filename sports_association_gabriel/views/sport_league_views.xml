@@ -20,8 +20,14 @@
             <form string="League">
                 <header>
                     <button string="Calculate Points" name="action_calculate_points" type="object" class="oe_highlight"/>
+                    <button string="Create Match" name="%(action_sport_create_match)d" context="{'default_league_id': id}" type="action" class="oe_highlight"/>
                 </header>                
                 <sheet>
+                    <div class="oe_button_box" name="button_box">                        
+                        <button name="action_view_matches" type="object" class="oe_stat_button" icon="fa-futbol-o">
+                            <field name="num_matches" string="Matches" widget="statinfo"/>
+                        </button>                        
+                    </div>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="League Name"/>
@@ -35,11 +41,20 @@
                         <field name="end_date"/>
                     </group>
                     <notebook>
-                        <page name="league_lines" string="Teams">
+                        <page name="league_lines" string="Classification">
                             <field name="league_line_ids">
                                 <tree editable="bottom">
-                                    <field name="team_id" domain="[('sport_id', '=', parent.sport_id)]"/>
+                                    <field name="team_id" domain="[('league_id', '=', parent.id)]"/>
                                     <field name="points"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="matches" string="Calendar">
+                            <field name="match_ids">
+                                <tree editable="bottom">
+                                    <field name="match_date"/>
+                                    <field name="name"/>
+                                    <field name="match_winner"/>                                    
                                 </tree>
                             </field>
                         </page>

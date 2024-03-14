@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 
 class SportLeague(models.Model):
@@ -10,6 +11,32 @@ class SportLeague(models.Model):
     end_date = fields.Date(string="End Date")
     sport_id = fields.Many2one('sport.sport', string='Sport')
     league_line_ids = fields.One2many('sport.league.line', 'league_id', string='League Lines')
+    match_ids = fields.One2many('sport.match', 'league_id', string='Calendar')
+    num_matches = fields.Integer(string='Number of matches', compute='_compute_num_matches')
+
+    # _sql_constraints = [
+    #     ('start_date_greater', 'check(start_date >= end_date)', "The league end date must be after the start date.")
+    # ]
+
+    @api.depends('match_ids')
+    def _compute_num_matches(self):
+        for record in self:
+            record.num_matches = len(record.match_ids)
+
+    @api.constrains('end_date', 'start_date')
+    def _verify_dates(self):
+        for record in self:
+            if record.end_date <= record.start_date:
+                raise ValidationError(_("The league end date must be after the start date."))
+                
+    def action_view_matches(self):
+        return {
+            'name': 'Matches',
+            'type': 'ir.actions.act_window',
+            'res_model': 'sport.match',
+            'view_mode': 'tree,form',
+            'domain': [('league_id', '=', self.id)]
+        }
 
     def action_calculate_points(self):
         for record in self:
@@ -27,6 +54,7 @@ class SportLeagueLine(models.Model):
     _name = "sport.league.line"
     _description = "Sport League Line"
     _order = 'points desc'
+    _sql_constraints = [('team_unique_in_league', 'UNIQUE(league_id, team_id)', 'Team must be unique in match')]
 
     team_id = fields.Many2one('sport.team', string='Team')
     points = fields.Integer(string='Points')

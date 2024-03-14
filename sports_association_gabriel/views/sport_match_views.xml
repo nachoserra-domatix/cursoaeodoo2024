@@ -6,6 +6,8 @@
         <field name="arch" type="xml">
             <tree string="Matches">
                 <field name="sport_id"/>
+                <field name="league_id"/>
+                <field name="name"/>
                 <field name="match_date"/>
                 <field name="match_winner"/>                
             </tree>
@@ -18,19 +20,27 @@
         <field name="arch" type="xml">
             <form string="Match">               
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Match"/>
+                        </h1>
+                    </div>
                     <group>
-                        <field name="sport_id" options="{'no_quick_create': True}"/>
-                        <field name="match_date"/>                
-                    </group>
-                    <group>
-                        <field name="points"/>
-                        <field name="match_winner"/>
-                    </group>
+                        <group>
+                            <field name="sport_id" options="{'no_quick_create': True}"/>
+                            <field name="league_id"/>
+                            <field name="match_date"/>                
+                        </group>
+                        <group>
+                            <field name="points"/>
+                            <field name="match_winner"/>
+                        </group>
+                    </group>                    
                     <notebook>
                         <page name="match_lines" string="Teams and Score">
                             <field name="match_line_ids">
                                 <tree editable="bottom">
-                                    <field name="team_id"/>
+                                    <field name="team_id" domain="[('league_id', '=', parent.league_id)]"/>
                                     <field name="score"/>
                                 </tree>
                             </field>
