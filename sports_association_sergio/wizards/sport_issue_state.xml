@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_sport_issue_state" model="ir.ui.view">
+        <field name="name">sport.issue.state</field>
+        <field name="model">sport.issue.state</field>
+        <field name="arch" type="xml">
+            <form string="Set state to done">
+                <group>
+                    <field name="date"/>
+                </group>
+                <footer>
+                    <button string="Set to done" type="object" class="btn-primary" name="set_done"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sport_issue_state" model="ir.actions.act_window">
+        <field name="name">Set to done</field>
+        <field name="res_model">sport.issue.state</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="sports_association_sergio.model_sport_issue"/>
+        <field name="binding_view_types">list,form</field>
+    </record>
+
+</odoo>

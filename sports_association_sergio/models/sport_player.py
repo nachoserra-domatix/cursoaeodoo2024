@@ -14,6 +14,8 @@ class SportPlayer(models.Model):
 
     sport = fields.Char(string='Sport', related='team_id.sport_id.name', store=True)
 
+    active = fields.Boolean(string='Active', default=True)
+
     def action_markself_starter(self):
         self.starter=True
     

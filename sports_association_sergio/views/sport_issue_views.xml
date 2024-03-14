@@ -20,7 +20,7 @@
             <form string="Issues">
                 <header>
                     <field name="state" options="{'clickable':1}" widget="statusbar" statusbar_visible="draft,open,done"></field>
-                    <button string="Find Tags" name="action_find_tags" type="object" class="oe_highlight"/>
+                    <button string="Find Tags" groups="sports_association_sergio.res_groups_sports_association_manager" name="action_find_tags" type="object" class="oe_highlight"/>
                     <button string="To draft" invisible="state in ('draft')" name="action_draft" type="object" class="oe_highlight"></button>
                     <button string="To open" invisible="state in ('open')" name="action_open" type="object" class="oe_highlight"></button>
                     <button string="To done" invisible="state in ('done')" name="action_done" type="object" class="oe_highlight"></button>

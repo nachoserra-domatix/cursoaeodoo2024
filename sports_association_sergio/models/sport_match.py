@@ -10,6 +10,7 @@ class SportMatch(models.Model):
     won_points = fields.Integer(string='Won Points', default=3)
     match_line_ids = fields.One2many('sport.match.line', 'match_id', string="Match Lines")
     sport_id = fields.Many2one('sport.sport', string='Sport')
+    league_id = fields.Many2one('sport.league', string='League')
 
 
     @api.depends('match_line_ids.score')
@@ -19,6 +20,7 @@ class SportMatch(models.Model):
                 record.winner_id = record.match_line_ids.sorted(key=lambda r: r.score, reverse=True)[0].team_id
             else:
                 record.winner_id = False
+    
 
 class SportMatchLine(models.Model):
     _name = 'sport.match.line'
@@ -27,3 +29,5 @@ class SportMatchLine(models.Model):
     match_id = fields.Many2one('sport.match', string='Match')
     team_id = fields.Many2one('sport.team', string='Team')
     score = fields.Integer(string='Score')
+
+    _sql_constraints = [('team_unique_in_match', 'UNIQUE(match_id, team_id)', 'Team must be unique in match')]

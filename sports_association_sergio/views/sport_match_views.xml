@@ -5,6 +5,7 @@
         <field name="model">sport.match</field>
         <field name="arch" type="xml">
             <tree string="Matches">
+                <field name="league_id"></field>
                 <field name="name"></field>
                 <field name="winner_id"></field>
                 <field name="match_datetime"></field>
@@ -20,6 +21,7 @@
             <form string="">
                 <sheet>
                     <group>
+                        <field name="league_id"></field>
                         <field name="name"></field>
                         <field name="winner_id"></field>
                         <field name="match_datetime"></field> 
