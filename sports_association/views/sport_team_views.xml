@@ -18,11 +18,6 @@
         <field name="arch" type="xml">
             <form string="Teams">
                 <header>
-                    <div class="oe_button_box" name="button_box">
-                        <button class="oe_stat_button" type="object" name="action_view_players" icon="fa-users">
-                            <field string="Players" name="players_count" widget="statinfo"/>
-                        </button>
-                    </div>
                     <button string="Mark as regular" name="action_mark_players_regular" type="object" class="btn-primary"/>
                     <button string="Unmark as regular" name="action_unmark_players_regular" type="object" class="btn-secondary"/>
                     <button string="Add Young Players" name="action_add_young_players" type="object" class="btn-success"/>
@@ -30,6 +25,11 @@
                     
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_players" icon="fa-users">
+                            <field string="Players" name="players_count" widget="statinfo"/>
+                        </button>
+                    </div>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Team Name" />

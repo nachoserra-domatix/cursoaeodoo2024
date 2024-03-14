@@ -20,8 +20,14 @@
             <form string="League">
                 <header>
                     <button string="Set Score" name="set_score" type="object" class="oe_highlight"/>
+                    <button string="Create Game" name="%(action_sport_create_game)d" type="action" class="oe_highlight"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_games" icon="fa-list">
+                            <field string="Games" name="game_count" widget="statinfo"/>
+                        </button>
+                    </div>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="League Name" />
