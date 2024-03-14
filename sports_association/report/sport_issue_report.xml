@@ -47,7 +47,7 @@
         </t>
     </template>
 
-    <template id="report_sport_issue_simple">
+    <!-- <template id="report_sport_issue_simple">
         <t t-call="web.html_container">
             <t t-call="web.external_layout">
                 <div class="page">
@@ -58,7 +58,7 @@
                 </div>
             </t>
         </t>
-    </template>
+    </template> -->
 
 
     <record id="paperformat_sport_issue" model="report.paperformat">
@@ -89,7 +89,7 @@
     	<field name="binding_type">report</field>
 	</record>
 
-    <record id="action_report_sport_issue_simple" model="ir.actions.report">
+    <!-- <record id="action_report_sport_issue_simple" model="ir.actions.report">
     	<field name="name">Issue - Simple</field>
     	<field name="model">sport.issue</field>
     	<field name="report_type">qweb-pdf</field>
@@ -98,6 +98,6 @@
     	<field name="print_report_name">(object.name)</field>
     	<field name="binding_model_id" ref="model_sport_issue"/>
     	<field name="binding_type">report</field>
-	</record>
+	</record> -->
 
 </odoo>

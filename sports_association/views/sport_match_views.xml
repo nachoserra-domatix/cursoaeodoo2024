@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <tree string="Matches">
                 <!-- Add your fields here -->
+                <field name="league_id" optional="show" />
                 <field name="winner_team_id" optional="show" />
                 <field name="score_winning" optional="show" />
                 <field name="date_and_time" optional="show" />
@@ -22,11 +23,13 @@
             <form string="Matches">
                 <header>
                     <button string="Set Score" name="set_score" type="object" class="oe_hightlight"/>
+                    <button string="Create match" name="%(sport_create_league_match_action)d" type="action" class="oe_hightlight"/>
                 </header>
                 <sheet>
                     <group>
                         <group>
                             <!-- Add your fields here -->
+                            <field name="league_id" />
                             <field name="winner_team_id" />
                             <field name="date_and_time" />
                         </group>

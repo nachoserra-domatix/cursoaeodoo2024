@@ -12,6 +12,8 @@ class SportMatch(models.Model):
     score_winning = fields.Integer('Score Winning', default=3)
     match_line_ids = fields.One2many(comodel_name='sport.match.line', inverse_name='match_id', string='Match Lines')
 
+    league_id = fields.Many2one(comodel_name='sport.league', string='League')
+
     @api.depends('match_line_ids.score')
     def set_score(self):
         for record in self.sport_league_ids:

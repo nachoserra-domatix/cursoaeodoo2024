@@ -23,8 +23,14 @@
             <form string="Leagues">
                 <header>
                     <button string="Set Score" name="set_score" type="object" class="oe_hightlight"/>
+                    <button string="Create match" name="%(sport_create_league_match_action)d" type="action" class="oe_hightlight"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_matches" type="object" icon="fa-futbol-o" class="oe_stat_button">
+                            <field string="Matches" name ="match_count" widget="statinfo" />
+                        </button>
+                    </div>
                     <group>
                         <group>
                             <!-- Add your fields here -->

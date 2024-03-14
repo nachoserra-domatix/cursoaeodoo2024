@@ -1,5 +1,5 @@
-from odoo import models, fields
-
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class SportLeague(models.Model):
@@ -12,6 +12,26 @@ class SportLeague(models.Model):
     sport_id = fields.Many2one(comodel_name='sport.sport', string='Sport')
     sport_league_ids = fields.One2many(comodel_name='sport.league.line', inverse_name='league_id', string='League Lines')
 
+    match_ids = fields.One2many(comodel_name='sport.match', inverse_name='league_id', string='Matches')
+
+    match_count = fields.Integer(string='Match count', compute='_compute_match_count')
+
+    # SI EL CONSTRAINT NO SE CUMPLE EN LOS REGISTROS YA CREADOS (INCLUIDOS LOS ARCHIVADOS) EL CONSTRAINT NO FUNCIONARÁ
+    # _sql_constraints = [
+    #     ('_league_date_greater', 'check(end_date >= date_start)', 'Start Date cannot be after End Date.')
+    # ]
+
+    @api.constrains('start_date','end_date')
+    def _check_start_date_is_before_end_date(self):
+        for record in self:
+            if record.start_date and record.end_date and record.start_date > record.end_date:
+                raise ValidationError("Start Date cannot be after End Date.")
+
+    def _compute_match_count(self):
+        for record in self:
+            record.match_count = len(record.match_ids)
+
+
     def set_score(self):
         for record in self.sport_league_ids:
             team = record.team_id
@@ -23,3 +43,12 @@ class SportLeague(models.Model):
         leagues = self.search([])
         leagues.set_score()
     
+    def action_view_matches(self):
+
+        return {
+            'name': 'Matches',
+            'type': 'ir.actions.act_window',
+            'res_model': 'sport.match',
+            'view_mode': 'tree,form',
+            'domain': [('league_id', '=', self.id)]
+        }

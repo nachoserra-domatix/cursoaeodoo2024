@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="report_sport_match">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="o">
+                        <h2>
+                            <span t-field="o.league_id" />
+                        </h2>
+                        <div t-if="o.sport_id" class="col-auto col-3 mw-100 mb-2" name="sport">
+                            <strong>Sport: </strong>
+                            <span class="m-0" t-field="o.sport_id"></span>
+                        </div>
+                        <div t-if="o.date_and_time" class="col-auto col-3 mw-100 mb-2" name="date_and_time">
+                            <strong>Date: </strong>
+                            <span class="m-0" t-field="o.date_and_time"></span>
+                        </div>
+                        <div t-if="o.winner_team_id" class="col-auto col-3 mw-100 mb-2" name="winner_team_id">
+                            <strong>Winner team: </strong>
+                            <span class="m-0" t-field="o.winner_team_id"></span>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_sport_match" model="ir.actions.report">
+    	<field name="name">Match</field>
+    	<field name="model">sport.match</field>
+    	<field name="report_type">qweb-pdf</field>
+    	<field name="report_name">sports_association.report_sport_match</field>
+    	<field name="report_file">sports_association.report_sport_match</field>
+    	<field name="print_report_name">(object.winner_team_id.name)</field>
+        <!-- <field name="paperformat_id" ref="sports_association.paperformat_sport_match"/> -->
+    	<field name="binding_model_id" ref="model_sport_match"/>
+    	<field name="binding_type">report</field>
+	</record>
+
+</odoo>
