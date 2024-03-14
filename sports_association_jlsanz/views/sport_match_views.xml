@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <tree multi_edit="1" string="Matches">
                 <field name="sport_id" />
+                <field name="league_id" />
                 <field name="date_time" />
                 <field name="matchpoints" />
                 <field name="winner" />
@@ -22,6 +23,7 @@
                 <sheet>
                     <group>
                         <field name="sport_id" />
+                        <field name="league_id" />
                         <field name="date_time" />
                         <field name="matchpoints" />
                         <field name="winner" />

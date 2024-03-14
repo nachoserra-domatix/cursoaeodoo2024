@@ -21,6 +21,7 @@
         "security/ir.model.access.csv",
         "wizards/sport_create_issue.xml",
         "wizards/sport_issue_state.xml",
+        "wizards/sport_create_match.xml",
         "views/sport_license_views.xml",
         "views/sport_issue_views.xml",
         "views/sport_clinic_views.xml",
@@ -32,5 +33,6 @@
         "views/sport_menuitems.xml",
         "report/sport_issue_report.xml",
         "report/sport_league_report.xml",
+        "report/sport_match_report.xml",
         ]
 }

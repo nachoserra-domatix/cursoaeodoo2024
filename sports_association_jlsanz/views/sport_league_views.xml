@@ -21,8 +21,15 @@
             <form string="Leagues">
                 <header>
                     <button string="Set Score" name="set_score" type="object" class="oe_highlight"/>
+                    <button string="Create Match" name="%(action_sport_create_match)d" context="{'default_league_id': id}" type="action" class="oe_highlight"></button>
                 </header>
                 <sheet>
+                                        <!-- smart button -->
+                                        <div class="oe_button_box" name="button_box" >
+                                            <button type="object" name="action_view_match" class="oe_stat_button" icon="fa-futbol-o" >
+                                                <field string="match_count" name="match_count" widget="statinfo" />
+                                            </button>
+                                        </div>
                     <group>
                         <field name="name"></field>
                         <field name="start_date" />

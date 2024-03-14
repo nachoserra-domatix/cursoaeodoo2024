@@ -11,6 +11,7 @@ class SportMatch(models.Model):
     match_result_ids = fields.One2many('sport.match.result', 'result_id', string='Result')
 
     #league_id = related
+    league_id = fields.Many2one('sport.league', string='League')
 
     @api.depends('match_result_ids.score')
     def _compute_winner_team_id(self):
