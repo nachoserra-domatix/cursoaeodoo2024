@@ -9,6 +9,7 @@
     "license": "AGPL-3",
     "depends": [
         "base",
+        "web",
     ],
     "data": [
         "wizards/sport_create_issue.xml",
@@ -25,5 +26,6 @@
         "views/sport_league_views.xml",
         "views/sport_match_views.xml",
         "views/sport_menuitems.xml",
+        "report/sport_issue_report.xml",
     ],
 }

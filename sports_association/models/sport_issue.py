@@ -29,6 +29,7 @@ class SportIssue(models.Model):
     assigned = fields.Boolean(string='Assigned', compute='_compute_assigned', inverse='_inverse_assigned', search='_search_assigned')
     
     clinic_id = fields.Many2one(comodel_name='sport.clinic', string='Clinic')
+    player_id = fields.Many2one(comodel_name='sport.player', string='Player')
     tag_ids = fields.Many2many(comodel_name='sport.issue.tag', string='')
 
     cost = fields.Float(string='Cost')
