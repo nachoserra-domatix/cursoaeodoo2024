@@ -21,10 +21,10 @@ class SportLeague(models.Model):
         for record in self:
             record.match_count = len(record.match_ids)
     
-    @api.constrains('start_date', 'end_date')
+    @api.constrains('date_start', 'date_end')
     def _check_dates(self):
         for record in self:
-            if record.start_date > record.end_date:
+            if record.date_start > record.date_end:
                 raise models.ValidationError('The league start date must be before its end date.')
 
     #=== METHODS ===#
