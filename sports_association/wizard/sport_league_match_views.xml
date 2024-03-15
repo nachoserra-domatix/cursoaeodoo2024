@@ -6,10 +6,12 @@
             <field name="model">sport.league.match</field>
             <field name="arch" type="xml">
                 <form string="Create Matchs">
-                    <group>                        
-                        <field name="team_ids"/>
+                    <group>
+                        <field name="league_id"/>                        
                         <field name="sport_id"/>                        
                         <field name="date"/>
+                        <field name="allowed_team_ids" invisible="1"/>
+                        <field name="team_ids" domain="[('id','in',allowed_team_ids)]" widget="many2many_tags"/>
                     </group>
                     <footer>
                         <button string="Create Matchs" name="create_matchs" class="btn-primary" type="object"/>

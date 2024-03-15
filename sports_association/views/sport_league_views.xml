@@ -23,6 +23,7 @@
             <form string="Leagues">
                 <header>
                     <button string="Set Score" name="set_score" type="object" class="oe_highlight"/>
+                    <button string="Create Match" name="%(action_sport_league_match)d" context="{'default_league_id': id}" type="action" class="btn-secondary"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -38,6 +39,10 @@
                     </div>
                     <group>                        
                         <field name="sport_id" string="sport"/>
+                    </group>
+                    <group>                        
+                        <field name="date_start"/>
+                        <field name="date_end"/>                    
                     </group>
                     <notebook>
                         <page name="Teams" string="Teams">                            
