@@ -82,10 +82,13 @@
             <search string="Search Players">
                 <field name="name"/>
                 <field name="team_id"/>
+                <field name="sport_name"/>
                 <separator/>
                 <filter name="is_starter" string="is_starter" domain="[('is_starter','=',True)]" help="Show active players"/>                
                 <group string="Group By">
-                    <filter string="Team" name="team" domain="[]" context="{'group_by':'team_id'}" groups="base.group_multi_company"/>                    
+                    <filter string="Team" name="team" domain="[]" context="{'group_by':'team_id'}" groups="base.group_multi_company"/>
+                    <filter string="Birthdate" name="birthdate" context="{'group_by':'birthdate'}"/>
+                    <filter string="Sport" name="sport" context="{'group_by':'sport_name'}"/>                    
                 </group>
             </search>
         </field>

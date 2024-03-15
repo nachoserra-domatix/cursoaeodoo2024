@@ -7,7 +7,8 @@
         <field name="name">sport.match.tree.view</field>
         <field name="model">sport.match</field>
         <field name="arch" type="xml">
-            <tree string="Matchs" multi_edit="1">                
+            <tree string="Matchs" multi_edit="1">
+                <field name="league_id"/>               
                 <field name="sport_id"/>
                 <field name="date"/> 
                 <field name="winner_team_id"/>               
@@ -21,8 +22,12 @@
         <field name="arch" type="xml">
             <form string="Match">
                 <sheet>
-                    <field name="sport_id"/>
-                    <field name="date"/>                                                            
+                    <group>
+                        <field name="league_id"/>
+                        <field name="sport_id"/>
+                        <field name="date"/>
+                        <field name="winner_team_id"/>
+                    </group>                                                            
                     <notebook>
                         <page name="teams" string="Teams">                            
                             <field name="match_line_ids">
@@ -69,7 +74,8 @@
         <field name="name">sport.match.pivot</field>
         <field name="model">sport.match</field>
         <field name="arch" type="xml">
-            <pivot string="Timesheet">                
+            <pivot string="Timesheet">
+                <field name="winner_team_id" type="row"/>               
                 <field name="date" interval="month" type="col"/>                
             </pivot>            
         </field>
