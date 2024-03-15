@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_sport_match">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="mt-4">
+                            <span>Winner </span>
+                            <span t-field="o.winner_team_id"></span>
+                        </h2>
+                        <div class="row mt-4 mb-2">
+                            <div class="col-auto col-3 mw-100 mb-2">
+                                <strong>League: </strong>
+                                <span t-field="o.league_id"></span>
+                            </div>
+                            <div class="col-auto col-3 mw-100 mb-2">
+                                <strong>Sport: </strong>
+                                <span t-field="o.sport_id"></span>
+                            </div>
+                            <div class="col-auto col-3 mw-100 mb-2">
+                                <strong>Date: </strong>
+                                <span t-field="o.date"></span>
+                            </div>
+                        </div>
+                        <table class="table-sm o_main_table table-borderless mt-4">
+                            <thead style="display: table-row-group">
+                                <tr>
+                                    <th class="text-start">Team</th>
+                                    <th class="text-start">Score</th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+                                <t t-foreach="o.match_line_ids" t-as="line">
+                                    <tr>
+                                        <td class="text-start">
+                                            <span t-field="line.team_id" />
+                                        </td>
+                                        <td class="text-start">
+                                            <span t-field="line.score" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_sport_match" model="ir.actions.report">
+        <field name="name">Match Info</field>
+        <field name="model">sport.match</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sports_association.report_sport_match</field>
+        <field name="report_file">sports_association.report_sport_match</field>
+        <field name="print_report_name">(object.league_id.name)</field>
+        <field name="binding_model_id" ref="model_sport_match" />
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

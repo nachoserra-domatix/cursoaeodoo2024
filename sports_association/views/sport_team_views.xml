@@ -8,6 +8,7 @@
         <field name="model">sport.team</field>
         <field name="arch" type="xml">
             <tree string="Teams">                
+                <field name="logo" string="" widget="image" class="oe_right oe_avatar" options="{'size': [25, 25]}"/>
                 <field name="name"/>
                 <field name="total_players"/>
             </tree>
