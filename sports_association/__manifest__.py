@@ -34,6 +34,7 @@
         "data/sport_issue_tag_data.xml",
         "report/sport_issue_report.xml",
         "wizard/sport_create_issue.xml",
+        "wizard/sport_league_match_views.xml",
         "data/ir_cron.xml",
     ],    
 }

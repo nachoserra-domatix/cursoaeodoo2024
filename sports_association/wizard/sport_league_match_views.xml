@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_sport_league_match" model="ir.ui.view">
+            <field name="name">sport.league.match</field>
+            <field name="model">sport.league.match</field>
+            <field name="arch" type="xml">
+                <form string="Create Matchs">
+                    <group>                        
+                        <field name="team_ids"/>
+                        <field name="sport_id"/>                        
+                        <field name="date"/>
+                    </group>
+                    <footer>
+                        <button string="Create Matchs" name="create_matchs" class="btn-primary" type="object"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sport_league_match" model="ir.actions.act_window">
+            <field name="name">Create Matchs</field>
+            <field name="res_model">sport.league.match</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="sports_association.model_sport_league"/>
+            <field name="binding_view_types">list,form</field>
+        </record>
+    </data>
+</odoo>
