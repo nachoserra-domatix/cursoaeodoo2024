@@ -16,6 +16,11 @@ class SportClinic(models.Model):
         comodel_name='sport.issue',
         inverse_name='clinic_id')
     available = fields.Boolean('Available')
+    issue_count = fields.Integer('Issue count', compute='_compute_issue_count')
+
+    def _compute_issue_count(self):
+        for record in self:
+            record.issue_count = len(record.issue_ids)
 
     #=== METHODS ===#
     

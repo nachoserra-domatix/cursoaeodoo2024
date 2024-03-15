@@ -20,12 +20,14 @@
         <field name="arch" type="xml">
             <form string="Clinic">
                 <header>
-                    <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"/>
-                    <div class="oe_button_box" name="button_box">
-                        <button class="oe_stat_button" type="object" name="action_view_issues" icon="fa-tasks"/>
-                    </div>
+                    <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"/>                    
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_issues" class="oe_stat_button" icon="fa-stethoscope">
+                            <field string="Issues" name="issue_count" widget="statinfo"/>
+                        </button>
+                    </div>
                     <group>
                         <group>
                             <field name="name" />

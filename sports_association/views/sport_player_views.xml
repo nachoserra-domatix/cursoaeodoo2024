@@ -12,6 +12,8 @@
                 <field name="name"/>
                 <field name="age"/>
                 <field name="team_id"/>
+                <field name="position" />
+                <field name="is_starter" widget="boolean_toggle" />
             </tree>
         </field>
     </record>
@@ -33,11 +35,12 @@
         <field name="model">sport.player</field>
         <field name="arch" type="xml">
             <form string="Player">
-                <sheet>
-                    <header>                        
-                        <button string="Starter"  class="btn-primary" name="action_starter" type="object"/>
-                        <button string="Reserve"  class="btn-primary" name="action_reserve" type="object"/>
-                    </header>                    
+                <header>                        
+                    <button string="Starter"  class="btn-primary" name="action_starter" type="object"/>
+                    <button string="Reserve"  class="btn-primary" name="action_reserve" type="object"/>
+                    <button string="Create issue" name="%(action_sport_create_issue)d" context="{'default_player_id': id}" type="action" class="oe_highlight"/>
+                </header>
+                <sheet>                                        
                     <field name="photo" widget="image" class="oe_avatar"/>
                     <label for="name" string="Name"/>
                     <div class="oe_title">                        

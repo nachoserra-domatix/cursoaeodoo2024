@@ -8,13 +8,14 @@ class SportPlayer(models.Model):
     _description = 'Player'
 
     name = fields.Char(string='Player Name', required=True)
-    birthdate = fields.Date('Birthdate')
+    birthdate = fields.Date('Birthdate', copy=False)
     age = fields.Integer('Age', compute='_compute_age', store=True)
     position = fields.Char(string='Position')
     team_id = fields.Many2one('sport.team', string='Team')
-    is_starter = fields.Boolean(string='Starter', default=True)
+    is_starter = fields.Boolean(string='Starter', default=True, copy=False)
     photo = fields.Image(string="Photo")
-    sport_name = fields.Char('Sport', related='team_id.sport_id.name')
+    sport_name = fields.Char('Sport', related='team_id.sport_id.name', store=True)
+    active = fields.Boolean('Active', default=True)
 
     @api.depends('birthdate')
     def _compute_age(self):
