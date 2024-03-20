@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="sport_ticket_view_tree" model="ir.ui.view">
+        <field name="name">sport.ticket.sale.view.tree</field>
+        <field name="model">sport.ticket</field>
+        <field name="inherit_id" ref="sports_association.sport_ticket_view_tree" />
+        <field name="arch" type="xml">
+            <field name="game_id" position="after">
+                <field name="sale_order_id" />
+            </field>
+        </field>
+    </record>
+
+    <record id="sport_ticket_sale_view" model="ir.ui.view">
+        <field name="name">sport.ticket.sale.view.form</field>
+        <field name="model">sport.ticket</field>
+        <field name="inherit_id" ref="sports_association.sport_ticket_view_form" />
+        <field name="arch" type="xml">
+            <field name="game_id" position="after">
+                <field name="sale_order_id" />
+            </field>
+        </field>
+    </record>
+</odoo>

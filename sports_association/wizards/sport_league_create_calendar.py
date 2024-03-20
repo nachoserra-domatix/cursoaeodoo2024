@@ -17,9 +17,8 @@ class SportLeagueCreateCalendar(models.TransientModel):
         date_game =  self.date_start
 
         # ToDo: better control dates for every week
-
         for i in range(len(league_id.league_line_ids)):
-            # date_game =  self.date_start
+            date_game =  self.date_start
             for j in range(i + 1, len(league_id.league_line_ids)):
                 vals = {
                     "league_id": league_id.id,
@@ -31,7 +30,7 @@ class SportLeagueCreateCalendar(models.TransientModel):
                 }
                 # import pdb; pdb.set_trace()
                 self.env["sport.game"].create(vals)
-            date_game += timedelta(weeks=1)    
+                date_game += timedelta(weeks=1)
         
         return {
             'name': 'League',

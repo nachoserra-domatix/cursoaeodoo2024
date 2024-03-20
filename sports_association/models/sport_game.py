@@ -6,6 +6,11 @@ class SportGame(models.Model):
     _rec_name = "sport_id"
 
     
+    name = fields.Char(
+        string='Name',
+        compute="_compute_name",
+        store=True
+    )
     league_id = fields.Many2one(string='League', comodel_name='sport.league')
     date = fields.Datetime(string='Date')
     team_winner_id = fields.Many2one(
@@ -30,6 +35,12 @@ class SportGame(models.Model):
         related='league_id.sport_id'
     )
     
+    
+    @api.depends('game_line_ids')
+    def _compute_name(self):
+        for record in self:
+            for line in record.game_line_ids:
+                record.name = " - ".join(filter(None, [record.name, line.team_id.name]))
 
     @api.depends('game_line_ids.score')
     def _compute_winner(self):

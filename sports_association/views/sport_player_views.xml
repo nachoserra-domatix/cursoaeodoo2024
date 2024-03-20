@@ -13,6 +13,10 @@
                 <field name="position" />
                 <field name="team_id" />
                 <field name="starter" widget="boolean_toggle" />
+                <field name="city" />
+                <field name="country_id" />
+                <field name="email" />
+                <field name="phone" />
             </tree>
         </field>
     </record>
@@ -46,15 +50,26 @@
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="player Name" />
+
                         </h1>
                     </div>
                     <group>
-                        <field name="active" invisible="1" />
-                        <field name="position" />
-                        <field name="birthdate" />
-                        <field name="age" />
-                        <field name="team_id" />
-                        <field name="starter" widget="boolean_toggle" />
+                        <field name="partner_id" readonly="1" />
+                        <group name="player_info" string="Player Info">
+                            <field name="active" invisible="1" />
+                            <field name="position" />
+                            <field name="birthdate" />
+                            <field name="age" />
+                            <field name="team_id" />
+                            <field name="starter" widget="boolean_toggle" />
+                        </group>
+                        <group name="partner_info" string="Partner Info">
+                            <field name="street" />
+                            <field name="city" />
+                            <field name="country_id" />
+                            <field name="email" />
+                            <field name="phone" />
+                        </group>
                     </group>
                 </sheet>
             </form>

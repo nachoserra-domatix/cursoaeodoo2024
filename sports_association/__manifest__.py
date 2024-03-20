@@ -11,7 +11,7 @@
     "installable": True,
     "preloadable": True,
     "depends": [
-        "web"
+        "web",
     ],
     "data": [
         "wizards/sport_league_create_games.xml",
@@ -26,6 +26,7 @@
         "views/sport_team_views.xml",
         "views/sport_player_views.xml",
         "views/sport_sport_views.xml",
+        "views/sport_ticket_views.xml",
         "data/sport_license_data.xml",
         "data/sport_issue_tag_data.xml",
         "data/ir_cron.xml",

@@ -99,6 +99,20 @@
         </field>
     </record>
 
+    <record id="action_sport_ticket" model="ir.actions.act_window">
+        <field name="name">Tickets</field>
+        <field name="res_model">sport.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new sport ticket
+            </p>
+        </field>
+    </record>
+
     <menuitem
         id="sport_menu"
         name="Sport Association"
@@ -156,4 +170,11 @@
             action="action_sport_license"
             sequence="20" />
     </menuitem>
+
+    <menuitem
+        id="sport_ticket_menu"
+        name="Sport Tickets"
+        action="action_sport_ticket"
+        parent="sport_menu"
+        sequence="10" />
 </odoo>

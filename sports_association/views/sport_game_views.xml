@@ -7,6 +7,7 @@
         <field name="priority" eval="16" />
         <field name="arch" type="xml">
             <tree string="Games">
+                <field name="name" />
                 <field name="date" />
                 <field name="league_id" />
                 <field name="team_winner_id" />
@@ -23,6 +24,7 @@
             <form string="Games">
                 <sheet>
                     <group>
+                        <field name="name" />
                         <field name="date" />
                         <field name="league_id" options="{'no_create': True}" />
                         <field name="sport_id" options="{'no_create': True}" />
@@ -49,6 +51,7 @@
         <field name="model">sport.game</field>
         <field name="arch" type="xml">
             <calendar string="Games" date_start="date" color="team_winner_id">
+                <field name="name" />
                 <field name="team_winner_id" />
                 <field name="team_looser_id" />
             </calendar>
