@@ -105,7 +105,19 @@
                 Create a new sport team
             </p>
         </field>
-    </record>      
+    </record>     
+    
+    <record id="action_sport_ticket" model="ir.actions.act_window">
+        <field name="name">Sport Ticket</field>
+        <field name="res_model">sport.ticket</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport ticket
+            </p>
+        </field>
+    </record>     
 
     <menuitem
         id="sport_menu"
@@ -170,7 +182,13 @@
                 name="Sport Match"
                 sequence="90"
                 action="sports_association_sergio.action_sport_match">
-            </menuitem>                                                                                           
+            </menuitem>
+            <menuitem 
+                id="sport_ticket_menu"
+                name="Sport Ticket"
+                sequence="100"
+                action="sports_association_sergio.action_sport_ticket">
+            </menuitem>              
         </menuitem>
     </menuitem>
                 

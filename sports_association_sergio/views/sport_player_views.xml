@@ -56,6 +56,10 @@
                         <field name="name"></field>
                         <field name="birthdate"></field>
                         <field name="age"></field>
+                        <field name="city"></field>
+                        <field name="street"></field>
+                        <field name="zip"></field>
+                        <field name="country_id"></field>
                     </group>
                     <group>
                         <field name="sport"></field>
@@ -75,6 +79,7 @@
             <form string="Player">
                 <sheet>
                     <field name="name"></field>
+                    <field name="partner_id"></field>
                     <field name="position"></field>
                 </sheet>
             </form>
