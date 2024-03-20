@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "application": False,
     "depends": [
-        "base","web","sale","sport_association_francisco"
+        "sale","sport_association_francisco"
     ],
     "data":[
         "views/sport_ticket_views.xml",

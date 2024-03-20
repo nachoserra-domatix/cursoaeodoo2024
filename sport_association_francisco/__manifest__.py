@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "application": False,
     "depends": [
-        "base","web"
+        "web"
     ],
     "data":[
         "security/groups.xml",

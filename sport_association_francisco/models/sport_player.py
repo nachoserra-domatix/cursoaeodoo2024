@@ -17,9 +17,6 @@ class SportPlayer(models.Model):
     sport_name = fields.Char('Sport Name', related='team_id.sport_id.name', store=True, copy=False)
     birth_date = fields.Date('Birth Date', copy=False)
     street = fields.Char(related="partner_id.street", inherited=True, readonly=False)
-    city = fields.Char(related="partner_id.city", inherited=True, readonly=False)
-    country_id = fields.Many2one(related="partner_id.country_id", inherited=True, readonly=False)
-    active = fields.Boolean('Active', default=True)
 
     @api.depends('birth_date')
     def _computed_age(self):

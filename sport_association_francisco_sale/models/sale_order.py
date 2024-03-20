@@ -15,4 +15,5 @@ class SaleOrder(models.Model):
     def action_cancel(self):
         self.ticket_ids.unlink()
         rec = super().action_cancel()
+        return rec
     
