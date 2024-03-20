@@ -6,14 +6,19 @@ class SportPlayer(models.Model):
 
     _name = 'sport.player'
     _description = 'Sport Player'
+    _inherits = {'res.partner': 'partner_id'}
 
-    name = fields.Char(string="Name", copy=False)
+    partner_id = fields.Many2one('res.partner', string='Partner', ondelete="cascade", required=True)
+    name = fields.Char(string="Name", related="partner_id.name",readonly=False, copy=False, inherited=True)
     age = fields.Integer(string='Age', compute='_computed_age', store=True, copy=False)
     position = fields.Char(string='Position', copy=False)
     team_id = fields.Many2one('sport.team', string='Team')
     titular = fields.Boolean(string='Titular', default=True, copy=False)
     sport_name = fields.Char('Sport Name', related='team_id.sport_id.name', store=True, copy=False)
     birth_date = fields.Date('Birth Date', copy=False)
+    street = fields.Char(related="partner_id.street", inherited=True, readonly=False)
+    city = fields.Char(related="partner_id.city", inherited=True, readonly=False)
+    country_id = fields.Many2one(related="partner_id.country_id", inherited=True, readonly=False)
     active = fields.Boolean('Active', default=True)
 
     @api.depends('birth_date')

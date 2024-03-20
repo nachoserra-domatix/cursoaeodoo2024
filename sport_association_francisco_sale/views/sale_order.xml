@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+
+        <record id="sport_association_sale_order_form_view" model="ir.ui.view">
+            <field name="name">sale.order.form.view</field>
+            <field name="model">sale.order</field>
+            <field name='inherit_id' ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <page name="customer_signature" position="after">
+                    <page string="Sport Tickets">
+                        <group>
+                            <field name="ticket_ids">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="client_id" />
+                                    <field name="match_id" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </page>
+                <button name="action_cancel" position="before">
+                    <button string="Create ticket" name="create_ticket" type="object" class="oe_highlight"/>
+                </button>
+            </field>
+        </record>
+        
+    </odoo>

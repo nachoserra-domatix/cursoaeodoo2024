@@ -48,6 +48,12 @@
                                 <field name="age"/>
                                 <field name="position"/>
                                 <field name="titular"/>
+                                <field name="partner_id" invisible="True"/>
+                            </group>
+                            <group>
+                                <field name="street"/>
+                                <field name="city"/>
+                                <field name="country_id"/>
                             </group>
                         </group>
                         <notebook>
