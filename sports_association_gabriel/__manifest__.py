@@ -33,6 +33,7 @@
         "views/sport_player_views.xml",
         "views/sport_league_views.xml",
         "views/sport_match_views.xml",
+        "views/sport_ticket_views.xml",
         "views/sport_association_menuitems.xml",
         "report/sport_issue_report.xml",
         "report/sport_issues_dates_report.xml",  

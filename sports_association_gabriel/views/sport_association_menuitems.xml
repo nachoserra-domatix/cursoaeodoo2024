@@ -67,6 +67,13 @@
         sequence="30"/>
 
     <menuitem
+        id="sport_ticket_menu"
+        name="Tickets"
+        action="sports_association_gabriel.sport_ticket_action"        
+        parent="sports_association_gabriel.sport_management_sports_menu"
+        sequence="35"/>
+
+    <menuitem
         id="sport_team_menu"
         name="Sport Teams"
         action="sports_association_gabriel.sport_team_action"        

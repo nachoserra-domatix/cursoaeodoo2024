@@ -50,6 +50,11 @@
                             <field name="position"/>
                         </group>
                         <group>
+                            <field name="street"/>
+                            <field name="city"/>
+                            <field name="country_id"/>
+                        </group>  
+                        <group>
                             <field name="team_id"/>
                             <field name="sport_name"/>
                             <field name="starter"/>
