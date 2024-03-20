@@ -63,6 +63,11 @@
                 name="Matchs"                
                 action="action_sport_match"            
                 groups="base.group_user"/>
+
+                <menuitem id="sport_tickets_menu"
+                name="Tickets"                
+                action="action_sport_ticket"            
+                groups="base.group_user"/>
                 
         </menuitem>
         
