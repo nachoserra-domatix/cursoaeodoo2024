@@ -72,5 +72,11 @@
         name="Matches"
         action="action_sports_match"
         parent="fifa_menu"
-        sequence="20"/>    
+        sequence="20"/>
+    <menuitem
+        id="sport_ticket_menu"
+        name="Tickets"
+        action="action_sport_ticket"
+        parent="fifa_menu"
+        sequence="30"/>    
     </odoo>

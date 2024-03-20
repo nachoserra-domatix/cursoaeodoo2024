@@ -10,3 +10,4 @@ from . import sports_league
 from . import sports_league_line
 from . import sports_match
 from . import sports_match_line
+from . import sports_ticket

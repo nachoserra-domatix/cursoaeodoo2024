@@ -3,6 +3,7 @@ from odoo import models, fields,api
 class SportsMatch(models.Model):
     _name = 'sports.match'
     _description = 'Sports Match'
+    _rec_name = 'date'
 
     date = fields.Datetime(string='Date')
     sport_id = fields.Many2one('sports.sport',string='Sport')
