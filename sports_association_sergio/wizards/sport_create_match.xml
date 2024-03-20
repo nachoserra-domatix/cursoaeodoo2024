@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_sport_create_match" model="ir.ui.view">
+        <field name="name">sport.create.match</field>
+        <field name="model">sport.create.match</field>
+        <field name="arch" type="xml">
+            <form string="Create Match">
+                <group>
+                    <field name="name"/>
+                    <field name="match_datetime"/>
+                    <field name="team1_id"/>
+                    <field name="team2_id"/>
+                    <field name="league_id"></field>
+                </group>
+                <footer>
+                    <button string="Create" type="object" class="btn-primary" name="create_match"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sport_create_match" model="ir.actions.act_window">
+        <field name="name">Create Match</field>
+        <field name="res_model">sport.create.match</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="sports_association_sergio.model_sport_league"/>
+        <field name="binding_view_types">list,form</field>
+    </record>
+
+</odoo>

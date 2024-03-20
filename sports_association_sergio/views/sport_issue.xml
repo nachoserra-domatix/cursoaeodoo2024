@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_sport_issue" model="ir.actions.act_window">
+        <field name="name">Sport Issues</field>
+        <field name="res_model">sport.issue</field>
+        <field name="view_mode">tree,form,kanban,pivot,graph,calendar</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport issue
+            </p>
+        </field>
+    </record>
+    <record id="action_sport_license" model="ir.actions.act_window">
+        <field name="name">Sport Licenses</field>
+        <field name="res_model">sport.license</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport license
+            </p>
+        </field>
+    </record>    
+
+    <record id="action_sport_clinic" model="ir.actions.act_window">
+        <field name="name">Sport Clinic</field>
+        <field name="res_model">sport.clinic</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport clinic
+            </p>
+        </field>
+    </record>      
+
+    <record id="action_sport_issue_tag" model="ir.actions.act_window">
+        <field name="name">Sport Clinic</field>
+        <field name="res_model">sport.issue.tag</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport issue tag
+            </p>
+        </field>
+    </record>        
+
+    <record id="action_sport_player" model="ir.actions.act_window">
+        <field name="name">Sport Player</field>
+        <field name="res_model">sport.player</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport player
+            </p>
+        </field>
+    </record>     
+
+    <record id="action_sport_sport" model="ir.actions.act_window">
+        <field name="name">Sport Sport</field>
+        <field name="res_model">sport.sport</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport sport
+            </p>
+        </field>
+    </record>     
+    
+    <record id="action_sport_team" model="ir.actions.act_window">
+        <field name="name">Sport Team</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport team
+            </p>
+        </field>
+    </record>
+    
+    <record id="action_sport_league" model="ir.actions.act_window">
+        <field name="name">Sport League</field>
+        <field name="res_model">sport.league</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport team
+            </p>
+        </field>
+    </record> 
+    
+    <record id="action_sport_match" model="ir.actions.act_window">
+        <field name="name">Sport Match</field>
+        <field name="res_model">sport.match</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport team
+            </p>
+        </field>
+    </record>     
+    
+    <record id="action_sport_ticket" model="ir.actions.act_window">
+        <field name="name">Sport Ticket</field>
+        <field name="res_model">sport.ticket</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport ticket
+            </p>
+        </field>
+    </record>     
+
+    <menuitem
+        id="sport_menu"
+        name="Sport Association"
+        sequence="10">
+
+        <menuitem 
+            id="sport_menu_list"
+            name="Sport Association"
+            sequence="10">
+
+            <menuitem 
+                id="sport_issue_menu"
+                name="Sport Issues"
+                sequence="10"
+                action="sports_association_sergio.action_sport_issue">
+            </menuitem>
+            <menuitem 
+                id="sport_license_menu"
+                name="Sport Licenses"
+                sequence="20"
+                action="sports_association_sergio.action_sport_license">
+            </menuitem>      
+            <menuitem 
+                id="sport_clinic_menu"
+                name="Sport Clinics"
+                sequence="30"
+                action="sports_association_sergio.action_sport_clinic">
+            </menuitem>       
+            <menuitem 
+                id="sport_issue_tag_menu"
+                name="Sport Issue Tags"
+                sequence="40"
+                action="sports_association_sergio.action_sport_issue_tag">
+            </menuitem>
+            <menuitem 
+                id="sport_player_menu"
+                name="Sport Player"
+                sequence="50"
+                action="sports_association_sergio.action_sport_player">
+            </menuitem>
+            <menuitem 
+                id="sport_sport_menu"
+                name="Sport Sport"
+                sequence="60"
+                action="sports_association_sergio.action_sport_sport">
+            </menuitem>
+            <menuitem 
+                id="sport_team_menu"
+                name="Sport Team"
+                sequence="70"
+                action="sports_association_sergio.action_sport_team">
+            </menuitem>
+            <menuitem 
+                id="sport_league_menu"
+                name="Sport League"
+                sequence="80"
+                action="sports_association_sergio.action_sport_league">
+            </menuitem>
+            <menuitem 
+                id="sport_match_menu"
+                name="Sport Match"
+                sequence="90"
+                action="sports_association_sergio.action_sport_match">
+            </menuitem>
+            <menuitem 
+                id="sport_ticket_menu"
+                name="Sport Ticket"
+                sequence="100"
+                action="sports_association_sergio.action_sport_ticket">
+            </menuitem>              
+        </menuitem>
+    </menuitem>
+                
+
+</odoo>
