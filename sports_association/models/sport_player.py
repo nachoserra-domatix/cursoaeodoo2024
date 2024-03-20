@@ -6,8 +6,10 @@ from odoo import api, models, fields
 class SportPlayer(models.Model):
     _name = 'sport.player'
     _description = 'Player'
+    _inherits = {'res.partner': 'partner_id'}
 
-    name = fields.Char(string='Player Name', required=True)
+    partner_id = fields.Many2one('res.partner', string='Partner', ondelete="cascade", required=True)
+    name = fields.Char(string="Name", related="partner_id.name",readonly=False, copy=False, inherited=True)
     birthdate = fields.Date('Birthdate', copy=False)
     age = fields.Integer('Age', compute='_compute_age', store=True)
     position = fields.Char(string='Position')
