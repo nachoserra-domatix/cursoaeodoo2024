@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="sport_team_tree_view" model="ir.ui.view">
+            <field name="name">sport.team.tree.view</field>
+            <field name="model">sport.team</field>
+            <field name="arch" type="xml">
+                <tree string="Sport Issue" multi_edit='1'>
+                    <field name="name"/>
+                    <field name="sport_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sport_team_form_view" model="ir.ui.view">
+            <field name="name">sport.team.form.view</field>
+            <field name="model">sport.team</field>
+            <field name="arch" type="xml">
+                <form string="Sport Team">
+                    <header>
+                        <button name="get_all_unasigned" type="object" class="btn-primary" string="Get all unasigned"/>
+                        <button name="mark_all_as_titular" type="object" class="btn-success" string="Mark all as titular"/>
+                        <button name="unmark_all_as_titular" type="object" class="btn-secondary" string="Unmark all as titular"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" type="object" name="action_view_players" icon="fa-user-plus">
+                                <field string="Members" name="members" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Team name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="logo" widget="image"/>
+                                <field name="sport_id"/>
+                                <field name="members"/>
+                                <field name="player_ids" context="{'tree_view_ref':'sport_association_francisco.sport_player_tree_simple_view',
+                                'form_view_ref':'sport_association_francisco.sport_player_form_simple_view'}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sport_team_view_kanban" model="ir.ui.view">
+            <field name="name">sport.team.view.kanban</field>
+            <field name="model">sport.team</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <field name="logo"/>
+                    <field name="sport_id"/>
+                    <field name="player_ids"/>
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-menu">
+                            <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                            <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                            <ul class="oe_kanban_colorpicker" data-field="color"/>
+                        </t>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''} #{lost_ribbon ? 'oe_kanban_card_ribbon' : ''} oe_kanban_global_click oe_kanban_card d-flex flex-column">
+                                <div class="oe_kanban_content flex-grow-1">
+                                    <div class="oe_kanban_details">
+                                        <strong class="o_kanban_record_title"><field name="name"/></strong>
+                                    </div>
+                                    <div class="o_kanban_record_subtitle">
+                                        <field name="logo" widget="image"/>
+                                    </div>
+                                    <!-- <div>
+                                        <field name="player_ids" widget="many2many_tags"/>
+                                    </div> -->
+                                </div>
+                                <div class="oe_kanban_footer">
+                                    <div class="o_kanban_record_bottom">
+                                        <!-- <div class="oe_kanban_bottom_left">
+                                            <field name="clinic_id"/>
+                                        </div> -->
+                                        <div class="oe_kanban_bottom_right">
+                                            <field name="sport_id"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        
+    </odoo>

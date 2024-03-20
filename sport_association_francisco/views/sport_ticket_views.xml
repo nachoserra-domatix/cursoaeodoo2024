@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="sport_ticket_tree_view" model="ir.ui.view">
+            <field name="name">sport.ticket.tree.view</field>
+            <field name="model">sport.ticket</field>
+            <field name="arch" type="xml">
+                <tree string="Sport ticket" multi_edit='1'>
+                    <field name="name"/>
+                    <field name="client_id"/>
+                    <field name="match_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sport_ticket_form_view" model="ir.ui.view">
+            <field name="name">sport.ticket.form.view</field>
+            <field name="model">sport.ticket</field>
+            <field name="arch" type="xml">
+                <form string="Sport ticket">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Clinic name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="match_id"/>
+                                <field name="client_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+    </odoo>

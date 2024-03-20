@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="sport_sport_tree_view" model="ir.ui.view">
+            <field name="name">sport.sport.tree.view</field>
+            <field name="model">sport.sport</field>
+            <field name="arch" type="xml">
+                <tree string="Sport Issue" multi_edit='1'>
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sport_sport_form_view" model="ir.ui.view">
+            <field name="name">sport.sport.form.view</field>
+            <field name="model">sport.sport</field>
+            <field name="arch" type="xml">
+                <form string="Sport">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Sport name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+    </odoo>
