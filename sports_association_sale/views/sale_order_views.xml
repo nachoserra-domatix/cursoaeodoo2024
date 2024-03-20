@@ -8,6 +8,9 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+            <button name="action_cancel" position="before">
+                <button string="Create ticket" name="create_sport_ticket" type="object" class="oe_highlight" />
+            </button>
             <page name="other_information" position="before">
                 <page string="Tickets">
                     <field name="sport_ticket_ids" />
