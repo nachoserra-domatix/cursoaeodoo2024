@@ -74,4 +74,11 @@
         parent="sport_sport_management_menu"
         sequence="50" />
 
+    <menuitem
+        id="sport_ticket_menu"
+        name="Sport Ticket"
+        action="sport_ticket_action"
+        parent="sport_sport_management_menu"
+        sequence="60" />
+
     </odoo>

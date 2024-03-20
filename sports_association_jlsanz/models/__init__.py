@@ -9,3 +9,4 @@ from . import sport_issue_action
 from . import sport_league
 from . import sport_league_result
 from . import sport_match
+from . import sport_ticket
