@@ -4,8 +4,11 @@ from datetime import date
 class SportPlayer(models.Model):
     _name = 'sport.player'
     _description = "Sport Player"
+    _inherits = {'res.partner': 'partner_id'}
 
-    name = fields.Char(string='Name', required=True)
+    # name = fields.Char(string='Name', required=True)
+    name = fields.Char(string='Name', related="partner_id.name", inherited=True, readonly=False ,required=True)
+    partner_id = fields.Many2one('res.partner', string='partner')
     birth_date = fields.Date(string='Birth Date', copy=False)
     position = fields.Char(string='Position', copy=False)
     team_id = fields.Many2one('sport.team',string='Team')

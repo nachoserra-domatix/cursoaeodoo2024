@@ -52,5 +52,11 @@
             name="Sport Game"
             action="sports_association.action_sport_game"
             sequence="70"/>
+
+        <menuitem
+            id="sport_ticket_menu"
+            name="Sport Ticket"
+            action="sports_association.action_sport_ticket"
+            sequence="80"/>
     </menuitem>
 </odoo>

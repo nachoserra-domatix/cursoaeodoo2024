@@ -53,6 +53,10 @@
                         <group>
                             <field name="position" />
                             <field name="regular" widget="boolean_toggle"/>
+                            <field name="street"/>
+                            <field name="city"/>
+                            <field name="country_id"/>
+                            
                         </group>
                     </group>
                 </sheet>
