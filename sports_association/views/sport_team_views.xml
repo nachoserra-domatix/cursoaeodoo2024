@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <record id="sport_team_tree" model="ir.ui.view">
         <field name="name">Sport teams</field>
@@ -6,7 +6,7 @@
         <field name="type">tree</field>
         <field name="priority" eval="16" />
         <field name="arch" type="xml">
-            <tree string="Teams">
+            <tree>
                 <field name="name" />
                 <field name="sport_id" />
             </tree>
@@ -20,23 +20,38 @@
         <field name="arch" type="xml">
             <form string="team">
                 <header>
-                    <button name="action_check_starter" string="Check Starters"
+                    <button
+                        name="action_check_starter"
+                        string="Check Starters"
                         type="object"
-                        class="oe_highlight" />
-                    <button name="action_uncheck_starter"
+                        class="oe_highlight"
+                    />
+                    <button
+                        name="action_uncheck_starter"
                         string="Uncheck Starters"
                         type="object"
-                        class="oe_highlight" />
-                    <button name="action_add_free_players"
+                        class="oe_highlight"
+                    />
+                    <button
+                        name="action_add_free_players"
                         string="Add Free Players"
                         type="object"
-                        class="oe_highlight" />
+                        class="oe_highlight"
+                    />
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="action_view_players" type="object" class="oe_stat_button"
-                            icon="fa-user">
-                            <field string="Players" name="player_count" widget="statinfo" />
+                        <button
+                            name="action_view_players"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-user"
+                        >
+                            <field
+                                string="Players"
+                                name="player_count"
+                                widget="statinfo"
+                            />
                         </button>
                     </div>
                     <field name="logo" widget="image" class="oe_avatar" />
@@ -53,9 +68,11 @@
                     </group>
                     <notebook>
                         <page string="Players">
-                            <field name="player_ids"
+                            <field
+                                name="player_ids"
                                 context="{'tree_view_ref': 'sports_association.sport_player_simple_tree',
-                                        'form_view_ref': 'sports_association.sport_player_form_tree'}">
+                                        'form_view_ref': 'sports_association.sport_player_form_tree'}"
+                            >
                             </field>
                         </page>
                     </notebook>
@@ -75,10 +92,18 @@
                 <templates>
                     <t t-name="kanban-menu">
                         <t t-if="widget.editable">
-                            <a role="menuitem" type="edit" class="dropdown-item">Edit</a>
+                            <a
+                                role="menuitem"
+                                type="edit"
+                                class="dropdown-item"
+                            >Edit</a>
                         </t>
                         <t t-if="widget.editable">
-                            <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                            <a
+                                role="menuitem"
+                                type="delete"
+                                class="dropdown-item"
+                            >Delete</a>
                         </t>
                     </t>
                     <t t-name="kanban-box">

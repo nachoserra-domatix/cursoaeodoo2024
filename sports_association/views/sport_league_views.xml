@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <record id="sport_league_tree" model="ir.ui.view">
         <field name="name">Sport league</field>
@@ -6,7 +6,7 @@
         <field name="type">tree</field>
         <field name="priority" eval="16" />
         <field name="arch" type="xml">
-            <tree string="Leagues">
+            <tree>
                 <field name="name" />
                 <field name="date_start" />
                 <field name="date_end" />
@@ -22,20 +22,33 @@
         <field name="arch" type="xml">
             <form string="Leagues">
                 <header>
-                    <button name="action_compute_classification" string="Compute Classifications"
-                        type="object" class="oe_highlight"
+                    <button
+                        name="action_compute_classification"
+                        string="Compute Classifications"
+                        type="object"
+                        class="oe_highlight"
                     />
-                    <button name="%(sport_league_create_games_action)d" string="Create Game"
-                        type="action" class="oe_highlight"
+                    <button
+                        name="%(sport_league_create_games_action)d"
+                        string="Create Game"
+                        type="action"
+                        class="oe_highlight"
                     />
-                    <button name="%(sport_league_create_calendar_action)d" string="Create Calendar"
-                        type="action" class="oe_highlight"
+                    <button
+                        name="%(sport_league_create_calendar_action)d"
+                        string="Create Calendar"
+                        type="action"
+                        class="oe_highlight"
                     />
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="action_view_games" type="object" class="oe_stat_button"
-                            icon="fa-list">
+                        <button
+                            name="action_view_games"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-list"
+                        >
                             <field name="game_count" widget="statinfo" />
                         </button>
                     </div>
@@ -54,11 +67,16 @@
                     <notebook>
                         <page name="Classification" string="Classification">
                             <field name="league_line_ids">
-                                <tree string="Classification" create="true" delete="true"
+                                <tree
+                                    create="true"
+                                    delete="true"
                                     edit="true"
-                                    editable="bottom">
-                                    <field name="team_id"
-                                        domain="[('sport_id', '=', parent.sport_id)]" />
+                                    editable="bottom"
+                                >
+                                    <field
+                                        name="team_id"
+                                        domain="[('sport_id', '=', parent.sport_id)]"
+                                    />
                                     <field name="points" />
                                 </tree>
                             </field>
@@ -90,6 +108,7 @@
         name="Leagues"
         action="action_sport_league"
         parent="sport_menu"
-        sequence="20" />
+        sequence="20"
+    />
 
 </odoo>

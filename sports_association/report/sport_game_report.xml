@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <template id="report_sport_game">
         <t t-call="web.html_container">
@@ -6,14 +6,17 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <h2 class="mt-4">
-                            <span t-field="o.date"></span> - <span t-field="o.league_id"></span>
+                            <span t-field="o.date" /> - <span t-field="o.league_id" />
                         </h2>
                         <div class="row mt-4 mb-2" id="info">
-                            <div t-if="o.sport_id" class="col-auto col-3 mw-100 mb-2"
-                                name="user">
+                            <div
+                                t-if="o.sport_id"
+                                class="col-auto col-3 mw-100 mb-2"
+                                name="user"
+                            >
                                 <strong>Sport: </strong>
                                 <br />
-                                <span class="m-0" t-field="o.sport_id"></span>
+                                <span class="m-0" t-field="o.sport_id" />
                             </div>
                         </div>
                         <table class="table table-sm table-borderless mt-1">
@@ -49,7 +52,10 @@
         <field name="report_name">sports_association.report_sport_game</field>
         <field name="report_file">sports_association.report_sport_game</field>
         <field name="print_report_name">(object.date)</field>
-        <field name="paperformat_id" ref="sports_association.paperformat_sport_association" />
+        <field
+            name="paperformat_id"
+            ref="sports_association.paperformat_sport_association"
+        />
         <field name="binding_model_id" ref="model_sport_game" />
         <field name="binding_type">report</field>
     </record>

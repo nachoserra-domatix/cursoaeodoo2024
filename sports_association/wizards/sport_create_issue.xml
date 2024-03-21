@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
 
@@ -14,8 +14,12 @@
                     <field name="player_id" />
                 </group>
                 <footer>
-                    <button name="create_issue" string="Create Issue" type="object"
-                        class="btn-primary" />
+                    <button
+                        name="create_issue"
+                        string="Create Issue"
+                        type="object"
+                        class="btn-primary"
+                    />
                     <button string="Cancel" special="cancel" class="btn-secondary" />
                 </footer>
             </form>

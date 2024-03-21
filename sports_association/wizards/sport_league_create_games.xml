@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
 
@@ -12,14 +12,19 @@
                     <field name="date" />
                     <field name="league_id" />
                     <field name="allowed_team_ids" invisible="1" />
-                    <field name="team_ids"
+                    <field
+                        name="team_ids"
                         widget="many2many_tags"
                         domain="[('id', 'in', allowed_team_ids)]"
                     />
                 </group>
                 <footer>
-                    <button name="create_games" string="Create Games" type="object"
-                        class="btn-primary" />
+                    <button
+                        name="create_games"
+                        string="Create Games"
+                        type="object"
+                        class="btn-primary"
+                    />
                     <button string="Cancel" special="cancel" class="btn-secondary" />
                 </footer>
             </form>

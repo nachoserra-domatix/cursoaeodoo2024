@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <record id="sport_game_tree" model="ir.ui.view">
         <field name="name">Sport Game</field>
@@ -6,7 +6,7 @@
         <field name="type">tree</field>
         <field name="priority" eval="16" />
         <field name="arch" type="xml">
-            <tree string="Games">
+            <tree>
                 <field name="name" />
                 <field name="date" />
                 <field name="league_id" />
@@ -35,8 +35,7 @@
                         <field name="points_looser" />
                     </group>
                     <field name="game_line_ids">
-                        <tree string="Marcador" create="true" delete="true" edit="true"
-                            editable="bottom">
+                        <tree create="true" delete="true" edit="true" editable="bottom">
                             <field name="team_id" />
                             <field name="score" />
                         </tree>
@@ -102,6 +101,7 @@
         name="Games"
         action="action_sport_game"
         parent="sport_menu"
-        sequence="20" />
+        sequence="20"
+    />
 
 </odoo>

@@ -6,15 +6,11 @@
     "version": "17.0.1.0.0",
     "category": "Sports",
     "author": "Luis Noreña",
+    "website": "https://github.com/OCA/web",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "preloadable": True,
-    "depends": [
-        "sale", "sports_association"
-    ],
-    "data": [
-        "views/sport_ticket_views.xml",
-        "views/sale_order_views.xml"
-    ],
+    "depends": ["sale", "sports_association"],
+    "data": ["views/sport_ticket_views.xml", "views/sale_order_views.xml"],
 }

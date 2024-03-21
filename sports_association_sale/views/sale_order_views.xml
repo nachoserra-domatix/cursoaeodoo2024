@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <record id="sport_ticket_sale_order_form" model="ir.ui.view">
         <field name="name">sale.order.sport.ticket.form</field>
@@ -6,13 +6,17 @@
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
             <button name="action_cancel" position="before">
-                <button name="create_sport_ticket" string="Create Ticket" type="object"
-                    class="oe_highligth" />
+                <button
+                    name="create_sport_ticket"
+                    string="Create Ticket"
+                    type="object"
+                    class="oe_highligth"
+                />
             </button>
             <page name="customer_signature" position="after">
                 <page name="sport_tickets" string="Sport Tickets">
                     <field name="sport_ticket_ids" widget="one2many_list">
-                        <tree string="">
+                        <tree>
                             <field name="name" />
                             <field name="partner_id" />
                             <field name="game_id" />

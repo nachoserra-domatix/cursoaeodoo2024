@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
 
@@ -12,8 +12,12 @@
                     <span>This will mark all issues as done. Are you sure?</span>
                 </group>
                 <footer>
-                    <button name="action_set_all_done" string="Mark All Done" type="object"
-                        class="btn-primary" />
+                    <button
+                        name="action_set_all_done"
+                        string="Mark All Done"
+                        type="object"
+                        class="btn-primary"
+                    />
                     <button string="Cancel" special="cancel" class="btn-secondary" />
                 </footer>
             </form>

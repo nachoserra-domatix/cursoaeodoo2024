@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <record id="sport_clinic_tree" model="ir.ui.view">
         <field name="name">Sport Clinics</field>
@@ -8,7 +8,7 @@
         <field name="priority" eval="16" />
         <field name="active" eval="True" />
         <field name="arch" type="xml">
-            <tree string="Issues">
+            <tree>
                 <field name="name" />
                 <field name="phone" />
             </tree>
@@ -22,18 +22,34 @@
         <field name="arch" type="xml">
             <form string="Clinic">
                 <header>
-                    <button name="action_check_assistance" string="Check Assistance" type="object"
-                        class="oe_highlight" />
-                    <button name="%(sport_create_issue_action)d" string="Create Issue" type="action"
-                        class="oe_highlight" context="{'default_clinic_id': id}" />
+                    <button
+                        name="action_check_assistance"
+                        string="Check Assistance"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    <button
+                        name="%(sport_create_issue_action)d"
+                        string="Create Issue"
+                        type="action"
+                        class="oe_highlight"
+                        context="{'default_clinic_id': id}"
+                    />
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="action_view_issues"
+                        <button
+                            name="action_view_issues"
                             context="{'default_clinic_id': id, 'search_default_draft': 1, 'search_default_open': 1}"
-                            type="object" class="oe_stat_button"
-                            icon="fa-medkit">
-                            <field string="Issues" name="issue_count" widget="statinfo" />
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-medkit"
+                        >
+                            <field
+                                string="Issues"
+                                name="issue_count"
+                                widget="statinfo"
+                            />
                         </button>
                     </div>
                     <div class="oe_title">
@@ -49,7 +65,7 @@
                     <notebook>
                         <page string="Issues">
                             <field name="issue_ids">
-                                <tree string="Issues" editable="bottom">
+                                <tree editable="bottom">
                                     <field name="name" />
                                     <field name="date" />
                                     <field name="assistance" widget="boolean_toggle" />

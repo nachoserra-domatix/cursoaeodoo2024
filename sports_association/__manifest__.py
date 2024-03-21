@@ -6,13 +6,12 @@
     "version": "17.0.1.0.0",
     "category": "Sports",
     "author": "Luis Noreña",
+    "website": "https://github.com/OCA/web",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "preloadable": True,
-    "depends": [
-        "web", "portal"
-    ],
+    "depends": ["web", "portal"],
     "data": [
         "wizards/sport_league_create_games.xml",
         "security/groups.xml",
@@ -35,6 +34,6 @@
         "report/sport_issue_report.xml",
         "report/sport_league_report.xml",
         "report/sport_game_report.xml",
-        "wizards/sport_league_create_calendar.xml"
+        "wizards/sport_league_create_calendar.xml",
     ],
 }

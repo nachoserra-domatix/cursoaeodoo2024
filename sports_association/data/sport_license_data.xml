@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
-        <record id="sport_license_data_1" model="sport.license">
-            <field name="name">License 1</field>
-            <field name="partner_id" ref="base.user_root"></field>
-            <field name="start_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')" />
-        </record>
-        <record id="sport_license_data_2" model="sport.license">
-            <field name="name">License 2</field>
-            <field name="partner_id" ref="base.user_root"></field>
-            <field name="start_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')" />
-        </record>
-    </data>
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+  <record id="sport_license_data_1" model="sport.license">
+    <field name="name">License 1</field>
+    <field name="partner_id" ref="base.user_root" />
+    <field name="start_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')" />
+  </record>
+  <record id="sport_license_data_2" model="sport.license">
+    <field name="name">License 2</field>
+    <field name="partner_id" ref="base.user_root" />
+    <field name="start_date" eval="time.strftime('%Y-%m-%d %H:%M:%S')" />
+  </record>
 
 </odoo>

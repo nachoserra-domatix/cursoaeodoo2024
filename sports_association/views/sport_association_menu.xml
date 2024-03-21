@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="action_sport_issue" model="ir.actions.act_window">
@@ -113,62 +113,69 @@
         </field>
     </record>
 
-    <menuitem
-        id="sport_menu"
-        name="Sport Association"
-        sequence="10" />
+    <menuitem id="sport_menu" name="Sport Association" sequence="10" />
 
     <menuitem
         id="sport_issue_menu"
         name="Sport Issues"
         parent="sport_menu"
-        sequence="10">
+        sequence="10"
+    >
         <menuitem
             id="sport_isuue_menu"
             name="Sport Issues"
             action="action_sport_issue"
-            sequence="10" />
+            sequence="10"
+        />
 
         <menuitem
             id="sport_clinic_menu"
             name="Sport Clinics"
             action="action_sport_clinic"
-            sequence="20" />
+            sequence="20"
+        />
 
         <menuitem
             id="sport_issue_tag_menu"
             name="Sport Issue Tag"
             action="action_sport_issue_tag"
-            sequence="20" />
+            sequence="20"
+        />
     </menuitem>
 
-    <menuitem id="sport_config_menu"
+    <menuitem
+        id="sport_config_menu"
         name="Configuration"
         parent="sport_menu"
-        sequence="20">
+        sequence="20"
+    >
 
         <menuitem
             id="sport_team_menu"
             name="Sport Team"
             action="action_sport_team"
-            sequence="20" />
+            sequence="20"
+        />
 
         <menuitem
             id="sport_sport_menu"
             name="Sport"
             action="action_sport_sport"
-            sequence="20" />
+            sequence="20"
+        />
 
         <menuitem
             id="sport_player_menu"
             name="Sport Player"
             action="action_sport_player"
-            sequence="20" />
+            sequence="20"
+        />
         <menuitem
             id="sport_license_menu"
             name="Licenses"
             action="action_sport_license"
-            sequence="20" />
+            sequence="20"
+        />
     </menuitem>
 
     <menuitem
@@ -176,5 +183,6 @@
         name="Sport Tickets"
         action="action_sport_ticket"
         parent="sport_menu"
-        sequence="10" />
+        sequence="10"
+    />
 </odoo>

@@ -1,10 +1,10 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
     <record id="sport_ticket_view_tree" model="ir.ui.view">
         <field name="name">sport.ticket.view.tree</field>
         <field name="model">sport.ticket</field>
         <field name="arch" type="xml">
-            <tree string="">
+            <tree>
                 <field name="name" />
                 <field name="partner_id" />
                 <field name="game_id" />
