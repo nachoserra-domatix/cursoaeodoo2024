@@ -4,7 +4,7 @@ from odoo import models, fields, api
 class SportMatch(models.Model):
     _name = "sport.match"
     _description = "Sport Match"
-    _rec_name = "sport_id"
+    # _rec_name = "sport_id"
 
     name = fields.Char(string='Match', compute='_compute_name', store=True)
     sport_id = fields.Many2one('sport.sport', string='Sport')

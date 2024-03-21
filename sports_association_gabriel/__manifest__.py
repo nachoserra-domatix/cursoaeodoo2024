@@ -11,6 +11,7 @@
     "installable": True,
     "depends": [
         "base",
+        "portal",
     ],
     
     "data": [

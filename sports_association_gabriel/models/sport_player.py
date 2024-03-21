@@ -31,4 +31,11 @@ class SportPlayer(models.Model):
 
     def uncheck_starter(self):
         self.starter = False
+
+    def copy(self, default=None):
+        self.ensure_one()
+        default = dict(default or {})
+        if('name' not in default) and ('partner_id' not in default):
+            default['name'] = f'{self.name} (copy)'
+        return super().copy(default)
     

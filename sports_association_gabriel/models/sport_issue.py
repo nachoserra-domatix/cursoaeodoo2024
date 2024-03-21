@@ -6,6 +6,7 @@ from odoo.exceptions import ValidationError, UserError
 class SportIssue(models.Model):
     _name = "sport.issue"
     _description = "Sport Issue"
+    _inherit = ['portal.mixin', 'mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Name", required=True)
     description = fields.Text(string="Description")
@@ -16,7 +17,8 @@ class SportIssue(models.Model):
         ("open", "Open"),
         ("done", "Done")],
         string="State",
-        default="draft"
+        default="draft",
+        tracking=True
     )
 
     # def _get_default_user(self):
@@ -86,6 +88,8 @@ class SportIssue(models.Model):
             if not record.date:
                 raise UserError(_("The date is required"))
             record.write({'state': 'done'})
+            msg_body = f'La incidencia ha pasado al estado {record.state} con fecha {record.date}'
+            record.message_post(body= msg_body)
 
     def action_add_tags(self):
         for record in self:

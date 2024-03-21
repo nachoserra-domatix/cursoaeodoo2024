@@ -24,7 +24,7 @@
                 </header>                
                 <sheet>
                     <div class="oe_button_box" name="button_box">                        
-                        <button name="action_view_issues" type="object" class="oe_stat_button" icon="fa-tasks">
+                        <button name="action_view_issues" type="object" context="{'default_clinic_id': id, 'search_default_draft': 1}" class="oe_stat_button" icon="fa-tasks">
                             <field name="issue_count" string="Issues" widget="statinfo"/>
                         </button>                        
                     </div>
