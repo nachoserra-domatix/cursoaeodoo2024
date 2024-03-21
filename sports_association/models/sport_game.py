@@ -3,7 +3,6 @@ from odoo import models, fields, api
 class SportGame(models.Model):
     _name = "sport.game"
     _description = "Sport Game"
-    _rec_name = "sport_id"
 
     
     name = fields.Char(

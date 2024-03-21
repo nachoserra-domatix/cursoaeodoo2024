@@ -29,7 +29,9 @@
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="action_view_issues" type="object" class="oe_stat_button"
+                        <button name="action_view_issues"
+                            context="{'default_clinic_id': id, 'search_default_draft': 1, 'search_default_open': 1}"
+                            type="object" class="oe_stat_button"
                             icon="fa-medkit">
                             <field string="Issues" name="issue_count" widget="statinfo" />
                         </button>

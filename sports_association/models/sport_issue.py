@@ -1,11 +1,12 @@
 from odoo import fields, models, Command, api
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError, UserError
 
 import datetime
 
 class SportIssue(models.Model):
     _name = 'sport.issue'
     _description = 'Sports Issues'
+    _inherit = ['portal.mixin', 'mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Name")
     description = fields.Text(string="Description")
@@ -17,9 +18,10 @@ class SportIssue(models.Model):
         ('done', 'Done')
         ],
         string="State",
-        default='draft'
+        default='draft',
+        tracking=True
     )
-    user_id = fields.Many2one('res.users', string='User', default=lambda self: self.env.user)
+    user_id = fields.Many2one('res.users', string='User', default=lambda self: self.env.user, tracking=True)
     player_id = fields.Many2one(string='Player', comodel_name='sport.player')
     phone_user = fields.Char("User Phone", readonly=True)
     secuence = fields.Integer(string='secuence', default=10)
@@ -34,7 +36,7 @@ class SportIssue(models.Model):
     )
     color = fields.Integer(string="Color", default=0)
     cost = fields.Float(string="Cost")
-    assigned = fields.Boolean(string="Assigned", compute="_compute_assigned", readonly=True)
+    assigned = fields.Boolean(string="Assigned", compute="_compute_assigned", inverse="_inverse_assigned", store=True)
     actions_ids = fields.One2many(string="Actions To Do", comodel_name='sport.issue.action', inverse_name='issue_id',)
 
     _sql_constraints = [
@@ -64,10 +66,18 @@ class SportIssue(models.Model):
             else:
                 record.phone_user = False
 
+    @api.depends('user_id')
     def _compute_assigned(self):
-        self.assigned = False
-        if self.user_id:
-            self.assigned = True
+        for record in self:
+            self.assigned = bool(self.user_id)
+
+    @api.depends("user_id")
+    def _inverse_assigned(self):
+        for record in self:
+            if not record.assigned:
+                record.user_id = False
+            else:
+                record.user_id = self.env.user
     
     def action_open(self):
         for record in self:
@@ -75,7 +85,10 @@ class SportIssue(models.Model):
 
     def action_done(self):
         for record in self:
-            record.state = 'done'
+            if record.date:
+                record.state = 'done'
+            else:
+                raise UserError("An issue date must be selected")
 
     def action_draft(self):
         for record in self:
