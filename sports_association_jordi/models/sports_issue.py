@@ -1,9 +1,10 @@
 from odoo import models, fields, Command,api,_
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError, UserError
 
 class SportsIssue(models.Model):
     _name = 'sports.issue'
     _description = 'Sports Issue'
+    _inherit = ['portal.mixin', 'mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Name',required=True)
     description = fields.Text(string='Description')
@@ -14,15 +15,16 @@ class SportsIssue(models.Model):
           ('open', 'Open'),
           ('done','Done') ],
           string='State',
-          default='draft')
+          default='draft',
+          tracking=True)
     user_id = fields.Many2one('res.users', string='User', default=lambda self: self.env.user)
     sequence = fields.Integer(string='Sequence',default=10)
     solution = fields.Html(string='Solution')
     clinic_id = fields.Many2one('sports.clinic', string='Clinic')
     tag_ids = fields.Many2many('sports.issue.tag', string='Tags')
     color = fields.Integer(string='Color Index',default=0)
-    cost=fields.Float(string='Cost')
-    assigned=fields.Boolean(string="Assigned",compute='_compute_asigned')
+    cost=fields.Float(string='Cost',tracking=True)
+    assigned=fields.Boolean(string="Assigned",compute='_compute_asigned',inverse='_inverse_assigned',store=True)
     action_ids = fields.One2many('sports.action','issue_id',string='Actions')
     # user_phone = fields.Char(string='User Phone',related='user_id.phone',store=True, readonly=False)
     user_phone = fields.Char(string='User Phone')
@@ -31,7 +33,10 @@ class SportsIssue(models.Model):
 
     def action_done(self):
         for record in self:
-            record.state='done'
+            if record.date:
+                 record.state='done'
+            else:
+                raise UserError(_("The date is necessary"))
     
     def action_open(self):
         for record in self:
@@ -40,11 +45,18 @@ class SportsIssue(models.Model):
     def action_draft(self):
         for record in self:
             record.state='draft'
-        
+
+    @api.depends('user_id')   
     def _compute_asigned(self):
         for issue in self:
             issue.assigned=bool(issue.user_id)
 
+    def _inverse_assigned(self):
+        for record in self:
+            if not record.assigned:
+                record.user_id = False
+            else:
+                record.user_id = self.env.user
     
     def action_add_tag(self):
         for record in self:

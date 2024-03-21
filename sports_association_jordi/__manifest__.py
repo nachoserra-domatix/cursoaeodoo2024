@@ -11,7 +11,7 @@
     "application": False,
     "installable": True,
     "depends": [
-        "base","web"
+        "base","web","portal"
     ],
    "data":["security/grupos.xml",
          "security/ir.model.access.csv",

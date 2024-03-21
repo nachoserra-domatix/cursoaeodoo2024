@@ -24,8 +24,8 @@
                 <sheet>
                     <!-- Smart button Issues -->
                     <div class="oe_button_box" name="button_box">
-                        <button class="oe_stat_button" type="object" name="action_show_issues" icon="fa-stethoscope">
-                            <field string="Issues" name="issue_count" widget="statinfo"/>
+                        <button class="oe_stat_button" context="{'search_default_draft':'1','default_clinic_id':id}" type="object" name="action_show_issues" icon="fa-stethoscope">
+                            <field string="Issues"  name="issue_count" widget="statinfo"/>
                         </button>
                     </div>
                     <div class="oe_title">
