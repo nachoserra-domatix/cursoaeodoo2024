@@ -65,7 +65,11 @@
                         <page string="Solution" name="solution">
                             <field name="solution"/>
                         </page>
-                    </notebook>                
+                    </notebook>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>                
                 </sheet>
             </form>
         </field>

@@ -14,7 +14,7 @@
     "installable": True,
     "preloadable": True,    
     "depends": [
-        "web", "sale",
+        "web", "sale", "sports_association",
     ],
     
     "data": [

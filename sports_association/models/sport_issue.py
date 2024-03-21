@@ -1,7 +1,11 @@
 # Copyright 2024 potxolate
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
+import logging
+import threading
+
 from odoo import api, models, fields, Command, _
+from odoo.tools import email_re, email_split
 from odoo.exceptions import ValidationError
 
 SPORT_ISSUE_STATE = [
@@ -14,6 +18,7 @@ SPORT_ISSUE_STATE = [
 class SportIssue(models.Model):
     _name = 'sport.issue'
     _description = "sport issue"
+    _inherit = ['mail.thread']
 
     #=== FIELDS ===#
 
