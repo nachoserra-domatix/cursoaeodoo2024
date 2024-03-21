@@ -11,7 +11,8 @@
     "installable": True,
     "depends": [
         "base",
-        "web"
+        "web",
+        "portal"
     ],
 
     "data": ["data/sport_license_data.xml",
