@@ -26,7 +26,7 @@
                     <div class="oe_button_box" name="button_box">
                         <button type="object" name="action_view_issues" 
                             class="oe_stat_button" icon="fa-stethoscope"
-                            context="{'default_clinic_id': id}">
+                            context="{'default_clinic_id': id, 'search_default_draft': 1}">
                             <field string="Issues" name="issue_count" widget="statinfo"/>
                         </button>
                     </div>
