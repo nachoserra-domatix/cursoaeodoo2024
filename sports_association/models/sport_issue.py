@@ -1,6 +1,6 @@
 from odoo import models, fields, api, Command, _
 from odoo.exceptions import ValidationError, UserError
-#from datetime import date
+# from datetime import date
 
 
 class SportIssue(models.Model):
@@ -59,7 +59,8 @@ class SportIssue(models.Model):
                 record.assistance = True
             else:
                 record.assistance = False
-            
+
+    #SOLO SE EJECUTAN POR VISTA, SI NO HAY QUE LLAMARLOS
     @api.onchange('user_id')
     def _onchange_user_id(self):
         for record in self:
@@ -110,6 +111,14 @@ class SportIssue(models.Model):
         for record in self:
             if record.date:
                 record.state = 'done'
+                # No funciona bien con traducciones
+                # msg_body = _(f'La incidencia ha pasado al estado {record.state} con fecha {fields.Date.today()}')
+                msg_body = _(
+                    'La incidencia ha pasado al estado %(state)s con fecha %(date)s',
+                    state=record.state,
+                    date=fields.Date.today().strftime('%d/%m/%Y')
+                    )
+                record.message_post(body=msg_body)
             else:
                 raise UserError(_("The date is necessary"))
 

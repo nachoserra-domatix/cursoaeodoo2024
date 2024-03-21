@@ -42,3 +42,14 @@ class TestSportIssue(common.TransactionCase):
     def test_action_fill_tags(self):
         self.issue.action_fill_tags()
         self.assertIn(self.issue.tag_ids, self.issue_tag)
+        self.issue.tag_ids = False
+        self.issue.name = "Other name"
+        self.issue.action_fill_tags()
+        self.assertEqual(len(self.issue.tag_ids), 1)
+        ## mapped(): applies the provided function to each record in the recordset, 
+        ## returns a recordset if the results are recordsets. 
+        self.assertNotIn(self.issue.name, self.issue.tag_ids.mapped('name'))
+        # for record in self.issue.tag_ids:
+            # self.assertNotEqual(record.name, self.issue_without_tag.name) ## Esto falla
+            # self.assertEqual(record.name, self.issue.name)
+        

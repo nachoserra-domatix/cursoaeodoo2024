@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from datetime import date
 
 class SportPlayer(models.Model):
@@ -34,8 +34,15 @@ class SportPlayer(models.Model):
 
     def action_mark_regular(self):
         for record in self:
-            record.regular = True;
+            record.regular = True
 
     def action_unmark_regular(self):
         for record in self:
-            record.regular = False;
+            record.regular = False
+
+    def copy(self, default=None):
+        self.ensure_one()
+        default = dict(default or {})
+        if ('name' not in default) and ('partner_id' not in default):
+            default['name'] = _("%s (copy)", self.name)
+        return super().copy(default)
