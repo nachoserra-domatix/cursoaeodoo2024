@@ -12,5 +12,5 @@ Hacer tests de los siguientes métodos del modelo sport.issue:
 * inverse_assigned
 * action_draft
 * action_done
-
+* action_add_tag
   
