@@ -24,7 +24,7 @@
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button class="oe_stat_button" type="object" name="action_view_issues" icon="fa-stethoscope">
+                        <button class="oe_stat_button" context="{'default_clinic_id': id, 'search_default_draft': 1}" type="object" name="action_view_issues" icon="fa-stethoscope">
                             <field string="Issues" name="issue_count" widget="statinfo"/>
                         </button>
                     </div>

@@ -6,6 +6,7 @@ from odoo.exceptions import ValidationError, UserError
 class SportIssue(models.Model):
     _name = 'sport.issue'
     _description = "Sport Issue"
+    _inherit = ["portal.mixin","mail.thread", "mail.activity.mixin"]
 
     # def _get_default_user(self):
     #     return self.env.user
@@ -23,7 +24,8 @@ class SportIssue(models.Model):
         ('done','Done')
         ],
         string='State',
-        default='draft'
+        default='draft',
+        tracking=True
     )    
 
     color = fields.Integer(string="Color", default="0")

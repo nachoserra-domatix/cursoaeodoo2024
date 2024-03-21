@@ -10,7 +10,7 @@
     "application": False,
     "installable": True,
     "depends": [
-        "base",
+        "web", "portal"
     ],
     "data": [
         "data/sport_issue_tag_data.xml",
