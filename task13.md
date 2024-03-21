@@ -1,5 +1,5 @@
 # Context
-* Hacer que desde el incidencias, cuando buscas más dentro del usuario por defecto aparezca el filtro de usuarios internos
+* Hacer que desde incidencias, cuando le das a buscar más en el campo del usuario por defecto aparezca el filtro de usuarios internos
 * Cuando desde la clínica vamos al smartbutton de Incidencias, que por defecto ponga el filtro de borrador y que al dar a crear directamente coja la propia clínica
 
 # Mixin
