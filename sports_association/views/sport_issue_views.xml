@@ -45,6 +45,7 @@
                             <field name="cost"/>                        
                         </group>
                         <group name="group_product">
+                            <field name="player_id" />
                             <field name="assistance" widget="boolean_toggle"/>
                             <field name="clinic_id" domain="[('available','=',True)]" />
                             <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>

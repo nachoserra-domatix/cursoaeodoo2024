@@ -37,9 +37,9 @@ class SportIssue(models.Model):
         default="draft",
         tracking=True)
     user_id = fields.Many2one(
-        comodel_name='sport.player',
+        comodel_name='res.users',
         string="User",
-        #default=lambda self: self.env.user.id
+        default=lambda self: self.env.user
         )
     sequence = fields.Integer(
         string="Sequence",
@@ -56,7 +56,7 @@ class SportIssue(models.Model):
     color = fields.Integer(string="Color")
     assigned = fields.Boolean('Assigned', compute='_compute_assigned', store=True)
     action_ids = fields.One2many('sport.issue.action', 'issue_id', string='Actions to do')
-
+    player_id = fields.Many2one('sport.player', string='Player')
     _sql_constraints = [
         ('name_uniq', 'unique(name)', 'Name must be unique.'),
     ]
