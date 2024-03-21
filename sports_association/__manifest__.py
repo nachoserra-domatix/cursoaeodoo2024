@@ -14,7 +14,7 @@
     "installable": True,
     "preloadable": True,    
     "depends": [
-        "web", "base", "mail",
+        "web", "base", "mail", "portal",
     ],
     
     "data": [

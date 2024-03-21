@@ -18,7 +18,7 @@ SPORT_ISSUE_STATE = [
 class SportIssue(models.Model):
     _name = 'sport.issue'
     _description = "sport issue"
-    _inherit = ['mail.thread']
+    _inherit = ['portal.mixin', 'mail.thread', 'mail.activity.mixin']
 
     #=== FIELDS ===#
 
@@ -34,11 +34,13 @@ class SportIssue(models.Model):
     state = fields.Selection(
         selection=SPORT_ISSUE_STATE,
         string="Status",
-        default="draft")
+        default="draft",
+        tracking=True)
     user_id = fields.Many2one(
         comodel_name='sport.player',
         string="User",
-        default=lambda self: self.env.user.id)
+        #default=lambda self: self.env.user.id
+        )
     sequence = fields.Integer(
         string="Sequence",
         default=10)
