@@ -12,6 +12,7 @@
     "depends": [
         "base",
         "web",
+        "portal",
     ],
     "data": [
         "data/sport_license_data.xml",

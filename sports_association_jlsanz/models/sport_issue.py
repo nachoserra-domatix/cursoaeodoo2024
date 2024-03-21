@@ -1,9 +1,11 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, UserError
 
+
 class SportIssue(models.Model):
     _name = 'sport.issue'
     _description = 'Sport Issue'
+    _inherit = ['portal.mixin', 'mail.thread', 'mail.activity.mixin']
 
     def _get_default_user(self):
         return self.env.user
@@ -17,7 +19,8 @@ class SportIssue(models.Model):
          ('open', 'Open'),
          ('done', 'Done')],
         string='State',
-        default='draft'
+        default='draft',
+        tracking=True,
     )
 
     user_id = fields.Many2one('res.users', string="User", default=_get_default_user)
@@ -70,7 +73,7 @@ class SportIssue(models.Model):
 
     def _inverse_assigned(self):
             for record in self:
-                if record.assigned:
+                if not record.assigned:
                     record.user_id = False
                 else:
                     record.user_id = self.env.user
@@ -90,6 +93,9 @@ class SportIssue(models.Model):
             if not record.date:
                 raise UserError(_('The date is required'))
             record.state = 'done'
+            # Al heredar mixin
+            msg_body = f'La incidencia ha pasado al estado {record.state} con fecha {record.date}'
+            record.message_post(body=msg_body)
 
 #    def action.open_all_issues(self):
 #        for record in self:
