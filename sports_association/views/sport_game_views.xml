@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sport_game_view_tree" model="ir.ui.view">
+        <field name="name">sport_game.view.tree</field>
+        <field name="model">sport.game</field>
+        <field name="arch" type="xml">
+            <tree string="Games">
+                <field name="name" />
+                <field name="sport_id" />
+                <field name="game_date"/>
+                <field name="winner_team_id"/>
+                <field name="winner_points" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_game_view_form" model="ir.ui.view">
+        <field name="name">sport_game.view.form</field>
+        <field name="model">sport.game</field>
+        <field name="arch" type="xml">
+            <form string="Game">
+                <header>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Game Name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="sport_id" />
+                        <field name="game_date"/>
+                        <field name="winner_team_id"/>
+                        <field name="winner_points" />
+                        <field name="league_id" />
+                    </group>
+                    <notebook>
+                        <page name="game_line" string="Game Lines">
+                            <field name="game_line_ids">
+                                <tree editable="bottom">
+                                    <field name="team_id" />
+                                    <field name="points" />
+                                </tree>
+                           </field>                             
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Actions -->
+    <record id="action_sport_game" model="ir.actions.act_window">
+        <field name="name">Sport Game</field>
+        <field name="res_model">sport.game</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport game
+            </p>
+        </field>
+    </record>
+</odoo>
