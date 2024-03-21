@@ -2,7 +2,7 @@
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
     <menuitem id="sport_association_menu" name="Sport Association" sequence="10"/>
     <menuitem id="sport_management" parent="sport_association_menu" name="Sport Management" sequence="20"/>
-    <menuitem id="sport_issues_management" parent="sport_association_menu" name="Issues Management" sequence="20"/>
+    <menuitem id="sport_issues_management" parent="sport_association_menu" name="Issues Management" sequence="30"/>
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="sport_issue_menu" 
         name="Sport Issues" 
@@ -33,6 +33,12 @@
         name="Players" 
         parent="sport_management" 
         action="action_sport_player" 
+        sequence="20"
+        />
+    <menuitem id="sport_ticket_menu_act" 
+        name="Tickets"
+        parent="sport_management"
+        action="sport_ticket_action" 
         sequence="20"
         />
     <menuitem id="sport_league_menu_act" 

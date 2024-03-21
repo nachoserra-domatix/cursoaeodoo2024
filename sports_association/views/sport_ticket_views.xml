@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- sport.ticket tree view -->
+    <record id="sport_ticket_view_tree" model="ir.ui.view">
+        <field name="name">sport.ticket.view.tree</field>
+        <field name="model">sport.ticket</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="match_id"/>
+            </tree>
+        </field>
+    </record>
+    <!-- sport.ticket form view -->
+    <record id="sport_ticket_view_form" model="ir.ui.view">
+        <field name="name">sport.ticket.view.form</field>
+        <field name="model">sport.ticket</field>
+        <field name="arch" type="xml">
+            <form string="Tickets">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="match_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_ticket_action" model="ir.actions.act_window">
+        <field name="name">Tickets</field>
+        <field name="res_model">sport.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new sport ticket
+            </p>
+        </field>
+    </record>
+</odoo>

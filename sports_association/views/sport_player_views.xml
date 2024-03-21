@@ -23,6 +23,13 @@
                             <field name="position"/>
                             <field name="starter" widget="boolean_toggle" />
                         </group>
+                        <group name="partner_info" string="Partner Info">
+                            <field name="street" />
+                            <field name="city" />
+                            <field name="country_id" />
+                            <field name="email" />
+                            <field name="phone" />
+                        </group>
                     </group>
                 </sheet>
             </form>

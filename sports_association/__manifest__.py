@@ -26,6 +26,7 @@
         "views/sport_team_views.xml",
         "views/sport_league_views.xml",
         "views/sport_match_views.xml",
+        "views/sport_ticket_views.xml",
         "views/sport_menuitems.xml",
         "report/sport_issue_report.xml",
         "report/sport_match_report.xml",
