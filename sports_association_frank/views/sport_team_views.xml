@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>    
+    <record id="sport_team_tree_view" model="ir.ui.view">
+        <field name="name">sport.team.tree.view</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <tree string="Teams">                
+                <field name="name"/>
+                <field name="coach_id"/>
+                <field name="sport_id"/>
+                <field name="player_count"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_team__form_view" model="ir.ui.view">
+        <field name="name">sport.team.form.view</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <form string="Team">
+                <header>
+                    <button string="Add free players" name="action_add_players" type="object" class="btn-warning"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button string="Players" type="object" name="action_view_players" class="oe_stat_button" icon="fa-users">
+                            <field name="player_count" widget="statinfo" string="Players"/>
+                        </button>
+                    </div>
+                    <label for="name" string="Team"/>
+                    <field name="displayed_image_id" widget="image" class="oe_avatar oe_left" />
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Team Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="coach_id"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="players" string="Players">
+                            <field 
+                            name="player_ids" 
+                            context="{'tree_view_ref':'sports_association_frank.sport_player_view_simple_tree', 'form_view_ref':'sports_association_frank.sport_player_view_simple_form'}"
+                            >
+                            </field>                  
+                        </page>
+                    </notebook>                
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_team_view_kanban" model="ir.ui.view">
+        <field name="name">sport.team.kanban</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="name" />
+                <field name="sport_id" />
+                <field name="coach_id" />
+                <field name="color" />
+                <field name="displayed_image_id" />
+                <templates>
+                    <t t-name="kanban-menu">
+                        <t t-if="widget.editable"><a role="menuitem" href="edit" class="dropdown-item">Edit</a></t>
+                        <t t-if="widget.deletable"><a role="menuitem" href="delete" class="dropdown-item">Delete</a></t>
+                        <ul class="oe_kanban_colorpicker" data-field="color" />
+                    </t>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{!selection_model ? kanban_color(record.color.raw_value) : ''}">
+                            <div class="o_kanban_record_head">
+                                <div class="o_kanban_record_head_left">
+                                    <field class="o_kanban_record_title" name="name" />
+                                    <field name="sport_id" />
+                                </div>
+                                <div class="o_kanban_record_head_right">
+                                    <field name="coach_id" />
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <div t-if="record.displayed_image_id.value">
+                                    <field name="displayed_image_id" widget="attachment_image" can_create="true" can_write="true" modifiers="{}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_sport_team" model="ir.actions.act_window">
+        <field name="name">Sport team</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new team
+            </p>
+        </field>
+    </record>
+</odoo>
