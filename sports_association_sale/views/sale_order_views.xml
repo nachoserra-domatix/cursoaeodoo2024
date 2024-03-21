@@ -21,6 +21,12 @@
                     </field>
                 </page>
             </xpath>
+            <!-- PARA OCULTAR CAMPOS, BOTONES, SECCIONES -->
+            <!-- <page name="customer_signature" position="attributes">
+                <attribute
+                    name="invisible"
+                >1</attribute>
+            </page> -->
             <!-- <page name="customer_signature" position="after">
                 <page string="Sport Tickets" name="sale_sport_tickets">
                     <field name="sport_ticket_ids">
