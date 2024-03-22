@@ -20,6 +20,7 @@
             <form string="Issue Tags">
                 <sheet>
                     <field name="name" placeholder="Clinic Name" />
+                    <field name="color" />
                 </sheet>
             </form>
         </field>
