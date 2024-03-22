@@ -9,13 +9,10 @@
                     <button name="%(sport_create_issue_action)d" type="action" string="Create Issue"/>
                 </header>
                 <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name" placeholder="Player Name" />
-                        </h1>
-                    </div>
                     <group>
                         <group>
+                            <field name="partner_id" invisible="1"/>
+                            <field name="name"/>
                             <field name="date_of_birth" />
                             <field name="age"/>
                             <field name="sport"/>
@@ -65,7 +62,11 @@
             <tree>
                 <!-- Add your fields here -->
                 <field name="name"/>
+                <field name="partner_id"/>
                 <field name="age"/>
+                <field name="position"/>
+                <field name="team_id"/>
+                <field name="starter" widget="boolean_toggle"/>
             </tree>
         </field>
     </record>

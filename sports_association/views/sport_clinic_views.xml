@@ -27,7 +27,7 @@
                     <button class="oe_highlight" name="%(sport_create_issue_action)d" context="{'default_clinic_id':id}" type="action" string="Create issue"/>
                 </header>
                 <div class="oe_button_box" name="button_box">
-                    <button name="action_view_issues" type="object" icon="fa-stethoscope" class="oe_stat_button">
+                    <button name="action_view_issues" context="{'default_clinic_id': id, 'search_default_draft': 1}" type="object" icon="fa-stethoscope" class="oe_stat_button">
                         <field string="Issues" name ="issue_count" widget="statinfo" />
                     </button>
                 </div>

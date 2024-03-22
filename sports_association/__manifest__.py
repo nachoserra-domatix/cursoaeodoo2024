@@ -10,6 +10,8 @@
     "depends": [
         "base",
         "web",
+        "portal",
+        "mail",
     ],
     "data": [
         "wizards/sport_create_issue.xml",

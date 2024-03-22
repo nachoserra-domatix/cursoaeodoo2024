@@ -4,6 +4,7 @@ from odoo.exceptions import ValidationError
 
 class SportIssue(models.Model):
     _name = 'sport.issue'
+    _inherit = 'mail.thread'
     _description = 'Sport Issue'
 
     name = fields.Char(string='Name')
