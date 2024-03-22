@@ -3,7 +3,7 @@
 {
     "name": "sports association",
     "summary": "Module for sports association",
-    "version": "17.0.1.0.0",    
+    "version": "17.0.1.0.0",
     "category": "Uncategorized",
     "website": "https://github.com/potxolate",
     "author": "potxolate",
@@ -12,14 +12,16 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "preloadable": True,    
+    "preloadable": True,
     "depends": [
-        "web", "base", "mail", "portal",
+        "web",
+        "base",
+        "mail",
+        "portal",
     ],
-    
     "data": [
         "security/sport_issue_security.xml",
-        "security/ir.model.access.csv",        
+        "security/ir.model.access.csv",
         "views/sport_issue_views.xml",
         "views/sport_clinic_views.xml",
         "views/sport_license_views.xml",
@@ -30,7 +32,7 @@
         "views/sport_match_views.xml",
         "views/sport_sport_views.xml",
         "views/sport_ticket_views.xml",
-        "views/sport_association_menus.xml",        
+        "views/sport_association_menus.xml",
         "data/sport_license_data.xml",
         "data/sport_issue_tag_data.xml",
         "report/sport_issue_report.xml",
@@ -39,5 +41,5 @@
         "wizard/sport_create_issue.xml",
         "wizard/sport_league_match_views.xml",
         "data/ir_cron.xml",
-    ],    
+    ],
 }

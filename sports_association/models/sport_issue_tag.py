@@ -3,11 +3,12 @@
 
 from odoo import models, fields
 
+
 class SportIssueTag(models.Model):
-    _name = 'sport.issue.tag'
+    _name = "sport.issue.tag"
     _description = "Sport Issue Tag"
 
-    #=== FIELDS ===#
-    
+    # === FIELDS ===#
+
     name = fields.Char(string="Name", required=True)
     color = fields.Integer(string="Color")

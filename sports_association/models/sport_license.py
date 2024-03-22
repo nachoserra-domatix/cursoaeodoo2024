@@ -3,22 +3,23 @@
 
 from odoo import models, fields
 
+
 class SportLicense(models.Model):
-    _name = 'sport.license'
+    _name = "sport.license"
     _description = "Sport License"
 
-    #=== FIELDS ===#
-    
+    # === FIELDS ===#
+
     name = fields.Char(string="name", required=True)
-    partner_id = fields.Many2one(comodel_name='res.partner')
-    start_date = fields.Datetime(        
+    partner_id = fields.Many2one(comodel_name="res.partner")
+    start_date = fields.Datetime(
         required=True,
-        default=fields.Datetime.now,        
+        default=fields.Datetime.now,
         help="Start date.",
     )
-    end_date = fields.Datetime(        
+    end_date = fields.Datetime(
         required=True,
-        default=fields.Datetime.now,        
+        default=fields.Datetime.now,
         help="Issue date.",
     )
     reference = fields.Char(string="Reference")

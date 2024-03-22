@@ -3,7 +3,7 @@
 {
     "name": "sports association sales",
     "summary": "Module for sports ticket sales",
-    "version": "17.0.1.0.0",    
+    "version": "17.0.1.0.0",
     "category": "Uncategorized",
     "website": "https://github.com/potxolate",
     "author": "potxolate",
@@ -12,13 +12,14 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "preloadable": True,    
+    "preloadable": True,
     "depends": [
-        "web", "sale", "sports_association",
+        "web",
+        "sale",
+        "sports_association",
     ],
-    
     "data": [
         "views/sale_order_views.xml",
-        "views/sport_ticket_views.xml",        
-    ],    
+        "views/sport_ticket_views.xml",
+    ],
 }
