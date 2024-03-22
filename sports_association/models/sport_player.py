@@ -1,5 +1,6 @@
-from odoo import api, models, fields
 from dateutil.relativedelta import relativedelta
+
+from odoo import api, fields, models
 
 
 class Sportplayer(models.Model):

@@ -1,5 +1,6 @@
-from odoo import fields, models, Command
 from datetime import timedelta
+
+from odoo import Command, fields, models
 
 
 class SportLeagueCreateCalendar(models.TransientModel):

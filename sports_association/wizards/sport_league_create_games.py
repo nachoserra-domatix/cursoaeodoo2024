@@ -1,4 +1,4 @@
-from odoo import fields, api, models, Command
+from odoo import Command, api, fields, models
 
 
 class SportLeagueCreateGames(models.TransientModel):

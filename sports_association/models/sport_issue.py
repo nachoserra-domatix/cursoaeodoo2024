@@ -1,5 +1,5 @@
-from odoo import fields, models, Command, api
-from odoo.exceptions import ValidationError, UserError
+from odoo import Command, api, fields, models
+from odoo.exceptions import UserError, ValidationError
 
 
 class SportIssue(models.Model):
@@ -75,7 +75,7 @@ class SportIssue(models.Model):
     @api.depends("user_id")
     def _compute_assigned(self):
         for record in self:
-            self.assigned = bool(self.user_id)
+            self.assigned = bool(record.user_id)
 
     @api.depends("user_id")
     def _inverse_assigned(self):
