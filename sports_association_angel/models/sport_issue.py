@@ -3,6 +3,7 @@ from odoo.exceptions import ValidationError, UserError
 
 class SportIssue(models.Model):
     _name =  'sport.issue'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Sport Issue'
 
     # def _get_default_user(self):
@@ -10,7 +11,7 @@ class SportIssue(models.Model):
 
     name = fields.Char(string='Name',required=True)
     description = fields.Text(string='Description')
-    date = fields.Date(string='Date',required=True, default=fields.Date.today)
+    date = fields.Date(string='Date',required=True, default=fields.Date.today, tracking=True)
     assistance = fields.Boolean(string='Assistance',help='Show if the issue had external assistance (paramedics)')
     state = fields.Selection(
         [('draft','Draft'),
@@ -18,6 +19,7 @@ class SportIssue(models.Model):
          ('done','Done')],
          string='State',
          default='draft',
+         tracking=True,
     )
 
     user_id = fields.Many2one('res.users', string='User', default=lambda self: self.env.user)
@@ -38,6 +40,10 @@ class SportIssue(models.Model):
     _sql_constraints = [
         ('name_uniq', 'unique(name)', _('The name must be unique'))
     ]
+
+    def _get_name(self):
+        import pdb;pdb.set_trace()
+        return self.name
 
     @api.constrains('cost')
     def _check_cost(self):
