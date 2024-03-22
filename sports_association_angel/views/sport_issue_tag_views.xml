@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sport_issue_tag_view_tree" model="ir.ui.view">
+        <field name="name">sport_issue_tags.view.tree</field>
+        <field name="model">sport.issue.tag</field>
+        <field name="arch" type="xml">
+            <tree string="Issue Tags" editable="bottom">
+                <field name="name"></field>
+            </tree>
+        </field>
+    </record>
+</odoo>
