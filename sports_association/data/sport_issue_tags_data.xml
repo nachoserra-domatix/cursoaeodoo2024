@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+        <record id="sport_issue_tag_injury" model="sport.issue.tag">
+            <field name="name">Injury</field>
+        </record>
+        <record id="sport_issue_tag_accident" model="sport.issue.tag">
+            <field name="name">Accident</field>
+        </record>
+        <record id="sport_issue_tag_fatigue" model="sport.issue.tag">
+            <field name="name">Fatigue</field>
+        </record>
+        <record id="sport_issue_tag_cramp" model="sport.issue.tag">
+            <field name="name">Cramp</field>
+        </record>
+        <record id="sport_issue_tag_muscle_strain" model="sport.issue.tag">
+            <field name="name">Muscle strain</field>
+        </record>
+        <record id="sport_issue_tag_sprain" model="sport.issue.tag">
+            <field name="name">Sprain</field>
+        </record>
+    </data>
+</odoo>
