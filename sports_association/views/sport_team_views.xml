@@ -32,9 +32,16 @@
                 <header>
                     <button string="To Principal" name="action_principal_all" type="object" class="btn-primary"/>
                     <button string="To secondary" name="action_secondary_all" type="object" class="btn-secondary"/>
+                    <button string="Add free players" name="action_add_players" type="object" class="btn-warning"/>
                 </header>
                 
                 <sheet>
+                    <!-- smart button -->
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_players" class="oe_stat_button" icon="fa-users">
+                            <field string="Players" name="player_count" widget="statinfo"/>
+                        </button>
+                    </div>
                     <group>
                         <field name="name" />
                         <field name="sport_id" />
@@ -44,17 +51,17 @@
                     </group>
                     <notebook>
                         <page name="players" string="Players">
-                            <!-- <field name="player_list_ids">
+                            <field name="player_list_ids" context="{'default':name}">
                                 <tree editable="bottom">
                                     <field name="name" />
                                     <field name="years" />
                                     <field name="position"/>
-                                    <field name="tittle"/>
+                                    <field name="tittle" widget="boolean_toggle"/>
                                 </tree>
-                                </field> -->
-                            <field name="player_list_ids"
-                                context="{'tree_view_ref':'sport.player.sport_player_view_tree_simple','form_view_ref':'sport.player.sport_player_view_form_simple'}"
-                            ></field>
+                            </field>
+                            <!-- <field name="player_list_ids"
+                                context="{'tree_view_ref':'sports_association.sport_player_view_tree_simple','form_view_ref':'sports_association.sport_player_view_form_simple'}"
+                            ></field> -->
                         </page>
                     </notebook>
                   </sheet>
@@ -71,6 +78,7 @@
                 <field name="sport_id" />
                 <field name="logo"></field>
                 <field name="color"></field>
+                <field name="player_count"/>
 
                 <templates>
                     <t t-name="kanban-menu" class="o_kanban_small_column o_opportunity_kanban" on_create="quick_create" archivable="false" sample="1" js_class="crm_kanban">
@@ -81,21 +89,20 @@
                     <t t-name="kanban-box">
                         <div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''} #{lost_ribbon ? 'oe_kanban_card_ribbon' : ''} oe_kanban_global_click oe_kanban_card d-flex flex-column">
                             <div class="oe_kanban_content flex-grow-1">
-                                <div class="oe_kanban_details">
+                                <div>
                                     <field name="logo" widget="image" class="oe_avatar"></field>
                                 </div>
-                                <div class="o_kanban_record_subtitle">
-                                    <strong class="o_kanban_record_title"><field name="name"/></strong>
-                                </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title"><field name="name"/></strong>    
                             </div>
-                            <div class="oe_kanban_footer">
-                                <div class="o_kanban_record_bottom">
-                                    <div class="oe_kanban_bottom_right">
-                                        <field name="sport_id"></field> 
-                                    </div>
-                                </div>
+                            <div class="o_kanban_record_subtitle">
+                                <field name="player_count"/>
                             </div>
-                            <div class="clearfix"/>
+                            </div>
+                            <div class="oe_kanban_bottom_right">
+                                <field name="sport_id"></field>
+                            </div>
+                            <!-- <div class="clearfix"/> -->
                         </div>
                     </t>
                 </templates>

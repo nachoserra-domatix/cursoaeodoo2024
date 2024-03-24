@@ -5,11 +5,20 @@
         <field name="model">sport.issue</field>
         <field name="arch" type="xml">
             <tree multi_edit="1" string="Issues">
-                <field name="sequence" widget="handle"></field>
+                <header>
+                    <button string="Mark as Done" name="%(action_sport_issues_done)d" type="action" class="oe_highlight"/>
+                </header>
+                <field name="sequence" optional="show" widget="handle"></field>
                 <field name="name"></field>
                 <field name="date" optional="show"></field>
+                <field name="player_id" optional="show"></field>
+                <field name="user_phone" optional="show"></field>
+                <field name="clinic_id" optional="show"></field>
                 <field name="user_id" optional="hide"></field>
                 <field name="state" widget="badge"></field>
+                <field name="cost" optional="show"></field>
+                <field name="assistance" optional="show" widget="boolean_toggle"></field>
+                <field name="tag_ids" optional="show" widget="many2many_tags" options="{'color_field': 'color', 'no_create':True}"></field>
             </tree>
         </field>
     </record>
@@ -25,7 +34,7 @@
                 <button string="To draft" invisible="state in ('draft')" name="action_draft" type="object" class="btn-secondary"/>
                 <!-- <button string="To done" invisible="state in ('done')" name="action_done" type="object" class="oe_highlight"/> -->
                 <button string="To done" invisible="state in ('done')" name="action_done" type="object" class="btn-success"/>
-                <button string="Tags" name="action_add_tags" type="object" class="btn-primary"/>
+                <button string="Tags" name="action_add_tags" groups="sports_association.res_groups_sports_association_manager" type="object" class="btn-primary"/>
                 </header>
                 
                 <sheet>
@@ -36,11 +45,12 @@
                     </div>
                     <group>
                         <group>
+                            <field name="player_id" placeholder="Player involved in a issue"/>
                             <field name="assigned"></field>
                             <field name="user_id" options="{'no_open': True, 'no_quick_create':True}" />
                             <field name="user_phone" />
-                            <field name="clinic_id" domain="[('available','=',True)]" options="{'no_open': True,'no_quick_create': True}" />
-                            <field name="cost"></field>
+                            <field name="clinic_id" placeholder="Clinic for the treatment" domain="[('available','=',True)]" options="{'no_open': True,'no_quick_create': True}" />
+                            <field name="cost" placeholder="Cost of the treatment" ></field>
                         </group>
                         <group>
                             <field name="date"></field>
@@ -51,7 +61,7 @@
 
                     <notebook>
                         <page name="description" string="Description">
-                            <field name="description"></field>
+                            <field name="description" placeholder="Issue description, where, how..."></field>
                         </page>
                         <page name="actionstodo" string="Actions To Do">
                             <field name="action_ids" context="{'default_action_state':state}">
@@ -66,6 +76,11 @@
                         </page>
                     </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             </form>
         </field>
     </record>

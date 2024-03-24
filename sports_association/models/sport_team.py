@@ -23,8 +23,11 @@ class SportTeam(models.Model):
 
     # cambiamos el estado a todas
     def action_principal_all(self):
-        self.player_list_ids.action_principal()        
-        
+        # self.player_list_ids.action_principal()
+        # Pruebo a hacerlo desde aqu'i sin usar el metodo creado en sport_player. Preguntar cual es la mejor practica
+        for record in self.player_list_ids:
+            record.tittle = True
+
     def action_secondary_all(self):
         self.player_list_ids.action_secondary()           
   

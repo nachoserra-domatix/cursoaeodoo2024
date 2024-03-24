@@ -6,7 +6,9 @@
         <field name="model">sport.issue.tag</field>
         <field name="arch" type="xml">
            <tree editable="bottom" string="Tags">
-                <field name="name" />
+                <field name="sequence" optional="show" widget="handle"></field>
+                <field name="name" widget="badge"/>
+                <field name="color" optional="show"/>
             </tree>
         </field>
     </record>

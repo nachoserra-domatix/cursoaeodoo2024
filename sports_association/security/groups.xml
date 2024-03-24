@@ -21,7 +21,7 @@
     <field name="category_id" ref="ir_module_sports_association"/>
     <field name="implied_ids" eval="[(4, ref('res_groups_sports_association_user'))]"/>
     <field name="comment">
-        The user will be able to manage some model.
+        The user will be able to manage all model.
     </field>
     <field name="users" eval="[(4, ref('base.user_admin'))]"/>
 </record>

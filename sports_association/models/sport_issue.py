@@ -5,7 +5,8 @@ from odoo.exceptions import ValidationError
 class SportIssue(models.Model):
     _name ='sport.issue'
     _description = 'Description'
-    
+    _inherit = ["portal.mixin", "mail.thread", "mail.activity.mixin"]
+
     name = fields.Char(string='Name', required=True,)
     description = fields.Text(string='Description')
     date = fields.Date(string='Date', default=fields.Date.today)
@@ -16,14 +17,15 @@ class SportIssue(models.Model):
         ('done', 'Done'),],
         string='State',
         default='draft',
+        tracking=True
     )
     
     color = fields.Integer('color', default=0)    
-    user_id = fields.Many2one('res.users', string='User', default=lambda self: self.env.user)
+    user_id = fields.Many2one('res.users', string='User', default=lambda self: self.env.user, domain="[('share', '=', False)]")
     sequence = fields.Integer('Sequence', default=10)
     solution = fields.Html('Solution')
     cost = fields.Float('Cost')
-  
+    player_id = fields.Many2one('sport.player', string='Player')
     clinic_id = fields.Many2one('sport.clinic', string='Clinic')
     tag_ids = fields.Many2many('sport.issue.tag', string='Tags')
     user_phone = fields.Char('User phone')

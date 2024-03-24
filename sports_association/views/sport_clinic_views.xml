@@ -21,6 +21,7 @@
             <form string="Clinic">
                 <header>
                     <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"/>
+                    <button string="Create Issue" name="%(action_sport_create_issue)d" context="{'default_clinic_id': id}" type="action" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <!-- smart button for issues -->
@@ -38,12 +39,13 @@
                     <notebook>
                         <page name="issues" string="Issues">
                             <field name="issue_ids">
+                                <!-- <tree multi_edit="1" string="Issues"> -->
                                 <tree editable="bottom">
                                     <field name="name" />
                                     <field name="date" />
                                     <field name="assistance" widget="boolean_toggle"/>
                                 </tree>
-                                </field>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
