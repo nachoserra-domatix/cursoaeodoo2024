@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_sport_issue">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <h2 class="mt-4">
+                            <span >Issue #</span>
+                            <span t-field="o.name"></span>
+                            <!-- <span t-out="o.get_name()"></span> -->
+                            <!-- t-debug="pdb" -->
+                        </h2>
+                        <div class="row mt-4 mb-2" id="informations">
+                            <div t-if="o.user_id" class="col-auto col-3 mw-100 mb-2" name="user">
+                                <strong>User: </strong><br/>
+                                <span class="m-0" t-field="o.user_id"></span>
+                            </div>
+                            <div t-if="o.player_id" class="col-auto col-3 mw-100 mb-2" name="player">
+                                <strong>Player: </strong><br/>
+                                <span class="m-0" t-field="o.date"></span>
+                            </div>
+                            <div t-if="o.date" class="col-auto col-3 mw-100 mb-2" name="date">
+                                <strong>Date: </strong><br/>
+                                <span class="m-0" t-field="o.date"></span>
+                            </div>
+                        </div>
+
+                            <table class="table table-sm o_main_table table-borderless mt-4">
+                                <thead style="display: table-row-group">
+                                    <tr>
+                                        <th name="th_action" class="text-start">Action</th>
+                                        <th name="th_state" class="text-start">State</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody class="sale_tbody">
+                                    <t t-foreach="o.action_ids" t-as="line">
+                                            <tr>
+                                                 <td name="td_action" class="text-start">
+                                                    <span t-field="line.name"/>
+                                                </td>
+                                                <td name="td_state" class="text-start">
+                                                    <span t-field="line.state"/>
+                                                </td>
+                                            </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_sport_issue" model="report.paperformat">
+        <field name="name">Sport Issue Paper Format</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">80</field>
+        <field name="page_width">175</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">3</field>
+        <field name="margin_bottom">3</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">3</field>
+        <field name="dpi">90</field>
+    </record>
+    
+    <!-- <field name="paperformat_id" ref="sports_association_jlsanz.paperformat_sport_issue"/> -->
+    <record id="action_report_sport_issue" model="ir.actions.report">
+    	<field name="name">Issue</field>
+    	<field name="model">sport.issue</field>
+    	<field name="report_type">qweb-pdf</field>
+    	<field name="report_name">sports_association_jlsanz.report_sport_issue</field>
+    	<field name="report_file">sports_association_jlsanz.report_sport_issue</field>
+    	<field name="print_report_name">(object.name)</field>
+    	<field name="binding_model_id" ref="model_sport_issue"/>
+    	<field name="binding_type">report</field>
+	</record>
+
+    <template id="report_sport_issue_list">
+        <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <h2 class="mt-4">
+                            <span >Issue List</span>
+                        </h2>
+
+                            <table class="table table-sm o_main_table table-borderless mt-4">
+                                <thead style="display: table-row-group">
+                                    <tr>
+                                        <th name="th_action" class="text-start">Action</th>
+                                        <th name="th_state" class="text-start">Date</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody class="sale_tbody">
+                                    <t t-foreach="docs" t-as="line">
+                                            <tr>
+                                                 <td name="td_action" class="text-start">
+                                                    <span t-field="line.name"/>
+                                                </td>
+                                                <td name="td_date" class="text-start">
+                                                    <span t-field="line.date"/>
+                                                </td>
+                                            </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        
+                    </div>
+                </t>
+        </t>
+    </template>
+
+    <record id="action_report_sport_issue_list" model="ir.actions.report">
+    	<field name="name">Issue List</field>
+    	<field name="model">sport.issue</field>
+    	<field name="report_type">qweb-pdf</field>
+    	<field name="report_name">sports_association_jlsanz.report_sport_issue_list</field>
+    	<field name="report_file">sports_association_jlsanz.report_sport_issue_list</field>
+    	<field name="print_report_name">Issue List</field>
+    	<field name="binding_model_id" ref="model_sport_issue"/>
+    	<field name="binding_type">report</field>
+	</record>
+
+
+</odoo>
