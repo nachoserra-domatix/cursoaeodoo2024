@@ -6,4 +6,4 @@ class SportsIssueTag(models.Model):
 
     name = fields.Char(string='Name',required=True,translate=True)
     color = fields.Integer(string='Color Index',default=0)
-    issue_ids = fields.Many2many('sports.issue', string='Issues')
+    issue_ids = fields.Many2many('sports.issue', 'sports_issue_tag_rel','tag_id','issue_id',string='Issues')

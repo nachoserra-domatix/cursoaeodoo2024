@@ -21,7 +21,7 @@ class SportsIssue(models.Model):
     sequence = fields.Integer(string='Sequence',default=10)
     solution = fields.Html(string='Solution')
     clinic_id = fields.Many2one('sports.clinic', string='Clinic')
-    tag_ids = fields.Many2many('sports.issue.tag', string='Tags')
+    tag_ids = fields.Many2many('sports.issue.tag', 'sports_issue_tag_rel','issue_id','tag_id',string='Tags')
     color = fields.Integer(string='Color Index',default=0)
     cost=fields.Float(string='Cost',tracking=True)
     assigned=fields.Boolean(string="Assigned",compute='_compute_asigned',inverse='_inverse_assigned',store=True)

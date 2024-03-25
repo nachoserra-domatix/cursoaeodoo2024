@@ -4,6 +4,7 @@ class SportsMatch(models.Model):
     _name = 'sports.match'
     _description = 'Sports Match'
     _rec_name = 'date'
+    _inherit = ['portal.mixin', 'mail.thread', 'mail.activity.mixin']
 
     date = fields.Datetime(string='Date')
     sport_id = fields.Many2one('sports.sport',string='Sport')

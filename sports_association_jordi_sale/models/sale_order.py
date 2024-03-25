@@ -17,3 +17,10 @@ class SaleOrder(models.Model):
         res= super().action_cancel()
         self.sports_ticket_ids.unlink()
         return res
+
+    def action_confirm(self):
+        res= super().action_confirm()
+        import pdb; pdb.set_trace()
+        for line in self.order_line:
+            if line.product_id.is_sports_ticket:
+                self.action_create_sports_ticket()
