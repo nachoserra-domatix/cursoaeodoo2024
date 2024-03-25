@@ -7,3 +7,4 @@ class SportIssueTag(models.Model):
 
     name = fields.Char(string='Name', required=True, translate=True)
     color = fields.Integer(string='Color', default=0)
+    issue_ids = fields.Many2many('sport.issue', 'sport_issue_tag_rel', 'tag_id', 'issue_id', string='issue')

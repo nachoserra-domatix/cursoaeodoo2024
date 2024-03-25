@@ -20,6 +20,7 @@
         "data/ir_cron.xml",
         "data/sport_issue_paperformat.xml",
         "data/sport_league_paperformat.xml",
+        "data/ir_sequence_data.xml",
         "security/groups.xml",
         "security/ir.model.access.csv",
         "wizards/sport_create_issue.xml",

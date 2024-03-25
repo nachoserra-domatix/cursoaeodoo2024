@@ -18,6 +18,12 @@ class SportCreateMatch(models.TransientModel):
         }
         match = self.env['sport.match'].create(vals)
 
+        # msg_body = f'El partido pertenece a la liga {match.league_id.name}'
+        # match.message_post(body= msg_body)
+        match.message_post_with_source('mail.message_origin_link', 
+                                       render_values={'self': match, 'origin': self.league_id}, 
+                                       subtype_xmlid='mail.mt_note')
+
         return {
             'name': 'Match',
             'view_mode': 'form',
