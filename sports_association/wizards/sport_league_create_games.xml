@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <record id="sport_league_create_games_view" model="ir.ui.view">
+        <field name="name">Sport League Create Games Wizard</field>
+        <field name="model">sport.league.create.games</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Create Games">
+                <group>
+                    <field name="date" />
+                    <field name="league_id" />
+                    <field name="allowed_team_ids" invisible="1" />
+                    <field
+                        name="team_ids"
+                        widget="many2many_tags"
+                        domain="[('id', 'in', allowed_team_ids)]"
+                    />
+                </group>
+                <footer>
+                    <button
+                        name="create_games"
+                        string="Create Games"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" special="cancel" class="btn-secondary" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_league_create_games_action" model="ir.actions.act_window">
+        <field name="name">Create Games</field>
+        <field name="res_model">sport.league.create.games</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_sport_league" />
+        <field name="binding_view_types">form</field>
+    </record>
+
+</odoo>

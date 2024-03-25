@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="sport_issue_tag_1" model="sport.issue.tag">
+        <field name="name">Lesión</field>
+    </record>
+    <record id="sport_issue_tag_2" model="sport.issue.tag">
+        <field name="name">Accidente</field>
+    </record>
+    <record id="sport_issue_tag_3" model="sport.issue.tag">
+        <field name="name">Fatiga</field>
+    </record>
+    <record id="sport_issue_tag_4" model="sport.issue.tag">
+        <field name="name">Calambre</field>
+    </record>
+    <record id="sport_issue_tag_5" model="sport.issue.tag">
+        <field name="name">Desgarro muscular</field>
+    </record>
+    <record id="sport_issue_tag_6" model="sport.issue.tag">
+        <field name="name">Esguince</field>
+    </record>
+</odoo>

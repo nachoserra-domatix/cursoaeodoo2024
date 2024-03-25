@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <record id="sport_clinic_tree" model="ir.ui.view">
+        <field name="name">Sport Clinics</field>
+        <field name="model">sport.clinic</field>
+        <field name="type">tree</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="16" />
+        <field name="active" eval="True" />
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="phone" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_clinic_form" model="ir.ui.view">
+        <field name="name">Sport Clinic Form</field>
+        <field name="model">sport.clinic</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Clinic">
+                <header>
+                    <button
+                        name="action_check_assistance"
+                        string="Check Assistance"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    <button
+                        name="%(sport_create_issue_action)d"
+                        string="Create Issue"
+                        type="action"
+                        class="oe_highlight"
+                        context="{'default_clinic_id': id}"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="action_view_issues"
+                            context="{'default_clinic_id': id, 'search_default_draft': 1, 'search_default_open': 1}"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-medkit"
+                        >
+                            <field
+                                string="Issues"
+                                name="issue_count"
+                                widget="statinfo"
+                            />
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Clinic Name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="phone" />
+                        <field name="email" />
+                        <field name="available" />
+                    </group>
+                    <notebook>
+                        <page string="Issues">
+                            <field name="issue_ids">
+                                <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="date" />
+                                    <field name="assistance" widget="boolean_toggle" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
