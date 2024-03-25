@@ -828,10 +828,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:sports_association.sport_issue_view_search
 #, fuzzy
 msgid "User"
-msgstr ""
-"\n"
-"        El usuario podra manejar todos los modelos.\n"
-"    "
+msgstr "Usuario"
 
 #. module: sports_association
 #: model:ir.model.fields,field_description:sports_association.field_sport_issue__user_phone

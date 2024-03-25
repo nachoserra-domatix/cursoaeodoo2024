@@ -23,6 +23,9 @@ class SportCreateMatch(models.TransientModel):
             'match_line_ids': [(0, 0, {'team_id': team.id}) for team in self.team_ids]
             }
         match = self.env['sport.match'].create(vals)
+        match.message_post_with_source('mail.message_origin_link', 
+                                       render_values={'self': match, 'origin': self.league_id}, 
+                                       subtype_xmlid='mail.mt_note')
         return {
             'name': 'Match',
             'view_mode': 'form',

@@ -1,6 +1,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo import models, fields, api, Command, _
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError, UserError
 
 class SportIssue(models.Model):
     _name ='sport.issue'
@@ -27,7 +27,8 @@ class SportIssue(models.Model):
     cost = fields.Float('Cost')
     player_id = fields.Many2one('sport.player', string='Player')
     clinic_id = fields.Many2one('sport.clinic', string='Clinic')
-    tag_ids = fields.Many2many('sport.issue.tag', string='Tags')
+    # tag_ids = fields.Many2many('sport.issue.tag', string='Tags')
+    tag_ids = fields.Many2many('sport.issue.tag', 'sport_issue_tags_rel', 'issue_id', 'tag_id', string='Tags')
     user_phone = fields.Char('User phone')
     assigned = fields.Boolean('Assigned', compute='_compute_assigned', inverse='_inverse_assigned')
     
@@ -76,7 +77,11 @@ class SportIssue(models.Model):
 
     def action_done(self):
         for record in self:
+            if not record.date:
+                raise UserError(_('The date is required'))
             record.state = 'done'
+            msg_body = f'La incidencia ha pasado al estado {record.state} con fecha {record.date}'
+            record.message_post(body=msg_body)
             
             
     def action_add_tags(self):

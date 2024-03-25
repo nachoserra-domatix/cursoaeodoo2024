@@ -24,7 +24,7 @@
     #     "bin": [],
     # },
     "depends": [
-        "sports_association", "sale"
+        "sports_association", "sale_management"
     ],
     # this feature is only present for 11.0+
     # "excludes": [
@@ -32,6 +32,7 @@
     # ],
     "data": [
         "views/sport_ticket_views.xml",
-        "views/sale_order_views.xml"
+        "views/sale_order_views.xml",
+        "views/product_views.xml",
          ],
 }

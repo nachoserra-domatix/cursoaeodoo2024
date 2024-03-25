@@ -50,6 +50,7 @@
         "data/sport_license_data.xml",
         "data/sport_issue_tag_data.xml",
         "data/ir_cron.xml",
+        "data/ir_sequence_data.xml",
         "wizards/sport_create_issue.xml",
         "report/sports_issue_report.xml",
         "report/sports_league_report.xml",

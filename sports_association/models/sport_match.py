@@ -6,6 +6,8 @@ class SportMatch(models.Model):
     _name = 'sport.match'
     _description = 'Sport Match'
     _rec_name = 'sport_id'
+    _inherit = ["portal.mixin", "mail.thread", "mail.activity.mixin"]
+
 
     sport_id = fields.Many2one('sport.sport', string='Sport')
     date = fields.Datetime('Date')
