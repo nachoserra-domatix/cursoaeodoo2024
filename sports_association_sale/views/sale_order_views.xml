@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sale_order_view_form" model="ir.ui.view">
+        <field name="name">sale.order.view.form</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <page name="customer_signature" position="after">
+                <page string="Sport Tickets">
+                    <field name="sport_ticket_ids">
+                        <tree string="Sport Tickets">
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="match_id"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+            <!-- <xpath expr="//notebook" position="inside">
+                <page string="Sport Tickets">
+                    <field name="sport_ticket_ids" widget="one2many_list">
+                        <tree string="Sport Tickets">
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="match_id"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath> -->
+            <button name="action_cancel" position="before">
+                <button string="Create ticket" name="create_sport_ticket" type="object" class="oe_highlight"/>
+            </button>
+        </field>
+    </record>
+
+</odoo>
