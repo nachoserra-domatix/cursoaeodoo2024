@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sports_ticket_view_form" model="ir.ui.view">
+        <field name="name">sports_ticket.view.form</field>
+        <field name="model">sports.ticket</field>
+        <field name="inherit_id" ref="sports_association_jordi.sports_ticket_view_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="sale_order_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
