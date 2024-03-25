@@ -16,5 +16,6 @@
     "data": [
         "views/sport_ticket_views.xml",
         "views/sale_order_views.xml",
+        "views/product_views.xml",
         ]
 }

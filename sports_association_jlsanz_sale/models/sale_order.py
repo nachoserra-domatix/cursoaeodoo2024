@@ -17,3 +17,12 @@ class SaleOrder(models.Model):
             'sale_order_id': self.id,
         }
         self.env['sport.ticket'].create(vals)
+
+    def action_confirm(self):
+        res = super().action_confirm()
+        for order in self:
+            ticket_products = order.order_line.filtered(lambda l: l.product_id.is_ticket)
+            for prod in ticket_products:   
+                order.create_sport_ticket()
+        return res
+        
