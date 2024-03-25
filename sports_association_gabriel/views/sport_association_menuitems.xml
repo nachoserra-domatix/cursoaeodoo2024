@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem
+        id="sport_menu"
+        name="Sport Association"
+        sequence="10"/>
+
+    <menuitem
+        id="sport_license_menu"
+        name="Sport License"
+        action="sports_association_gabriel.action_sport_license"        
+        parent="sports_association_gabriel.sport_menu"
+        sequence="10"/>
+
+    <menuitem
+        id="sport_management_issues_menu"
+        name="Management Issues"        
+        parent="sports_association_gabriel.sport_menu"
+        sequence="20"/>    
+    
+    <menuitem
+        id="sport_issue_menu"
+        name="Sport Issues"
+        action="sports_association_gabriel.action_sport_issue"        
+        parent="sports_association_gabriel.sport_management_issues_menu"
+        sequence="10"/>
+    
+    <menuitem
+        id="sport_issue_tag_menu"
+        name="Sport Issue Tags"
+        action="sports_association_gabriel.sport_issue_tag_action"        
+        parent="sports_association_gabriel.sport_management_issues_menu"
+        sequence="20"/>
+
+    <menuitem
+        id="sport_clinic_menu"
+        name="Sport Clinics"
+        action="sports_association_gabriel.action_sport_clinic"        
+        parent="sports_association_gabriel.sport_menu"
+        sequence="30"/>
+
+    <menuitem
+        id="sport_management_sports_menu"
+        name="Management Sports"        
+        parent="sports_association_gabriel.sport_menu"
+        sequence="40"/>
+    
+    <menuitem
+        id="sport_sport_menu"
+        name="Sports"
+        action="sports_association_gabriel.sport_sport_action"        
+        parent="sports_association_gabriel.sport_management_sports_menu"
+        sequence="10"/>
+
+    <menuitem
+        id="sport_league_menu"
+        name="Leagues"
+        action="sports_association_gabriel.action_sport_league"        
+        parent="sports_association_gabriel.sport_management_sports_menu"
+        sequence="20"/>
+    
+    <menuitem
+        id="sport_match_menu"
+        name="Matches"
+        action="sports_association_gabriel.action_sport_match"        
+        parent="sports_association_gabriel.sport_management_sports_menu"
+        sequence="30"/>
+
+    <menuitem
+        id="sport_ticket_menu"
+        name="Tickets"
+        action="sports_association_gabriel.sport_ticket_action"        
+        parent="sports_association_gabriel.sport_management_sports_menu"
+        sequence="35"/>
+
+    <menuitem
+        id="sport_team_menu"
+        name="Sport Teams"
+        action="sports_association_gabriel.sport_team_action"        
+        parent="sports_association_gabriel.sport_management_sports_menu"
+        sequence="40"/>
+
+    <menuitem
+        id="sport_player_menu"
+        name="Sport Players"
+        action="sports_association_gabriel.sport_player_action"        
+        parent="sports_association_gabriel.sport_management_sports_menu"
+        sequence="50"/>
+</odoo>
