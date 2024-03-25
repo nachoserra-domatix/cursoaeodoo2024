@@ -31,6 +31,9 @@ class SportIssue(models.Model):
     tag_ids = fields.Many2many(
         string="Tags",
         comodel_name="sport.issue.tag",
+        relation="sport_issue_tag_rel",
+        column1="issue_ids",
+        column2="tag_ids",
     )
     color = fields.Integer(string="Color", default=0)
     cost = fields.Float(string="Cost")
@@ -49,6 +52,11 @@ class SportIssue(models.Model):
     _sql_constraints = [
         ("name_unique", "unique (name)", "The issue name must be unique!"),
     ]
+
+    def create(self, vals):
+        res = super().create(vals)
+        vals["name"] = self.env["ir.sequence"].next_by_code("sport.issue")
+        return res
 
     @api.constrains("cost")
     def _check_cost(self):

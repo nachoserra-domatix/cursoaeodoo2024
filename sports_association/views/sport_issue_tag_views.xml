@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <tree editable="bottom">
                 <field name="name" />
+                <field name="issue_ids" widget="many2many_tags" />
             </tree>
         </field>
     </record>

@@ -29,6 +29,7 @@
         "data/sport_license_data.xml",
         "data/sport_issue_tag_data.xml",
         "data/ir_cron.xml",
+        "data/ir_sequence_data.xml",
         "wizards/sport_create_issue.xml",
         "wizards/sport_issue_mark_all_done.xml",
         "report/sport_issue_report.xml",

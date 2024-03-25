@@ -39,6 +39,11 @@ class SportLeagueCreateGames(models.TransientModel):
             ],
         }
         game = self.env["sport.game"].create(vals)
+        game.message_post_with_source(
+            "mail.message_origin_link",
+            render_values={"self": game, "origin": self.league_id},
+            subtype_xmlid="mail.mt_note",
+        )
         return {
             "name": "Game",
             "type": "ir.actions.act_window",

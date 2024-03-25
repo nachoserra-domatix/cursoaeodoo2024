@@ -15,8 +15,20 @@ class SaleOrder(models.Model):
 
     def create_sport_ticket(self):
         vals = {
-            "name": self.name,
             "partner_id": self.partner_id.id,
             "sale_order_id": self.id,
         }
         self.env["sport.ticket"].create(vals)
+
+    def action_confirm(self):
+        res = super().action_confirm()
+        for order in self:
+            for line in order.order_line:
+                if line.product_id.is_ticket:
+                    vals = {
+                        "partner_id": self.partner_id.id,
+                        "sale_order_id": self.id,
+                        "game_id": line.product_id.game_id.id,
+                    }
+                    self.env["sport.ticket"].create(vals)
+        return res

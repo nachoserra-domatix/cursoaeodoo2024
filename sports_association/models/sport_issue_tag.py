@@ -10,6 +10,9 @@ class SportIssueTag(models.Model):
     issue_ids = fields.Many2many(
         string="Issues",
         comodel_name="sport.issue",
+        relation="sport_issue_tag_rel",
+        column1="tag_ids",
+        column2="issue_ids",
     )
 
     def _cron_remove_unused_tags(self):

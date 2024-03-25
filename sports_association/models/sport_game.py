@@ -4,6 +4,7 @@ from odoo import api, fields, models
 class SportGame(models.Model):
     _name = "sport.game"
     _description = "Sport Game"
+    _inherit = ["portal.mixin", "mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="Name", compute="_compute_name", store=True)
     league_id = fields.Many2one(string="League", comodel_name="sport.league")

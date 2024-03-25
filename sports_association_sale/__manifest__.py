@@ -12,5 +12,9 @@
     "installable": True,
     "preloadable": True,
     "depends": ["sale", "sports_association"],
-    "data": ["views/sport_ticket_views.xml", "views/sale_order_views.xml"],
+    "data": [
+        "views/sport_ticket_views.xml",
+        "views/sale_order_views.xml",
+        "views/product_template_views.xml",
+    ],
 }
