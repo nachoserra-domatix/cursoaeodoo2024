@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sport_baseball" model="sport.sport">
+            <field name="name">Béisbol</field>
+            <field name="description">Deporte de equipo en el que un jugador lanza una pelota y otro la golpea con un bate.</field>
+        </record>
+        <record id="sport_football" model="sport.sport">
+            <field name="name">Fútbol</field>
+            <field name="description">Deporte de equipo en el que dos equipos de once jugadores compiten por llevar un balón a la portería contraria.</field>
+        </record>
+        <record id="sport_basketball" model="sport.sport">
+            <field name="name">Baloncesto</field>
+            <field name="description">Deporte de equipo en el que dos equipos de cinco jugadores compiten por encestar el balón en la canasta contraria.</field>
+        </record>
+    </data>
+</odoo>

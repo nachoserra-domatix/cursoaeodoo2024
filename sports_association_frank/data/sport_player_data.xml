@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="coach_yankees" model="sport.player">
+            <field name="name">Aaron Boone</field>
+        </record>
+        <record id="coach_dodgers" model="sport.player">
+            <field name="name">Dave Roberts</field>
+        </record>
+        <record id="coach_barcelona" model="sport.player">
+            <field name="name">Ronald Koeman</field>
+        </record>
+        <record id="coach_real_madrid" model="sport.player">
+            <field name="name">Carlo Ancelotti</field>
+        </record>
+        <record id="coach_lakers" model="sport.player">
+            <field name="name">Frank Vogel</field>
+        </record>
+        <record id="coach_bulls" model="sport.player">
+            <field name="name">Billy Donovan</field>
+        </record>
+        <record id="player_judge" model="sport.player">
+            <field name="name">Aaron Judge</field>
+            <field name="position">Right Field</field>
+        </record>
+        <record id="player_stanton" model="sport.player">
+            <field name="name">Giancarlo Stanton</field>
+            <field name="position">Left Field</field>
+        </record>
+        <record id="player_kershaw" model="sport.player">
+            <field name="name">Clayton Kershaw</field>
+            <field name="position">Pitcher</field>
+        </record>
+        <record id="player_bellinger" model="sport.player">
+            <field name="name">Cody Bellinger</field>
+            <field name="position">First Base</field>
+        </record>
+        <record id="player_messi" model="sport.player">
+            <field name="name">Lionel Messi</field>
+            <field name="position">Forward</field>
+        </record>
+        <record id="player_xavi" model="sport.player">
+            <field name="name">Xavi Hernández</field>
+            <field name="position">Midfielder</field>
+        </record>
+        <record id="player_ronaldo" model="sport.player">
+            <field name="name">Cristiano Ronaldo</field>
+            <field name="position">Forward</field>
+        </record>
+        <record id="player_benzema" model="sport.player">
+            <field name="name">Karim Benzema</field>
+            <field name="position">Forward</field>
+        </record>
+        <record id="player_lebron" model="sport.player">
+            <field name="name">LeBron James</field>
+            <field name="position">Small Forward</field>
+        </record>
+        <record id="player_davis" model="sport.player">
+            <field name="name">Anthony Davis</field>
+            <field name="position">Power Forward</field>
+        </record>
+        <record id="player_jordan" model="sport.player">
+            <field name="name">Michael Jordan</field>
+            <field name="position">Shooting Guard</field>
+        </record>
+        <record id="player_pippen" model="sport.player">
+            <field name="name">Scottie Pippen</field>
+            <field name="position">Small Forward</field>
+        </record>
+    </data>
+</odoo>

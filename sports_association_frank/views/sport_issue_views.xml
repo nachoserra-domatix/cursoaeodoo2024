@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_sport_mark_done" model="ir.actions.server">
+        <field name="name">Sport Issue Mark Done</field>
+        <field name="model_id" ref="model_sport_issue"/>
+        <field name="binding_model_id" ref="model_sport_issue"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_sport_mark_done()
+        </field>
+    </record>    
+    <record id="sport_issue_action" model="ir.actions.act_window">
+        <field name="name">Sport Issue</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sport.issue</field>
+        <field name="view_mode">tree,form,kanban,pivot,graph,calendar</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a sport issue
+            </p>
+        </field>
+    </record>
+    <record id="view_sport_issue_form" model="ir.ui.view">
+        <field name="name">sport.issue.form</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <form string="Sport Issue">
+                <header>
+                    <button string="Create Issue" name="%(action_sport_mark_done)d" type="action" class="oe_highlight" />
+                    <field name="state" widget="statusbar" />
+                    <button name="action_open" string="To open" invisible="state not in ('draft')" type="object" class="btn-primary" />
+                    <button name="action_draft" string="To draft" invisible="state in ('draft')" type="object" class="btn-secondary" />
+                    <button name="action_done" string="Done" invisible="state in ('done')" type="object" class="btn-success" />
+                    <button name="action_add_tag" string="Add Tag" type="object" class="btn-secondary" groups="sports_association_frank.res_groups_sports_association_manager" />
+                </header>
+                <sheet>
+                    <h1>
+                        <label for="name" string="Issue"/>
+                        <div class="oe_title">
+                            <field name="name"/>
+                        </div>                     
+                    </h1>
+                    <group>
+                        <field name="user_id" options="{'no_open': True, 'no_quick_create':True}" />
+                        <field name="assigned" />
+                    </group>
+                    <group string="Personal Info" col="2">
+                        <group>
+                            <field name="player_id" />
+                            <field name="user_phone" />
+                            <field name="date" />
+                        </group>
+                        <group>
+                            <field name="assistance" widget="boolean_toggle" />
+                            <field name="priority" widget="radio" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="clinic_id" />
+                        <field name="tag_ids" widget="many2many_tags" />
+                        <field name="cost" />
+                    </group>                    
+                    <notebook>
+                        <page name="description" string="Description">
+                            <field name="description" />
+                        </page>
+                        <page name="actions" string="Actions to do">
+                            <field name="action_ids" context="{'default_state': state}">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="solution" string="Solution">
+                            <field name="solution" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sport_issue_view_calendar" model="ir.ui.view">
+        <field name="name">sport.issue.calendar</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <calendar string="Issues" date_start="date" color="user_id">
+                <field name="name" />
+                <field name="user_id" />
+                <field name="state" filters="1" invisible="1" />
+            </calendar>
+        </field>
+    </record>
+    <record id="sport_issue_view_graph" model="ir.ui.view">
+        <field name="name">sport.issue.graph</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <graph string="Issues" type="bar">
+                <field name="user_id" type="row" />
+                <field name="date" type="col" />
+                <field name="cost" type="measure" />
+            </graph>
+        </field>
+    </record>
+    <record id="sport_issue_view_search" model="ir.ui.view">
+        <field name="name">sport.issue.search</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <search string="Issues">
+                <field name="name" />
+                <field name="user_id" />
+                <field name="clinic_id" />
+                <field name="tag_ids" />
+                <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]" />
+                <filter string="Open" name="open" domain="[('state', '=', 'open')]" />
+                <filter string="Done" name="done" domain="[('state', '=', 'done')]" />
+                <filter string="User" name="user" context="{'group_by': 'user_id'}" />
+                <filter string="Date" name="date" context="{'group_by': 'date'}" />
+            </search>
+        </field>
+    </record>
+    <record id="sport_issue_view_kanban" model="ir.ui.view">
+        <field name="name">sport.issue.kanban</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" default_group_by="state">
+                <field name="name" />
+                <field name="user_id" />
+                <field name="clinic_id" />
+                <field name="tag_ids" />
+                <field name="color" />
+                <templates>
+                    <t t-name="kanban-menu">
+                        <t t-if="widget.editable"><a role="menuitem" href="edit" class="dropdown-item">Edit</a></t>
+                        <t t-if="widget.deletable"><a role="menuitem" href="delete" class="dropdown-item">Delete</a></t>
+                        <ul class="oe_kanban_colorpicker" data-field="color" />
+                    </t>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{!selection_model ? kanban_color(record.color.raw_value) : ''}">
+                            <div class="o_kanban_record_head">
+                                <div class="o_kanban_record_head_left">
+                                    <field class="o_kanban_record_title" name="name" />
+                                    <field name="date" />
+                                </div>
+                                <div class="o_kanban_record_head_right">
+                                    <field name="user_id" />
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <field name="clinic_id" />
+                            </div>
+                            <div class="oe_kanban_footer">
+                                <div class="o_kanban_record_bottom">
+                                    <div class="o_kanban_record_bottom_left">
+                                        <field name="priority" widget="priority" />
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_bottom_right">
+                                    <field name="state" widget="badge" />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="sport_issue_view_pivot" model="ir.ui.view">
+        <field name="name">sport.issue.pivot</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <pivot string="Issues" >
+                <field name="user_id" type="row" />
+                <field name="date" type="col" />
+                <field name="cost" type="measure" />
+            </pivot>
+        </field>
+    </record>
+    <record id="view_sport_issue_tree" model="ir.ui.view">
+        <field name="name">sport.issue.tree</field>
+        <field name="model">sport.issue</field>
+        <field name="arch" type="xml">
+            <tree string="Sport Issues">
+                <button name="action_done_all_issues" string="Done All" type="object" class="oe_highlight" />
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="date" optional="show" />
+                <field name="user_id" optional="hide" />
+                <field name="assistance" widget="boolean_toggle" />
+                <field name="state" widget="badge" decoration-info="state == 'open'" decoration-success="state == 'done'" />
+            </tree>
+        </field>
+    </record>
+</odoo>
