@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sport_clinic_view_tree" model="ir.ui.view">
+        <field name="name">sport_clinic.view.tree</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <tree string="Clinics">
+                <field name="name"></field>
+                <field name="phone"></field>
+                <field name="email"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_clinic_view_form" model="ir.ui.view">
+        <field name="name">sport_clinic.view.form</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <form string="Clinic">
+                <header>
+                    <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"></button>
+                    <button string="Create Issue" name="%(action_sport_create_issue)d" type="action" class="oe_highlight" context="{'default_clinic_id':id}"></button>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_issues" class="oe_stat_button" icon="fa-tasks" context="{'search_default_draft':1}">
+                            <field string="Issues" name="issue_cont" widget="statinfo"></field>
+                            
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name"></field>
+                        <field name="phone"></field>
+                        <field name="email"></field>
+                        <field name="available" widget='boolean_toogle'></field>   
+                    </group>
+                    <notebook>
+                        <page name="issues" string="Issues">
+                            <field name="issue_ids">
+                                <tree editable="bottom">
+                                    <field name="name"></field>
+                                    <field name="date"></field>
+                                    <field name="assistance"></field>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record> 
+</odoo>
