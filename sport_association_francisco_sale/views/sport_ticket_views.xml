@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="sport_ticket_tree_view" model="ir.ui.view">
+            <field name="name">sport.ticket.tree.view</field>
+            <field name="model">sport.ticket</field>
+            <field name='inherit_id' ref="sport_association_francisco.sport_ticket_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="match_id" position="after">
+                    <field name="sale_order_id"/>
+                    </field>
+                </field>
+        </record>
+
+        <record id="sport_ticket_form_view" model="ir.ui.view">
+            <field name="name">sport.ticket.form.view</field>
+            <field name="model">sport.ticket</field>
+            <field name='inherit_id' ref="sport_association_francisco.sport_ticket_form_view"/>
+            <field name="arch" type="xml">
+                <field name="match_id" position="after">
+                    <field name="sale_order_id"/>
+                </field>
+            </field>
+        </record>
+        
+    </odoo>

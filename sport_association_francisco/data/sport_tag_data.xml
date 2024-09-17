@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <record id="tag_1" model="sport.tag">
+            <field name="name">Injury</field>
+        </record>
+        <record id="tag_2" model="sport.tag">
+            <field name="name">Accident</field>
+        </record>
+        <record id="tag_3" model="sport.tag">
+            <field name="name">Fatigue</field>
+        </record>
+        <record id="tag_4" model="sport.tag">
+            <field name="name">Cramp</field>
+        </record>
+        <record id="tag_5" model="sport.tag">
+            <field name="name">mustular Tare</field>
+        </record>
+        <record id="tag_5" model="sport.tag">
+            <field name="name">Sprain</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="check_all_issues_form_view" model="ir.ui.view">
+        <field name="name">check.all.issues.view.form</field>
+        <field name="model">check.all.issues</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="date" />
+                </group>
+                <footer>
+                    <button name="check_all_issues" id="change_state" string="Change state" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+            
+        </field>
+    </record>
+
+    <record id="action_check_all_issues_wizard" model="ir.actions.act_window">
+        <field name="name">Change state</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">check.all.issues</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="sport_association_francisco.model_sport_issue" />
+        <field name="binding_view_types">list,form</field>
+    </record>
+
+</odoo>
