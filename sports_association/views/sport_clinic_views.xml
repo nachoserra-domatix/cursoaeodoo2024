@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright NuoBiT Solutions - Kilian Niubo <kniubo@nuobit.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl) -->
+<odoo>
+    <record id="sport_clinic_view_tree" model="ir.ui.view">
+        <field name="name">sport_clinic.view.tree</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="phone" />
+                <field name="email" />
+            </tree>
+        </field>
+    </record>
+    <record id="sport_clinic_view_form" model="ir.ui.view">
+        <field name="name">sport_clinic.view.form</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <form string="Clinic">
+                <header>
+                    <button
+            string="Check Assistance"
+            name="action_check_assistance"
+            type="object"
+            class="oe_highlight"
+          />
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="phone" />
+                        <field name="email" />
+                        <field name="issue_ids" />
+                    </group>
+                    <notebook>
+                        <page name="issues" string="Issues">
+                            <field name="issue_ids">
+                                <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="date" />
+                                    <field name="assistance" />
+                                </tree>
+                                </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_sport_clinic" model="ir.actions.act_window">
+        <field name="name">Sport Clinic</field>
+        <field name="res_model">sport.clinic</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport issue
+            </p>
+        </field>
+    </record>
+</odoo>

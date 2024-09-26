@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright NuoBiT Solutions - Kilian Niubo <kniubo@nuobit.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl) -->
+<odoo>
+    <menuitem id="sport_menu" name="Sport Association" sequence="10">
+        <menuitem
+      id="sport_issue_menu"
+      name="Sport Issues"
+      action="action_sport_issue"
+      sequence="10"
+    />
+        <menuitem
+      id="sport_clinic_menu"
+      name="Sport Clinics"
+      action="action_sport_clinic"
+      sequence="20"
+    />
+        <menuitem
+      id="sport_issue_tag_menu"
+      name="Sport Issue Tags"
+      action="sport_issue_tag_action"
+      sequence="40"
+    />
+        <menuitem
+      id="sport_player_menu"
+      name="Sport Players"
+      action="action_sport_player"
+      sequence="50"
+    />
+                <menuitem
+      id="sport_sport_menu"
+      name="Sport Sport"
+      action="action_sport_sport"
+      sequence="60"
+    />
+                <menuitem
+      id="sport_team_menu"
+      name="Sport Team"
+      action="action_sport_team"
+      sequence="70"
+    />
+    </menuitem>
+</odoo>
