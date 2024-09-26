@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        
+        <record id="sport_association_category" model="ir.module.category">
+            <field name="name">Sport Association</field>
+        </record>
+
+        <record id="sport_association_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="sport_association_category"/>
+        </record>
+
+        <record id="sport_association_admin" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="sport_association_category"/>
+            <field name="implied_ids" eval="[
+            (4, ref('sport_association_user'))
+            ]"/>
+        </record>
+        
+        
+
+    </data>
+</odoo>
