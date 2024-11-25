@@ -3,7 +3,7 @@
 * Añadir restricción con _sql_constraints en el que el nombre de la incidencia sea único.
 
 # Onchange
-* Al cambiar la el asignado de la cita, que el campo usuario se ponga con el usuario que lo ha modificado
+* Al cambiar el asignado de la cita, que el campo usuario se ponga con el usuario que lo ha modificado
 * Cambiar la funcionalidad de partner_phone, quitar el related y añadir un onchange para que cuando se cambie el contacto se traiga el teléfono
 
 # Actions
