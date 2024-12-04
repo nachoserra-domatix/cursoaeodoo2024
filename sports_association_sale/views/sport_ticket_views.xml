@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- sport.ticket inherit tree view -->
+    <record id="sport_ticket" model="ir.ui.view">
+        <field name="name">sport.ticket.inherit.view.tree</field>
+        <field name="model">sport.ticket</field>
+        <field name="inherit_id" ref="sports_association.sport_ticket_view_tree"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <field name="match_id" position="after">
+                <field name="name"/>
+                <field name="sale_order_id"/>
+                <field name="match_id"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- sport.ticket inherit form view -->
+    <record id="sport_ticket" model="ir.ui.view">
+        <field name="name">sport.ticket.inherit.view.form</field>
+        <field name="model">sport.ticket</field>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <field name="match_id" position="after">
+                <field name="sale_order_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>
