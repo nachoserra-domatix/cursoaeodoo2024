@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_sport_issues_dates">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2 class="mt-4">
+                        <span>Issues Dates</span>
+                    </h2>
+                    
+                    <table class="table table-sm o_main_table table-borderless mt-4">                        
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th name="th_action" class="text-start">Issue</th>
+                                <th name="th_state" class="text-start">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="o">                                
+                                <tr>
+                                    <td name="td_name" class="text-start">
+                                        <span t-field="o.name"></span>
+                                    </td>
+                                    <td name="td_date" class="text-start">
+                                        <span t-field="o.date"></span>
+                                    </td>
+                                </tr>
+                            </t>                                
+                        </tbody>
+                    </table>
+                </div>
+            </t>            
+        </t>
+    </template>
+
+    <record id="action_report_sport_issues_dates" model="ir.actions.report">
+        <field name="name">Issue Dates</field>
+        <field name="model">sport.issue</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sports_association_gabriel.report_sport_issues_dates</field>
+        <field name="report_file">sports_association_gabriel.report_sport_issues_dates</field>
+        <field name="print_report_name">'%s' % object.name</field>
+        <field name="paperformat_id" ref="sports_association_gabriel.paperformat_sport_issue"/>
+        <field name="binding_model_id" ref="model_sport_issue"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

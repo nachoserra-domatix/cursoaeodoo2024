@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="seq_sport_ticket" model="ir.sequence">
+        <field name="name">Ticket Sequence</field>
+        <field name="code">sport.ticket</field>
+        <field name="prefix">Ticket</field>
+        <field name="padding">5</field>
+    </record>
+</odoo>
