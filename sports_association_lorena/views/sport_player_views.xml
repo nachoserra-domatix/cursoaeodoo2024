@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sport_player_view_tree" model="ir.ui.view">
+        <field name="name">sport_player.view.tree</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <tree string="Players">
+                <field name="name"/>
+                <field name="age"/>
+                <field name="position"/>
+                <field name="team_id"/>
+                <field name="headline"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_player_view_tree_context" model="ir.ui.view">
+        <field name="name">sport_player.view.tree.context</field>
+        <field name="model">sport.player</field>
+        <field eval="100" name="priority"/>
+        <field name="arch" type="xml">
+            <tree string="Players">
+                <field name="name"/>
+                <field name="age"/>
+                <field name="team_id" context="{'default':'Wildcats'}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_player_view_form" model="ir.ui.view">
+        <field name="name">sport_player.view.form</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <form string="Players">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="date_birth"/>
+                        <field name="age"/>
+                        <field name="position"/>
+                    </group>
+                    <group>
+                        <field name="team_id"/>
+                        <field name="headline"/>
+                        <field name="sport" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_player_view_form_context" model="ir.ui.view">
+        <field name="name">sport_player.view.form.context</field>
+        <field name="model">sport.player</field>
+        <field eval="100" name="priority"/>
+        <field name="arch" type="xml">
+            <form string="Players">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="team_id" context="{'default':'Wildcats'}"/>
+                        <field name="headline"/>
+                        <field name="sport" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_player_view_search" model="ir.ui.view">
+        <field name="name">sport.player.view.search</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="sport" />
+                <field name="team_id" />
+                <filter string='Headline' name='headline' domain="[('headline', '=', True)]"/>
+                <filter string="Team" name="team_id" context="{'group_by':'team_id'}"/>
+                <filter string="Sport" name="sport" context="{'group_by':'sport'}"/>
+                <filter string="Date birth" name="date_birth" context="{'group_by':'date_birth'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_sport_player" model="ir.actions.act_window">
+        <field name="name">Sport Player</field>
+        <field name="res_model">sport.player</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

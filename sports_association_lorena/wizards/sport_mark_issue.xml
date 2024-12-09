@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sport_mark_view" model="ir.ui.view">
+        <field name="name">sport.mark.issue.view.tree</field>
+        <field name="model">sport.mark.issue</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="issue_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sport_mark_issue" model="ir.actions.act_window">
+        <field name="name">Mark Issue</field>
+        <field name="res_model">sport.mark.issue</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="sports_association_lorena.model_sport_clinic"/>
+        <field name="binding_view_types">list,form</field>
+    </record>
+
+</odoo>
