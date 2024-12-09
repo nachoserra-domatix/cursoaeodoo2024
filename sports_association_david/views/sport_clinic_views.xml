@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_sport_clinic" model="ir.actions.act_window">
+        <field name="name">Sport Clinic</field>
+        <field name="res_model">sport.clinic</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <!-- <field name="domain">[]</field> -->
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport issue
+            </p>
+        </field>   
+    </record>
+    
+    <record id="sport_clinic_view_tree" model="ir.ui.view">
+        <field name="name">sport.clinic.view.tree</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Clinics">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email" widget="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_clinic_view_form" model="ir.ui.view">
+        <field name="name">sport_clinic.view.form</field>
+        <field name="model">sport.clinic</field>
+        <field name="arch" type="xml">
+            <form string="Clinic">
+                <header>
+                    <button string="Check Assistance" name="action_check_assistance" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="phone"/>
+                        <field name="email" />
+                        <field name="issue_ids" />
+                        <field name="available" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
