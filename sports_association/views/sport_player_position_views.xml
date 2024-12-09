@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="sport_player_position_form_view" model="ir.ui.view">
+        <field name="name">sport.player.position.form</field>
+        <field name="model">sport.player.position</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1 >
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="sport_id"/>
+                    </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                          <field name="description" wigdet="html"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sport_player_position_tree_view" model="ir.ui.view">
+        <field name="name">sport.player.position.tree</field>
+        <field name="model">sport.player.position</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sport_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sport_player_position_search_view" model="ir.ui.view">
+        <field name="name">sport.player.position.search</field>
+        <field name="model">sport.player.position</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="sport_id"/>
+            </search>
+        </field>
+    </record>
+
+     <record id="sport_player_position_action" model="ir.actions.act_window">
+        <field name="name">Positions</field>
+        <field name="res_model">sport.player.position</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="sport_configuration_menu" 
+    name="Configuration" 
+    groups="sports_association.res_groups_sports_association_manager"
+    parent="sports_association.sport_menu"/>
+
+    <menuitem id="sport_player_configuration_menu"
+    name="Players"
+    parent="sports_association.sport_configuration_menu"
+    />
+
+    <menuitem id="sport_player_position_configuration_menu"
+    name="Positions"
+    parent="sports_association.sport_player_configuration_menu"
+    action="sport_player_position_action"
+    />
+    
+
+
+</odoo>
