@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <record id="sport_issue_mark_all_done_view" model="ir.ui.view">
+        <field name="name">Mark All Issues Done Wizard</field>
+        <field name="model">sport.issue.mark.all.done</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Mark All issues As Done">
+                <group>
+                    <span>This will mark all issues as done. Are you sure?</span>
+                </group>
+                <footer>
+                    <button
+                        name="action_set_all_done"
+                        string="Mark All Done"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" special="cancel" class="btn-secondary" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_issue__mark_all_done_action" model="ir.actions.act_window">
+        <field name="name">Mark All Issues Done</field>
+        <field name="res_model">sport.issue.mark.all.done</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_sport_issue" />
+        <field name="binding_view_types">list,form</field>
+    </record>
+
+
+</odoo>

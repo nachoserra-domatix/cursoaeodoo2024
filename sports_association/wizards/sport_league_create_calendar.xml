@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <record id="sport_league_create_calendar_view" model="ir.ui.view">
+        <field name="name">Sport League Create Calendar Wizard</field>
+        <field name="model">sport.league.create.calendar</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Create Calendar">
+                <group>
+                    <field name="date_start" />
+                </group>
+                <footer>
+                    <button
+                        name="create_calendar"
+                        string="Create Calendar"
+                        type="object"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" special="cancel" class="btn-secondary" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_league_create_calendar_action" model="ir.actions.act_window">
+        <field name="name">Create Calendar</field>
+        <field name="res_model">sport.league.create.calendar</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_sport_league" />
+        <field name="binding_view_types">form</field>
+    </record>
+
+</odoo>
