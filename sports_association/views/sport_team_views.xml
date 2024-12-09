@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_sport_team" model="ir.actions.act_window">
+        <field name="name">Sport Team</field>
+        <field name="res_model">sport.team</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport team
+            </p>
+        </field>
+    </record>
+    
+    <record id="sport_team_view_tree" model="ir.ui.view">
+        <field name="name">sport_team.view.tree</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Sport">
+                <field name="name"></field>
+                <field name="sport_id" optional="show"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_team_view_form" model="ir.ui.view">
+        <field name="name">sport_team.view.form</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <form string="Sport Teams">
+                <header>
+                    <button string="To Principal" name="action_principal_all" type="object" class="btn-primary"/>
+                    <button string="To secondary" name="action_secondary_all" type="object" class="btn-secondary"/>
+                    <button string="Add free players" name="action_add_players" type="object" class="btn-warning"/>
+                </header>
+                
+                <sheet>
+                    <!-- smart button -->
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_players" class="oe_stat_button" icon="fa-users">
+                            <field string="Players" name="player_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name" />
+                        <field name="sport_id" />
+                    </group>
+                    <group>
+                        <field name="logo" widget="image" class="oe_avatar"></field>
+                    </group>
+                    <notebook>
+                        <page name="players" string="Players">
+                            <field name="player_list_ids" context="{'default':name}">
+                                <tree editable="bottom">
+                                    <field name="name" />
+                                    <field name="years" />
+                                    <field name="position"/>
+                                    <field name="tittle" widget="boolean_toggle"/>
+                                </tree>
+                            </field>
+                            <!-- <field name="player_list_ids"
+                                context="{'tree_view_ref':'sports_association.sport_player_view_tree_simple','form_view_ref':'sports_association.sport_player_view_form_simple'}"
+                            ></field> -->
+                        </page>
+                    </notebook>
+                  </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_team_view_kanban" model="ir.ui.view">
+        <field name="name">sport_team.view.kanban</field>
+        <field name="model">sport.team</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="sport_id">
+                <field name="name" />
+                <field name="sport_id" />
+                <field name="logo"></field>
+                <field name="color"></field>
+                <field name="player_count"/>
+
+                <templates>
+                    <t t-name="kanban-menu" class="o_kanban_small_column o_opportunity_kanban" on_create="quick_create" archivable="false" sample="1" js_class="crm_kanban">
+                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                    </t>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''} #{lost_ribbon ? 'oe_kanban_card_ribbon' : ''} oe_kanban_global_click oe_kanban_card d-flex flex-column">
+                            <div class="oe_kanban_content flex-grow-1">
+                                <div>
+                                    <field name="logo" widget="image" class="oe_avatar"></field>
+                                </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title"><field name="name"/></strong>    
+                            </div>
+                            <div class="o_kanban_record_subtitle">
+                                <field name="player_count"/>
+                            </div>
+                            </div>
+                            <div class="oe_kanban_bottom_right">
+                                <field name="sport_id"></field>
+                            </div>
+                            <!-- <div class="clearfix"/> -->
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>
