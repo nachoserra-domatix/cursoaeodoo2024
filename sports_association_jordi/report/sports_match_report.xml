@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_sport_match">
+        <t t-call="web.html_container"> 
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="mt-4">
+                            <span>League # </span>
+                            <span t-field="o.league_id"></span>
+                        </h2>
+                        <div class="row mt-4 mb-2" name="league">
+                            <div t-if="o.date" class="col-auto col-3 mw-100 mb-2" name="date">
+                                <strong>Date: </strong><br/>
+                                <span class="m-0" t-field="o.date"/>
+                            </div>
+                            <div t-if="o.sport_id" class="col-auto col-3 mw-100 mb-2" name="Sport">
+                                <strong>Sport: </strong><br/>
+                                <span class="m-0" t-field="o.sport_id"/>
+                            </div> 
+                        </div>
+                        <table class="table table-sm table-bordered mt-4">
+                            <thead style="display: tabole-row-group">
+                                <tr>
+                                    <th name="th_team" class="text-start">Team</th>
+                                    <th name="th_points" class="text-start">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+                                <t t-foreach="o.match_lines" t-as="p">
+                                    <tr>
+                                        <td name="team" class="text-start">
+                                            <span t-field="p.team_id"/>
+                                        </td>
+                                        <td name="points" class="text-end">
+                                            <span t-field="p.score"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>   
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    <record id="action_report_sport_match" model="ir.actions.report">
+    	<field name="name">Match</field>
+    	<field name="model">sports.match</field>
+    	<field name="report_type">qweb-pdf</field>
+    	<field name="report_name">sports_association_jordi.report_sport_match</field>
+    	<field name="report_file">sports_association_jordi.report_sport_match</field>
+    	<field name="print_report_name">(object.date)</field>
+    	<field name="binding_model_id" ref="model_sports_match"/>
+    	<field name="binding_type">report</field>
+	</record>
+
+</odoo>

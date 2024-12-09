@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sports_player_tree_view" model="ir.ui.view">
+        <field name="name">sports_player.tree.view</field>
+        <field name="model">sports.player</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Players">
+                <field name="name" />
+                <field name="age" optional="show" />
+                <field name="position" optional="show" />
+                <field name="team_id" optional="show" />
+                <field name="starter" optional="show" />
+            </tree>
+        </field>
+    </record>
+    <record id="sports_player_tree_simple_view" model="ir.ui.view">
+        <field name="name">sports_player.simple.tree.view</field>
+        <field name="model">sports.player</field>
+        <field eval="100" name="priority" />
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Players">
+                <field name="name" />
+                <field name="age" optional="show" />
+            </tree>
+        </field>
+    </record>
+    <record id="sports_player_simple_view_form" model="ir.ui.view">
+        <field name="name">sports_player.simple.view.form</field>
+        <field name="model">sports.player</field>
+        <field eval="100" name="priority" />
+        <field name="arch" type="xml">
+            <form string="Player">
+                <header>
+                    <button string="Starter" name="make_starter" type="object" class="btn-success" />
+                    <button string="Substitute" name="make_substitute" type="object"
+                        class="btn-danger" />
+
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Player Name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="age" />
+                            <field name="position" />
+                            <field name="team_id" />
+                            <field name="starter" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sports_player_view_form" model="ir.ui.view">
+        <field name="name">sports_player.view.form</field>
+        <field name="model">sports.player</field>
+        <field name="arch" type="xml">
+            <form string="Player">
+                <header>
+                    <button string="Starter" name="make_starter" type="object" class="btn-success" />
+                    <button string="Substitute" name="make_substitute" type="object"
+                        class="btn-danger" />
+                    <button string="Create Issue"
+                        name="%(sports_association_jordi.action_sports_create_issue)d" type="action"
+                        class="btn-primary" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Player Name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="date_of_birth"></field>
+                        <field name="age" />
+                        <field name="position" />
+                        <field name="team_id" />
+                        <field name="starter" />
+                        <field name="sport_name" />
+                    </group>
+                    <group>
+                        <field name="street" />
+                        <field name="city" />
+                        <field name="zip" />
+                        <field name="phone" />
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sport_player_view_search" model="ir.ui.view">
+        <field name="name">sport_player_view_search</field>
+        <field name="model">sports.player</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="sport_name" />
+                <field name="team_id" />
+                <filter string="Starter" name="starter" domain="[('starter', '=', True)]" />
+                <filter name="Sport" string="Sport" context="{'group_by': 'sport_name'}" />
+                <filter name="Team" string="Team" context="{'group_by': 'team_id'}" />
+                <filter name="Date Of Birth" string="Date Of Birth"
+                    context="{'group_by': 'date_of_birth'}" />
+            </search>
+        </field>
+    </record>
+    <record id="action_player_team" model="ir.actions.act_window">
+        <field name="name">sport.player</field>
+        <field name="res_model">sports.player</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new Player
+            </p>
+        </field>
+    </record>
+
+</odoo>

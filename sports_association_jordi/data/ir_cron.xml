@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="ir_cron_set_score" model="ir.cron">
+        <field name="name">Set score to leagues</field>
+        <field name="model_id" ref="sports_association_jordi.model_sports_league"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_set_score()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="ir_cron_delete_unused_tag" model="ir.cron">
+        <field name="name">Delete unused tags</field>
+        <field name="model_id" ref="sports_association_jordi.model_sports_issue"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_delete_unused_tags()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="active">True</field>
+    </record>
+
+</odoo>
