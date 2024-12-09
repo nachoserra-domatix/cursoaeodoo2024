@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="sport_player_tree_view" model="ir.ui.view">
+            <field name="name">sport.player.tree.view</field>
+            <field name="model">sport.player</field>
+            <field name="arch" type="xml">
+                <tree string="Sport Issue" multi_edit='1'>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="titular"/>
+                    <field name="team_id"/>
+                    <field name="position"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sport_player_tree_simple_view" model="ir.ui.view">
+            <field name="name">sport.player.tree.simple.view</field>
+            <field name="model">sport.player</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Sport Issue" editable="bottom">
+                    <field name="name"/>
+                    <field name="team_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sport_player_form_view" model="ir.ui.view">
+            <field name="name">sport.player.form.view</field>
+            <field name="model">sport.player</field>
+            <field name="arch" type="xml">
+                <form string="Sport Player">
+                    <header>
+                        <button name="mark_as_titular" type="object" class="btn-success" string="Mark as titular"/>
+                        <button name="unmark_as_titular" type="object" class="btn-secondary" string="Unmark as titular"/>
+                        <button name="%(action_sport_create_issue_wizard)d" context="{'default_player_id': id}" type="action" class="oe_stat_button" string="Create issue"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Issue name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="birth_date"/>
+                                <field name="age"/>
+                                <field name="position"/>
+                                <field name="titular"/>
+                                <field name="partner_id" invisible="True"/>
+                            </group>
+                            <group>
+                                <field name="street"/>
+                                <field name="city"/>
+                                <field name="country_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="teams" string="Teams">
+                                <group>
+                                    <field name="team_id"/>
+                                    <field name="sport_name"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="sport_player_form_simple_view" model="ir.ui.view">
+            <field name="name">sport.player.form.simple.view</field>
+            <field name="model">sport.player</field>
+            <field eval="100" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Sport Player">
+                    <sheet>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="name" placeholder="Issue name"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="age"/>
+                                <field name="position"/>
+                            </group>
+                            <group>
+                                <field name="team_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sport_player_view_search" model="ir.ui.view">
+            <field name="name">sport.player.view.search</field>
+            <field name="model">sport.player</field>
+            <field name="arch" type="xml">
+                <search string="Players">
+                    <field name="name"/>
+                    <field name="team_id"/>
+                    <field name="sport_name"/>
+                    <separator/>
+                    <filter name="filter_titular" string="Titular Players" domain="[('titular', '=', True)]"/>
+                    <separator/>
+                    <filter name="group_team" string="Team" context="{'group_by': 'team_id'}" />
+                    <filter name="group_sport" string="Sport" context="{'group_by': 'sport_name'}" />
+                    <filter name="group_birth_date" string="Birth Date" context="{'group_by': 'birth_date'}" />
+                </search>
+            </field>
+        </record>
+        
+    </odoo>

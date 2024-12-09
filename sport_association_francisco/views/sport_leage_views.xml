@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="sport_leage_tree_view" model="ir.ui.view">
+            <field name="name">sport.leage.tree.view</field>
+            <field name="model">sport.leage</field>
+            <field name="arch" type="xml">
+                <tree string="Sport Issue" multi_edit='1'>
+                    <field name="name"/>
+                    <field name="sport_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sport_leage_form_view" model="ir.ui.view">
+            <field name="name">sport.leage.form.view</field>
+            <field name="model">sport.leage</field>
+            <field name="arch" type="xml">
+                <form string="Sport leage">
+                    <header>
+                        <button string="Update" name="update_leage_points" type="object" class="oe_highlight"/>
+                        <button name="%(action_sport_create_match_wizard)d" type="action" class="oe_stat_button" string="Create Match"/>                    
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" type="object" name="action_view_matches" icon="fa-bars">
+                                <field string="Matches" name="match_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="leage name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="sport_id"/>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="leage_line_ids">
+                                    <tree>
+                                        <field name="team_id"/>
+                                        <field name="score"/>
+                                    </tree>
+                                    <form>
+                                        <field name="team_id"/>
+                                        <field name="score"/>
+                                        <field name="leage_id"/>
+                                    </form>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </odoo>

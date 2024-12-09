@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_sport_match">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="o">
+                        <h2>Match Report</h2>
+                        <p>This leage is <span t-field="o.leage_id"/>.</p>
+                        <p>Match date: <span t-field="o.match_date"/>.</p>
+                        <p>Match points for the leage: <span t-field="o.up_score"/>.</p>
+                        <p>The match results are:</p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <span>Team</span>
+                                    </td>
+                                    <td>
+                                        <span>Points</span>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.match_line_ids" t-as="leage">
+                                    <td>
+                                        <span t-field="leage.team_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="leage.total_score" class="ms-3"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p t-if="o.winner_team_id">The match winner is: <strong><span t-field="o.winner_team_id"/></strong>!</p>
+                        <p t.else="">The match winner is <strong>None</strong>!</p>
+                        <p>Its a tie!</p>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_sport_match" model="ir.actions.report">
+    	<field name="name">Match</field>
+    	<field name="model">sport.match</field>
+    	<field name="report_type">qweb-pdf</field>
+    	<field name="report_name">sport_association_francisco.report_sport_match</field>
+    	<field name="report_file">sport_association_francisco.report_sport_match</field>
+    	<field name="print_report_name">'Match - %s' % (object.match_date)</field>
+    	<field name="binding_model_id" ref="model_sport_match"/>
+    	<field name="binding_type">report</field>
+	</record>
+
+</odoo>

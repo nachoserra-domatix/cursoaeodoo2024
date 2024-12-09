@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="sport_issue_tree_view" model="ir.ui.view">
+            <field name="name">sport.issue.tree.view</field>
+            <field name="model">sport.issue</field>
+            <field name="arch" type="xml">
+                <tree string="Sport Issue" multi_edit='1'>
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="date" optional="show"/>
+                    <field name="state" widget="badge"/>
+                    <field name="solution"/>
+                    <field name="assistance" optional="hide"/>
+                    <field name="user_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="sport_issue_form_view" model="ir.ui.view">
+            <field name="name">sport.issue.form.view</field>
+            <field name="model">sport.issue</field>
+            <field name="arch" type="xml">
+                <form string="Sport Issue">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button name="assign_tags" string="Asign tags" type="object" class="btn-primary" groups="sport_association_francisco.res_groups_sports_association_manager"/>
+                        <button name="action_open" string="To Open" type="object" invisible="state == 'open'" class="btn-primary"/>
+                        <button name="action_draft" string="To Draft" type="object" invisible="state in ['draft','done']" class="btn-secondary"/>
+                        <button name="action_done" string="Done" type="object" invisible="state == 'Done'" class="btn-success"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Issue name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="sequence"/>
+                                <field name="player_id"/>
+                                <field name="description"/>
+                                <field name="date" widget="remaining_days"/>
+                                <field name="cost" widget="monetary"/>
+                                <field name="assigned" widget="boolean_toggle"/>
+                            </group>
+                            <group>
+                                <field name="solution"/>
+                                <field name="assistance" widget="boolean_toggle"/>
+                                <field name="user_id" options="{'no_quick_create':True,'no_open':True}"/>
+                                <field name="user_phone"/>
+                                <field name="tag_ids" widget="many2many_tags" options="{'no_create':True}"/>
+                                <field name="clinic_id" domain="[('available','=',True)]"/>
+                            </group>
+                            <notebook>
+                                <page name="description" string="Description">
+                                    <field name="description"/>
+                                </page>
+                                <page name="solution" string="Solution">
+                                    <field name="solution"/>
+                                </page>
+                                <page name="actions" string="Actions">
+                                    <field name="action_ids" context="{'default_state':state}">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="state"/>
+                                        </tree>
+                                        <form>
+                                            <sheet>
+                                                <div class="oe_title">
+                                                    <h1>
+                                                        <field name="name" placeholder="Action name"/>
+                                                    </h1>
+                                                </div>
+                                                <group>
+                                                    <group>
+                                                        <field name="state"/>
+                                                        <field name="issue_id"/>
+                                                    </group>
+                                                </group>
+                                            </sheet>
+                                        </form>
+                                    </field>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sport_issue_view_kanban" model="ir.ui.view">
+            <field name="name">sport.issue.view.kanban</field>
+            <field name="model">sport.issue</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="clinic_id"/>
+                    <field name="tag_ids"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-menu">
+                            <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                            <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                            <ul class="oe_kanban_colorpicker" data-field="color"/>
+                        </t>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''} #{lost_ribbon ? 'oe_kanban_card_ribbon' : ''} oe_kanban_global_click oe_kanban_card d-flex flex-column">
+                                <div class="oe_kanban_content flex-grow-1">
+                                    <div class="oe_kanban_details">
+                                        <strong class="o_kanban_record_title"><field name="name"/></strong>
+                                    </div>
+                                    <div class="o_kanban_record_subtitle">
+                                        <field name="date"/>
+                                    </div>
+                                    <div>
+                                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_footer">
+                                    <div class="o_kanban_record_bottom">
+                                        <div class="oe_kanban_bottom_left">
+                                            <!-- <field name="state"/> -->
+                                            <field name="clinic_id"/>
+                                        </div>
+                                        <div class="oe_kanban_bottom_right">
+                                            <field name="user_id" widget="many2one_avatar_user" domain="[('share', '=', False)]"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="sport_issue_view_pivot" model="ir.ui.view">
+            <field name="name">sport.issue.view.pivot</field>
+            <field name="model">sport.issue</field>
+            <field name="arch" type="xml">
+                <pivot string="Issues" disable_linking="true">
+                    <field name="user_id" type="row"/>
+                    <field name="date" type="col"/>
+                    <field name="cost" type="measure"/>
+                    
+                </pivot>
+            </field>
+        </record>
+
+        <record id="sport_issue_view_graph" model="ir.ui.view">
+            <field name="name">sport.issue.view.graph</field>
+            <field name="model">sport.issue</field>
+            <field name="arch" type="xml">
+                <graph string="Issues" type="bar">
+                    <field name="user_id"/>
+                    <field name="cost" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="sport_issue_view_calendar" model="ir.ui.view">
+            <field name="name">sport.issue.view.calendar</field>
+            <field name="model">sport.issue</field>
+            <field name="arch" type="xml">
+                <calendar string="Issues" date_start="date" color="user_id">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="state" filters="1" invisible="1"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="sport_issue_view_search" model="ir.ui.view">
+            <field name="name">sport.issue.view.search</field>
+            <field name="model">sport.issue</field>
+            <field name="arch" type="xml">
+                <search string="Issues">
+                    <field name="name" filter_domain="['|', ('name', 'ilike', self), ('description', 'ilike', self)]"/>
+                    <field name="user_id"/>
+                    <field name="tag_ids"/>
+                    <separator/>
+                    <filter name="filter_state" string="State Open" domain="[('state', '=', 'open')]"/>
+                    <filter name="filter_state" string="State Draft" domain="[('state', '=', 'draft')]"/>
+                    <separator/>
+                    <filter name="group_users" string="Users" context="{'group_by': 'user_id'}" />
+                </search>
+                
+            </field>
+        </record>
+        
+    </odoo>

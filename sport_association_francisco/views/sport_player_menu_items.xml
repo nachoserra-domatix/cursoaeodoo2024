@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <record id="action_sport_player" model="ir.actions.act_window">
+            <field name="name">Sport Players</field>
+            <field name="res_model">sport.player</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create new player
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="sport_player_menu" name="Sport Players" sequence="10" action="sport_association_francisco.action_sport_player"
+            parent="sport_association_francisco.sport_clinic_menu"/>
+        
+    </odoo>
