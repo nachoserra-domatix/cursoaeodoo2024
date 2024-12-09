@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_sport"
+        name="Sport Association"
+        sequence= "10">
+
+            <menuitem
+            id="menu_sport_clinic"
+            name="Sport Clinic"
+            action="sports_association_villa.action_sport_clinic"
+            />
+
+            <menuitem id="menu_general_sport_issue" name="Sport Issue" sequence="10">
+
+                    <menuitem id="menu_sport_issue"
+                    name="Sport Issue"
+                    action="sports_association_villa.action_sport_issue"/>
+
+                    <menuitem
+                    id="menu_sport_issue_tag"
+                    name="Sport Issue Tag"
+                    action="sports_association_villa.action_sport_issue_tag"
+                    sequence="50"
+                />
+
+            </menuitem>
+
+            <menuitem id="menu_general_sport_sport" name="Sport" sequence="20">
+
+                <menuitem
+                id="menu_sport_sport"
+                name="Sport"
+                action="sports_association_villa.action_sport"
+                />
+
+                <menuitem
+                id="menu_sport_team"
+                name="Sport Team"
+                action="sports_association_villa.action_sport_team"
+                sequence="10"
+                />
+
+                <menuitem
+                id="menu_sport_player"
+                name="Sport Player"
+                action="sports_association_villa.action_sport_player"
+                sequence="20"
+                />
+
+                <menuitem
+                id="menu_sport_league"
+                name="Sport League"
+                action="sports_association_villa.action_sport_league"
+                sequence="30"
+                />
+
+                <menuitem
+                id="menu_sport_match"
+                name="Sport Match"
+                action="sports_association_villa.action_sport_match"
+                sequence="40"
+                />
+            </menuitem>
+    </menuitem>
+</odoo>
