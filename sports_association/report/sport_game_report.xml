@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_sport_game">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="mt-4">
+                            <span >Game </span>
+                            <span t-field="o.name"></span>
+                        </h2>
+
+                        <div class="row mt-4 mb-2" id="informations">
+                            <div t-if="o.sport_id" class="col-auto col-3 mw-100 mb-2" name="sport">
+                                <strong>Sport:</strong><br/>
+                                <span class="m-0" t-field="o.sport_id"></span>
+                            </div>
+                            <div t-if="o.game_date" class="col-auto col-3 mw-100 mb-2" name="date">
+                                <strong>Date:</strong><br/>
+                                <span class="m-0" t-field="o.game_date">2023-12-31</span>
+                            </div>
+                            <div t-if="o.league_id" class="col-auto col-3 mw-100 mb-2" name="league">
+                                <strong>League:</strong><br/>
+                                <span class="m-0" t-field="o.league_id"></span>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4 mb-2" id="information_winner">
+                            <div t-if="o.winner_team_id" class="col-auto col-3 mw-100 mb-2" name="winner_team">
+                                <strong>Winner team:</strong><br/>
+                                <span class="m-0" t-field="o.winner_team_id"></span>
+                            </div>
+                            <div t-if="o.winner_points" class="col-auto col-3 mw-100 mb-2" name="winner_points">
+                                <strong>Winner points:</strong><br/>
+                                <span class="m-0" t-field="o.winner_points"></span>
+                            </div>
+                            <div class="col-auto col-3 mw-100 mb-2" name="empty_column">
+                            </div>
+                        </div>
+
+                        <h3 class="mt-4">
+                            <span >Game lines</span>
+                        </h3>
+                        <table class="table table-sm o_main_table table-borderless mt-4">
+                            <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+                            <thead style="display: table-row-group">
+                                <tr>
+                                    <th name="th_name" class="text-start">Team</th>
+                                    <th name="th_state" class="text-start">Points</th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+
+                                <t t-foreach="o.game_line_ids" t-as="line">
+                                    <tr>
+                                        <td name="td_team" class="text-start"><span t-field="line.team_id"></span></td>
+                                        <td name="td_points" class="text-start"><span t-field="line.points"></span></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_sport_game" model="report.paperformat">
+        <field name="name">Sport Game Paperformat</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">32</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+    <record id="action_report_sport_game" model="ir.actions.report">
+    	<field name="name">Game</field>
+    	<field name="model">sport.game</field>
+    	<field name="report_type">qweb-pdf</field>
+    	<field name="report_name">sports_association.report_sport_game</field>
+    	<field name="report_file">sports_association.report_sport_game</field> <!-- Deprecated?-->
+    	<field name="print_report_name">(object.name)</field>
+        <field name="paperformat_id" ref="sports_association.paperformat_sport_game" />
+    	<field name="binding_model_id" ref="model_sport_game"/>
+    	<field name="binding_type">report</field>
+	</record>
+
+</odoo>

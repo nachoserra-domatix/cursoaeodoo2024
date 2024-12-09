@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sport_create_game_form" model="ir.ui.view">
+        <field name="name">sport_create_game.view.form</field>
+        <field name="model">sport.create.game</field>
+        <field name="arch" type="xml">
+            <form string="Games">
+                <group>
+                    <field name="name" />
+                    <field name="game_date"/>
+                    <field name="league_id"/>
+                    <field name="allowed_team_ids" invisible="1"/>
+                    <field name="team_ids"  widget="many2many_tags" domain="[('id','in',allowed_team_ids)]"/>
+                </group>
+                <footer>
+                        <button string="Create and View Game" name="create_game" class="btn-primary" type="object"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sport_create_game" model="ir.actions.act_window">
+        <field name="name">Create game</field>
+        <field name="res_model">sport.create.game</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="sports_association.model_sport_league" />
+        <field name="binding_view_types">list,form</field>
+    </record>
+
+</odoo>

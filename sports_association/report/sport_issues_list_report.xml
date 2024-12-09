@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_sport_issues_list">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page mx-5">
+                    <h2 class="mt-4">
+                        <span >Issues</span>
+                    </h2>
+
+                    <table class="table table-sm o_main_table table-borderless mt-4">
+                        <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th name="th_name" class="text-start">Name</th>
+                                <th name="th_date" class="text-start">Date</th>
+                                <th name="th_date" class="text-start">User</th>
+                                <th name="th_assistance" class="text-end">Assistance</th>
+                            </tr>
+                        </thead>
+                        <tbody class="sale_tbody">
+                            <t t-foreach="docs" t-as="o">
+                                <tr>
+                                    <td name="td_name" class="text-start"><span t-field="o.name"></span></td>
+                                    <td name="td_date" class="text-start"><span t-field="o.date"></span></td>
+                                    <td name="td_user" class="text-start"><span t-field="o.user_id"></span></td>
+                                    <td name="td_assistance" class="text-end"><span t-if="o.assistance">Sí</span><span t-else="">No</span></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_sport_issues_list" model="report.paperformat">
+        <field name="name">Sport Issues List Paperformat</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">32</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+    <record id="action_report_sport_issues_list" model="ir.actions.report">
+    	<field name="name">Issues List</field>
+    	<field name="model">sport.issue</field>
+    	<field name="report_type">qweb-pdf</field>
+    	<field name="report_name">sports_association.report_sport_issues_list</field>
+    	<field name="report_file">sports_association.report_sport_issues_list</field> <!-- Deprecated?-->
+    	<field name="print_report_name">(object.name)</field>
+        <field name="paperformat_id" ref="sports_association.paperformat_sport_issues_list" />
+    	<field name="binding_model_id" ref="model_sport_issue"/>
+    	<field name="binding_type">report</field>
+	</record>
+
+</odoo>

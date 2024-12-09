@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sport_player_view_tree" model="ir.ui.view">
+        <field name="name">sport_player.view.tree</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Players">
+                <field name="name" />
+                <field name="age" optional="show" />
+                <field name="position" optional="hide" />
+                <field name="team_id" />
+                <field name="sport_name" />
+                <field name="regular" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_player_view_simple_tree" model="ir.ui.view">
+        <field name="name">sport_player.view.simple.tree</field>
+        <field eval="100" name="priority"/>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <tree multi_edit="1" string="Players">
+                <field name="name" />
+                <field name="age" optional="show" />
+                <field name="position" optional="hide" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="sport_player_view_form" model="ir.ui.view">
+        <field name="name">sport_player.view.form</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <form string="Players">
+                <header>
+                    <button string="Create Issue" name="%(action_sport_create_issue)d" type="action" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Player Name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name='active' invisible="1"/>
+                            <field name="birth_date" />
+                            <field name="age" />
+                            <field name="team_id" domain="[('sport_id','!=',False)]"/>
+                            <field name="sport_name" />
+                        </group>
+                        <group>
+                            <field name="position" />
+                            <field name="regular" widget="boolean_toggle"/>
+                            <field name="street"/>
+                            <field name="city"/>
+                            <field name="country_id"/>
+                            
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_player_view_simple_form" model="ir.ui.view">
+        <field name="name">sport_player.view.simple.form</field>
+        <field eval="100" name="priority"/>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <form string="Players">
+
+                <sheet>
+                    <field name="name" placeholder="Player Name" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sport_player_view_search" model="ir.ui.view">
+        <field name="name">sport_player.view.search</field>
+        <field name="model">sport.player</field>
+        <field name="arch" type="xml">
+            <search string="Players">
+                <field name="name" filter_domain="['|', ('name','ilike',self), '|', ('sport_name','ilike',self), ('team_id','ilike',self)]"/>
+                <filter string="Regular players" name="regular" domain="[('regular','=', True)]"/>
+                <filter name="team" string="Team" context="{'group_by': 'team_id'}" />
+                <filter name="sport" string="Sport" context="{'group_by': 'sport_name'}" />
+                <filter name="birth_date" string="Brith Date" context="{'group_by': 'birth_date'}" />
+            </search>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_sport_player" model="ir.actions.act_window">
+        <field name="name">Sport Player</field>
+        <field name="res_model">sport.player</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <!-- <field name="domain">[]</field> -->
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new sport player
+            </p>
+        </field>
+    </record>
+</odoo>

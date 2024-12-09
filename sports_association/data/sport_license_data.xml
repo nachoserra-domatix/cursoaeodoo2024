@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data noupdate="1">
+        <!-- create data example for model sport.license -->
+        <record id="sport_license_data_1" model="sport.license">
+            <field name="name">License 1</field>
+            <field name="start_date">2024-01-01</field>
+            <field name="partner_id" />
+        </record>
+        <record id="sport_license_data_2" model="sport.license">
+            <field name="name">License 2</field>
+            <field name="start_date">2024-01-01</field>
+            <field name="partner_id" ref="base.user_root"/>
+        </record>
+
+        <record id="sport_license_data_4" model="sport.license">
+            <field name="name">License 4</field>
+            <field name="start_date">2024-01-01</field>
+            <field name="partner_id" model="res.partner" eval="obj().browse(1)"/>
+        </record>
+        <record id="sport_license_data_5" model="sport.license">
+            <field name="name">License 5</field>
+            <field name="start_date">2024-01-01</field>
+            <field name="partner_id" model="res.partner" eval="obj().search([('email','=','nacho@gmail.com')])"/>
+        </record>
+        <!-- license with partner_id with mail patata@gmail -->
+
+    </data>
+</odoo>
