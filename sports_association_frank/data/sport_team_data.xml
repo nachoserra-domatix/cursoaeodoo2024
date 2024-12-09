@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="team_yankees" model="sport.team">
+            <field name="name">Yankees de Nueva York</field>
+            <field name="sport_id" ref="sport_baseball"/>
+            <field name="coach_id" ref="coach_yankees"/>
+            <field name="color">1</field>
+            <field name="player_ids" eval="[(4, ref('player_judge')), (4, ref('player_stanton'))]"/>
+        </record>
+        <record id="team_dodgers" model="sport.team">
+            <field name="name">Dodgers de Los Ángeles</field>
+            <field name="sport_id" ref="sport_baseball"/>
+            <field name="coach_id" ref="coach_dodgers"/>
+            <field name="color">2</field>
+            <field name="player_ids" eval="[(4, ref('player_kershaw')), (4, ref('player_bellinger'))]"/>
+        </record>
+
+        <record id="team_barcelona" model="sport.team">
+            <field name="name">FC Barcelona</field>
+            <field name="sport_id" ref="sport_football"/>
+            <field name="coach_id" ref="coach_barcelona"/>
+            <field name="color">3</field>
+            <field name="player_ids" eval="[(4, ref('player_messi')), (4, ref('player_xavi'))]"/>
+        </record>
+        <record id="team_real_madrid" model="sport.team">
+            <field name="name">Real Madrid</field>
+            <field name="sport_id" ref="sport_football"/>
+            <field name="coach_id" ref="coach_real_madrid"/>
+            <field name="color">4</field>
+            <field name="player_ids" eval="[(4, ref('player_ronaldo')), (4, ref('player_benzema'))]"/>
+        </record>
+
+        <record id="team_lakers" model="sport.team">
+            <field name="name">Los Angeles Lakers</field>
+            <field name="sport_id" ref="sport_basketball"/>
+            <field name="coach_id" ref="coach_lakers"/>
+            <field name="color">5</field>
+            <field name="player_ids" eval="[(4, ref('player_lebron')), (4, ref('player_davis'))]"/>
+        </record>
+        <record id="team_bulls" model="sport.team">
+            <field name="name">Chicago Bulls</field>
+            <field name="sport_id" ref="sport_basketball"/>
+            <field name="coach_id" ref="coach_bulls"/>
+            <field name="color">6</field>
+            <field name="player_ids" eval="[(4, ref('player_jordan')), (4, ref('player_pippen'))]"/>
+        </record>
+    </data>
+</odoo>
